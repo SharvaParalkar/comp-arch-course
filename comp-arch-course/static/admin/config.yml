@@ -12,7 +12,7 @@ publish_mode: editorial_workflow
 media_library:
   name: cloudinary
   config:
-    cloud_name: dto9h2al
+    cloud_name: dbf3aqsxu
     api_key: 251365553116344
     default_transformations:
       - - fetch_format: auto
