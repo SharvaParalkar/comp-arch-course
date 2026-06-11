@@ -11,11 +11,7 @@ const config = {
   organizationName: 'SharvaParalkar',
   projectName: 'comp-arch-course',
   onBrokenLinks: 'throw',
-  markdown: {
-    hooks: {
-      onBrokenMarkdownLinks: 'warn',
-    },
-  },
+  onBrokenMarkdownLinks: 'warn',
 
   i18n: {
     defaultLocale: 'en',
@@ -115,7 +111,6 @@ const config = {
       },
       prism: {
         theme: prismThemes.oneLight,
-        darkTheme: prismThemes.dracula,
         additionalLanguages: ['python', 'csharp', 'bash'],
       },
       colorMode: {
