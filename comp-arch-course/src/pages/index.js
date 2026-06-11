@@ -7,55 +7,86 @@ import styles from './index.module.css';
 const topics = [
   {
     title: '3D Graphic Statics',
-    icon: '⬡',
-    description: 'Exploring structural form-finding through polyhedral force diagrams and funicular geometries.',
+    tag: 'STRUCTURES',
+    description: 'Polyhedral force diagrams, form/force duality, and funicular structural morphologies.',
     link: '/docs/intro',
   },
   {
     title: 'Shellular Optimization',
-    icon: '◎',
-    description: 'Shell-based cellular funicular structures — designing for structural efficiency at architectural scale.',
+    tag: 'GEOMETRY',
+    description: 'Shell-based cellular funicular structures optimized for structural efficiency at architectural scale.',
     link: '/docs/intro',
   },
   {
     title: 'Biological Growth',
-    icon: '⟁',
-    description: 'Directed rhizome growth simulations, auxin modeling, and nature-inspired structural morphologies.',
+    tag: 'COMPUTATION',
+    description: 'Directed rhizome growth simulations, auxin modeling, and nature-inspired structural form-finding.',
     link: '/docs/intro',
   },
   {
     title: 'Granular Jamming',
-    icon: '⬤',
+    tag: 'MATERIALS',
     description: 'Particle jamming mechanics applied to adaptive and reconfigurable architectural systems.',
     link: '/docs/intro',
   },
   {
     title: 'Digital Fabrication',
-    icon: '▦',
-    description: 'From computational geometry to physical form — fabrication workflows using Rhino, Grasshopper, and custom toolpaths.',
+    tag: 'FABRICATION',
+    description: 'Computational geometry to physical form — fabrication workflows using Rhino and Grasshopper.',
     link: '/docs/intro',
   },
   {
     title: 'Material Computation',
-    icon: '◈',
+    tag: 'RESEARCH',
     description: 'Integrating material behavior and computational design across micro to macro scales.',
     link: '/docs/intro',
   },
 ];
 
-function Topic({title, icon, description, link}) {
+function Topic({title, tag, description, link}) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="card margin-bottom--lg padding--lg">
-        <div style={{fontSize: '2rem', marginBottom: '0.5rem'}}>{icon}</div>
-        <h3 style={{fontFamily: 'Oswald, sans-serif', textTransform: 'uppercase', letterSpacing: '0.05em'}}>
-          {title}
-        </h3>
-        <p style={{color: 'var(--ifm-color-emphasis-700)', fontSize: '0.95rem'}}>
-          {description}
-        </p>
-        <Link className="button button--sm button--primary" to={link}>
-          Explore →
+    <div className="col col--4">
+      <div className="card margin-bottom--lg padding--lg" style={{height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
+        <div>
+          <div style={{
+            fontSize: '0.65rem',
+            fontWeight: 600,
+            letterSpacing: '0.12em',
+            color: 'var(--cal-maroon, #500000)',
+            marginBottom: '0.6rem',
+            fontFamily: 'Inter, sans-serif'
+          }}>
+            {tag}
+          </div>
+          <h3 style={{
+            fontFamily: 'Space Grotesk, sans-serif',
+            fontSize: '1.1rem',
+            fontWeight: 600,
+            letterSpacing: '-0.02em',
+            marginBottom: '0.75rem'
+          }}>
+            {title}
+          </h3>
+          <p style={{
+            fontSize: '0.875rem',
+            lineHeight: 1.6,
+            color: 'var(--ifm-color-emphasis-600)',
+            marginBottom: '1.25rem'
+          }}>
+            {description}
+          </p>
+        </div>
+        <Link
+          style={{
+            fontSize: '0.8rem',
+            fontWeight: 500,
+            color: 'var(--cal-maroon, #500000)',
+            textDecoration: 'none',
+            letterSpacing: '0.02em'
+          }}
+          to={link}
+        >
+          View notes →
         </Link>
       </div>
     </div>
@@ -66,44 +97,85 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title="Cellular Architectures Laboratory"
-      description="Computational Architecture course platform — Dr. Mostafa Akbari, Texas A&M University">
-      
+      title="CAL · Cellular Architectures Laboratory"
+      description="Computational Architecture — Dr. Mostafa Akbari, Texas A&M University">
+
       {/* Hero */}
-      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <header className={clsx('hero', styles.heroBanner)}>
         <div className="container">
-          <div style={{marginBottom: '1rem', opacity: 0.7, fontFamily: 'Oswald, sans-serif', letterSpacing: '0.15em', fontSize: '0.85rem'}}>
-            TEXAS A&M UNIVERSITY · COLLEGE OF ARCHITECTURE
-          </div>
-          <h1 className="hero__title">Cellular Architectures<br/>Laboratory</h1>
-          <p className="hero__subtitle">
-            Computational Design · Digital Fabrication · Structural Form-Finding
-          </p>
-          <div style={{marginTop: '0.5rem', marginBottom: '2rem', opacity: 0.6, fontFamily: 'Work Sans, sans-serif', fontSize: '0.9rem'}}>
-            Dr. Mostafa Akbari · Assistant Professor of Architecture
-          </div>
-          <div className={styles.buttons}>
-            <Link className="button button--secondary button--lg" to="/docs/intro">
-              Course Notes
-            </Link>
-            <Link className="button button--primary button--lg margin-left--md" to="/docs/lectures">
-              Lectures
-            </Link>
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            maxWidth: '640px'
+          }}>
+            <div style={{
+              fontSize: '0.7rem',
+              fontWeight: 600,
+              letterSpacing: '0.15em',
+              color: 'rgba(255,255,255,0.35)',
+              marginBottom: '1.5rem',
+              fontFamily: 'Inter, sans-serif'
+            }}>
+              TEXAS A&M UNIVERSITY · COLLEGE OF ARCHITECTURE
+            </div>
+            <h1 className="hero__title">
+              Cellular<br/>Architectures<br/>Laboratory
+            </h1>
+            <p className="hero__subtitle">
+              Computational Design · Structural Form-Finding<br/>Digital Fabrication · Material Computation
+            </p>
+            <div style={{
+              marginTop: '0.75rem',
+              marginBottom: '2.5rem',
+              fontSize: '0.8rem',
+              color: 'rgba(255,255,255,0.3)',
+              fontFamily: 'Inter, sans-serif',
+              letterSpacing: '0.02em'
+            }}>
+              Dr. Mostafa Akbari · Assistant Professor of Architecture
+            </div>
+            <div style={{display: 'flex', gap: '0.75rem', flexWrap: 'wrap'}}>
+              <Link className="button button--primary" to="/docs/intro">
+                Course Notes
+              </Link>
+              <Link className="button button--secondary" to="/docs/lectures">
+                Lectures
+              </Link>
+              <Link className="button button--secondary" to="/docs/assignments">
+                Assignments
+              </Link>
+            </div>
           </div>
         </div>
       </header>
 
-      {/* Topics Grid */}
+      {/* Divider line */}
+      <div style={{height: '1px', background: 'var(--cal-gray-200, #e8e8e8)'}} />
+
+      {/* Research areas */}
       <main>
-        <section style={{padding: '4rem 0', background: 'var(--ifm-background-color)'}}>
+        <section style={{padding: '5rem 0'}}>
           <div className="container">
-            <div style={{textAlign: 'center', marginBottom: '3rem'}}>
-              <h2 style={{fontFamily: 'Oswald, sans-serif', textTransform: 'uppercase', letterSpacing: '0.08em', fontSize: '2rem'}}>
-                Research Areas
+            <div style={{marginBottom: '3rem'}}>
+              <div style={{
+                fontSize: '0.65rem',
+                fontWeight: 600,
+                letterSpacing: '0.12em',
+                color: 'var(--cal-gray-400, #999)',
+                marginBottom: '0.5rem',
+                fontFamily: 'Inter, sans-serif'
+              }}>
+                RESEARCH AREAS
+              </div>
+              <h2 style={{
+                fontFamily: 'Space Grotesk, sans-serif',
+                fontSize: '1.75rem',
+                fontWeight: 600,
+                letterSpacing: '-0.02em',
+                margin: 0
+              }}>
+                Course Topics
               </h2>
-              <p style={{color: 'var(--ifm-color-emphasis-600)', maxWidth: '600px', margin: '0 auto'}}>
-                This course bridges multiple disciplines — from structural geometry and material science to biological systems and computational fabrication.
-              </p>
             </div>
             <div className="row">
               {topics.map((props, idx) => (
@@ -113,21 +185,63 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Quick Links */}
-        <section style={{padding: '3rem 0', background: 'var(--aggie-maroon, #500000)', color: 'white'}}>
+        {/* Bottom CTA */}
+        <section style={{
+          padding: '4rem 0',
+          borderTop: '1px solid var(--cal-gray-200, #e8e8e8)',
+          background: 'var(--cal-gray-100, #f4f4f4)'
+        }}>
           <div className="container">
-            <div className="row" style={{alignItems: 'center'}}>
-              <div className="col col--8">
-                <h2 style={{fontFamily: 'Oswald, sans-serif', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'white', margin: 0}}>
-                  Ready to dive in?
-                </h2>
-                <p style={{opacity: 0.8, margin: '0.5rem 0 0 0'}}>
-                  Access lecture notes, assignments, and course resources.
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: '1.5rem'
+            }}>
+              <div>
+                <div style={{
+                  fontSize: '0.65rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.12em',
+                  color: 'var(--cal-gray-400, #999)',
+                  marginBottom: '0.4rem',
+                  fontFamily: 'Inter, sans-serif'
+                }}>
+                  CELLULAR ARCHITECTURES LAB
+                </div>
+                <h3 style={{
+                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontWeight: 600,
+                  letterSpacing: '-0.02em',
+                  margin: 0,
+                  fontSize: '1.25rem'
+                }}>
+                  Texas A&M University
+                </h3>
+                <p style={{
+                  fontSize: '0.875rem',
+                  color: 'var(--cal-gray-600, #555)',
+                  margin: '0.25rem 0 0 0'
+                }}>
+                  College of Architecture · Department of Architecture
                 </p>
               </div>
-              <div className="col col--4" style={{textAlign: 'right'}}>
-                <Link className="button button--secondary button--lg" to="/docs/assignments">
-                  View Assignments →
+              <div style={{display: 'flex', gap: '0.75rem', flexWrap: 'wrap'}}>
+                <Link
+                  className="button button--primary"
+                  to="/docs/assignments"
+                >
+                  Assignments
+                </Link>
+                <Link
+                  className="button button--secondary"
+                  href="https://www.arch.tamu.edu/staff/mostafa-akbari/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{color: 'var(--cal-gray-800, #222)', borderColor: 'var(--cal-gray-200, #e8e8e8)'}}
+                >
+                  Faculty Profile ↗
                 </Link>
               </div>
             </div>

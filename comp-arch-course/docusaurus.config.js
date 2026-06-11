@@ -119,7 +119,7 @@ const config = {
         additionalLanguages: ['python', 'csharp', 'bash'],
       },
       colorMode: {
-        defaultMode: 'dark',
+        defaultMode: 'light',
         disableSwitch: false,
         respectPrefersColorScheme: true,
       },
