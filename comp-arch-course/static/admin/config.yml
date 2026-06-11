@@ -3,6 +3,7 @@ backend:
   repo: SharvaParalkar/comp-arch-course
   branch: main
   base_url: https://cms-auth.sharvaparalkar.workers.dev
+  auth_endpoint: /auth
 
 media_folder: "comp-arch-course/static/img"
 public_folder: "/img/"
