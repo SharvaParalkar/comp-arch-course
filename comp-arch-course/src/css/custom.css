@@ -9,7 +9,7 @@
   --cal-ink:         #1a1a1a;
   --cal-ink-mid:     #555550;
   --cal-ink-faint:   #999990;
-  --cal-clay:        #8b7355;      /* warm sand — the signature accent */
+  --cal-clay:        #8b7355;
   --cal-clay-light:  #b09e85;
   --cal-clay-wash:   #f2ede7;
 
@@ -36,25 +36,6 @@
   --ifm-navbar-shadow:              none;
   --ifm-code-font-size:             85%;
   --docusaurus-highlighted-code-line-bg: rgba(139, 115, 85, 0.08);
-}
-
-[data-theme='dark'] {
-  --ifm-color-primary:           #c0ae96;
-  --ifm-color-primary-dark:      #aa9576;
-  --ifm-color-primary-darker:    #9d8768;
-  --ifm-color-primary-darkest:   #8b7355;
-  --ifm-color-primary-light:     #cfc0ab;
-  --ifm-color-primary-lighter:   #d9ccba;
-  --ifm-color-primary-lightest:  #e6ddd0;
-  --ifm-background-color:           #111110;
-  --ifm-navbar-background-color:    #111110;
-  --cal-off-white:   #1a1a18;
-  --cal-rule:        rgba(255,255,255,0.09);
-  --cal-ink:         #f0ede8;
-  --cal-ink-mid:     rgba(240,237,232,0.6);
-  --cal-ink-faint:   rgba(240,237,232,0.35);
-  --cal-clay-wash:   rgba(139,115,85,0.08);
-  --docusaurus-highlighted-code-line-bg: rgba(192, 174, 150, 0.1);
 }
 
 /* ─── Base ──────────────────────────────────────────────────────── */
@@ -104,7 +85,7 @@ code, pre {
   background: none;
 }
 
-/* ─── Hero (in index.js) ────────────────────────────────────────── */
+/* ─── Hero ──────────────────────────────────────────────────────── */
 .hero {
   background: var(--cal-white);
   padding: 0;
@@ -153,11 +134,6 @@ code, pre {
   box-shadow: 0 2px 16px rgba(139, 115, 85, 0.1);
 }
 
-[data-theme='dark'] .card {
-  background: var(--cal-off-white);
-  border-color: var(--cal-rule);
-}
-
 /* ─── Buttons ───────────────────────────────────────────────────── */
 .button--primary {
   background: var(--cal-ink);
@@ -199,9 +175,19 @@ code, pre {
   font-size: 0.8125rem;
 }
 
-[data-theme='dark'] .footer {
-  background: #0d0d0c;
-  border-top: 1px solid var(--cal-rule);
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer__links {
+  justify-content: center;
+}
+
+.footer__col {
+  text-align: center;
 }
 
 .footer__title {

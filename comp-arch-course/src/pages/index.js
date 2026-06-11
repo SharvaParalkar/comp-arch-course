@@ -4,45 +4,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
 
-/* ── Geometric wire SVG — polyhedral / graphic-statics motif ───── */
-function PolyhedralSVG() {
-  return (
-    <svg
-      viewBox="0 0 480 480"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-      style={{ width: '100%', maxWidth: 480, opacity: 0.18 }}
-    >
-      {/* Outer icosahedron projection */}
-      <polygon points="240,28 420,148 380,348 100,348 60,148" stroke="#8b7355" strokeWidth="1" fill="none" />
-      {/* Inner force diagram */}
-      <polygon points="240,108 356,184 316,292 164,292 124,184" stroke="#8b7355" strokeWidth="0.75" fill="none" />
-      {/* Core cell */}
-      <polygon points="240,176 296,212 276,268 204,268 184,212" stroke="#8b7355" strokeWidth="0.5" fill="none" />
-      {/* Radial lines — load paths */}
-      <line x1="240" y1="28" x2="240" y2="176" stroke="#8b7355" strokeWidth="0.5" />
-      <line x1="420" y1="148" x2="296" y2="212" stroke="#8b7355" strokeWidth="0.5" />
-      <line x1="380" y1="348" x2="276" y2="268" stroke="#8b7355" strokeWidth="0.5" />
-      <line x1="100" y1="348" x2="204" y2="268" stroke="#8b7355" strokeWidth="0.5" />
-      <line x1="60" y1="148" x2="184" y2="212" stroke="#8b7355" strokeWidth="0.5" />
-      {/* Cross-diagonals */}
-      <line x1="240" y1="28" x2="380" y2="348" stroke="#8b7355" strokeWidth="0.35" strokeDasharray="4 6" />
-      <line x1="420" y1="148" x2="100" y2="348" stroke="#8b7355" strokeWidth="0.35" strokeDasharray="4 6" />
-      <line x1="60" y1="148" x2="380" y2="348" stroke="#8b7355" strokeWidth="0.35" strokeDasharray="4 6" />
-      {/* Centroid */}
-      <circle cx="240" cy="222" r="3" stroke="#8b7355" strokeWidth="1" fill="none" />
-      <circle cx="240" cy="222" r="1.2" fill="#8b7355" />
-      {/* Vertex dots — outer */}
-      <circle cx="240" cy="28" r="2.5" fill="#8b7355" fillOpacity="0.6" />
-      <circle cx="420" cy="148" r="2.5" fill="#8b7355" fillOpacity="0.6" />
-      <circle cx="380" cy="348" r="2.5" fill="#8b7355" fillOpacity="0.6" />
-      <circle cx="100" cy="348" r="2.5" fill="#8b7355" fillOpacity="0.6" />
-      <circle cx="60" cy="148" r="2.5" fill="#8b7355" fillOpacity="0.6" />
-    </svg>
-  );
-}
-
 /* ── Topic cards ─────────────────────────────────────────────────── */
 const topics = [
   {
@@ -85,56 +46,54 @@ const topics = [
 
 function Topic({ title, tag, description, link }) {
   return (
-    <div className="col col--4">
-      <div
-        className="card margin-bottom--lg padding--lg"
-        style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
-      >
-        <div>
-          <div style={{
-            fontSize: '0.65rem',
-            fontWeight: 600,
-            letterSpacing: '0.1em',
-            color: 'var(--cal-clay, #8b7355)',
-            marginBottom: '0.65rem',
-            fontFamily: 'Space Mono, monospace',
-          }}>
-            {tag}
-          </div>
-          <h3 style={{
-            fontFamily: 'Libre Baskerville, Georgia, serif',
-            fontSize: '1rem',
-            fontWeight: 700,
-            letterSpacing: '-0.01em',
-            marginBottom: '0.75rem',
-            color: 'var(--cal-ink, #1a1a1a)',
-          }}>
-            {title}
-          </h3>
-          <p style={{
-            fontSize: '0.8375rem',
-            lineHeight: 1.65,
-            color: 'var(--cal-ink-mid, #555550)',
-            marginBottom: '1.25rem',
-            fontFamily: 'Inter, sans-serif',
-          }}>
-            {description}
-          </p>
+    <div
+      className="card padding--lg"
+      style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+    >
+      <div>
+        <div style={{
+          fontSize: '0.65rem',
+          fontWeight: 600,
+          letterSpacing: '0.1em',
+          color: 'var(--cal-clay, #8b7355)',
+          marginBottom: '0.65rem',
+          fontFamily: 'Space Mono, monospace',
+        }}>
+          {tag}
         </div>
-        <Link
-          style={{
-            fontSize: '0.78rem',
-            fontWeight: 500,
-            color: 'var(--cal-clay, #8b7355)',
-            textDecoration: 'none',
-            fontFamily: 'Inter, sans-serif',
-            letterSpacing: '0.01em',
-          }}
-          to={link}
-        >
-          View notes →
-        </Link>
+        <h3 style={{
+          fontFamily: 'Libre Baskerville, Georgia, serif',
+          fontSize: '1rem',
+          fontWeight: 700,
+          letterSpacing: '-0.01em',
+          marginBottom: '0.75rem',
+          color: 'var(--cal-ink, #1a1a1a)',
+        }}>
+          {title}
+        </h3>
+        <p style={{
+          fontSize: '0.8375rem',
+          lineHeight: 1.65,
+          color: 'var(--cal-ink-mid, #555550)',
+          marginBottom: '1.25rem',
+          fontFamily: 'Inter, sans-serif',
+        }}>
+          {description}
+        </p>
       </div>
+      <Link
+        style={{
+          fontSize: '0.78rem',
+          fontWeight: 500,
+          color: 'var(--cal-clay, #8b7355)',
+          textDecoration: 'none',
+          fontFamily: 'Inter, sans-serif',
+          letterSpacing: '0.01em',
+        }}
+        to={link}
+      >
+        View notes →
+      </Link>
     </div>
   );
 }
@@ -149,103 +108,80 @@ export default function Home() {
     >
       {/* ── Hero ─────────────────────────────────────────────────── */}
       <header className={clsx('hero', styles.heroBanner)}>
-        <div className="container" style={{ padding: '0 2rem' }}>
+        <div className="container">
           <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr auto',
+            display: 'flex',
+            flexDirection: 'column',
             alignItems: 'center',
-            gap: '2rem',
+            textAlign: 'center',
             padding: '5rem 0 4.5rem',
           }}>
-            {/* Left — text */}
-            <div style={{ maxWidth: 580 }}>
-              {/* Eyebrow */}
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.75rem',
-                marginBottom: '2rem',
-              }}>
-                <span style={{
-                  fontSize: '0.65rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.12em',
-                  color: 'var(--cal-ink-faint, #999990)',
-                  fontFamily: 'Space Mono, monospace',
-                  textTransform: 'uppercase',
-                }}>
-                  Texas A&M University · College of Architecture
-                </span>
-              </div>
-
-              {/* Headline */}
-              <h1 style={{
-                fontFamily: 'Libre Baskerville, Georgia, serif',
-                fontSize: 'clamp(2rem, 4vw, 3.25rem)',
-                fontWeight: 700,
-                letterSpacing: '-0.02em',
-                lineHeight: 1.1,
-                color: 'var(--cal-ink, #1a1a1a)',
-                margin: 0,
-              }}>
-                Cellular<br />Architectures<br />Laboratory
-              </h1>
-
-              {/* Rule */}
-              <div style={{
-                width: 40,
-                height: 1,
-                background: 'var(--cal-clay, #8b7355)',
-                margin: '1.75rem 0',
-              }} />
-
-              {/* Descriptor */}
-              <p style={{
-                fontFamily: 'Inter, sans-serif',
-                fontSize: '0.9375rem',
-                lineHeight: 1.7,
-                color: 'var(--cal-ink-mid, #555550)',
-                fontWeight: 300,
-                marginBottom: '0.5rem',
-                maxWidth: 460,
-              }}>
-                Computational Design · Structural Form-Finding<br />
-                Digital Fabrication · Material Computation
-              </p>
-              <p style={{
-                fontFamily: 'Inter, sans-serif',
-                fontSize: '0.8rem',
-                color: 'var(--cal-ink-faint, #999990)',
-                marginBottom: '2.5rem',
-              }}>
-                Dr. Mostafa Akbari · Assistant Professor of Architecture
-              </p>
-
-              {/* CTAs */}
-              <div style={{ display: 'flex', gap: '0.625rem', flexWrap: 'wrap' }}>
-                <Link className="button button--primary" to="/docs/intro">
-                  Course Notes
-                </Link>
-                <Link className="button button--secondary" to="/docs/lectures">
-                  Lectures
-                </Link>
-                <Link className="button button--secondary" to="/docs/assignments">
-                  Assignments
-                </Link>
-              </div>
+            {/* Eyebrow */}
+            <div style={{
+              fontSize: '0.65rem',
+              fontWeight: 600,
+              letterSpacing: '0.12em',
+              color: 'var(--cal-ink-faint, #999990)',
+              fontFamily: 'Space Mono, monospace',
+              textTransform: 'uppercase',
+              marginBottom: '2rem',
+            }}>
+              Texas A&amp;M University · College of Architecture
             </div>
 
-            {/* Right — polyhedral wire diagram */}
+            {/* Headline */}
+            <h1 style={{
+              fontFamily: 'Libre Baskerville, Georgia, serif',
+              fontSize: 'clamp(2rem, 4vw, 3.25rem)',
+              fontWeight: 700,
+              letterSpacing: '-0.02em',
+              lineHeight: 1.1,
+              color: 'var(--cal-ink, #1a1a1a)',
+              margin: 0,
+            }}>
+              Cellular<br />Architectures<br />Laboratory
+            </h1>
+
+            {/* Rule */}
             <div style={{
-              width: 'clamp(220px, 28vw, 380px)',
-              flexShrink: 0,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-              aria-hidden="true"
-            >
-              <PolyhedralSVG />
+              width: 40,
+              height: 1,
+              background: 'var(--cal-clay, #8b7355)',
+              margin: '1.75rem auto',
+            }} />
+
+            {/* Descriptor */}
+            <p style={{
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '0.9375rem',
+              lineHeight: 1.7,
+              color: 'var(--cal-ink-mid, #555550)',
+              fontWeight: 300,
+              marginBottom: '0.5rem',
+            }}>
+              Computational Design · Structural Form-Finding<br />
+              Digital Fabrication · Material Computation
+            </p>
+            <p style={{
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '0.8rem',
+              color: 'var(--cal-ink-faint, #999990)',
+              marginBottom: '2.5rem',
+            }}>
+              Dr. Mostafa Akbari · Assistant Professor of Architecture
+            </p>
+
+            {/* CTAs */}
+            <div style={{ display: 'flex', gap: '0.625rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+              <Link className="button button--primary" to="/docs/intro">
+                Course Notes
+              </Link>
+              <Link className="button button--secondary" to="/docs/lectures">
+                Lectures
+              </Link>
+              <Link className="button button--secondary" to="/docs/assignments">
+                Assignments
+              </Link>
             </div>
           </div>
         </div>
@@ -267,12 +203,19 @@ export default function Home() {
                 letterSpacing: '0.1em',
                 color: 'var(--cal-clay, #8b7355)',
                 textTransform: 'uppercase',
+                whiteSpace: 'nowrap',
               }}>
                 Course Topics
               </span>
               <div style={{ flex: 1, height: '1px', background: 'var(--cal-rule, #d9d5cf)' }} />
             </div>
-            <div className="row">
+
+            {/* Even card grid — no Docusaurus row/col to avoid uneven bottom margins */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '1rem',
+            }}>
               {topics.map((props, idx) => (
                 <Topic key={idx} {...props} />
               ))}
@@ -313,7 +256,7 @@ export default function Home() {
                   fontSize: '1.2rem',
                   color: 'var(--cal-ink, #1a1a1a)',
                 }}>
-                  Texas A&M University
+                  Texas A&amp;M University
                 </h3>
                 <p style={{
                   fontFamily: 'Inter, sans-serif',
