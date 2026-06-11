@@ -31,7 +31,7 @@ const config = {
           sidebarPath: './sidebars.js',
           routeBasePath: 'docs',
         },
-        blog: false, // disable blog
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -79,7 +79,7 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
+        style: 'light',
         links: [
           {
             title: 'Course',
@@ -114,7 +114,7 @@ const config = {
         copyright: `© ${new Date().getFullYear()} Cellular Architectures Laboratory · Dr. Mostafa Akbari · Texas A&M University`,
       },
       prism: {
-        theme: prismThemes.github,
+        theme: prismThemes.oneLight,
         darkTheme: prismThemes.dracula,
         additionalLanguages: ['python', 'csharp', 'bash'],
       },
