@@ -5,16 +5,251 @@ backend:
 
 media_folder: "comp-arch-course/static/img"
 public_folder: "/img/"
+publish_mode: editorial_workflow
+
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: dto9h2al
+    api_key: 251365553116344
+    default_transformations:
+      - - fetch_format: auto
+          quality: auto
 
 collections:
   - name: docs
     label: "Course Pages"
+    label_singular: "Course Page"
     folder: comp-arch-course/docs
+    identifier_field: title
+    extension: md
+    create: true
+    slug: "{{slug}}"
+    preview_path: "docs/{{slug}}"
+    fields:
+      - { label: "Title", name: title, widget: string }
+      - { label: "Sidebar Position", name: sidebar_position, widget: number, default: 1 }
+      - label: "Description"
+        name: description
+        widget: string
+        required: false
+        hint: "Short description shown in meta tags"
+      - label: "Category"
+        name: category
+        widget: select
+        required: false
+        options:
+          - { label: "Foundations", value: "foundations" }
+          - { label: "Graphic Statics", value: "graphic-statics" }
+          - { label: "Shellular Optimization", value: "shellular" }
+          - { label: "Biological Growth", value: "biological-growth" }
+          - { label: "Granular Jamming", value: "granular-jamming" }
+          - { label: "Tools & Software", value: "tools" }
+          - { label: "Resources", value: "resources" }
+      - label: "Tags"
+        name: tags
+        widget: list
+        required: false
+        hint: "e.g. grasshopper, rhino, structures"
+      - label: "Related Pages"
+        name: related
+        widget: relation
+        collection: docs
+        search_fields: ["title"]
+        value_field: "title"
+        display_fields: ["title"]
+        required: false
+        multiple: true
+      - label: "Content Blocks"
+        name: body
+        widget: markdown
+      - label: "Code Snippet"
+        name: code_snippet
+        widget: object
+        required: false
+        collapsed: true
+        fields:
+          - label: "Language"
+            name: language
+            widget: select
+            options:
+              - { label: "Python", value: "python" }
+              - { label: "GHPython", value: "python" }
+              - { label: "JavaScript", value: "javascript" }
+              - { label: "C#", value: "csharp" }
+              - { label: "Bash", value: "bash" }
+          - label: "Code"
+            name: code
+            widget: code
+            default_language: python
+            allow_language_selection: true
+
+  - name: lectures
+    label: "Lectures"
+    label_singular: "Lecture"
+    folder: comp-arch-course/docs/lectures
     identifier_field: title
     extension: md
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: title, widget: string }
-      - { label: "Sidebar Position", name: sidebar_position, widget: number }
+      - { label: "Lecture Number", name: sidebar_position, widget: number }
+      - label: "Week"
+        name: week
+        widget: select
+        options:
+          - { label: "Week 1", value: "week-1" }
+          - { label: "Week 2", value: "week-2" }
+          - { label: "Week 3", value: "week-3" }
+          - { label: "Week 4", value: "week-4" }
+          - { label: "Week 5", value: "week-5" }
+          - { label: "Week 6", value: "week-6" }
+          - { label: "Week 7", value: "week-7" }
+          - { label: "Week 8", value: "week-8" }
+          - { label: "Week 9", value: "week-9" }
+          - { label: "Week 10", value: "week-10" }
+          - { label: "Week 11", value: "week-11" }
+          - { label: "Week 12", value: "week-12" }
+          - { label: "Week 13", value: "week-13" }
+          - { label: "Week 14", value: "week-14" }
+          - { label: "Week 15", value: "week-15" }
+        required: false
+      - label: "Date"
+        name: date
+        widget: datetime
+        format: "YYYY-MM-DD"
+        date_format: "MMMM D, YYYY"
+        time_format: false
+      - label: "Topic"
+        name: topic
+        widget: select
+        required: false
+        options:
+          - { label: "Graphic Statics", value: "graphic-statics" }
+          - { label: "Shellular Optimization", value: "shellular" }
+          - { label: "Biological Growth", value: "biological-growth" }
+          - { label: "Granular Jamming", value: "granular-jamming" }
+          - { label: "Guest Lecture", value: "guest" }
+          - { label: "Workshop", value: "workshop" }
+          - { label: "Review", value: "review" }
+          - { label: "Critique", value: "critique" }
+      - label: "YouTube Video ID"
+        name: youtube_id
+        widget: string
+        required: false
+        hint: "Paste just the video ID from the YouTube URL (e.g. dQw4w9WgXcQ)"
+      - label: "Slides"
+        name: slides_url
+        widget: string
+        required: false
+        hint: "Link to slides (Google Slides, PDF, etc.)"
+      - label: "Related Reading"
+        name: related_docs
+        widget: relation
+        collection: docs
+        search_fields: ["title"]
+        value_field: "title"
+        display_fields: ["title"]
+        required: false
+        multiple: true
+      - label: "Downloads"
+        name: downloads
+        widget: list
+        required: false
+        hint: "Attach files for students to download"
+        fields:
+          - { label: "Label", name: label, widget: string }
+          - { label: "File", name: file, widget: file }
       - { label: "Body", name: body, widget: markdown }
+      - label: "Code Example"
+        name: code_example
+        widget: object
+        required: false
+        collapsed: true
+        fields:
+          - label: "Language"
+            name: language
+            widget: select
+            options:
+              - { label: "Python", value: "python" }
+              - { label: "GHPython", value: "python" }
+              - { label: "JavaScript", value: "javascript" }
+              - { label: "C#", value: "csharp" }
+              - { label: "Bash", value: "bash" }
+          - label: "Code"
+            name: code
+            widget: code
+            default_language: python
+            allow_language_selection: true
+
+  - name: assignments
+    label: "Assignments"
+    label_singular: "Assignment"
+    folder: comp-arch-course/docs/assignments
+    identifier_field: title
+    extension: md
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: title, widget: string }
+      - { label: "Assignment Number", name: sidebar_position, widget: number }
+      - label: "Due Date"
+        name: due_date
+        widget: datetime
+        format: "YYYY-MM-DD"
+        date_format: "MMMM D, YYYY"
+        time_format: false
+      - label: "Status"
+        name: status
+        widget: select
+        options:
+          - { label: "Upcoming", value: "upcoming" }
+          - { label: "Active", value: "active" }
+          - { label: "Past Due", value: "past-due" }
+        default: "upcoming"
+      - label: "Related Lecture"
+        name: related_lecture
+        widget: relation
+        collection: lectures
+        search_fields: ["title"]
+        value_field: "title"
+        display_fields: ["title"]
+        required: false
+      - label: "Submission Link"
+        name: submission_url
+        widget: string
+        required: false
+        hint: "Link to submission form or portal"
+      - label: "Downloads"
+        name: downloads
+        widget: list
+        required: false
+        fields:
+          - { label: "Label", name: label, widget: string }
+          - { label: "File", name: file, widget: file }
+      - { label: "Body", name: body, widget: markdown }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "Course Info"
+        name: "course_info"
+        file: "comp-arch-course/docs/course-info.md"
+        fields:
+          - { label: "Course Name", name: title, widget: string }
+          - { label: "Instructor", name: instructor, widget: string }
+          - { label: "Semester", name: semester, widget: string }
+          - label: "Office Hours"
+            name: office_hours
+            widget: list
+            fields:
+              - { label: "Day", name: day, widget: string }
+              - { label: "Time", name: time, widget: string }
+              - { label: "Location", name: location, widget: string }
+          - label: "Syllabus"
+            name: syllabus
+            widget: file
+            required: false
+            hint: "Upload the course syllabus PDF"
+          - { label: "Body", name: body, widget: markdown }
