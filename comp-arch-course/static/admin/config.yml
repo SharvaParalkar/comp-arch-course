@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: SharvaParalkar/comp-arch-course
   branch: main
+  base_url: https://cms-auth.sharvaparalkar.workers.dev
 
 media_folder: "comp-arch-course/static/img"
 public_folder: "/img/"
