@@ -11,7 +11,11 @@ const config = {
   organizationName: 'SharvaParalkar',
   projectName: 'comp-arch-course',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
   i18n: {
     defaultLocale: 'en',
