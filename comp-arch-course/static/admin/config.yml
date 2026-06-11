@@ -1,15 +1,15 @@
 backend:
   name: github
-  repo: sharvaparalkar/comp-arch-course
+  repo: SharvaParalkar/comp-arch-course
   branch: main
 
-media_folder: "static/img"
+media_folder: "comp-arch-course/static/img"
 public_folder: "/img/"
 
 collections:
   - name: docs
     label: "Course Pages"
-    folder: docs
+    folder: comp-arch-course/docs
     identifier_field: title
     extension: md
     create: true
