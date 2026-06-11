@@ -6,39 +6,39 @@ import styles from './index.module.css';
 
 const topics = [
   {
-    title: '3D Graphic Statics',
+    title: 'Parametric Modeling',
+    tag: 'GRASSHOPPER',
+    description: 'Node-based visual programming in Grasshopper — building parametric relationships, data trees, and generative geometry.',
+    link: '/docs/intro',
+  },
+  {
+    title: 'Structural Form-Finding',
     tag: 'STRUCTURES',
-    description: 'Polyhedral force diagrams, form/force duality, and funicular structural morphologies.',
+    description: 'Computational approaches to finding efficient structural forms — funicular geometries, load paths, and equilibrium.',
     link: '/docs/intro',
   },
   {
-    title: 'Shellular Optimization',
+    title: 'Computational Geometry',
     tag: 'GEOMETRY',
-    description: 'Shell-based cellular funicular structures optimized for structural efficiency at architectural scale.',
+    description: 'Working with surfaces, meshes, and polyhedral geometries as the basis for structural and architectural systems.',
     link: '/docs/intro',
   },
   {
-    title: 'Biological Growth',
-    tag: 'COMPUTATION',
-    description: 'Directed rhizome growth simulations, auxin modeling, and nature-inspired structural form-finding.',
-    link: '/docs/intro',
-  },
-  {
-    title: 'Granular Jamming',
-    tag: 'MATERIALS',
-    description: 'Particle jamming mechanics applied to adaptive and reconfigurable architectural systems.',
+    title: 'Structural Analysis',
+    tag: 'ANALYSIS',
+    description: 'Evaluating structural performance through simulation — stress, deformation, and optimization workflows.',
     link: '/docs/intro',
   },
   {
     title: 'Digital Fabrication',
     tag: 'FABRICATION',
-    description: 'Computational geometry to physical form — fabrication workflows using Rhino and Grasshopper.',
+    description: 'Translating computational models to physical artifacts — fabrication-aware design and toolpath generation.',
     link: '/docs/intro',
   },
   {
-    title: 'Material Computation',
-    tag: 'RESEARCH',
-    description: 'Integrating material behavior and computational design across micro to macro scales.',
+    title: 'Design Optimization',
+    tag: 'OPTIMIZATION',
+    description: 'Algorithmic and evolutionary methods for optimizing structural and spatial performance in architectural design.',
     link: '/docs/intro',
   },
 ];
