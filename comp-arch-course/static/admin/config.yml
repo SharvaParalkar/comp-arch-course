@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: sharvaparalkar/comp-arch-course
+  branch: main
+
+media_folder: "static/img"
+public_folder: "/img/"
+
+collections:
+  - name: docs
+    label: "Course Pages"
+    folder: docs
+    identifier_field: title
+    extension: md
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: title, widget: string }
+      - { label: "Sidebar Position", name: sidebar_position, widget: number }
+      - { label: "Body", name: body, widget: markdown }
