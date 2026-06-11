@@ -6,7 +6,7 @@ const config = {
   title: 'Cellular Architectures Laboratory',
   tagline: 'Computational Architecture · Texas A&M University',
   favicon: 'img/favicon.ico',
-  url: 'https://famous-beijinho-64835c.netlify.app',
+  url: 'https://comp-arch-course.pages.dev/',
   baseUrl: '/',
   organizationName: 'SharvaParalkar',
   projectName: 'comp-arch-course',

@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: SharvaParalkar/comp-arch-course
+  name: git-gateway
   branch: main
 
 media_folder: "comp-arch-course/static/img"
