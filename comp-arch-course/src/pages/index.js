@@ -139,7 +139,7 @@ export default function Home() {
               color: 'var(--cal-ink, #1a1a1a)',
               margin: 0,
             }}>
-              Cellular<br />Architectures<br />Laboratory
+              CAL • Rhino, Grasshopper, & Structural Analysis
             </h1>
 
             {/* Rule */}
