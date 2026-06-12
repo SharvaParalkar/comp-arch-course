@@ -103,7 +103,7 @@ const config = {
             items: [
               { label: 'Rhino', href: 'https://www.rhino3d.com/' },
               { label: 'Grasshopper', href: 'https://www.grasshopper3d.com/' },
-              { label: 'Polyframe', href: 'https://www.food4rhino.com/en/app/polyframe' },
+              { label: 'Polyframe 2', href: 'https://www.food4rhino.com/en/app/polyframe-2' },
             ],
           },
         ],
