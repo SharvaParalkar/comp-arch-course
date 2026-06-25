@@ -6,8 +6,29 @@
   border-bottom: 1px solid var(--cal-rule, #d9d5cf);
 }
 
+.heroInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 5rem 0 4.5rem;
+}
+
+.heroFigure {
+  width: 100%;
+  margin: 2.25rem 0 0.5rem;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 @media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 0;
+  .heroInner {
+    padding: 3.5rem 0 2.5rem;
   }
 }

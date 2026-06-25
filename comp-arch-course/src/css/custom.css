@@ -4,7 +4,7 @@
 :root {
   /* Palette */
   --cal-white:       #ffffff;
-  --cal-off-white:   #f7f7f5;
+  --cal-off-white:   #ffffff;
   --cal-rule:        #d9d5cf;
   --cal-ink:         #1a1a1a;
   --cal-ink-mid:     #555550;
@@ -171,7 +171,7 @@ code, pre {
 /* ─── Footer ────────────────────────────────────────────────────── */
 .footer {
   border-top: 1px solid var(--cal-rule);
-  background: var(--cal-off-white);
+  background: #ffffff;
   font-size: 0.8125rem;
 }
 

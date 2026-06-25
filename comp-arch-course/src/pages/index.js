@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
@@ -101,6 +102,8 @@ function Topic({ title, tag, description, link }) {
 /* ── Page ─────────────────────────────────────────────────────────── */
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
+  const shellularImage = useBaseUrl('/img/shellular-transition.jpg');
+
   return (
     <Layout
       title="CAL · Cellular Architectures Laboratory"
@@ -109,13 +112,7 @@ export default function Home() {
       {/* ── Hero ─────────────────────────────────────────────────── */}
       <header className={clsx('hero', styles.heroBanner)}>
         <div className="container">
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            textAlign: 'center',
-            padding: '5rem 0 4.5rem',
-          }}>
+          <div className={styles.heroInner}>
             {/* Eyebrow */}
             <div style={{
               fontSize: '0.65rem',
@@ -139,8 +136,18 @@ export default function Home() {
               color: 'var(--cal-ink, #1a1a1a)',
               margin: 0,
             }}>
-              CAL • Analyzing Structures
+              CAL | Analyzing Structures
             </h1>
+
+            {/* Featured visualization */}
+            <figure className={styles.heroFigure}>
+              <img
+                className={styles.heroImage}
+                src={shellularImage}
+                alt="Progression of shellular structures from lattice to optimized topology under applied loads"
+                loading="eager"
+              />
+            </figure>
 
             {/* Rule */}
             <div style={{
@@ -186,9 +193,6 @@ export default function Home() {
           </div>
         </div>
       </header>
-
-      {/* Rule */}
-      <div style={{ height: '1px', background: 'var(--cal-rule, #d9d5cf)' }} />
 
       {/* ── Topics ─────────────────────────────────────────────────── */}
       <main>
