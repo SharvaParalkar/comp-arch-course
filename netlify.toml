@@ -1,4 +1,0 @@
-[build]
-  base = "comp-arch-course"
-  command = "npm run build"
-  publish = "build"
