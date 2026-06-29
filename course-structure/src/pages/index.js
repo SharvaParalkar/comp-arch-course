@@ -147,6 +147,18 @@ export default function Home() {
                 alt="Progression of shellular structures from lattice to optimized topology under applied loads"
                 loading="eager"
               />
+              <figcaption style={{
+                fontFamily: 'Inter, sans-serif',
+                fontSize: '0.8125rem',
+                lineHeight: 1.6,
+                color: 'var(--cal-ink-mid, #555550)',
+                fontWeight: 300,
+                fontStyle: 'italic',
+                textAlign: 'center',
+                marginTop: '0.75rem',
+              }}>
+                Supported by Open Educational Resources (OER) Grant, Texas A&amp;M University
+              </figcaption>
             </figure>
 
             {/* Rule */}
