@@ -7,7 +7,7 @@ const config = {
   tagline: 'Computational Architecture · Texas A&M University',
   favicon: 'img/favicon.ico',
   url: 'https://comp-arch-course.pages.dev/',
-  baseUrl: '/',
+  baseUrl: '/structure/',
   organizationName: 'SharvaParalkar',
   projectName: 'comp-arch-course',
   onBrokenLinks: 'throw',
