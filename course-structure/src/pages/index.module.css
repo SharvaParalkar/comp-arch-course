@@ -27,8 +27,24 @@
   height: auto;
 }
 
+.topicGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
 @media screen and (max-width: 996px) {
   .heroInner {
     padding: 3.5rem 0 2.5rem;
+  }
+
+  .topicGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topicGrid {
+    grid-template-columns: 1fr;
   }
 }

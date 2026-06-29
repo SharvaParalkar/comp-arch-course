@@ -113,19 +113,6 @@ export default function Home() {
       <header className={clsx('hero', styles.heroBanner)}>
         <div className="container">
           <div className={styles.heroInner}>
-            {/* Eyebrow */}
-            <div style={{
-              fontSize: '0.65rem',
-              fontWeight: 600,
-              letterSpacing: '0.12em',
-              color: 'var(--cal-ink-faint, #999990)',
-              fontFamily: 'Space Mono, monospace',
-              textTransform: 'uppercase',
-              marginBottom: '2rem',
-            }}>
-              Texas A&amp;M University · College of Architecture
-            </div>
-
             {/* Headline */}
             <h1 style={{
               fontFamily: 'Libre Baskerville, Georgia, serif',
@@ -227,11 +214,7 @@ export default function Home() {
             </div>
 
             {/* Even card grid — no Docusaurus row/col to avoid uneven bottom margins */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: '1rem',
-            }}>
+            <div className={styles.topicGrid}>
               {topics.map((props, idx) => (
                 <Topic key={idx} {...props} />
               ))}
