@@ -136,7 +136,7 @@ export default function Home() {
               color: 'var(--cal-ink, #1a1a1a)',
               margin: 0,
             }}>
-              CAL | Analyzing Structures
+              Computational Structural Design & Analysis
             </h1>
 
             {/* Featured visualization */}
