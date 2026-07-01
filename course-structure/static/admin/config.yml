@@ -5,8 +5,11 @@ backend:
   base_url: https://cms-auth.sharvaparalkar.workers.dev
   auth_endpoint: /auth
 
-media_folder: "comp-arch-course/static/img"
-public_folder: "/img/"
+site_url: https://calab.net/structure
+display_url: https://calab.net/structure
+
+media_folder: "course-structure/static/img"
+public_folder: "/structure/img/"
 publish_mode: editorial_workflow
 
 media_library:
@@ -22,7 +25,7 @@ collections:
   - name: docs
     label: "Course Pages"
     label_singular: "Course Page"
-    folder: comp-arch-course/docs
+    folder: course-structure/docs
     identifier_field: title
     extension: md
     create: true
@@ -89,7 +92,8 @@ collections:
   - name: lectures
     label: "Lectures"
     label_singular: "Lecture"
-    folder: comp-arch-course/docs/lectures
+    folder: course-structure/docs/lectures
+    preview_path: "docs/lectures/{{slug}}"
     identifier_field: title
     extension: md
     create: true
@@ -188,7 +192,8 @@ collections:
   - name: assignments
     label: "Assignments"
     label_singular: "Assignment"
-    folder: comp-arch-course/docs/assignments
+    folder: course-structure/docs/assignments
+    preview_path: "docs/assignments/{{slug}}"
     identifier_field: title
     extension: md
     create: true
@@ -237,7 +242,7 @@ collections:
     files:
       - label: "Course Info"
         name: "course_info"
-        file: "comp-arch-course/docs/course-info.md"
+        file: "course-structure/docs/course-info.md"
         fields:
           - { label: "Course Name", name: title, widget: string }
           - { label: "Instructor", name: instructor, widget: string }
