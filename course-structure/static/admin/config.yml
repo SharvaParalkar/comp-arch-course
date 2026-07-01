@@ -77,6 +77,7 @@ collections:
           - label: "Language"
             name: language
             widget: select
+            required: false
             options:
               - { label: "Python", value: "python" }
               - { label: "GHPython", value: "python" }
@@ -86,6 +87,7 @@ collections:
           - label: "Code"
             name: code
             widget: code
+            required: false
             default_language: python
             allow_language_selection: true
 
@@ -177,6 +179,7 @@ collections:
           - label: "Language"
             name: language
             widget: select
+            required: false
             options:
               - { label: "Python", value: "python" }
               - { label: "GHPython", value: "python" }
@@ -186,6 +189,7 @@ collections:
           - label: "Code"
             name: code
             widget: code
+            required: false
             default_language: python
             allow_language_selection: true
 
