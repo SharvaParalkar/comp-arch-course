@@ -6,7 +6,7 @@ const config = {
   title: 'Cellular Architectures Laboratory',
   tagline: 'Computational Architecture · Texas A&M University',
   favicon: 'img/favicon.ico',
-  url: 'https://comp-arch-course.pages.dev/',
+  url: 'https://calab.net/',
   baseUrl: '/structure/',
   organizationName: 'SharvaParalkar',
   projectName: 'comp-arch-course',
