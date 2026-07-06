@@ -1,0 +1,9 @@
+{
+  "label": "Assignments",
+  "position": 3,
+  "link": {
+    "type": "doc",
+    "id": "assignments/index"
+  },
+  "collapsed": false
+}

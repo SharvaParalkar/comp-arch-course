@@ -22,90 +22,36 @@ media_library:
           quality: auto
 
 collections:
-  - name: docs
-    label: "Course Notes"
-    label_singular: "Course Note"
-    folder: course-structure/docs/course-notes
-    identifier_field: title
-    extension: md
-    create: true
-    slug: "{{slug}}"
-    preview_path: "docs/course-notes/{{slug}}"
-    fields:
-      - { label: "Title", name: title, widget: string }
-      - { label: "Sidebar Position", name: sidebar_position, widget: number, default: 1 }
-      - label: "Description"
-        name: description
-        widget: string
-        required: false
-        hint: "Short description shown in meta tags"
-      - label: "Category"
-        name: category
-        widget: select
-        required: false
-        options:
-          - { label: "Foundations", value: "foundations" }
-          - { label: "Graphic Statics", value: "graphic-statics" }
-          - { label: "Shellular Optimization", value: "shellular" }
-          - { label: "Biological Growth", value: "biological-growth" }
-          - { label: "Granular Jamming", value: "granular-jamming" }
-          - { label: "Tools & Software", value: "tools" }
-          - { label: "Resources", value: "resources" }
-      - label: "Tags"
-        name: tags
-        widget: list
-        required: false
-        hint: "e.g. grasshopper, rhino, structures"
-      - label: "Related Pages"
-        name: related
-        widget: relation
-        collection: docs
-        search_fields: ["title"]
-        value_field: "title"
-        display_fields: ["title"]
-        required: false
-        multiple: true
-      - label: "Content Blocks"
-        name: body
-        widget: markdown
-      - label: "Code Snippet"
-        name: code_snippet
-        widget: object
-        required: false
-        collapsed: true
+  # ── Welcome ────────────────────────────────────────────────────────
+  - name: welcome
+    label: Welcome
+    files:
+      - label: Welcome Page
+        name: welcome_page
+        file: course-structure/docs/welcome/index.mdx
         fields:
-          - label: "Language"
-            name: language
-            widget: select
-            required: false
-            options:
-              - { label: "Python", value: "python" }
-              - { label: "GHPython", value: "python" }
-              - { label: "JavaScript", value: "javascript" }
-              - { label: "C#", value: "csharp" }
-              - { label: "Bash", value: "bash" }
-          - label: "Code"
-            name: code
-            widget: code
-            required: false
-            default_language: python
-            allow_language_selection: true
+          - { label: "Title", name: title, widget: string }
+          - { label: "Body", name: body, widget: markdown }
 
+  # ── Lectures ─────────────────────────────────────────────────────
   - name: lectures
-    label: "Lectures"
-    label_singular: "Lecture"
+    label: Lectures
+    label_singular: Lecture
     folder: course-structure/docs/lectures
     preview_path: "docs/lectures/{{slug}}"
     identifier_field: title
     extension: md
     create: true
     slug: "{{slug}}"
+    summary: title
+    sortable_fields: ["sidebar_position", "title", "date"]
     fields:
       - { label: "Title", name: title, widget: string }
-      - { label: "Lecture Number", name: sidebar_position, widget: number }
+      - { label: "Lecture Number", name: sidebar_position, widget: number, default: 1 }
       - label: "Week"
         name: week
         widget: select
+        required: false
         options:
           - { label: "Week 1", value: "week-1" }
           - { label: "Week 2", value: "week-2" }
@@ -122,13 +68,13 @@ collections:
           - { label: "Week 13", value: "week-13" }
           - { label: "Week 14", value: "week-14" }
           - { label: "Week 15", value: "week-15" }
-        required: false
       - label: "Date"
         name: date
         widget: datetime
         format: "YYYY-MM-DD"
         date_format: "MMMM D, YYYY"
         time_format: false
+        required: false
       - label: "Topic"
         name: topic
         widget: select
@@ -152,10 +98,10 @@ collections:
         widget: string
         required: false
         hint: "Link to slides (Google Slides, PDF, etc.)"
-      - label: "Related Reading"
+      - label: "Related Course Notes"
         name: related_docs
         widget: relation
-        collection: docs
+        collection: course_notes
         search_fields: ["title"]
         value_field: "title"
         display_fields: ["title"]
@@ -193,24 +139,28 @@ collections:
             default_language: python
             allow_language_selection: true
 
+  # ── Assignments ──────────────────────────────────────────────────
   - name: assignments
-    label: "Assignments"
-    label_singular: "Assignment"
+    label: Assignments
+    label_singular: Assignment
     folder: course-structure/docs/assignments
     preview_path: "docs/assignments/{{slug}}"
     identifier_field: title
     extension: md
     create: true
     slug: "{{slug}}"
+    summary: title
+    sortable_fields: ["sidebar_position", "title", "due_date"]
     fields:
       - { label: "Title", name: title, widget: string }
-      - { label: "Assignment Number", name: sidebar_position, widget: number }
+      - { label: "Assignment Number", name: sidebar_position, widget: number, default: 1 }
       - label: "Due Date"
         name: due_date
         widget: datetime
         format: "YYYY-MM-DD"
         date_format: "MMMM D, YYYY"
         time_format: false
+        required: false
       - label: "Status"
         name: status
         widget: select
@@ -241,12 +191,84 @@ collections:
           - { label: "File", name: file, widget: file }
       - { label: "Body", name: body, widget: markdown }
 
-  - name: "settings"
-    label: "Site Settings"
+  # ── Course Notes ─────────────────────────────────────────────────
+  - name: course_notes
+    label: Course Notes
+    label_singular: Course Note
+    folder: course-structure/docs/course-notes
+    preview_path: "docs/course-notes/{{slug}}"
+    identifier_field: title
+    extension: md
+    create: true
+    slug: "{{slug}}"
+    summary: title
+    sortable_fields: ["sidebar_position", "title", "topic"]
+    fields:
+      - { label: "Title", name: title, widget: string }
+      - { label: "Sidebar Position", name: sidebar_position, widget: number, default: 2 }
+      - label: "Description"
+        name: description
+        widget: string
+        required: false
+        hint: "Short description shown in meta tags"
+      - label: "Topic"
+        name: topic
+        widget: select
+        required: false
+        hint: "Groups this note by course subject area"
+        options:
+          - { label: "Foundations", value: "foundations" }
+          - { label: "Graphic Statics", value: "graphic-statics" }
+          - { label: "Shellular Optimization", value: "shellular" }
+          - { label: "Biological Growth", value: "biological-growth" }
+          - { label: "Granular Jamming", value: "granular-jamming" }
+          - { label: "Tools & Software", value: "tools" }
+          - { label: "Resources", value: "resources" }
+      - label: "Tags"
+        name: tags
+        widget: list
+        required: false
+        hint: "e.g. grasshopper, rhino, structures"
+      - label: "Related Notes"
+        name: related
+        widget: relation
+        collection: course_notes
+        search_fields: ["title"]
+        value_field: "title"
+        display_fields: ["title"]
+        required: false
+        multiple: true
+      - { label: "Body", name: body, widget: markdown }
+      - label: "Code Snippet"
+        name: code_snippet
+        widget: object
+        required: false
+        collapsed: true
+        fields:
+          - label: "Language"
+            name: language
+            widget: select
+            required: false
+            options:
+              - { label: "Python", value: "python" }
+              - { label: "GHPython", value: "python" }
+              - { label: "JavaScript", value: "javascript" }
+              - { label: "C#", value: "csharp" }
+              - { label: "Bash", value: "bash" }
+          - label: "Code"
+            name: code
+            widget: code
+            required: false
+            default_language: python
+            allow_language_selection: true
+
+  # ── Site Settings ────────────────────────────────────────────────
+  - name: settings
+    label: Site Settings
     files:
-      - label: "Course Info"
-        name: "course_info"
-        file: "course-structure/docs/course-info.md"
+      - label: Course Info
+        name: course_info
+        file: course-structure/course-info.md
         fields:
           - { label: "Course Name", name: title, widget: string }
           - { label: "Instructor", name: instructor, widget: string }
@@ -263,4 +285,4 @@ collections:
             widget: file
             required: false
             hint: "Upload the course syllabus PDF"
-          - { label: "Body", name: body, widget: markdown }
+          - { label: "Notes", name: body, widget: markdown }

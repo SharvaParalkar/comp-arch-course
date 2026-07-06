@@ -179,7 +179,10 @@ export default function Home() {
 
             {/* CTAs */}
             <div style={{ display: 'flex', gap: '0.625rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-              <Link className="button button--primary" to="/docs/lectures">
+              <Link className="button button--primary" to="/docs/welcome">
+                Welcome
+              </Link>
+              <Link className="button button--secondary" to="/docs/lectures">
                 Lectures
               </Link>
               <Link className="button button--secondary" to="/docs/assignments">

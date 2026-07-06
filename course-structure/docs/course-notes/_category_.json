@@ -1,0 +1,9 @@
+{
+  "label": "Course Notes",
+  "position": 4,
+  "link": {
+    "type": "doc",
+    "id": "course-notes/index"
+  },
+  "collapsed": false
+}

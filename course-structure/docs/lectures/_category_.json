@@ -1,0 +1,9 @@
+{
+  "label": "Lectures",
+  "position": 2,
+  "link": {
+    "type": "doc",
+    "id": "lectures/index"
+  },
+  "collapsed": false
+}

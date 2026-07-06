@@ -1,0 +1,9 @@
+{
+  "label": "Welcome",
+  "position": 1,
+  "link": {
+    "type": "doc",
+    "id": "welcome/index"
+  },
+  "collapsed": false
+}
