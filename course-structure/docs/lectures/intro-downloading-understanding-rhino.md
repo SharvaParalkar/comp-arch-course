@@ -5,4 +5,5 @@ week: week-1
 date: 2026-07-06
 youtube_id: 9u0Hu1l9sv4
 ---
-<https://www.rhino3d.com/>
+
+Download and install [Rhinoceros 3D](https://www.rhino3d.com/) before the first workshop session.

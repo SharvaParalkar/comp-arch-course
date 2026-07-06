@@ -10,7 +10,7 @@ display_url: https://calab.net/structure
 
 media_folder: "course-structure/static/img"
 public_folder: "/structure/img/"
-publish_mode: editorial_workflow
+publish_mode: simple
 
 media_library:
   name: cloudinary
@@ -23,14 +23,14 @@ media_library:
 
 collections:
   - name: docs
-    label: "Course Pages"
-    label_singular: "Course Page"
-    folder: course-structure/docs
+    label: "Course Notes"
+    label_singular: "Course Note"
+    folder: course-structure/docs/course-notes
     identifier_field: title
     extension: md
     create: true
     slug: "{{slug}}"
-    preview_path: "docs/{{slug}}"
+    preview_path: "docs/course-notes/{{slug}}"
     fields:
       - { label: "Title", name: title, widget: string }
       - { label: "Sidebar Position", name: sidebar_position, widget: number, default: 1 }

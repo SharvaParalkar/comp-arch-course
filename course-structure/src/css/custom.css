@@ -208,6 +208,78 @@ code, pre {
   color: var(--cal-clay);
 }
 
+.footer__copyright {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--cal-ink-faint);
+  max-width: 36rem;
+}
+
+@media screen and (max-width: 996px) {
+  .footer {
+    padding: 2.5rem 1.25rem 2rem;
+  }
+
+  .footer__links {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .footer__col {
+    margin: 0;
+    width: 100%;
+    max-width: 16rem;
+  }
+
+  .footer__copyright {
+    margin-top: 2rem;
+    padding: 0 0.5rem;
+  }
+}
+
+/* ─── Lecture meta ──────────────────────────────────────────────── */
+.lecture-meta {
+  margin-bottom: 2rem;
+}
+
+.lecture-meta__details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1.25rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cal-ink-faint);
+}
+
+.lecture-meta__video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  margin-bottom: 1rem;
+  background: var(--cal-clay-wash);
+  border: 1px solid var(--cal-rule);
+}
+
+.lecture-meta__video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.lecture-meta__slides {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
 /* ─── Doc content ───────────────────────────────────────────────── */
 .markdown h1 {
   font-family: 'Libre Baskerville', Georgia, serif;

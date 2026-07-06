@@ -11,37 +11,37 @@ const topics = [
     title: 'Parametric Modeling',
     tag: 'GRASSHOPPER',
     description: 'Node-based visual programming — building parametric relationships, data trees, and generative geometry.',
-    link: '/docs/intro',
+    link: '/docs/course-notes',
   },
   {
     title: 'Structural Form-Finding',
     tag: 'STRUCTURES',
     description: 'Computational approaches to efficient structural form — funicular geometries, load paths, and equilibrium.',
-    link: '/docs/intro',
+    link: '/docs/course-notes',
   },
   {
     title: 'Computational Geometry',
     tag: 'GEOMETRY',
     description: 'Surfaces, meshes, and polyhedral geometries as the basis for structural and architectural systems.',
-    link: '/docs/intro',
+    link: '/docs/course-notes',
   },
   {
     title: 'Structural Analysis',
     tag: 'ANALYSIS',
     description: 'Evaluating structural performance through simulation — stress, deformation, and optimization workflows.',
-    link: '/docs/intro',
+    link: '/docs/course-notes',
   },
   {
     title: 'Digital Fabrication',
     tag: 'FABRICATION',
     description: 'Translating computational models to physical artifacts — fabrication-aware design and toolpath generation.',
-    link: '/docs/intro',
+    link: '/docs/course-notes',
   },
   {
     title: 'Design Optimization',
     tag: 'OPTIMIZATION',
     description: 'Algorithmic and evolutionary methods for optimizing structural and spatial performance.',
-    link: '/docs/intro',
+    link: '/docs/course-notes',
   },
 ];
 
@@ -179,14 +179,14 @@ export default function Home() {
 
             {/* CTAs */}
             <div style={{ display: 'flex', gap: '0.625rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-              <Link className="button button--primary" to="/docs/intro">
-                Course Notes
-              </Link>
-              <Link className="button button--secondary" to="/docs/lectures">
+              <Link className="button button--primary" to="/docs/lectures">
                 Lectures
               </Link>
               <Link className="button button--secondary" to="/docs/assignments">
                 Assignments
+              </Link>
+              <Link className="button button--secondary" to="/docs/course-notes">
+                Course Notes
               </Link>
             </div>
           </div>

@@ -48,19 +48,21 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'lecturesSidebar',
+            position: 'left',
+            label: 'Lectures',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'assignmentsSidebar',
+            position: 'left',
+            label: 'Assignments',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'courseNotesSidebar',
             position: 'left',
             label: 'Course Notes',
-          },
-          {
-            to: '/docs/lectures',
-            label: 'Lectures',
-            position: 'left',
-          },
-          {
-            to: '/docs/assignments',
-            label: 'Assignments',
-            position: 'left',
           },
           {
             href: 'https://www.arch.tamu.edu/staff/mostafa-akbari/',
@@ -80,9 +82,9 @@ const config = {
           {
             title: 'Course',
             items: [
-              { label: 'Course Notes', to: '/docs/intro' },
               { label: 'Lectures', to: '/docs/lectures' },
               { label: 'Assignments', to: '/docs/assignments' },
+              { label: 'Course Notes', to: '/docs/course-notes' },
             ],
           },
           {
