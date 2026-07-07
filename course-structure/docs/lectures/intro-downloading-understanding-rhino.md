@@ -1,5 +1,5 @@
 ---
-title: Intro | Downloading & Understanding Rhino
+title: "Intro | Downloading & Understanding Rhino"
 sidebar_position: 1
 week: week-1
 date: 2026-07-06

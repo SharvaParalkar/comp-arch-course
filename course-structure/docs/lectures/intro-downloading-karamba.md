@@ -1,11 +1,6 @@
 ---
-<<<<<<< HEAD
-title: Intro | Downloading Karamba
+title: "Intro | Downloading Karamba"
 sidebar_position: 2
-=======
-title: "Intro | Downloading Karamba "
-sidebar_position: 1
->>>>>>> 07b195f671a79f48ccd045a6ec74d963a81b676f
 week: week-1
 date: 2026-07-07
 youtube_id: lbO1dj3lFfQ
