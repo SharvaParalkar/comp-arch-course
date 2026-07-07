@@ -43,7 +43,7 @@ collections:
     extension: md
     create: true
     slug: "{{slug}}"
-    summary: title
+    summary: "{{title}}"
     sortable_fields: ["sidebar_position", "title", "date"]
     fields:
       - { label: "Title", name: title, widget: string }
@@ -149,7 +149,7 @@ collections:
     extension: md
     create: true
     slug: "{{slug}}"
-    summary: title
+    summary: "{{title}}"
     sortable_fields: ["sidebar_position", "title", "due_date"]
     fields:
       - { label: "Title", name: title, widget: string }
@@ -201,7 +201,7 @@ collections:
     extension: md
     create: true
     slug: "{{slug}}"
-    summary: title
+    summary: "{{title}}"
     sortable_fields: ["sidebar_position", "title", "topic"]
     fields:
       - { label: "Title", name: title, widget: string }

@@ -1,6 +1,6 @@
 ---
 title: Intro | Downloading Karamba
-sidebar_position: 1
+sidebar_position: 2
 week: week-1
 date: 2026-07-07
 youtube_id: lbO1dj3lFfQ
