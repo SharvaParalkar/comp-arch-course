@@ -1,0 +1,76 @@
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const currentYear = new Date().getFullYear();
+  document.querySelectorAll('[data-current-year]').forEach(el => { el.textContent = currentYear; });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const videos = document.querySelectorAll('video');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target;
+      if (entry.isIntersecting) {
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            if (video.paused) video.play().catch(() => {});
+          }, 150);
+        });
+      } else if (!video.paused) {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.05 });
+  videos.forEach(video => observer.observe(video));
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger, SplitText);
+function initHighlightText() {
+  document.querySelectorAll("[data-highlight-text]").forEach((heading) => {
+    const scrollStart = heading.getAttribute("data-highlight-scroll-start") || "top 75%";
+    const scrollEnd = heading.getAttribute("data-highlight-scroll-end") || "center 25%";
+    const fadedValue = heading.getAttribute("data-highlight-fade") || 0.00;
+    const staggerValue = heading.getAttribute("data-highlight-stagger") || 0.1;
+    new SplitText(heading, {
+      type: "words, chars", autoSplit: true,
+      onSplit(self) {
+        let ctx = gsap.context(() => {
+          gsap.timeline({
+            scrollTrigger: { scrub: true, trigger: heading, start: scrollStart, end: scrollEnd }
+          }).from(self.chars, { autoAlpha: fadedValue, stagger: staggerValue, ease: "linear" });
+        });
+        return ctx;
+      }
+    });
+  });
+}
+document.addEventListener("DOMContentLoaded", () => initHighlightText());
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('[data-video="track"]').forEach((track) => {
+    const video = track.querySelector('[data-video="video"]');
+    if (!video) return;
+    video.load();
+    const proxy = { currentTime: 0 };
+    video.addEventListener('loadedmetadata', function() {
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: track, start: "top 170%", end: "bottom center", scrub: 0.5,
+          onUpdate: (self) => {
+            const targetTime = self.progress * video.duration;
+            gsap.to(proxy, {
+              currentTime: targetTime, duration: 0.1, ease: "power4.out",
+              onUpdate: () => { if (video.readyState) video.currentTime = proxy.currentTime; }
+            });
+          }
+        }
+      });
+    });
+  });
+});
+</script>

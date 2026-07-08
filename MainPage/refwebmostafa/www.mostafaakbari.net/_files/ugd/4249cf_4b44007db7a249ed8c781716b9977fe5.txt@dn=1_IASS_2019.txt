@@ -1,0 +1,6 @@
+@inproceedings{akbari2019polyhedral,
+title={From Polyhedral to Anticlastic Funicular Spatial Structures},
+author={Akbari, Mostafa and Akbarzadeh, Masoud and Bolhassani, Mohammad},
+booktitle={Proceedings of IASS Symposium},
+year={2019}
+}

@@ -1,0 +1,13 @@
+@article{Hsain_Akbari_2023,
+author = {Hsain, Zakaria and Akbari, Mostafa and Prasanna, Adhokshid and Jiang, Zhimin and Akbarzadeh, Masoud and Pikul, James H.},
+title = {Electrochemical Healing of Fractured Metals},
+journal = {Advanced Materials},
+volume = {n/a},
+number = {n/a},
+pages = {2211242},
+keywords = {3D printing, circular economy, electrodeposition, healing, repair, structural metals},
+doi = {https://doi.org/10.1002/adma.202211242},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1002/adma.202211242},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1002/adma.202211242},
+abstract = {Abstract Repairing fractured metals to extend their useful lifetimes advances sustainability and mitigates greenhouse gas emissions from metal mining and processing. While high-temperature techniques have long been used to repair metals, the increasing ubiquity of digital manufacturing and “unweldable” alloys, as well as the integration of metals with polymers and electronics, call for radically different repair approaches. This paper presents a framework for effective room temperature repair of fractured metals using an area-selective nickel electrodeposition process we refer to as electrochemical healing. Based on a theoretical model that links geometric, mechanical, and electrochemical parameters to the recovery of tensile strength, this framework enables 100% recovery of tensile strength in nickel, low-carbon steel, two “unweldable” aluminum alloys, and a 3D-printed difficult-to-weld shellular structure while using a single common electrolyte chemistry. Through a distinct energy dissipation mechanism, this framework also enables up to 136% recovery of toughness in an aluminum alloy. To facilitate practical adoption, this work reveals scaling laws for the energetic, financial, and time costs of healing, and demonstrates the restoration of a functional level of strength in a fractured standard steel wrench. Empowered with this framework, room-temperature electrochemical healing could open exciting possibilities for the effective, scalable repair of metals in diverse applications. This article is protected by copyright. All rights reserved}
+}

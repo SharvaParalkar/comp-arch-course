@@ -1,0 +1,66 @@
+title: Contact
+permalink: /contact.html
+body_class: body
+seo:
+  description: >-
+    Envision a future of complete synergy between Nature and humanity. OXMAN is accelerating systems-level change by
+    fusing design, technology, and biology in a radical shift from human-centric design to Nature-centric design.
+  og_title: Contact | OXMAN
+  og_description: >-
+    Envision a future of complete synergy between Nature and humanity. OXMAN is accelerating systems-level change by
+    fusing design, technology, and biology in a radical shift from human-centric design to Nature-centric design.
+  og_image: https://cdn.prod.website-files.com/690e0b6e2e2a0cbc45ab116e/696fe3952005ae09bb201fdc_OXMAN-OG-image.jpg
+body_mode: legacy
+main_html: >-
+  <header data-w-id="7f42f814-048a-7f67-47b6-ff35f9ca8b68" class="section is-hero"><div class="abs-img-frame"><img
+  src="https://cdn.prod.website-files.com/690e0b6e2e2a0cbc45ab116e/6920d3dfe07c1512bb8a6bf2_690bb03ea18d086c19c62bdf_gradient-uncrop.avif"
+  loading="lazy" alt="" class="abs-img"/></div><div class="container is-hero-100 is-exclusion"><div class="d"><h1
+  class="display-h">Contact</h1></div></div></header><section data-wf--section-1--variant="xl-top-padding"
+  class="section w-variant-6a1ea14f-8362-e228-ff29-de9328c3d4e1"><div class="container"><div class="d"><div
+  class="h-x-large">How might we design a future in which all life on Earth
+  thrives—together?</div></div></div></section><section class="section"><div class="container"><div class="d"></div><div
+  class="d"><div class="form w-form"><form id="email-form" name="email-form" data-name="Email Form" method="get"
+  class="form-content" data-wf-page-id="6920d2b700053f96388593ef"
+  data-wf-element-id="c816db1d-5fd3-e3df-f451-05b47c608be6" data-turnstile-sitekey="0x4AAAAAAAQTptj2So4dx43e"><div
+  class="form-row"><select id="Category" name="Category" data-name="Category" required="" class="form-field
+  w-select"><option value="">Category (Select)</option><option value="Collaboration">Collaboration</option><option
+  value="Press">Press</option><option value="Careers">Careers</option><option
+  value="Investors">Investors</option></select></div><div class="form-row"><input class="form-field w-input"
+  maxlength="256" name="Subject" data-name="Subject" placeholder="Subject" type="text" id="Subject"/></div><div
+  class="form-row"><input class="form-field w-input" maxlength="256" name="First-Name" data-name="First Name"
+  placeholder="First Name" type="text" id="First-Name" required=""/><input class="form-field w-input" maxlength="256"
+  name="Last-Name" data-name="Last Name" placeholder="Last Name" type="text" id="Last-Name" required=""/></div><div
+  class="form-row"><input class="form-field w-input" maxlength="256" name="Email" data-name="Email" placeholder="Email"
+  type="email" id="Email" required=""/></div><div class="form-row"><div class="file-upload w-file-upload"><div
+  class="default-state w-file-upload-default"><input class="w-file-upload-input" accept="" name="file" data-name="File"
+  aria-hidden="true" type="file" id="file" tabindex="-1"/><label for="file" role="button" tabindex="0" class="form-field
+  is-upload w-file-upload-label"><div class="w-icon-file-upload-icon"></div><div class="w-inline-block">Upload
+  File</div></label><div class="max-file-size-txt w-file-upload-info">Max file size 10MB.</div></div><div tabindex="-1"
+  class="w-file-upload-uploading w-hidden"><div class="w-file-upload-uploading-btn"><svg
+  class="w-icon-file-upload-uploading" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" aria-hidden="true"><path
+  fill="currentColor" opacity=".2" d="M15 30a15 15 0 1 1 0-30 15 15 0 0 1 0 30zm0-3a12 12 0 1 0 0-24 12 12 0 0 0 0
+  24z"></path><path fill="currentColor" opacity=".75" d="M0 15A15 15 0 0 1 15 0v3A12 12 0 0 0 3 15H0z"><animateTransform
+  attributeName="transform" attributeType="XML" dur="0.6s" from="0 15 15" repeatCount="indefinite" to="360 15 15"
+  type="rotate"></animateTransform></path></svg><div class="w-inline-block">Uploading...</div></div></div><div
+  tabindex="-1" class="w-file-upload-success w-hidden"><div class="w-file-upload-file"><div
+  class="w-file-upload-file-name">fileuploaded.jpg</div><div aria-label="Remove file" role="button" tabindex="0"
+  class="w-file-remove-link"><div class="w-icon-file-upload-remove"></div></div></div></div><div tabindex="-1"
+  class="w-file-upload-error w-hidden"><div class="w-file-upload-error-msg" data-w-size-error="Upload failed. Max size
+  for files is 10 MB." data-w-type-error="Upload failed. Invalid file type." data-w-generic-error="Upload failed.
+  Something went wrong. Please retry.">Upload failed. Max size for files is 10 MB.</div></div></div></div><div
+  class="form-row"><textarea required="" placeholder="Message" maxlength="5000" id="Message" name="Message"
+  data-name="Message" class="form-field is-msg w-input"></textarea></div><div data-underline-link="alt"
+  class="form-button-wrap"><input type="submit" data-wait="Please wait..." class="form-button w-button"
+  value="Submit"/><div class="txt-large">Submit</div></div></form><div class="w-form-done"><div>Thank you! Your
+  submission has been received!</div></div><div class="w-form-fail"><div>Oops! Something went wrong while submitting the
+  form.</div></div></div></div></div></section><footer data-wf--footer--variant="black-on-white" class="section
+  is-footer"><div class="container is-tab-vert"><div class="d is-pad-only"></div><div class="d"><div class="d"><div
+  class="footer-nav-column"><div class="navlink-list"><a data-underline-link="" href="terms-and-policies.html"
+  class="navlink is-footer">Terms and Policies<br/></a></div></div></div><div class="d"><div
+  class="footer-nav-column"><div class="navlink-list"><a data-underline-link=""
+  href="https://www.youtube.com/channel/UCWA9MwbHMrutAzyLBYhs9KQ" target="_blank" class="navlink
+  is-footer">YouTube</a><a data-underline-link="" href="https://www.linkedin.com/company/oxman/" target="_blank"
+  class="navlink is-footer">LinkedIn</a><a data-underline-link="" href="https://www.instagram.com/oxmanofficial/"
+  target="_blank" class="navlink is-footer">Instagram</a></div></div></div></div></div><div class="container
+  is-tab-vert"><div class="d is-pad-only"></div><div class="d"><div class="d"><div class="navlink is-footer">© OXMAN
+  2026. All rights reserved</div></div></div></div></footer>

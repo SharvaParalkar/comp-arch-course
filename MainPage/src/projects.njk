@@ -1,0 +1,10 @@
+---
+pagination:
+  data: collections.projects
+  size: 1
+  alias: entry
+permalink: "{{ entry.permalink }}"
+eleventyExcludeFromCollections: true
+---
+{% set nav_prefix = "../" %}
+{% include "layouts/base.njk" %}

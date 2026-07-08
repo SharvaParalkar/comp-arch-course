@@ -1,0 +1,8 @@
+@inproceedings{akbari2023biobased,
+title = {Bio-based Composite Spatial Shell Structures},
+author = {Akbari, M. et al.},
+booktitle = {Proceedings of the IASS Annual Symposium 2023},
+year = {2023},
+month = {July 10-14},
+address = {Melbourne, Australia}
+}

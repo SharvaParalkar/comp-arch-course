@@ -347,6 +347,13 @@ code, pre {
   border-color: var(--cal-clay);
 }
 
+.pagination-nav__link:focus,
+.pagination-nav__link:focus-visible,
+.pagination-nav__link:active {
+  outline: none;
+  box-shadow: none;
+}
+
 /* ─── Search ────────────────────────────────────────────────────── */
 .navbar__search-input {
   border-radius: 2px;

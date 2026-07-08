@@ -1,0 +1,258 @@
+backend:
+  name: github
+  repo: SharvaParalkar/comp-arch-course
+  branch: main
+  base_url: https://cms-auth.sharvaparalkar.workers.dev
+  auth_endpoint: /auth
+
+site_url: https://calab.net
+display_url: https://calab.net
+
+media_folder: "MainPage/static/uploads"
+public_folder: "/uploads"
+publish_mode: simple
+
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: dbf3aqsxu
+    api_key: 251365553116344
+    default_transformations:
+      - - fetch_format: auto
+          quality: auto
+
+# ── Reusable field groups ──────────────────────────────────────────
+
+seo_fields: &seo_fields
+  - label: SEO Description
+    name: seo
+    widget: object
+    collapsed: true
+    fields:
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: OG Title, name: og_title, widget: string, required: false }
+      - { label: OG Description, name: og_description, widget: text, required: false }
+      - { label: OG Image, name: og_image, widget: image, required: false }
+
+body_fields: &body_fields
+  - label: Body Mode
+    name: body_mode
+    widget: select
+    default: legacy
+    options:
+      - { label: "Legacy HTML (full page content)", value: legacy }
+      - { label: "Structured sections", value: sections }
+  - label: Main HTML
+    name: main_html
+    widget: code
+    default_language: html
+    required: false
+    hint: "Full <main> content. Used when Body Mode is Legacy."
+  - label: Sections
+    name: sections
+    widget: list
+    required: false
+    hint: "Used when Body Mode is Structured sections."
+    types:
+      - label: Hero with Video
+        name: hero_video
+        widget: object
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Video URL, name: video_url, widget: string }
+      - label: Headline
+        name: headline
+        widget: object
+        fields:
+          - { label: Text, name: text, widget: text }
+      - label: Two Column Text
+        name: two_column
+        widget: object
+        fields:
+          - { label: Heading, name: heading, widget: string, required: false }
+          - { label: Left Column, name: left, widget: markdown }
+          - { label: Right Column, name: right, widget: markdown }
+      - label: Full-width Video
+        name: video
+        widget: object
+        fields:
+          - { label: Video URL, name: video_url, widget: string }
+          - { label: Caption, name: caption, widget: string, required: false }
+      - label: Full-width Image
+        name: image
+        widget: object
+        fields:
+          - { label: Image, name: image, widget: image }
+          - { label: Alt Text, name: alt, widget: string, required: false }
+          - { label: Caption, name: caption, widget: string, required: false }
+      - label: Stat
+        name: stat
+        widget: object
+        fields:
+          - { label: Label, name: label, widget: string }
+          - { label: Value, name: value, widget: string }
+      - label: Rich Text
+        name: rich_text
+        widget: object
+        fields:
+          - { label: Body, name: body, widget: markdown }
+
+collections:
+  # ── Site Settings ──────────────────────────────────────────────────
+  - name: settings
+    label: Site Settings
+    files:
+      - label: Global Settings
+        name: site
+        file: MainPage/content/site.yml
+        fields:
+          - { label: Site Name, name: site_name, widget: string }
+          - { label: Tagline, name: tagline, widget: text }
+          - { label: Copyright, name: copyright, widget: string }
+          - label: Navigation
+            name: navigation
+            widget: list
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: URL, name: url, widget: string, hint: "e.g. mission.html" }
+          - label: Social Links
+            name: social_links
+            widget: list
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: URL, name: url, widget: string }
+          - label: Footer Links
+            name: footer_links
+            widget: list
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: URL, name: url, widget: string }
+          - label: Default SEO
+            name: default_seo
+            widget: object
+            fields:
+              - { label: Description, name: description, widget: text }
+              - { label: OG Image, name: og_image, widget: image }
+
+  # ── Pages ────────────────────────────────────────────────────────
+  - name: pages
+    label: Pages
+    label_singular: Page
+    folder: MainPage/content/pages
+    extension: yml
+    format: yaml
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - label: Permalink
+        name: permalink
+        widget: string
+        hint: "e.g. /mission.html or /index.html"
+      - label: Body Class
+        name: body_class
+        widget: string
+        default: body
+        required: false
+      - *seo_fields
+      - *body_fields
+
+  # ── Projects ─────────────────────────────────────────────────────
+  - name: projects
+    label: Projects
+    label_singular: Project
+    folder: MainPage/content/projects
+    extension: yml
+    format: yaml
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}}"
+    preview_path: "projects/{{slug}}.html"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - label: Permalink
+        name: permalink
+        widget: string
+        default: "/projects/{{slug}}.html"
+        hint: "Auto-set on create; e.g. /projects/alef.html"
+      - label: Body Class
+        name: body_class
+        widget: string
+        default: body
+        required: false
+      - label: Featured on Home
+        name: featured
+        widget: boolean
+        default: false
+        required: false
+      - label: Sort Order
+        name: sort_order
+        widget: number
+        required: false
+        value_type: int
+      - *seo_fields
+      - *body_fields
+
+  # ── Platforms ────────────────────────────────────────────────────
+  - name: platforms
+    label: Platforms
+    label_singular: Platform
+    folder: MainPage/content/platforms
+    extension: yml
+    format: yaml
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}}"
+    preview_path: "platforms/{{slug}}.html"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - label: Permalink
+        name: permalink
+        widget: string
+        default: "/platforms/{{slug}}.html"
+      - label: Body Class
+        name: body_class
+        widget: string
+        default: "body is-black"
+        required: false
+      - *seo_fields
+      - *body_fields
+
+  # ── Jobs ─────────────────────────────────────────────────────────
+  - name: jobs
+    label: Jobs
+    label_singular: Job
+    folder: MainPage/content/jobs
+    extension: yml
+    format: yaml
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}} — {{department}}"
+    preview_path: "job/{{slug}}.html"
+    fields:
+      - { label: Job Title, name: title, widget: string }
+      - label: Permalink
+        name: permalink
+        widget: string
+        default: "/job/{{slug}}.html"
+      - { label: Department, name: department, widget: string, required: false }
+      - label: Body Class
+        name: body_class
+        widget: string
+        default: body
+        required: false
+      - label: Published
+        name: published
+        widget: boolean
+        default: true
+      - *seo_fields
+      - label: Job Page HTML
+        name: main_html
+        widget: code
+        default_language: html
+        hint: "HTML inside the job-page-div (hero, overview, role description, etc.)"

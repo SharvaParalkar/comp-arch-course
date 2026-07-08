@@ -1,0 +1,36 @@
+{% for section in entry.sections %}
+  {% if section.type == 'headline' %}
+  <section class="section is-t-double"><div class="container"><div class="d"><div class="h-x-large">{{ section.text }}</div></div></div></section>
+  {% elif section.type == 'two_column' %}
+  <section class="section"><div class="container">
+    {% if section.heading %}<div class="d"><div class="h-medium-div"><h2 class="h-medium">{{ section.heading }}</h2></div></div>{% endif %}
+    <div class="d">
+      <div class="d is-tab-half"><div class="txt-large w-richtext">{{ section.left | safe }}</div></div>
+      <div class="d is-tab-half"><div class="txt-large w-richtext">{{ section.right | safe }}</div></div>
+    </div>
+  </div></section>
+  {% elif section.type == 'hero_video' %}
+  <header class="section is-hero"><div class="bg-video-wrap"><div class="video-aspect-box">
+    <video loading="eager" preload="metadata" loop playsinline muted autoplay class="video-element">
+      <source src="{{ section.video_url }}" type="video/mp4"/>
+    </video>
+  </div></div><div class="container is-hero-100 is-exclusion"><div class="d"><h1 class="display-h">{{ section.title }}</h1></div></div></header>
+  {% elif section.type == 'video' %}
+  <section class="full-media-section"><div class="video-aspect-box">
+    <video loading="eager" preload="metadata" loop playsinline muted autoplay class="video-element">
+      <source src="{{ section.video_url }}" type="video/mp4"/>
+    </video>
+  </div>{% if section.caption %}<div class="caption-div"><div class="h-x-small">{{ section.caption }}</div></div>{% endif %}</section>
+  {% elif section.type == 'image' %}
+  <section class="full-media-section"><div class="full-img-frame">
+    <img src="{{ section.image }}" loading="lazy" alt="{{ section.alt or '' }}" class="full-img"/>
+  </div>{% if section.caption %}<div class="caption-div"><div class="h-x-small">{{ section.caption }}</div></div>{% endif %}</section>
+  {% elif section.type == 'stat' %}
+  <section class="section"><div class="container"><div class="d"><div class="vert-div">
+    <div class="display-eyebrow-div"><div class="h-x-small">{{ section.label }}</div></div>
+    <div class="display-h is-data">{{ section.value }}</div>
+  </div></div></div></section>
+  {% elif section.type == 'rich_text' %}
+  <section class="section"><div class="container"><div class="d"><div class="txt-large w-richtext">{{ section.body | safe }}</div></div></div></section>
+  {% endif %}
+{% endfor %}

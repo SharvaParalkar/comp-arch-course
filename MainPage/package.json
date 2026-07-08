@@ -1,0 +1,21 @@
+{
+  "name": "mainpage",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "migrate": "node scripts/migrate-from-refweb.js",
+    "dev": "npx @11ty/eleventy --serve --port=8080",
+    "cms": "npx @11ty/eleventy --serve --port=8080",
+    "deploy": "npm run build && npx wrangler pages deploy site --project-name=calab-main"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "js-yaml": "^4.1.0",
+    "nunjucks": "^3.2.4",
+    "wrangler": "^4.0.0"
+  }
+}

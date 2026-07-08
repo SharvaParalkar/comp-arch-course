@@ -1,0 +1,7 @@
+@inproceedings{AKBARIACADIA2021,
+title={From design to the fabrication of shellular funicular structures},
+author={Akbari, M. and Lu, Y. and Akbarzadeh, M.},
+booktitle={Proceedings of the Association for Computer-Aided Design in Architecture (ACADIA)},
+year={2021},
+place={Virtual Conference},
+}

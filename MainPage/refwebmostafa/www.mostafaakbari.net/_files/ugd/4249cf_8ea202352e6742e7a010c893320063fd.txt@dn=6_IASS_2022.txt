@@ -1,0 +1,8 @@
+@inproceedings{akbari2022continuous,
+title = {Continuous Approximation of Shellular Funicular Structures},
+author = {Akbari, M. and Akbarzadeh, M.},
+booktitle = {Proceedings of IASS 2022 symposium affiliated with APCS 2022 conference},
+year = {2022},
+month = {September 19-22},
+address = {Beijing, China}
+}

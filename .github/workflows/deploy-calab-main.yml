@@ -1,0 +1,38 @@
+name: Deploy calab-main
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "MainPage/**"
+      - ".github/workflows/deploy-calab-main.yml"
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    defaults:
+      run:
+        working-directory: MainPage
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: MainPage/.node-version
+          cache: npm
+          cache-dependency-path: MainPage/package-lock.json
+
+      - name: Install and build
+        run: npm ci && npm run build
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: MainPage
+          command: pages deploy site --project-name=calab-main

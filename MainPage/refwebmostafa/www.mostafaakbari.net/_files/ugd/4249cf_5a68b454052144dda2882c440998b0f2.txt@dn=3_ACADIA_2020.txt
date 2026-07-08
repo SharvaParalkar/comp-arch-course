@@ -1,0 +1,7 @@
+@inproceedings{AkbarzadehACADIA2020,
+title={Saltatur: Node-Based Assembly of Funicular Spatial Concrete},
+author={Akbarzadeh, M. and Tabatabaie Ghomi, A. and Bolhassani, M. and Akbari, M. and Seyedahmadian, A. and Sun, J. and Yao, H. and and Miziumski, J. and Papalexiou, K. },
+booktitle={Proceedings of the 40th Annual Conference of the Association for Computer-Aided Design in Architecture (ACADIA)},
+year={2021},
+place={Virtual Conference},
+}
