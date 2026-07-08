@@ -1,3 +1,7 @@
 name = "calab-router"
 main = "src/index.js"
 compatibility_date = "2024-01-01"
+
+# Comma-separated first-path segments routed to course-{slug}.pages.dev
+[vars]
+COURSE_SLUGS = "structure"

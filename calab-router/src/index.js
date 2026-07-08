@@ -1,18 +1,19 @@
 /**
  * calab.net router
  *
- * /{course-slug}/*  →  https://course-{course-slug}.pages.dev/*
+ * /{course-slug}/*  →  https://course-{course-slug}.pages.dev/*  (allowlisted slugs only)
  * everything else   →  https://calab-main.pages.dev/*
  *
- * Rewrites relative redirect Location headers so /structure/admin on Pages
- * does not send the browser to calab.net/admin.
+ * Only paths whose first segment is a known course slug are routed to course Pages
+ * projects. Main-site paths like /admin/, /about.html, /projects/ stay on calab-main.
  */
 export default {
-  async fetch(request) {
+  async fetch(request, env) {
     const url = new URL(request.url);
     const parts = url.pathname.split('/').filter(Boolean);
+    const courseSlugs = parseCourseSlugs(env.COURSE_SLUGS);
 
-    if (parts.length > 0) {
+    if (parts.length > 0 && courseSlugs.has(parts[0])) {
       const slug = parts[0];
       const rest = pathnameAfterSlug(url.pathname, parts);
       const targetUrl = `https://course-${slug}.pages.dev${rest}${url.search}`;
@@ -29,6 +30,16 @@ export default {
     return proxyToPages(targetUrl, request);
   },
 };
+
+function parseCourseSlugs(raw) {
+  const value = raw || 'structure';
+  return new Set(
+    value
+      .split(',')
+      .map((slug) => slug.trim())
+      .filter(Boolean)
+  );
+}
 
 /** Proxy to a *.pages.dev origin with the correct Host header. */
 function proxyToPages(targetUrl, request) {
