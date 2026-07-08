@@ -1,0 +1,68 @@
+title: Teaching
+permalink: /teaching.html
+body_class: body
+seo:
+  description: Teaching
+  og_title: Teaching | Mostafa Akbari
+body_mode: sections
+sections:
+  - type: headline
+    text: Teaching
+  - type: headline
+    text: Structures| Seminar
+  - type: rich_text
+    body: <p><strong>2023</strong></p>
+  - type: rich_text
+    body: >-
+      <p>Structures Instructors: Richard Farley, Masoud Akbarzadeh, Mostafa Akbari (TA)</p>
+
+      <p>This seminar covers the study of static and hyperstatic systems and design of their elements. Flexural theory,
+      elastic and plastic. Design for combined stresses; prestressing. The study of graphic statics and the design of
+      trusses. The course comprises both lectures and a weekly laboratory in which various structural elements, systems,
+      materials and technical principles are explored., [...]</p>
+  - type: headline
+    text: Developing Computational Solutions for Design Problems| Seminar
+  - type: rich_text
+    body: <p><strong>2023</strong></p>
+  - type: rich_text
+    body: >-
+      <p>Developing Computational Solutions for Design Problems Instructors: Mostafa Akbari, Yao Lu</p>
+
+      <p>This seminar aimed at students who seek to identify, investigate, formulate, and resolve design problems in
+      Architecture and Structural Design using advanced computational techniques. This course goes through the critical
+      knowledge and technical foundations that current computational design and Computational Structures are built upon,
+      [...]</p>
+  - type: headline
+    text: Digiblast| Summer workshop
+  - type: rich_text
+    body: <p><strong>2018-2019</strong></p>
+  - type: rich_text
+    body: >-
+      <p>Digiblast Instructors: Danielle Willems, Ezio Blasetti , Mostafa Akbari (TA)</p>
+
+      <p>Digiblast is an intensive workshop that outlines digital modeling, representation and fabrication for incoming
+      Master of Architecture students. The workshop operates as an introduction to contemporary computational geometries
+      and digital workflows. [...]</p>
+  - type: headline
+    text: Material Formation| Seminar
+  - type: rich_text
+    body: <p><strong>2019</strong></p>
+  - type: rich_text
+    body: >-
+      <p>Material Formation Instructors: Robert Stuart Smith, Mostafa Akbari (TA), Mariana Righi ( TA ), Yi
+      Dazhong(TA)</p>
+
+      <p>Material Formations introduces principles of generative design into the discipline of architecture, providing
+      opportunities for architects to synthesize multiple performance criteria within design that leverage
+      organizational principles in order to negotiate relations between[...]</p>
+  - type: headline
+    text: Next Generation Airport Terminals | Studio
+  - type: rich_text
+    body: <p><strong>2019</strong></p>
+  - type: rich_text
+    body: >-
+      <p>Next Generation Airport Terminals Instructors : Masoud Akbarzadeh, Mostafa Akbari ( TA)</p>
+
+      <p>The main research objectives of the studio can be summarized as formal structural explorations of the efficient
+      structural typologies suitable for infrastructural design; material computing research, including tectonic studies
+      on the design of structural forms using various [...]</p>

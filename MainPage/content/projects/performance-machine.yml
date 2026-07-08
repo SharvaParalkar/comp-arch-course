@@ -1,0 +1,36 @@
+title: Performance Machine
+permalink: /projects/performance-machine.html
+body_class: body
+featured: true
+sort_order: 3
+seo:
+  description: |-
+    Performance Machine   2018     Mostafa Akbari, Wenqi Huang  
+     Instructor : Matias Del Campo   University of Pennsylvania 
+     The primary concept underlying this project entails the design of a futuristic theater tailored for a utopian epoch, with a pronounced focus on robotic fabri
+  og_title: Performance Machine | Mostafa Akbari
+body_mode: sections
+sections:
+  - type: headline
+    text: Performance Machine
+  - type: rich_text
+    body: <p><strong>2018</strong></p>
+  - type: rich_text
+    body: |-
+      <p><em>Mostafa Akbari, Wenqi Huang</em></p>
+      <h3>Instructor : Matias Del Campo</h3>
+  - type: rich_text
+    body: >-
+      <p>University of Pennsylvania</p>
+
+      <p>The primary concept underlying this project entails the design of a futuristic theater tailored for a utopian
+      epoch, with a pronounced focus on robotic fabrication and its pivotal role in preserving the tradition of
+      ornamental culture. Theater buildings have historically been regarded as integral components of the performances
+      they host, particularly with respect to intricate embellishments. However, the creation of these ornaments demands
+      substantial resources in terms of labor, energy, and time. Envisioning processes capable of producing exquisitely
+      detailed elements while minimizing energy consumption becomes a critical consideration. The Performance Machine
+      exemplifies how advancements in computation and fabrication can materialize novel architectural realms. The
+      objective is to unveil a plethora of distinct and varied geometries that craft an immersive and intellectually
+      engaging spatial encounter for the observer. In terms of form, our endeavor has centered on realizing porous,
+      multi-layered structures imbued with depth, thereby cultivating an organic aesthetic that resides at the
+      intersection of human craftsmanship and the natural environment.</p>

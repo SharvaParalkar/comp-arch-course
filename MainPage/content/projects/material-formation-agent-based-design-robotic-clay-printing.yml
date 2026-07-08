@@ -1,0 +1,39 @@
+title: Material Formation | Agent-based Design | Robotic Clay printing
+permalink: /projects/material-formation-agent-based-design-robotic-clay-printing.html
+body_class: body
+featured: false
+sort_order: 4
+seo:
+  description: |-
+    Material Formation | Agent-based Design | Robotic Clay printing   2018     Mostafa Akbari, Mariana Righi  
+     Instructor : Robert Stuart Smith   University of Pennsylvania 
+     The research investigates the development of complex architectural solutions that creatively engage with mat
+  og_title: Material Formation | Agent-based Design | Robotic Clay printing | Mostafa Akbari
+body_mode: sections
+sections:
+  - type: headline
+    text: Material Formation | Agent-based Design | Robotic Clay printing
+  - type: rich_text
+    body: <p><strong>2018</strong></p>
+  - type: rich_text
+    body: |-
+      <p><em>Mostafa Akbari, Mariana Righi</em></p>
+      <h3>Instructor : Robert Stuart Smith</h3>
+  - type: rich_text
+    body: >-
+      <p>University of Pennsylvania</p>
+
+      <p>The research investigates the development of complex architectural solutions that creatively engage with
+      material organization, production and design performance as intrinsic properties to a creative design methodology,
+      and opportunistically; capable of producing a range of aesthetic effects. Agent based programming offers an
+      event-based approach to computer programming that is context sensitive and systemically open. As an
+      object-orientated programming method, agents are essentially entities that are endowed with autonomy through
+      preprogrammed decision making capabilities. Since Henri Poincarr&eacute;&rsquo;s 3-Body problem, it has been
+      understood that where three or more discrete entities interact, a non-linear chaotic process ensues. Craig
+      Reynolds has demonstrated that emergent adaptive formations such as flocks of birds and schools of fish can be
+      simulated through very simple agent-based vector functions. Scientists Eric Bonabeau and Guy Theraulaz have
+      illustrated that termites and wasps utilize similar multi-agent protocols to construct their mounds and nests.
+      Similar methods can and have been employed in individual and swarm robot systems for architectural design and
+      construction purposes, with much potential for future development. At this stage, we developed an algorithmically
+      determined tool paths for robot motion for 3d printing through bottom-up rule sets. Here, we evaluated production
+      constraints and attempt to incorporate these as heuristics within our tool path .</p>

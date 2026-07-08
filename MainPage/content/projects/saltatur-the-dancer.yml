@@ -1,0 +1,44 @@
+title: Saltatur the Dancer
+permalink: /projects/saltatur-the-dancer.html
+body_class: body
+featured: true
+sort_order: 2
+seo:
+  description: |-
+    Saltatur the Dancer   2019    Related Publications : 
+     Acknowledgments:   Ali Tabatabaie Ghomi , Mostafa Akbari , Mohammad Bolhassani , Alireza Seyed Ahmadian, Konstantinos Papalexiou , Jingchu Sun , Hanqing Yao, Masoud Akbarzadeh 
+     Saltatur: Node-Based Assembly of Funicular Spat
+  og_title: Saltatur the Dancer | Mostafa Akbari
+body_mode: sections
+sections:
+  - type: headline
+    text: Saltatur the Dancer
+  - type: rich_text
+    body: <p><strong>2019</strong></p>
+  - type: rich_text
+    body: |-
+      <h3>Related Publications :</h3>
+      <h3>Acknowledgments:</h3>
+  - type: rich_text
+    body: >-
+      <p>Ali Tabatabaie Ghomi , Mostafa Akbari , Mohammad Bolhassani , Alireza Seyed Ahmadian, Konstantinos Papalexiou ,
+      Jingchu Sun , Hanqing Yao, Masoud Akbarzadeh</p>
+
+      <p>Saltatur: Node-Based Assembly of Funicular Spatial Concrete</p>
+
+      <p>The Saltatur demonstrates innovative research in the design and fabrication of a prefab, discrete, spatial
+      composite structure consisting of a spatial, compression-only concrete body, post-tensioning steel rods, and an
+      ultra-thin glass structure on its top in the form of long-span furniture. Using discrete spatial systems would
+      minimize the volume of concrete and the carbon footprint while preserving the necessary mass for structural
+      performance and specific architectural detailing. Achieving a high level of efficiency in utilizing concrete for
+      spatial systems requires a robust and powerful structural design and fabrication approach. There are multiple
+      design innovations in various phases of the realization of this project, from conceptual structural design to
+      fabrication. This project impeccably combines efficiency, elegance, and economy in one product whose fabrication
+      technique opens a new horizon for the future of construction of large scale systems. The entire volume of concrete
+      used for this structure is 0.06 cubic meters distributed in 4.44 cubic meters (3.1 m x 0.8 m x 1.9 m) of space.
+      This volume makes the relative density of this structure as small as 1% percent (0.013), comparable to the volume
+      density of the human&rsquo;s bone structure, which demonstrates the ingenuity in the design and engineering of an
+      efficient load-bearing, expressive system.</p>
+
+      <p>The project was supported by the Board of Overseers and the University Research Foundation Grant at the
+      University of Pennsylvania, National Science Foundation.</p>

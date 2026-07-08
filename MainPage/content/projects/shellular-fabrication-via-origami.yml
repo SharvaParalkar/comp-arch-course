@@ -1,0 +1,44 @@
+title: Shellular Fabrication via Origami
+permalink: /projects/shellular-fabrication-via-origami.html
+body_class: body
+featured: false
+sort_order: 13
+seo:
+  description: |-
+    Shellular Fabrication via Origami   2021     Mostafa Akbari, Yao Lu, Masoud Akbarzadeh  
+     Related Publications : 
+     Acknowledgments:   From Design to the Fabrication of Shellular Funicular Structures 
+     Shellular Funicular Structures (SFSs) represent single-layer, two-manifold desi
+  og_title: Shellular Fabrication via Origami | Mostafa Akbari
+body_mode: sections
+sections:
+  - type: headline
+    text: Shellular Fabrication via Origami
+  - type: rich_text
+    body: <p><strong>2021</strong></p>
+  - type: rich_text
+    body: |-
+      <p><em>Mostafa Akbari, Yao Lu, Masoud Akbarzadeh</em></p>
+      <h3>Related Publications :</h3>
+      <h3>Acknowledgments:</h3>
+  - type: rich_text
+    body: >-
+      <p>From Design to the Fabrication of Shellular Funicular Structures</p>
+
+      <p>Shellular Funicular Structures (SFSs) represent single-layer, two-manifold designs characterized by anticlastic
+      curvature, conceived within the framework of graphic statics. These structures offer efficiency across various
+      functions and scales. Despite their intricate geometry, they feature planar faces that facilitate manufacturing.
+      This study delves into a fabrication approach employing the origami/kirigami technique. Constructing the structure
+      from a flat sheet of material promises reduced construction expenses, minimized waste, and expanded applicability
+      at larger scales. Drawing inspiration from a mathematical methodology developed by Tomohiro Tachi for crafting
+      polyhedral structures, this research explores the potential of fabricating curved shells with anticlastic
+      properties. The proposed technique involves introducing a series of folds within the faces of the polyhedral
+      geometry, rendering fabrication feasible. Indeed, without this approach, realizing a surface with anticlastic
+      curvature through origami techniques remains a formidable challenge. Moreover, these folds align with the
+      structural force distribution, thereby enhancing the system's overall structural performance. This investigation
+      introduces a fabrication method that could obviate the necessity for conventional formwork, streamlining the
+      manufacturing process and yielding positive outcomes in terms of labor, cost efficiency, and time savings.</p>
+
+      <p>This research was supported by the University of Pennsylvania Research Foundation Grant (URF), National Science
+      Foundation (NSF) CAREER AWARD (NSF CAREER-1944691- CMMI), and the National Science Foundation (NSF) Future Eco
+      Manufacturing Research Grant (NSF, FMRG-CMMI 2037097) to Dr. Masoud Akbarzadeh.</p>

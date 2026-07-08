@@ -1,17 +1,19 @@
-title: Mostafa Akbari
-permalink: /index.html
-body_class: body is-black
+title: About
+permalink: /about.html
+body_class: body
 seo:
   description: >-
-    Mostafa Akbari — computational designer and architectural technologist specializing in shellular funicular
-    structures, digital fabrication, and computational design.
-  og_title: Mostafa Akbari | Architectural Technologist
+    Mostafa is a distinguished computational designer and researcher with a distinctive academic background encompassing
+    architectural design and computational structures. He is currently an Assistant Professor of Architecture with
+    expertise in Computational Structures and Advanced Manufacturing at Texas A&M University. His academic journey
+    includes a Ph.D. in Computational Design and a Master degree in Advanced Architectural Design from Upenn, a Master's
+    degree in Architecture from the University of Shahid Beheshti, and a Bachelor's degree in Architecture from the
+    University of Tehran.
+  og_title: About | Mostafa Akbari
 body_mode: sections
 sections:
   - type: headline
-    text: Mostafa Akbari
-  - type: headline
-    text: Architectural Technologist | Designer
+    text: About
   - type: rich_text
     body: >-
       <p>Mostafa is a distinguished computational designer and researcher with a distinctive academic background
@@ -30,7 +32,9 @@ sections:
       human-computer interaction. His endeavors are geared towards unearthing the nascent prospects in contemporary
       architecture, allowing for a reevaluation of tectonics and material systems in the face of synergistic
       advancements in architecture, structural design, robotic fabrication, computation, and material science.</p>
+
+      <p>Mostafa's collaborative endeavors span across prestigious international establishments, including his role as a
+      designer and researcher with Gensler. Moreover, he has garnered valuable experience in architectural design and
+      construction as an independent architect.</p>
   - type: rich_text
-    body: >-
-      <p><a href="about.html">About</a> · <a href="projects.html">Projects</a> · <a
-      href="publications.html">Publications</a> · <a href="teaching.html">Teaching</a></p>
+    body: <p><strong>Mostafa Akbari</strong></p>

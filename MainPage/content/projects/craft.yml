@@ -1,0 +1,44 @@
+title: CRAFT
+permalink: /projects/craft.html
+body_class: body
+featured: false
+sort_order: 7
+seo:
+  description: |-
+    CRAFT   2016     Team project : Names at www.tehrancraft.com  
+     Instructors : Zubin Khabazi, Mehran Davari   The principal focus of this workshop's research agenda centered on investigating methodologies for the construction of free-form surface structures utilizing composite mat
+  og_title: CRAFT | Mostafa Akbari
+body_mode: sections
+sections:
+  - type: headline
+    text: CRAFT
+  - type: rich_text
+    body: <p><strong>2016</strong></p>
+  - type: rich_text
+    body: |-
+      <p><em>Team project : Names at www.tehrancraft.com</em></p>
+      <h3>Instructors : Zubin Khabazi, Mehran Davari</h3>
+  - type: rich_text
+    body: >-
+      <p>The principal focus of this workshop's research agenda centered on investigating methodologies for the
+      construction of free-form surface structures utilizing composite materials through the application of the
+      'Flexible Forming' technique. Within this context, the transformation of a doubly curved surface into a formwork
+      was pursued, with the fabrication of said formwork serving as the pathway to realizing the envisaged surface. The
+      design objective encompassed the creation of a pavilion that adhered to constraints regarding size, material
+      allocation, internal spatial considerations, and construction methodologies. While the overarching concept
+      revolved around crafting the design using a thin layer of fiber composite, the approach hinged on the integration
+      of "Minimal Surfaces," which locally minimize their area, during the design phase. After evaluating several
+      surface classifications, the 'Gyroid' geometry was adopted and subsequently manipulated to generate the pavilion's
+      outer skin. The chosen method for fabricating continuous, slender, curved surfaces was the utilization of
+      composite materials, specifically composed of layers of glass fibers for reinforcement and polyester resin. The
+      resultant fiberglass material would serve as the exceptionally thin surface of the pavilion. Its application would
+      be facilitated by digitally created fabric formwork. The polyester resin comprised two essential components: a
+      base resin and a hardener, the combination of which initiated a reaction leading to the solidification of the
+      liquid materials into a robust plastic. Given the workshop's time constraints, this research culminated in a
+      well-optimized formulation of resin, activator, and hardener ratios, ensuring both desired quality and expediency.
+      The fabrication methodology centered on the application of resin onto a cast. To streamline material usage for
+      constructing the casts, the wooden structure was integrated with the fabric. The mesh model underwent successive
+      relaxation steps and was further reconfigured in Kangaroo for simulating physical loads. Consequently, there was a
+      level of confidence that affixing the tensioned fabric to the wooden framework would enable the replication of the
+      curved surfaces designed within Rhino for fabrication purposes. The foundational wooden structures essentially
+      comprised boxes encompassing the panel edges, fabricated from MDF sheets utilizing laser cutters.</p>

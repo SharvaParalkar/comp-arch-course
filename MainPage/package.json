@@ -7,7 +7,7 @@
   },
   "scripts": {
     "build": "node scripts/build.js",
-    "migrate": "node scripts/migrate-from-refweb.js",
+    "migrate:mostafa": "node scripts/migrate-from-refwebmostafa.js",
     "dev": "npx @11ty/eleventy --serve --port=8080",
     "cms": "npx @11ty/eleventy --serve --port=8080",
     "deploy": "npm run build && npx wrangler pages deploy site --project-name=calab-main"

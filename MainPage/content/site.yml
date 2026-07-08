@@ -1,29 +1,20 @@
-site_name: OXMAN
-tagline: Envision a future of complete synergy between Nature and humanity.
-copyright: © OXMAN 2026. All rights reserved
+site_name: Mostafa Akbari
+tagline: Computational Designer | Architect | Architectural Technologist
+copyright: © Mostafa Akbari. All rights reserved.
 navigation:
-  - label: Mission
-    url: mission.html
-  - label: Company
-    url: company.html
-  - label: Work
-    url: work.html
-  - label: Careers
-    url: careers.html
-  - label: Contact
-    url: contact.html
-social_links:
-  - label: YouTube
-    url: https://www.youtube.com/channel/UCWA9MwbHMrutAzyLBYhs9KQ
-  - label: LinkedIn
-    url: https://www.linkedin.com/company/oxman/
-  - label: Instagram
-    url: https://www.instagram.com/oxmanofficial/
-footer_links:
-  - label: Terms and Policies
-    url: terms-and-policies.html
+  - label: About
+    url: about.html
+  - label: Projects
+    url: projects.html
+  - label: Publications
+    url: publications.html
+  - label: Teaching
+    url: teaching.html
+social_links: []
+footer_links: []
 default_seo:
   description: >-
-    Envision a future of complete synergy between Nature and humanity. OXMAN is accelerating systems-level change by
-    fusing design, technology, and biology in a radical shift from human-centric design to Nature-centric design.
-  og_image: https://cdn.prod.website-files.com/690e0b6e2e2a0cbc45ab116e/696fe3952005ae09bb201fdc_OXMAN-OG-image.jpg
+    Mostafa is a distinguished computational designer and researcher with a distinctive academic background encompassing
+    architectural design and computational structures. He is currently an Assistant Professor of Architecture with
+    expertise in Computational Structures and Advanced Manufacturing at Texa
+  og_image: ''

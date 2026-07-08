@@ -36,12 +36,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("projects", () =>
     readYamlFiles(path.join(CONTENT_DIR, "projects"))
   );
-  eleventyConfig.addCollection("platforms", () =>
-    readYamlFiles(path.join(CONTENT_DIR, "platforms"))
-  );
-  eleventyConfig.addCollection("jobs", () =>
-    readYamlFiles(path.join(CONTENT_DIR, "jobs"))
-  );
 
   eleventyConfig.addFilter("markdown", (value) => value || "");
 

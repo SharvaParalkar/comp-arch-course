@@ -17,7 +17,7 @@ export default {
       const rest = pathnameAfterSlug(url.pathname, parts);
       const targetUrl = `https://course-${slug}.pages.dev${rest}${url.search}`;
 
-      const resp = await fetch(targetUrl, request);
+      const resp = await proxyToPages(targetUrl, request);
       if (resp.status === 404) {
         return resp;
       }
@@ -25,9 +25,23 @@ export default {
       return rewriteRedirectLocation(resp, slug);
     }
 
-    return fetch(`https://calab-main.pages.dev${url.pathname}${url.search}`, request);
+    const targetUrl = `https://calab-main.pages.dev${url.pathname}${url.search}`;
+    return proxyToPages(targetUrl, request);
   },
 };
+
+/** Proxy to a *.pages.dev origin with the correct Host header. */
+function proxyToPages(targetUrl, request) {
+  const target = new URL(targetUrl);
+  const headers = new Headers(request.headers);
+  headers.set('Host', target.host);
+  return fetch(target.toString(), {
+    method: request.method,
+    headers,
+    body: request.body,
+    redirect: 'manual',
+  });
+}
 
 /** Preserve trailing slash when proxying to Pages. */
 function pathnameAfterSlug(pathname, parts) {

@@ -1,0 +1,36 @@
+title: Random Symbiosis
+permalink: /projects/random-symbiosis.html
+body_class: body
+featured: false
+sort_order: 6
+seo:
+  description: |-
+    Random Symbiosis   2018     Team project : Names at www.chaotic.studio.com  
+     Instructor : Mehdi Kiani, Saeed Torabi   Iran University of Science and Technology 
+     This project was undertaken in affiliation with the Iran University of Science and Technology to create a dynamic mon
+  og_title: Random Symbiosis | Mostafa Akbari
+body_mode: sections
+sections:
+  - type: headline
+    text: Random Symbiosis
+  - type: rich_text
+    body: <p><strong>2018</strong></p>
+  - type: rich_text
+    body: |-
+      <p><em>Team project : Names at www.chaotic.studio.com</em></p>
+      <h3>Instructor : Mehdi Kiani, Saeed Torabi</h3>
+  - type: rich_text
+    body: >-
+      <p>Iran University of Science and Technology</p>
+
+      <p>This project was undertaken in affiliation with the Iran University of Science and Technology to create a
+      dynamic monument possessing the capacity to engage with students in motion. Furthermore, it served as an
+      opportunity for us to delve into the realm of responsive design, designing a project to adapt to diverse
+      environmental influences. This interdisciplinary endeavor was a collaborative venture involving graduates from
+      Mechanical Engineering and Architecture, encompassing intricate work in programming, utilization of Arduino kits,
+      and engagement with diverse mechanical systems. To establish this interactive facet, the fundamental requirement
+      was to devise a structure amenable to transformation based on the movements of visitors. Thus, the challenge lay
+      in the design of a mechanism capable of executing these movements, while establishing the correlation between the
+      forces exerted by servomotors and their translation into captivating external configurations. Concurrently,
+      meticulous assessment of various elastic materials and their pliability was essential, in relation to the specific
+      threshold of force tolerable by the servomotors.</p>

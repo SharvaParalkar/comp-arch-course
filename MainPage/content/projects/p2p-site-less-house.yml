@@ -1,0 +1,34 @@
+title: P2P Site-less House
+permalink: /projects/p2p-site-less-house.html
+body_class: body
+featured: false
+sort_order: 12
+seo:
+  description: |-
+    P2P Site-less House   2019     Mostafa Akbari, Aishwarya Katta, Naman Gupta  
+     Instructors : Masoud Akbarzadeh Robert Stuart Smith   University of Pennsylvania 
+     The research intends to address the challenges in the design development process and fabrication of the P2P Siteless H
+  og_title: P2P Site-less House | Mostafa Akbari
+body_mode: sections
+sections:
+  - type: headline
+    text: P2P Site-less House
+  - type: rich_text
+    body: <p><strong>2019</strong></p>
+  - type: rich_text
+    body: |-
+      <p><em>Mostafa Akbari, Aishwarya Katta, Naman Gupta</em></p>
+      <h3>Instructors : Masoud Akbarzadeh Robert Stuart Smith</h3>
+  - type: rich_text
+    body: >-
+      <p>University of Pennsylvania</p>
+
+      <p>The research intends to address the challenges in the design development process and fabrication of the P2P
+      Siteless House. The existing design of the house needs to be rationalized. The rationalization will include:
+      dividing the geometry into prefabricated parts with structural integrity, proper sealing strategies, and
+      meticulous detailing for the interior as well as the exterior of the house. The primary objective of the research
+      is to address the fabrication challenges of the Tiny House project. The structure of the research is two-fold:
+      first, to research the fabrication challenges for cutting the formwork of the parts using robotic wire cutting
+      technique and to find solutions to rationalize and improve the existing design of the house; and second, to
+      fabricate a part of the house assembled in the form of a mock-up to manifest the solutions to construct the entire
+      project.</p>

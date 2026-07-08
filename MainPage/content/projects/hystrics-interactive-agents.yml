@@ -1,0 +1,37 @@
+title: Hystrics | Interactive agents
+permalink: /projects/hystrics-interactive-agents.html
+body_class: body
+featured: false
+sort_order: 5
+seo:
+  description: |-
+    Hystrics | Interactive agents   2018     Mostafa Akbari, Lina Choi, Abdollah Alsahafi  
+     Instructor : Simon Kim   University of Pennsylvania 
+     The central concept of this project revolves around the creation of a cohort of entities capable of mutual interaction and engagement wit
+  og_title: Hystrics | Interactive agents | Mostafa Akbari
+body_mode: sections
+sections:
+  - type: headline
+    text: Hystrics | Interactive agents
+  - type: rich_text
+    body: <p><strong>2018</strong></p>
+  - type: rich_text
+    body: |-
+      <p><em>Mostafa Akbari, Lina Choi, Abdollah Alsahafi</em></p>
+      <h3>Instructor : Simon Kim</h3>
+  - type: rich_text
+    body: >-
+      <p>University of Pennsylvania</p>
+
+      <p>The central concept of this project revolves around the creation of a cohort of entities capable of mutual
+      interaction and engagement with their surrounding environment. These entities, known as "Hysterics," consist of
+      three distinct creatures that have been dissociated from their primary entity. While collectively these three
+      agents manifest intricate collaborative behaviors to form a comprehensive entity, each individual agent now
+      embodies a singular and elementary function. Each creature is attuned to a specific sensory modality. The first
+      creature responds to proximity-based stimuli; the act of bringing one's hands near it prompts the emission of a
+      sound, while physical contact induces silence. The second creature integrates a camera sensor and reacts to close
+      proximity by generating a mist-like effect. The third creature, akin to a pliable robot, exhibits mobility
+      triggered by our approach. The structural framework of these sculptures is constructed using carbon fiber. This
+      involves the weaving the carbon fiber around a preconstructed form, followed by a curing process to solidify the
+      sculpture's shape. All models are outfitted with Arduino kits and servomotors, which incorporate diverse sensors
+      including distance, camera, and touch sensors.</p>

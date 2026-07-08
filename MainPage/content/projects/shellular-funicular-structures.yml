@@ -1,0 +1,47 @@
+title: Shellular Funicular Structures
+permalink: /projects/shellular-funicular-structures.html
+body_class: body
+featured: false
+sort_order: 10
+seo:
+  description: |-
+    Shellular Funicular Structures   2022     Mostafa Akbari, Masoud Akbarzadeh  
+     Related Publications :   From Polyhedral to Anticlastic Funicular Spatial Structures 
+     Geometry-based structural form-finding to design architected cellular solids 
+     From Design to the Fabrication of S
+  og_title: Shellular Funicular Structures | Mostafa Akbari
+body_mode: sections
+sections:
+  - type: headline
+    text: Shellular Funicular Structures
+  - type: rich_text
+    body: <p><strong>2022</strong></p>
+  - type: rich_text
+    body: |-
+      <p><em>Mostafa Akbari, Masoud Akbarzadeh</em></p>
+      <h3>Related Publications :</h3>
+  - type: rich_text
+    body: >-
+      <p>From Polyhedral to Anticlastic Funicular Spatial Structures</p>
+
+      <p>Geometry-based structural form-finding to design architected cellular solids</p>
+
+      <p>From Design to the Fabrication of Shellular Funicular Structures</p>
+
+      <p>Strut-based Cellular to Shellular Funicular Materials</p>
+
+      <p>Continuous Approximation of Shellular Funicular Structures</p>
+
+      <p>The structural performance of cellular polyhedral funicular geometries in 3D graphic statics(3DGS) relies
+      heavily on the buckling performance of the system; if the edges of the form diagram are immediately translated to
+      structural members. Besides, the spatial geometry of the nodes makes the fabrication process quite challenging.
+      This research proposes a novel approach to translate a polyhedral cellular geometry into a polyhedral
+      surface-based structure in 3DGS that is comparable to the widely known minimal surface geometries in the context
+      of structural design, bridging the gap between polyhedral cellular geometry and surface-based structure. Using
+      such anti-clastic structures for materialization in place of polyhedral geometries in 3DGS improves the structural
+      performance of the system and facilitates its fabrications process. The proposed approach introduces a new
+      typology of funicular spatial structures consist of a minimal surface for a given boundary condition. Numerous
+      studies show that the high surface-to-volume ratio in minimal surface geometries enhances mechanical performance.
+      In this research, we are trying to get as close as possible to such geometries utilizing 3D graphic statics to
+      take advantage of their properties in many fields such as architectural design, structural design, biomechanics,
+      biochemistry, and beyond.</p>
