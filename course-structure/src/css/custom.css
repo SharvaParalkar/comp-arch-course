@@ -339,12 +339,12 @@ code, pre {
 
 /* ─── Pagination ────────────────────────────────────────────────── */
 .pagination-nav__link {
-  border: 1px solid var(--cal-rule);
-  border-radius: 2px;
+  border: none;
+  border-radius: 0;
 }
 
 .pagination-nav__link:hover {
-  border-color: var(--cal-clay);
+  border-color: transparent;
 }
 
 .pagination-nav__link:focus,
