@@ -2,12 +2,12 @@ title: Structurally Adaptable Shoes
 permalink: /projects/structurally-adaptable-shoes.html
 body_class: body
 featured: false
-sort_order: 11
+sort_order: 5
 seo:
   description: >-
-    Structurally Adaptable Shoes   2023     Mostafa Akbari, Masoud Akbarzadeh    The project "Structurally Adaptable
-    Shoe" serves as another exemplar showcasing the practical utilization of shellular structures. Within this study,
-    insights derived from foot podometry were employed to
+    Structurally Adaptable Shoes   2023     Mostafa Akbari, Masoud Akbarzadeh    The project
+    "Structurally Adaptable Shoe" serves as another exemplar showcasing the practical utilization of
+    shellular structures. Within this study, insights derived from foot podometry were employed to
   og_title: Structurally Adaptable Shoes | Mostafa Akbari
 body_mode: sections
 sections:
@@ -19,15 +19,25 @@ sections:
     body: <p><em>Mostafa Akbari, Masoud Akbarzadeh</em></p>
   - type: rich_text
     body: >-
-      <p>The project "Structurally Adaptable Shoe" serves as another exemplar showcasing the practical utilization of
-      shellular structures. Within this study, insights derived from foot podometry were employed to inform the design
-      of a shoe's midsole, tailored to withstand the specific forces exerted by the feet. To achieve this, a systematic
-      approach was adopted. Various shellular unit cells were conceptualized and subsequently assessed for their
-      respective levels of stiffness. From this evaluation, two distinct unit cell designs were selected, each
-      characterized by differing degrees of stiffness. These selected designs were strategically incorporated into
-      different segments of the midsole. Precisely, the unit cell possessing lower stiffness was strategically
-      implemented in regions necessitating greater flexibility, while the unit cell with higher stiffness found its
-      place in sections requiring enhanced rigidity. This design approach capitalizes on the inherent advantages of the
-      shellular technique, thereby facilitating the creation of a gradient that transitions from cell to shell
-      structures. The integration of divergent unit cells, each distinguished by unique geometries, culminates in the
-      formation of a hybrid structure that seamlessly combines various components into a cohesive whole.</p>
+      <p>The project "Structurally Adaptable Shoe" serves as another exemplar showcasing the
+      practical utilization of shellular structures. Within this study, insights derived from foot
+      podometry were employed to inform the design of a shoe's midsole, tailored to withstand the
+      specific forces exerted by the feet. To achieve this, a systematic approach was adopted.
+      Various shellular unit cells were conceptualized and subsequently assessed for their
+      respective levels of stiffness. From this evaluation, two distinct unit cell designs were
+      selected, each characterized by differing degrees of stiffness. These selected designs were
+      strategically incorporated into different segments of the midsole. Precisely, the unit cell
+      possessing lower stiffness was strategically implemented in regions necessitating greater
+      flexibility, while the unit cell with higher stiffness found its place in sections requiring
+      enhanced rigidity. This design approach capitalizes on the inherent advantages of the
+      shellular technique, thereby facilitating the creation of a gradient that transitions from
+      cell to shell structures. The integration of divergent unit cells, each distinguished by
+      unique geometries, culminates in the formation of a hybrid structure that seamlessly combines
+      various components into a cohesive whole.</p>
+year: '2023'
+category: Research
+card_title: Structurally Adaptable Shoes
+summary: >-
+  This research presents a framework for effective room temperature repair of fractured metals using
+  an area-selective nickel electrodeposition process we refer to as electrochemical healing.
+cover_image: https://static.wixstatic.com/media/4249cf_69204090c0ad49b6a6f8d955085b25fe~mv2.jpg

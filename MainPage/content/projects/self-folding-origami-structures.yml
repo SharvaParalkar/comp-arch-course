@@ -1,0 +1,32 @@
+title: Self-folding Origami Structures
+permalink: /projects/self-folding-origami-structures.html
+body_class: body
+featured: false
+seo:
+  description: >-
+    Although one can design Shellular Funicular Structures (SFSs) using Polyhedral Graphic Statics
+    (PGS), the fabrication process of these structures might be time consuming and labor intensive.
+    In order to fabricate these structures out of a flat sheet of material and automating the
+  og_title: Self-folding Origami Structures | Mostafa Akbari
+body_mode: sections
+sections:
+  - type: headline
+    text: Self-folding Origami Structures
+  - type: rich_text
+    body: <p><strong>2023</strong></p>
+  - type: rich_text
+    body: >-
+      <p>Although one can design Shellular Funicular Structures (SFSs) using Polyhedral Graphic
+      Statics (PGS), the fabrication process of these structures might be time consuming and labor
+      intensive. In order to fabricate these structures out of a flat sheet of material and
+      automating the fabrication process, [...]</p>
+year: '2023'
+category: Research
+card_title: Self-folding Origami Structures
+summary: >-
+  Although one can design Shellular Funicular Structures (SFSs) using Polyhedral Graphic Statics
+  (PGS), the fabrication process of these structures might be time consuming and labor intensive. In
+  order to fabricate these structures out of a flat sheet of material and automating the fabrication
+  process,
+cover_image: https://static.wixstatic.com/media/4249cf_2101c2818aa64bf0b155beb8a3d4fd9a~mv2.jpg
+sort_order: 8

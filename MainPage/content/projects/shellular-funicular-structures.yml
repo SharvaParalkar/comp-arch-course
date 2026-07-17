@@ -2,7 +2,7 @@ title: Shellular Funicular Structures
 permalink: /projects/shellular-funicular-structures.html
 body_class: body
 featured: false
-sort_order: 10
+sort_order: 6
 seo:
   description: |-
     Shellular Funicular Structures   2022     Mostafa Akbari, Masoud Akbarzadeh  
@@ -32,16 +32,27 @@ sections:
 
       <p>Continuous Approximation of Shellular Funicular Structures</p>
 
-      <p>The structural performance of cellular polyhedral funicular geometries in 3D graphic statics(3DGS) relies
-      heavily on the buckling performance of the system; if the edges of the form diagram are immediately translated to
-      structural members. Besides, the spatial geometry of the nodes makes the fabrication process quite challenging.
-      This research proposes a novel approach to translate a polyhedral cellular geometry into a polyhedral
-      surface-based structure in 3DGS that is comparable to the widely known minimal surface geometries in the context
-      of structural design, bridging the gap between polyhedral cellular geometry and surface-based structure. Using
-      such anti-clastic structures for materialization in place of polyhedral geometries in 3DGS improves the structural
-      performance of the system and facilitates its fabrications process. The proposed approach introduces a new
-      typology of funicular spatial structures consist of a minimal surface for a given boundary condition. Numerous
-      studies show that the high surface-to-volume ratio in minimal surface geometries enhances mechanical performance.
-      In this research, we are trying to get as close as possible to such geometries utilizing 3D graphic statics to
-      take advantage of their properties in many fields such as architectural design, structural design, biomechanics,
-      biochemistry, and beyond.</p>
+      <p>The structural performance of cellular polyhedral funicular geometries in 3D graphic
+      statics(3DGS) relies heavily on the buckling performance of the system; if the edges of the
+      form diagram are immediately translated to structural members. Besides, the spatial geometry
+      of the nodes makes the fabrication process quite challenging. This research proposes a novel
+      approach to translate a polyhedral cellular geometry into a polyhedral surface-based structure
+      in 3DGS that is comparable to the widely known minimal surface geometries in the context of
+      structural design, bridging the gap between polyhedral cellular geometry and surface-based
+      structure. Using such anti-clastic structures for materialization in place of polyhedral
+      geometries in 3DGS improves the structural performance of the system and facilitates its
+      fabrications process. The proposed approach introduces a new typology of funicular spatial
+      structures consist of a minimal surface for a given boundary condition. Numerous studies show
+      that the high surface-to-volume ratio in minimal surface geometries enhances mechanical
+      performance. In this research, we are trying to get as close as possible to such geometries
+      utilizing 3D graphic statics to take advantage of their properties in many fields such as
+      architectural design, structural design, biomechanics, biochemistry, and beyond.</p>
+year: '2021'
+category: Research
+card_title: Shellular Funicular Structures
+summary: >-
+  This research proposes a novel approach to translate a cellular polyhedral geometry into a
+  polyhedral surface-based structure (shellulars) in PGS that is comparable to the widely known
+  minimal surface geometries in the context of structural design, bridging the gap between cellular
+  polyhedral geometries and surface-based structures.
+cover_image: https://static.wixstatic.com/media/4249cf_60b21ef3b270474aa2fbbc767a6d4571~mv2.jpg

@@ -2,7 +2,7 @@ title: Shellular Funicular Materials
 permalink: /projects/shellular-funicular-materials.html
 body_class: body
 featured: false
-sort_order: 9
+sort_order: 4
 seo:
   description: |-
     Shellular Funicular Materials   2022    Related Publications : 
@@ -22,27 +22,41 @@ sections:
       <h3>Acknowledgments :</h3>
   - type: rich_text
     body: >-
-      <p>Mostafa Akbari , Armin Mirabolghasemi, Mohammad Bolhassani , Abdolhamid Akbarzadeh , Masoud Akbarzadeh</p>
+      <p>Mostafa Akbari , Armin Mirabolghasemi, Mohammad Bolhassani , Abdolhamid Akbarzadeh , Masoud
+      Akbarzadeh</p>
 
       <p>Strut-based Cellular to Shellular Funicular Materials</p>
 
-      <p>Owing to the fact that effective properties of low-density cellular solids heavily rely on their underlying
-      architecture, a variety of explicit and implicit techniques exist for designing cellular geometries. However, most
-      of these techniques fail to present a correlation among architecture, internal forces, and effective properties.
-      This research introduces an alternative design strategy based on the static equilibrium of forces, equilibrium of
-      polyhedral frames, and reciprocity of form and force. This novel approach reveals a geometric relationship among
-      the truss system architecture, topological dual, and equilibrium of forces on the basis of 3D graphic statics. We
-      adapt this technique to devise periodic strut-based cellular architectures under certain boundary conditions and
-      manipulate them to construct shell-based (shellular) cells with a variety of mechanical properties. By treating
-      the materialized unit cells as representative volume elements (RVE), multiscale homogenization is used to
-      investigate their effective linear elastic properties. Validated by experimental tests on 3D printed cellular
-      polyhedral materials, we show that by manipulating the RVE topology using the proposed methodology, alternative
-      strut materialization schemes, and rational addition of bracing struts, cellular mechanical metamaterials can be
-      systematically architected to demonstrate properties ranging from bending- to stretching-dominated, realize
+      <p>Owing to the fact that effective properties of low-density cellular solids heavily rely on
+      their underlying architecture, a variety of explicit and implicit techniques exist for
+      designing cellular geometries. However, most of these techniques fail to present a correlation
+      among architecture, internal forces, and effective properties. This research introduces an
+      alternative design strategy based on the static equilibrium of forces, equilibrium of
+      polyhedral frames, and reciprocity of form and force. This novel approach reveals a geometric
+      relationship among the truss system architecture, topological dual, and equilibrium of forces
+      on the basis of 3D graphic statics. We adapt this technique to devise periodic strut-based
+      cellular architectures under certain boundary conditions and manipulate them to construct
+      shell-based (shellular) cells with a variety of mechanical properties. By treating the
+      materialized unit cells as representative volume elements (RVE), multiscale homogenization is
+      used to investigate their effective linear elastic properties. Validated by experimental tests
+      on 3D printed cellular polyhedral materials, we show that by manipulating the RVE topology
+      using the proposed methodology, alternative strut materialization schemes, and rational
+      addition of bracing struts, cellular mechanical metamaterials can be systematically
+      architected to demonstrate properties ranging from bending- to stretching-dominated, realize
       metafluidic behavior, or create novel hybrid shellulars.</p>
 
-      <p>This research is funded by the National Science Foundation CAREER Award (NSF CAREER-1944691 CMMI) and the
-      National Science Foundation Future Eco Manufacturing Research Grant (NSF, FMRG-CMMI 2037097) to Masoud Akbarzadeh,
-      and by Natural Sciences and Engineering Research Council of Canada (RGPIN-2016-0471) and Canada Research Chairs
-      program in Multifunctional Metamaterials to Abdolhamid Akbarzadeh. The authors acknowledge the contribution of
-      Hossein Mofatteh, at the AM^3L laboratory at McGill University, for the 3D printing process.</p>
+      <p>This research is funded by the National Science Foundation CAREER Award (NSF CAREER-1944691
+      CMMI) and the National Science Foundation Future Eco Manufacturing Research Grant (NSF,
+      FMRG-CMMI 2037097) to Masoud Akbarzadeh, and by Natural Sciences and Engineering Research
+      Council of Canada (RGPIN-2016-0471) and Canada Research Chairs program in Multifunctional
+      Metamaterials to Abdolhamid Akbarzadeh. The authors acknowledge the contribution of Hossein
+      Mofatteh, at the AM^3L laboratory at McGill University, for the 3D printing process.</p>
+year: '2022'
+category: Research
+card_title: Shellular Funicular Materials
+summary: >-
+  This research introduces an alternative design strategy based on the static equilibrium of forces,
+  equilibrium of polyhedral frames, and reciprocity of form and force. This novel approach reveals a
+  geometric relationship among the truss system architecture, topological dual, and equilibrium of
+  forces on the basis of 3D graphic statics.
+cover_image: https://static.wixstatic.com/media/4249cf_3a9a783e47324a059dcf4fdf0f25d5b8~mv2.jpg

@@ -2,11 +2,11 @@ title: Terrene / Composite structure with pneumatic formwork
 permalink: /projects/terrene-composite-structure-with-pneumatic-formwork.html
 body_class: body
 featured: false
-sort_order: 8
+sort_order: 7
 seo:
   description: >-
-    Terrene / Composite structure with pneumatic formwork   2022     Liam Lasting, Mostafa Akbari, Laia Mogas-Soldevila,
-    Masoud Akbarzadeh  
+    Terrene / Composite structure with pneumatic formwork   2022     Liam Lasting, Mostafa Akbari,
+    Laia Mogas-Soldevila, Masoud Akbarzadeh  
      Acknowledgments :   With the construction industry being one of the leading contributors to annual carbon dioxide emissions and waste producti
   og_title: Terrene / Composite structure with pneumatic formwork | Mostafa Akbari
 body_mode: sections
@@ -21,20 +21,31 @@ sections:
       <h3>Acknowledgments :</h3>
   - type: rich_text
     body: >-
-      <p>With the construction industry being one of the leading contributors to annual carbon dioxide emissions and
-      waste production, the utilization of sustainable materials is critical for the future of the built environment.
-      Therefore, this research explores using sand as primary support by combining structural and material optimization
-      methods. The main objective of this research was to go beyond a compression-only material and invent a new
-      composition of material using natural sources with both compression and tensile capacity. Thus, a composite is
-      designed with an enhanced tensile capacity provided by natural fibers, plasticizers, and binding agents. This
-      mixture creates a biodegradable material system that can be reintegrated into the environment without adversely
-      damaging effects. In addition, anti-clastic structural forms were developed using polyhedral graphic statics to
-      optimize the structural capacity and provide geometric efficiency using planar surface patches. Fabrication is
-      executed via reusable pneumatic formwork in conjunction with a non-stretchable fabric saturated with a bio-resin
-      covered with our novel material mixture. This research results in a tension-compression system with a performative
-      geometry and material.</p>
+      <p>With the construction industry being one of the leading contributors to annual carbon
+      dioxide emissions and waste production, the utilization of sustainable materials is critical
+      for the future of the built environment. Therefore, this research explores using sand as
+      primary support by combining structural and material optimization methods. The main objective
+      of this research was to go beyond a compression-only material and invent a new composition of
+      material using natural sources with both compression and tensile capacity. Thus, a composite
+      is designed with an enhanced tensile capacity provided by natural fibers, plasticizers, and
+      binding agents. This mixture creates a biodegradable material system that can be reintegrated
+      into the environment without adversely damaging effects. In addition, anti-clastic structural
+      forms were developed using polyhedral graphic statics to optimize the structural capacity and
+      provide geometric efficiency using planar surface patches. Fabrication is executed via
+      reusable pneumatic formwork in conjunction with a non-stretchable fabric saturated with a
+      bio-resin covered with our novel material mixture. This research results in a
+      tension-compression system with a performative geometry and material.</p>
 
-      <p>This research was supported by the University of Pennsylvania Research Foundation Grant (URF) to Dr. Laia
-      Mogas-Soldevila. It is also partially funded by the National Science Foundation (NSF) CAREER AWARD (NSF
-      CAREER-1944691- CMMI), and the National Science Foundation (NSF) Future Eco Manufacturing Research Grant (NSF,
-      FMRG-CMMI 2037097) to Dr. Masoud Akbarzadeh.</p>
+      <p>This research was supported by the University of Pennsylvania Research Foundation Grant
+      (URF) to Dr. Laia Mogas-Soldevila. It is also partially funded by the National Science
+      Foundation (NSF) CAREER AWARD (NSF CAREER-1944691- CMMI), and the National Science Foundation
+      (NSF) Future Eco Manufacturing Research Grant (NSF, FMRG-CMMI 2037097) to Dr. Masoud
+      Akbarzadeh.</p>
+year: '2023'
+category: Research
+card_title: Terrene
+summary: >-
+  this research explores using sand as primary support by combining structural and material
+  optimization methods. The main objective of this research was to go beyond a compression-only
+  material and invent a new composition
+cover_image: https://static.wixstatic.com/media/4249cf_0aba6caedcf74608ae4ea08b38b8fdbb~mv2.jpg

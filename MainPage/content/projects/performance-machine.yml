@@ -2,7 +2,7 @@ title: Performance Machine
 permalink: /projects/performance-machine.html
 body_class: body
 featured: true
-sort_order: 3
+sort_order: 11
 seo:
   description: |-
     Performance Machine   2018     Mostafa Akbari, Wenqi Huang  
@@ -23,14 +23,25 @@ sections:
     body: >-
       <p>University of Pennsylvania</p>
 
-      <p>The primary concept underlying this project entails the design of a futuristic theater tailored for a utopian
-      epoch, with a pronounced focus on robotic fabrication and its pivotal role in preserving the tradition of
-      ornamental culture. Theater buildings have historically been regarded as integral components of the performances
-      they host, particularly with respect to intricate embellishments. However, the creation of these ornaments demands
-      substantial resources in terms of labor, energy, and time. Envisioning processes capable of producing exquisitely
-      detailed elements while minimizing energy consumption becomes a critical consideration. The Performance Machine
-      exemplifies how advancements in computation and fabrication can materialize novel architectural realms. The
-      objective is to unveil a plethora of distinct and varied geometries that craft an immersive and intellectually
-      engaging spatial encounter for the observer. In terms of form, our endeavor has centered on realizing porous,
-      multi-layered structures imbued with depth, thereby cultivating an organic aesthetic that resides at the
-      intersection of human craftsmanship and the natural environment.</p>
+      <p>The primary concept underlying this project entails the design of a futuristic theater
+      tailored for a utopian epoch, with a pronounced focus on robotic fabrication and its pivotal
+      role in preserving the tradition of ornamental culture. Theater buildings have historically
+      been regarded as integral components of the performances they host, particularly with respect
+      to intricate embellishments. However, the creation of these ornaments demands substantial
+      resources in terms of labor, energy, and time. Envisioning processes capable of producing
+      exquisitely detailed elements while minimizing energy consumption becomes a critical
+      consideration. The Performance Machine exemplifies how advancements in computation and
+      fabrication can materialize novel architectural realms. The objective is to unveil a plethora
+      of distinct and varied geometries that craft an immersive and intellectually engaging spatial
+      encounter for the observer. In terms of form, our endeavor has centered on realizing porous,
+      multi-layered structures imbued with depth, thereby cultivating an organic aesthetic that
+      resides at the intersection of human craftsmanship and the natural environment.</p>
+year: '2018'
+category: Design
+card_title: Performance Machine
+summary: >-
+  The main idea in this project is designing a future theater for utopian era concentrating on the
+  robotic fabrication and its role to keep alive ornaments&rsquo; culture. Theaters&rsquo; buildings
+  have been considered as part of the performance themselves as far as complex decorations are
+  concerned, But these decorations require a lot of effort, energy and
+cover_image: https://static.wixstatic.com/media/4249cf_ac2da7d2930f4797b507387a8b0584e3f000.jpg

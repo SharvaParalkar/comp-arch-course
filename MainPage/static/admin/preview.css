@@ -1,0 +1,146 @@
+/* CMS preview — mirrors live page sections + projects grid */
+
+@import url("https://cdn.prod.website-files.com/690e0b6e2e2a0cbc45ab116e/css/oxman25.webflow.shared.810108e95.css");
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+
+.cms-preview {
+  font-family: inherit;
+  color: #111;
+  padding: 1.25rem 1.5rem 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cms-preview h1,
+.cms-preview .h-x-large {
+  font-size: 2rem;
+  line-height: 1.15;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.cms-preview .section {
+  margin: 1rem 0;
+}
+
+.cms-preview .txt-large,
+.cms-preview .w-richtext {
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.cms-preview .full-img,
+.cms-preview .cms-preview__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cms-preview .video-aspect-box {
+  background: #111;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+.cms-preview .caption-div {
+  margin-top: 0.5rem;
+  opacity: 0.75;
+  font-size: 0.85rem;
+}
+
+.cms-preview__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem 1rem;
+  margin-top: 1.5rem;
+}
+
+.project-card__media {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 0.92;
+  overflow: hidden;
+  background: #e8e8e8;
+}
+
+.project-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card__placeholder {
+  width: 100%;
+  height: 100%;
+  background: #ddd;
+}
+
+.project-card__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.7rem;
+  text-shadow: 0 1px 2px rgba(0,0,0,.45);
+  background: rgba(0,0,0,.2);
+}
+
+.project-card__year {
+  margin-top: 0.65rem;
+  font-size: 0.75rem;
+}
+
+.project-card__title {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.project-card__summary {
+  margin: 0.4rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.cms-preview__empty {
+  padding: 2rem;
+  border: 1px dashed #bbb;
+  color: #666;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

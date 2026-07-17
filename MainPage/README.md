@@ -23,19 +23,39 @@ Uses the same GitHub OAuth backend as the course CMS (`cms-auth` Cloudflare Work
 | Collection | Folder | Description |
 |------------|--------|-------------|
 | Site Settings | `content/site.yml` | Nav, footer, social links, default SEO |
-| Pages | `content/pages/` | Home, Mission, Company, Work, Contact, etc. |
-| Projects | `content/projects/` | Project detail pages |
-| Platforms | `content/platforms/` | Platform detail pages |
-| Jobs | `content/jobs/` | Job postings |
+| Pages | `content/pages/` | Home, About, Projects listing, Publications, Teaching |
+| Projects | `content/projects/` | Project cards (grid) + detail pages |
 
 ## Editing content
 
-Each page supports two modes:
+Open **`/admin/`** after login. Collections are numbered for a clear path:
 
-1. **Legacy HTML** — edit the full page body in the HTML code editor (migrated from the Webflow export).
-2. **Structured sections** — build pages from reusable blocks (hero, headlines, two-column text, video, image, stat, rich text).
+1. **Site Settings** — navigation and global SEO (all SEO fields optional)
+2. **Pages** — top-level pages; turn on **Show Projects Grid** on the Projects page
+3. **Projects** — edit **Cover Image**, year, category, and summary for the grid, then detail sections
 
-Switch modes via the **Body Mode** field in the CMS.
+Each page/project supports:
+
+1. **Structured sections** (recommended) — headlines, images, image galleries, video, rich text
+2. **Legacy HTML** — full-page HTML (older migrated content)
+
+The CMS preview pane renders sections and project cards in a layout close to the live site (not a raw text dump).
+
+### Projects grid
+
+The Projects listing page (`content/pages/projects.yml`) uses `show_projects_grid: true`. Cards are built automatically from every file in `content/projects/`, sorted by `sort_order`.
+
+To refresh card metadata from the Wix export:
+
+```bash
+npm run enrich:cards
+```
+
+### Media
+
+- Upload via the Media library (files land in `static/uploads/`)
+- Or use Cloudinary from image fields
+- Add **Full-width Image** or **Image Gallery** sections on any page/project
 
 ## Deploying to calab.net
 

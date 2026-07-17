@@ -37,9 +37,25 @@ module.exports = function (eleventyConfig) {
     readYamlFiles(path.join(CONTENT_DIR, "projects"))
   );
 
+  eleventyConfig.addFilter("sortProjects", (projects) =>
+    [...(projects || [])].sort((a, b) => {
+      const ao = Number.isFinite(a.sort_order) ? a.sort_order : 9999;
+      const bo = Number.isFinite(b.sort_order) ? b.sort_order : 9999;
+      if (ao !== bo) return ao - bo;
+      return String(a.title || "").localeCompare(String(b.title || ""));
+    })
+  );
+
+  eleventyConfig.addFilter("hrefPath", (permalink) => {
+    const value = String(permalink || "");
+    return value.startsWith("/") ? value.slice(1) : value;
+  });
+
   eleventyConfig.addFilter("markdown", (value) => value || "");
 
   eleventyConfig.addFilter("safeHtml", (value) => value || "");
+
+  eleventyConfig.addPassthroughCopy({ "static/css": "css" });
 
   return {
     dir: {

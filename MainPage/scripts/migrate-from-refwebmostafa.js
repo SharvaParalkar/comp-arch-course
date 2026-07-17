@@ -388,27 +388,25 @@ function main() {
     sortOrder += 1;
   }
 
-  console.log("\nUpdating projects listing with links...");
-  const projectsPage = buildStandardPage(
-    "Projects",
-    "/projects.html",
-    pages["projects2.html"],
-    "Projects"
-  );
-  projectsPage.sections = projectsPage.sections.filter(
-    (s) => !(s.type === "rich_text" && isNoise(stripTags(s.body || "")))
-  );
-  for (const section of projectsPage.sections) {
-    if (section.type !== "rich_text" || !section.body) continue;
-    for (const proj of projectIndex) {
-      const escaped = proj.title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-      section.body = section.body.replace(
-        new RegExp(`<p>${escaped}</p>`, "g"),
-        `<p><a href="projects/${proj.slug}.html">${proj.title}</a></p>`
-      );
-    }
+  writeYaml(path.join(CONTENT, "pages"), "projects", {
+    title: "Projects",
+    permalink: "/projects.html",
+    body_class: "body",
+    seo: {
+      description: "Research and design projects by Mostafa Akbari",
+      og_title: "Projects | Mostafa Akbari",
+    },
+    body_mode: "sections",
+    show_projects_grid: true,
+    sections: [headlineSection("Projects")],
+  });
+
+  console.log("\nEnriching project cards from listing...");
+  try {
+    require("./enrich-project-cards.js");
+  } catch (err) {
+    console.warn("  card enrichment skipped:", err.message);
   }
-  writeYaml(path.join(CONTENT, "pages"), "projects", projectsPage);
 
   console.log("\nRemoving legacy collections...");
   clearDir(path.join(CONTENT, "platforms"));

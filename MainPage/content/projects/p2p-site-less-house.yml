@@ -23,12 +23,21 @@ sections:
     body: >-
       <p>University of Pennsylvania</p>
 
-      <p>The research intends to address the challenges in the design development process and fabrication of the P2P
-      Siteless House. The existing design of the house needs to be rationalized. The rationalization will include:
-      dividing the geometry into prefabricated parts with structural integrity, proper sealing strategies, and
-      meticulous detailing for the interior as well as the exterior of the house. The primary objective of the research
-      is to address the fabrication challenges of the Tiny House project. The structure of the research is two-fold:
-      first, to research the fabrication challenges for cutting the formwork of the parts using robotic wire cutting
-      technique and to find solutions to rationalize and improve the existing design of the house; and second, to
-      fabricate a part of the house assembled in the form of a mock-up to manifest the solutions to construct the entire
-      project.</p>
+      <p>The research intends to address the challenges in the design development process and
+      fabrication of the P2P Siteless House. The existing design of the house needs to be
+      rationalized. The rationalization will include: dividing the geometry into prefabricated parts
+      with structural integrity, proper sealing strategies, and meticulous detailing for the
+      interior as well as the exterior of the house. The primary objective of the research is to
+      address the fabrication challenges of the Tiny House project. The structure of the research is
+      two-fold: first, to research the fabrication challenges for cutting the formwork of the parts
+      using robotic wire cutting technique and to find solutions to rationalize and improve the
+      existing design of the house; and second, to fabricate a part of the house assembled in the
+      form of a mock-up to manifest the solutions to construct the entire project.</p>
+year: '2018'
+category: Research
+card_title: P2P Sitless House
+summary: >-
+  This research intends to address the challenges in the design process and fabrication of the P2P
+  Site-less House concept. The primary objective of the course is to prepare the design of the house
+  for fabrication utilizing wire-cutting robotic arms.
+cover_image: https://static.wixstatic.com/media/4249cf_a7ec3c3aed15424a8e7e29526bf98e60~mv2.jpg

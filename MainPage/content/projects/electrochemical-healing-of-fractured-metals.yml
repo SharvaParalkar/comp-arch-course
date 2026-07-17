@@ -2,11 +2,11 @@ title: Electrochemical Healing of Fractured Metals
 permalink: /projects/electrochemical-healing-of-fractured-metals.html
 body_class: body
 featured: true
-sort_order: 1
+sort_order: 2
 seo:
   description: >-
-    Electrochemical Healing of Fractured Metals   2023     Zakaria Hsain, Mostafa Akbari, Adhokshid Prasanna, Zhimin
-    Jiang, Masoud Akbarzadeh, James H. Pikul  
+    Electrochemical Healing of Fractured Metals   2023     Zakaria Hsain, Mostafa Akbari, Adhokshid
+    Prasanna, Zhimin Jiang, Masoud Akbarzadeh, James H. Pikul  
      Related Publications : 
      Acknowledgments :   Electrochemical Healing of Fractured Metals 
      Strut-based cellular to shellula
@@ -18,9 +18,12 @@ sections:
   - type: rich_text
     body: <p><strong>2023</strong></p>
   - type: rich_text
-    body: |-
-      <p><em>Zakaria Hsain, Mostafa Akbari, Adhokshid Prasanna, Zhimin Jiang, Masoud Akbarzadeh, James H. Pikul</em></p>
+    body: >-
+      <p><em>Zakaria Hsain, Mostafa Akbari, Adhokshid Prasanna, Zhimin Jiang, Masoud Akbarzadeh,
+      James H. Pikul</em></p>
+
       <h3>Related Publications :</h3>
+
       <h3>Acknowledgments :</h3>
   - type: rich_text
     body: >-
@@ -28,28 +31,40 @@ sections:
 
       <p>Strut-based cellular to shellular materials</p>
 
-      <p>Repairing fractured metals to extend their useful lifetimes advances sustainability and mitigates greenhouse
-      gas emissions from metal mining and processing. While high-temperature techniques have long been used to repair
-      metals, the increasing ubiquity of digital manufacturing and “unweldable” alloys, as well as the integration of
-      metals with polymers and electronics, call for radically different repair approaches. This research presents a
-      framework for effective room temperature healing of fractured metals using area-selective nickel electrodeposition
-      with a single commonly-used electrolyte chemistry. Based on a theoretical model that links geometric, mechanical,
-      and electrochemical parameters to the recovery of tensile strength, this framework enables 100 % recovery of
-      tensile strength in nickel, low-carbon steel, two “unweldable” aluminum alloys, and a 3D-printed difficult-to-weld
-      shellular structure. Through a distinct energy dissipation mechanism, this framework also enables up to 136 %
-      recovery of toughness in an aluminum alloy. To facilitate practical adoption, this work reveals scaling laws for
-      the energetic, financial, and time costs of healing, and demonstrates the restoration of strength and
-      functionality in a fractured standard steel wrench. Empowered with this framework, room-temperature
-      electrochemical healing could open exciting possibilities for the effective, scalable repair of metals in diverse
+      <p>Repairing fractured metals to extend their useful lifetimes advances sustainability and
+      mitigates greenhouse gas emissions from metal mining and processing. While high-temperature
+      techniques have long been used to repair metals, the increasing ubiquity of digital
+      manufacturing and “unweldable” alloys, as well as the integration of metals with polymers and
+      electronics, call for radically different repair approaches. This research presents a
+      framework for effective room temperature healing of fractured metals using area-selective
+      nickel electrodeposition with a single commonly-used electrolyte chemistry. Based on a
+      theoretical model that links geometric, mechanical, and electrochemical parameters to the
+      recovery of tensile strength, this framework enables 100 % recovery of tensile strength in
+      nickel, low-carbon steel, two “unweldable” aluminum alloys, and a 3D-printed difficult-to-weld
+      shellular structure. Through a distinct energy dissipation mechanism, this framework also
+      enables up to 136 % recovery of toughness in an aluminum alloy. To facilitate practical
+      adoption, this work reveals scaling laws for the energetic, financial, and time costs of
+      healing, and demonstrates the restoration of strength and functionality in a fractured
+      standard steel wrench. Empowered with this framework, room-temperature electrochemical healing
+      could open exciting possibilities for the effective, scalable repair of metals in diverse
       applications.</p>
 
-      <p>We thank Jeremy Wang for waterjet cutting, Jason Pastor and Peter Szczesniak for the fabrication of tension
-      grips, Yichao Shi for assistance with photography, and Alissa Johnson for assistance with XRD. We thank Gnana
-      Saurya Vankayalapati and Prof. Kevin Turner for graciously providing access to a mechanical testing tool used for
-      some preliminary testing, and Xiaoheng Zhu, Chengyang Mo, and Prof. Jordan Raney for providing access to an
-      Instron 68SC-5 mechanical testing tool. This work was performed in part at the Singh Center for Nanotechnology, a
-      node in the National Nanotechnology Coordinated Infrastructure (NNCI) network, which is supported by the National
-      Science Foundation under grant NNCI-1542153. J.H.P acknowledges funding from the TMS Foundation (Early Career
-      Faculty Fellow Award) and the U.S. Air Force Office of Scientific Research (grant no. FA9550-22-1-0095). M.
-      Akbarzadeh acknowledges funding from the National Science Foundation through a CAREER Award (CAREER-1944691-CMMI)
-      and a Future Eco Manufacturing Research Grant (FMRG-CMMI 2037097).</p>
+      <p>We thank Jeremy Wang for waterjet cutting, Jason Pastor and Peter Szczesniak for the
+      fabrication of tension grips, Yichao Shi for assistance with photography, and Alissa Johnson
+      for assistance with XRD. We thank Gnana Saurya Vankayalapati and Prof. Kevin Turner for
+      graciously providing access to a mechanical testing tool used for some preliminary testing,
+      and Xiaoheng Zhu, Chengyang Mo, and Prof. Jordan Raney for providing access to an Instron
+      68SC-5 mechanical testing tool. This work was performed in part at the Singh Center for
+      Nanotechnology, a node in the National Nanotechnology Coordinated Infrastructure (NNCI)
+      network, which is supported by the National Science Foundation under grant NNCI-1542153. J.H.P
+      acknowledges funding from the TMS Foundation (Early Career Faculty Fellow Award) and the U.S.
+      Air Force Office of Scientific Research (grant no. FA9550-22-1-0095). M. Akbarzadeh
+      acknowledges funding from the National Science Foundation through a CAREER Award
+      (CAREER-1944691-CMMI) and a Future Eco Manufacturing Research Grant (FMRG-CMMI 2037097).</p>
+year: '2023'
+category: Research
+card_title: Electrochemical Healing of Fractured Metals
+summary: >-
+  This research presents a framework for effective room temperature repair of fractured metals using
+  an area-selective nickel electrodeposition process we refer to as electrochemical healing.
+cover_image: https://static.wixstatic.com/media/4249cf_f2bb7b1e943147668bd9db76d787b36b~mv2.jpg
