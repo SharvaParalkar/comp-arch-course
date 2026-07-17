@@ -97,6 +97,12 @@ collections:
         default: false
         required: false
         hint: "Turn on for the Projects page. Renders all Projects as a card grid automatically."
+      - label: Show Publications List
+        name: show_publications_list
+        widget: boolean
+        default: false
+        required: false
+        hint: "Turn on for the Publications page. Renders all Publications with image, text, and links."
       - label: SEO
         name: seo
         widget: object
@@ -332,3 +338,53 @@ collections:
         default_language: html
         required: false
         hint: "Only used when Body Mode is Legacy HTML."
+
+  - name: publications
+    label: "4 · Publications"
+    label_singular: Publication
+    description: "Each entry appears on the Publications page with an image, authors, venue, and PDF / BibTeX links."
+    folder: MainPage/content/publications
+    extension: yml
+    format: yaml
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{year}} · {{title}}"
+    sortable_fields: ["sort_order", "year", "title"]
+    preview_path: "publications.html"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Authors, name: authors, widget: text, required: false }
+      - { label: Venue, name: venue, widget: string, required: false, hint: "e.g. IASS 2023" }
+      - { label: Year, name: year, widget: string, required: false }
+      - label: Sort Order
+        name: sort_order
+        widget: number
+        required: false
+        value_type: int
+        hint: "Lower numbers appear first"
+      - label: Image
+        name: image
+        widget: image
+        required: false
+        hint: "Thumbnail shown beside the publication"
+      - label: PDF URL
+        name: pdf_url
+        widget: string
+        required: false
+        hint: "Link to PDF (/uploads/... or external URL)"
+      - label: BibTeX URL
+        name: bibtex_url
+        widget: string
+        required: false
+        hint: "Link to a .bib / .txt file"
+      - label: Article URL
+        name: article_url
+        widget: string
+        required: false
+        hint: "Optional DOI or publisher page"
+      - label: BibTeX
+        name: bibtex
+        widget: text
+        required: false
+        hint: "Optional inline BibTeX (used if no BibTeX URL)"

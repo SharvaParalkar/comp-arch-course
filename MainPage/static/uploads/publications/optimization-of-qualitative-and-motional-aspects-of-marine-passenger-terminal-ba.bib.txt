@@ -1,0 +1,8 @@
+@inproceedings{akbari2016pedestrian,
+title={OPTIMIZATION OF QUALITITATIVE AND MOTIONAL ASPECTS OF MARINE
+PASSENGER TERMINAL BASED ON INNOVATIVE APPROACH FOR PEDESTRIAN
+SIMULATION},
+author={Akbari, Mostafa and Bahrami, Leila and Safamanesh, Kamran},
+booktitle={Processdings of International Conference on Civil Engineering, Architecture, and Cityscape (ICCACS),},
+year={2016}
+}

@@ -1,0 +1,12 @@
+title: Geometry-based structural form-finding to design architected cellular solids
+authors: Mostafa Akbari, Armin Mirabolghasemi, Hamid Akbarzadeh, Masoud Akbarzadeh
+venue: SCF - ACM 2020
+year: '2020'
+sort_order: 7
+image: https://static.wixstatic.com/media/4249cf_b023b907ea4344e8b000cba07366fc9e~mv2.jpg
+pdf_url: >-
+  /uploads/publications/geometry-based-structural-form-finding-to-design-architected-cellular-solids.pdf
+bibtex_url: >-
+  /uploads/publications/geometry-based-structural-form-finding-to-design-architected-cellular-solids.bib.txt
+article_url: ''
+bibtex: "@inproceedings{akbari2020geometry,\r\ntitle={Geometry-based structural form-finding to design architected cellular solids},\r\nauthor={Akbari, Mostafa and Mirabolghasemi, Armin and Akbarzadeh, Hamid and Akbarzadeh, Masoud},\r\nbooktitle={Symposium on Computational Fabrication},\r\npages={1–11},\r\nyear={2020}\r\n}"

@@ -1,0 +1,7 @@
+@inproceedings{akbari2020geometry,
+title={Geometry-based structural form-finding to design architected cellular solids},
+author={Akbari, Mostafa and Mirabolghasemi, Armin and Akbarzadeh, Hamid and Akbarzadeh, Masoud},
+booktitle={Symposium on Computational Fabrication},
+pages={1–11},
+year={2020}
+}

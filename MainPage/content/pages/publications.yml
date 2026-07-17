@@ -2,73 +2,10 @@ title: Publications
 permalink: /publications.html
 body_class: body
 seo:
-  description: Publications
+  description: Selected publications by Mostafa Akbari
   og_title: Publications | Mostafa Akbari
 body_mode: sections
+show_publications_list: true
 sections:
   - type: headline
     text: Publications
-  - type: rich_text
-    body: <p><strong>Bio-Based Composite Spatial Shell Structures</strong></p>
-  - type: rich_text
-    body: >-
-      <p><strong>Mostafa Akbari, Farzaneh Oghazian, Ji Yoon Bae, Felecia Davis, Laia Mogas-Soldevila, Masoud
-      Akbarzadeh</strong></p>
-  - type: rich_text
-    body: <p><strong>IASS 2023</strong></p>
-  - type: rich_text
-    body: <p><strong>Electrochemical Healing of Fractured Metals</strong></p>
-  - type: rich_text
-    body: >-
-      <p><strong>Zakaria Hsain, Mostafa Akbari, Adhokshid Prasanna, Zhimin Jiang, Masoud Akbarzadeh, James H.
-      Pikul</strong></p>
-  - type: rich_text
-    body: <p><strong>Advanced Materials 2023</strong></p>
-  - type: rich_text
-    body: <p><strong>Continuous Approximation of Shellular Funicular Structures</strong></p>
-  - type: rich_text
-    body: <p><strong>Mostafa Akbari, Masoud Akbarzadeh</strong></p>
-  - type: rich_text
-    body: <p><strong>IASS 2022</strong></p>
-  - type: rich_text
-    body: <p><strong>Strut-Based Cellular to Shellular Funicular Polyhedral Materials</strong></p>
-  - type: rich_text
-    body: >-
-      <p><strong>Mostafa Akbari, Armin Mirabolghasemi, Mohammad Bolhassani, Abdolhamid Akbarzadeh, Masoud
-      Akbarzadeh</strong></p>
-  - type: rich_text
-    body: <p><strong>Advanced Functional Materials 2022</strong></p>
-  - type: rich_text
-    body: <p><strong>From Design to the Fabrication of Shellular Funicular Structures</strong></p>
-  - type: rich_text
-    body: <p><strong>Mostafa Akbari, Yao Lu, Masoud Akbarzadeh</strong></p>
-  - type: rich_text
-    body: <p><strong>ACADIA 2021</strong></p>
-  - type: rich_text
-    body: '<p><strong>Saltatur: Node-Based Assembly of Funicular Spatial Concrete</strong></p>'
-  - type: rich_text
-    body: >-
-      <p><strong>Masoud Akbarzadeh, Ali Tabatabaie Ghomi, Mohammad Bolhassani, Mostafa Akbari, Alireza Seyedahmadian,
-      Konstantinos Papalexiou, Jingchu Sun, Hanqin Yao, et al.</strong></p>
-  - type: rich_text
-    body: <p><strong>ACADIA 2020</strong></p>
-  - type: rich_text
-    body: <p><strong>Geometry-based structural form-finding to design architected cellular solids</strong></p>
-  - type: rich_text
-    body: <p><strong>Mostafa Akbari, Armin Mirabolghasemi, Hamid Akbarzadeh, Masoud Akbarzadeh</strong></p>
-  - type: rich_text
-    body: <p><strong>SCF - ACM 2020</strong></p>
-  - type: rich_text
-    body: <p><strong>From Polyhedral to Anticlastic Funicular Spatial Structures</strong></p>
-  - type: rich_text
-    body: <p><strong>Mostafa Akbari, Mohammad Bolhassani, Masoud Akbarzadeh</strong></p>
-  - type: rich_text
-    body: <p><strong>IASS 2019</strong></p>
-  - type: rich_text
-    body: >-
-      <p><strong>Optimization of qualitative and motional aspects of marine passenger terminal based on pedestrian
-      simulation</strong></p>
-  - type: rich_text
-    body: <p><strong>Mostafa Akbari, Leila Bahrami, Kamran Safamanesh</strong></p>
-  - type: rich_text
-    body: <p><strong>ICCACS 2016</strong></p>

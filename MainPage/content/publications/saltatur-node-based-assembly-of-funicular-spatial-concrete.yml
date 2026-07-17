@@ -1,0 +1,12 @@
+title: 'Saltatur: Node-Based Assembly of Funicular Spatial Concrete'
+authors: >-
+  Masoud Akbarzadeh, Ali Tabatabaie Ghomi, Mohammad Bolhassani, Mostafa Akbari, Alireza
+  Seyedahmadian, Konstantinos Papalexiou, Jingchu Sun, Hanqin Yao, et al.
+venue: ACADIA 2020
+year: '2020'
+sort_order: 6
+image: https://static.wixstatic.com/media/4249cf_017bd203f89146f6a24dc4c7669f8b00~mv2.jpg
+pdf_url: /uploads/publications/saltatur-node-based-assembly-of-funicular-spatial-concrete.pdf
+bibtex_url: /uploads/publications/saltatur-node-based-assembly-of-funicular-spatial-concrete.bib.txt
+article_url: ''
+bibtex: "@inproceedings{AkbarzadehACADIA2020,\r\ntitle={Saltatur: Node-Based Assembly of Funicular Spatial Concrete},\r\nauthor={Akbarzadeh, M. and Tabatabaie Ghomi, A. and Bolhassani, M. and Akbari, M. and Seyedahmadian, A. and Sun, J. and Yao, H. and and Miziumski, J. and Papalexiou, K. },\r\nbooktitle={Proceedings of the 40th Annual Conference of the Association for Computer-Aided Design in Architecture (ACADIA)},\r\nyear={2021},\r\nplace={Virtual Conference},\r\n}"

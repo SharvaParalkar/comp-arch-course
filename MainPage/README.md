@@ -25,14 +25,16 @@ Uses the same GitHub OAuth backend as the course CMS (`cms-auth` Cloudflare Work
 | Site Settings | `content/site.yml` | Nav, footer, social links, default SEO |
 | Pages | `content/pages/` | Home, About, Projects listing, Publications, Teaching |
 | Projects | `content/projects/` | Project cards (grid) + detail pages |
+| Publications | `content/publications/` | Publication rows (image, authors, PDF / BibTeX) |
 
 ## Editing content
 
 Open **`/admin/`** after login. Collections are numbered for a clear path:
 
 1. **Site Settings** — navigation and global SEO (all SEO fields optional)
-2. **Pages** — top-level pages; turn on **Show Projects Grid** on the Projects page
+2. **Pages** — top-level pages; turn on **Show Projects Grid** / **Show Publications List** as needed
 3. **Projects** — edit **Cover Image**, year, category, and summary for the grid, then detail sections
+4. **Publications** — image, authors, venue, PDF / BibTeX / article links
 
 Each page/project supports:
 
@@ -49,6 +51,14 @@ To refresh card metadata from the Wix export:
 
 ```bash
 npm run enrich:cards
+```
+
+### Publications list
+
+The Publications page uses `show_publications_list: true`. Rows are built from `content/publications/`.
+
+```bash
+npm run enrich:publications
 ```
 
 ### Media

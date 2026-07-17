@@ -1,0 +1,40 @@
+<section class="section publications-list-section">
+  <div class="container">
+    <div class="publications-list">
+      {% for pub in collections.publications | sortProjects %}
+      <article class="pub-row">
+        <div class="pub-row__media">
+          {% if pub.image %}
+          <img src="{{ pub.image }}" alt="{{ pub.title }}" loading="lazy" class="pub-row__img"/>
+          {% else %}
+          <div class="pub-row__placeholder" aria-hidden="true"></div>
+          {% endif %}
+        </div>
+        <div class="pub-row__body">
+          <h3 class="pub-row__title">{{ pub.title }}</h3>
+          {% if pub.authors %}<p class="pub-row__authors">{{ pub.authors }}</p>{% endif %}
+          <div class="pub-row__meta">
+            {% if pub.venue %}<span class="pub-row__venue">{{ pub.venue }}</span>{% endif %}
+            <span class="pub-row__links">
+              {% if pub.pdf_url %}
+              <a data-underline-link="" href="{{ pub.pdf_url }}" target="_blank" rel="noopener">PDF</a>
+              {% endif %}
+              {% if pub.bibtex_url %}
+              <a data-underline-link="" href="{{ pub.bibtex_url }}" target="_blank" rel="noopener">BibTeX</a>
+              {% elif pub.bibtex %}
+              <details class="pub-row__bib">
+                <summary data-underline-link="">BibTeX</summary>
+                <pre class="pub-row__bibtex">{{ pub.bibtex }}</pre>
+              </details>
+              {% endif %}
+              {% if pub.article_url %}
+              <a data-underline-link="" href="{{ pub.article_url }}" target="_blank" rel="noopener">Article</a>
+              {% endif %}
+            </span>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -36,6 +36,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("projects", () =>
     readYamlFiles(path.join(CONTENT_DIR, "projects"))
   );
+  eleventyConfig.addCollection("publications", () =>
+    readYamlFiles(path.join(CONTENT_DIR, "publications"))
+  );
 
   eleventyConfig.addFilter("sortProjects", (projects) =>
     [...(projects || [])].sort((a, b) => {

@@ -112,10 +112,134 @@
   opacity: 0.8;
 }
 
+/* Publications list — row layout in the same visual language as projects */
+.publications-list-section {
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+}
+
+.publications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+  width: 100%;
+}
+
+.pub-row {
+  display: grid;
+  grid-template-columns: minmax(140px, 220px) minmax(0, 1fr);
+  gap: 1.75rem 2rem;
+  align-items: stretch;
+}
+
+.pub-row__media {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #e8e8e8;
+}
+
+.pub-row__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.pub-row:hover .pub-row__img {
+  transform: scale(1.03);
+}
+
+.pub-row__placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #d8d8d8, #efefef 45%, #cfcfcf);
+}
+
+.pub-row__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 0.25rem 0;
+}
+
+.pub-row__title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.pub-row__authors {
+  margin: 0.65rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  opacity: 0.75;
+}
+
+.pub-row__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.pub-row__venue {
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  opacity: 0.85;
+}
+
+.pub-row__links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.85rem;
+}
+
+.pub-row__links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pub-row__bib {
+  display: inline;
+}
+
+.pub-row__bib summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.pub-row__bib summary::-webkit-details-marker {
+  display: none;
+}
+
+.pub-row__bibtex {
+  margin: 0.75rem 0 0;
+  padding: 0.85rem 1rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  background: rgba(0, 0, 0, 0.04);
+  max-width: 100%;
+}
+
 @media (max-width: 991px) {
   .projects-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem 1.25rem;
+  }
+
+  .pub-row {
+    grid-template-columns: minmax(120px, 180px) minmax(0, 1fr);
+    gap: 1.25rem;
   }
 }
 
@@ -123,5 +247,18 @@
   .projects-grid,
   .image-gallery {
     grid-template-columns: 1fr;
+  }
+
+  .pub-row {
+    grid-template-columns: 1fr;
+  }
+
+  .pub-row__media {
+    max-width: 280px;
+  }
+
+  .pub-row__meta {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

@@ -1,0 +1,8 @@
+@article{akbari2022strut,
+title = {Strut-based Cellular to Shellular Funicular Polyhedral Materials},
+author={Akbari, Mostafa and Mirabolghasemi, Armin and Bolhassani, Mohammad and Akbarzadeh, Abdolhamid and Akbarzadeh, Masoud},
+journal={Advanced Functional Materials},
+pages={2109725},
+year={2022},
+publisher={Wiley Online Library}
+}
