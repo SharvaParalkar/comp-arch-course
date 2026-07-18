@@ -12,7 +12,7 @@
     "enrich:publications": "node scripts/enrich-publications.js",
     "dev": "npx @11ty/eleventy --serve --port=8080",
     "cms": "npx @11ty/eleventy --serve --port=8080",
-    "deploy": "npm run build && npx wrangler pages deploy site --project-name=calab-main"
+    "deploy": "npm run build && npx wrangler pages deploy site --project-name=calab-site"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",

@@ -1,6 +1,6 @@
 # Main Page — Decap CMS + Eleventy
 
-This site is built from CMS-managed YAML content and deployed as static HTML (Cloudflare Pages → `calab-main.pages.dev`).
+This site is built from CMS-managed YAML content and deployed as static HTML (Cloudflare Pages → `calab-site.pages.dev`).
 
 ## Quick start
 
@@ -69,11 +69,11 @@ npm run enrich:publications
 
 ## Deploying to calab.net
 
-This site is served at **https://calab.net** via the `calab-router` worker, which proxies root traffic to the **`calab-main`** Cloudflare Pages project.
+This site is served at **https://calab.net** via the `calab-router` worker, which proxies root traffic to the **`calab-site`** Cloudflare Pages project.
 
 ### Option A — Cloudflare Pages (Git integration)
 
-In the Cloudflare dashboard, create or connect a Pages project named **`calab-main`**:
+In the Cloudflare dashboard, create or connect a Pages project named **`calab-site`**:
 
 | Setting | Value |
 |---------|-------|
@@ -107,7 +107,7 @@ Requires [Wrangler](https://developers.cloudflare.com/workers/wrangler/) authent
 
 After deploy, check:
 
-- https://calab-main.pages.dev — Pages preview URL
+- https://calab-site.pages.dev — Pages preview URL
 - https://calab.net — production (via `calab-router`)
 - https://calab.net/admin/ — Decap CMS
 

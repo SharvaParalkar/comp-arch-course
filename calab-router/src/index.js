@@ -2,10 +2,10 @@
  * calab.net router
  *
  * /{course-slug}/*  →  https://course-{course-slug}.pages.dev/*  (allowlisted slugs only)
- * everything else   →  https://calab-main.pages.dev/*
+ * everything else   →  https://calab-site.pages.dev/*
  *
  * Only paths whose first segment is a known course slug are routed to course Pages
- * projects. Main-site paths like /admin/, /about.html, /projects/ stay on calab-main.
+ * projects. Main-site paths like /admin/, /about.html, /projects/ stay on calab-site.
  */
 export default {
   async fetch(request, env) {
@@ -26,7 +26,7 @@ export default {
       return rewriteRedirectLocation(resp, slug);
     }
 
-    const targetUrl = `https://calab-main.pages.dev${url.pathname}${url.search}`;
+    const targetUrl = `https://calab-site.pages.dev${url.pathname}${url.search}`;
     return proxyToPages(targetUrl, request);
   },
 };

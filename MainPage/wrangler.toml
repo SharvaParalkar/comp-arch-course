@@ -1,4 +1,4 @@
-# Cloudflare Pages project for calab.net (root traffic via calab-router → calab-main.pages.dev)
-name = "calab-main"
+# Cloudflare Pages project for calab.net (root traffic via calab-router → calab-site.pages.dev)
+name = "calab-site"
 pages_build_output_dir = "site"
 compatibility_date = "2024-01-01"
