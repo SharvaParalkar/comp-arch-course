@@ -4,6 +4,7 @@ sidebar_position: 2
 week: week-2
 date: 2026-07-24
 topic: workshop
+youtube_id: https://youtu.be/T_y_G0k8lho
 related_docs: []
 downloads:
   - label: Rhino File
