@@ -14,12 +14,11 @@ publish_mode: simple
 
 media_library:
   name: cloudinary
+  # Keep raw URLs (PDFs, .gh, .3dm). Image transforms break non-image downloads.
+  use_transformations: false
   config:
     cloud_name: dbf3aqsxu
     api_key: 251365553116344
-    default_transformations:
-      - - fetch_format: auto
-          quality: auto
 
 collections:
   # ── Welcome ────────────────────────────────────────────────────────
