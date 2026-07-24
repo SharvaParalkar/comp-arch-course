@@ -5,7 +5,8 @@ week: week-2
 date: 2026-07-24
 topic: workshop
 youtube_id: https://youtu.be/T_y_G0k8lho
-related_docs: []
+related_docs:
+  - Intro | Karamba Foundations Notes
 downloads:
   - label: Rhino File
     file: https://res.cloudinary.com/dbf3aqsxu/raw/upload/v1784887636/IntroToKaramba_bbbdl1.3dm
