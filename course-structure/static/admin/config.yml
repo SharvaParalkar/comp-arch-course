@@ -30,7 +30,10 @@ collections:
         file: course-structure/docs/welcome/index.mdx
         fields:
           - { label: "Title", name: title, widget: string }
-          - { label: "Body", name: body, widget: markdown }
+          - label: "Body"
+            name: body
+            widget: markdown
+            modes: [raw, rich_text]
 
   # ── Lectures ─────────────────────────────────────────────────────
   - name: lectures
@@ -110,6 +113,7 @@ collections:
         name: downloads
         widget: list
         required: false
+        summary: "{{fields.label}}"
         hint: "Attach files for students to download. Add a label, then pick the Cloudinary file, then Save/Publish the lecture."
         fields:
           - { label: "Label", name: label, widget: string }
@@ -119,7 +123,11 @@ collections:
             media_library:
               name: cloudinary
               use_transformations: false
-      - { label: "Body", name: body, widget: markdown }
+      - label: "Body"
+        name: body
+        widget: markdown
+        # Rich-text paste often crashes Decap's Slate editor on lists; raw is safer.
+        modes: [raw, rich_text]
       - label: "Code Example"
         name: code_example
         widget: object
@@ -190,6 +198,7 @@ collections:
         name: downloads
         widget: list
         required: false
+        summary: "{{fields.label}}"
         hint: "Attach files for students to download. Add a label, then pick the Cloudinary file, then Save/Publish the assignment."
         fields:
           - { label: "Label", name: label, widget: string }
@@ -199,7 +208,10 @@ collections:
             media_library:
               name: cloudinary
               use_transformations: false
-      - { label: "Body", name: body, widget: markdown }
+      - label: "Body"
+        name: body
+        widget: markdown
+        modes: [raw, rich_text]
 
   # ── Course Notes ─────────────────────────────────────────────────
   - name: course_notes
@@ -239,6 +251,7 @@ collections:
         widget: list
         required: false
         hint: "e.g. grasshopper, rhino, structures"
+        field: { label: "Tag", name: tag, widget: string }
       - label: "Related Notes"
         name: related
         widget: relation
@@ -248,7 +261,10 @@ collections:
         display_fields: ["title"]
         required: false
         multiple: true
-      - { label: "Body", name: body, widget: markdown }
+      - label: "Body"
+        name: body
+        widget: markdown
+        modes: [raw, rich_text]
       - label: "Code Snippet"
         name: code_snippet
         widget: object
@@ -298,4 +314,7 @@ collections:
             media_library:
               name: cloudinary
               use_transformations: false
-          - { label: "Notes", name: body, widget: markdown }
+          - label: "Notes"
+            name: body
+            widget: markdown
+            modes: [raw, rich_text]
