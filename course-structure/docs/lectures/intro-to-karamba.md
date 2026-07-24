@@ -1,5 +1,5 @@
 ---
-title: Intro To Karamba
+title: Intro | Karamba Foundations
 sidebar_position: 2
 week: week-2
 date: 2026-07-24
