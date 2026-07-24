@@ -13,9 +13,41 @@ function formatDate(dateStr) {
   });
 }
 
+function fileUrl(file) {
+  if (!file) return null;
+  if (typeof file === 'string') return file;
+  return file.url || file.secure_url || file.path || null;
+}
+
+function Downloads({downloads}) {
+  const items = (downloads || [])
+    .map((item) => ({
+      label: item?.label || 'Download',
+      href: fileUrl(item?.file),
+    }))
+    .filter((item) => item.href);
+
+  if (items.length === 0) return null;
+
+  return (
+    <div className="doc-downloads">
+      <p className="doc-downloads__label">Downloads</p>
+      <ul className="doc-downloads__list">
+        {items.map((item) => (
+          <li key={`${item.label}-${item.href}`}>
+            <a href={item.href} target="_blank" rel="noopener noreferrer" download>
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 function LectureMeta({frontMatter}) {
-  const {youtube_id, date, slides_url, week, topic} = frontMatter;
-  if (!youtube_id && !date && !slides_url) return null;
+  const {youtube_id, date, slides_url, week, topic, downloads} = frontMatter;
+  if (!youtube_id && !date && !slides_url && !(downloads && downloads.length)) return null;
 
   return (
     <div className="lecture-meta">
@@ -45,6 +77,7 @@ function LectureMeta({frontMatter}) {
           </a>
         </p>
       )}
+      <Downloads downloads={downloads} />
     </div>
   );
 }
@@ -53,10 +86,13 @@ export default function DocItemContent(props) {
   const {metadata, frontMatter} = useDoc();
   const isLecture =
     metadata.id.startsWith('lectures/') && metadata.id !== 'lectures/index';
+  const isAssignment =
+    metadata.id.startsWith('assignments/') && metadata.id !== 'assignments/index';
 
   return (
     <>
       {isLecture && <LectureMeta frontMatter={frontMatter} />}
+      {isAssignment && <Downloads downloads={frontMatter.downloads} />}
       <Content {...props} />
     </>
   );

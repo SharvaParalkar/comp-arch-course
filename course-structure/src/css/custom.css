@@ -280,6 +280,45 @@ code, pre {
   font-size: 0.875rem;
 }
 
+.doc-downloads {
+  margin: 1.25rem 0 1.5rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--cal-rule);
+  background: var(--cal-clay-wash);
+}
+
+.doc-downloads__label {
+  margin: 0 0 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cal-ink-faint);
+}
+
+.doc-downloads__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.doc-downloads__list li + li {
+  margin-top: 0.35rem;
+}
+
+.doc-downloads__list a {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--cal-ink);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.doc-downloads__list a:hover {
+  color: var(--cal-clay);
+}
+
 /* ─── Doc content ───────────────────────────────────────────────── */
 .markdown h1 {
   font-family: 'Libre Baskerville', Georgia, serif;

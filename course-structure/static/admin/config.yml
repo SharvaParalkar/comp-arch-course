@@ -111,10 +111,15 @@ collections:
         name: downloads
         widget: list
         required: false
-        hint: "Attach files for students to download"
+        hint: "Attach files for students to download. Add a label, then pick the Cloudinary file, then Save/Publish the lecture."
         fields:
           - { label: "Label", name: label, widget: string }
-          - { label: "File", name: file, widget: file }
+          - label: "File"
+            name: file
+            widget: file
+            media_library:
+              name: cloudinary
+              use_transformations: false
       - { label: "Body", name: body, widget: markdown }
       - label: "Code Example"
         name: code_example
@@ -186,9 +191,15 @@ collections:
         name: downloads
         widget: list
         required: false
+        hint: "Attach files for students to download. Add a label, then pick the Cloudinary file, then Save/Publish the assignment."
         fields:
           - { label: "Label", name: label, widget: string }
-          - { label: "File", name: file, widget: file }
+          - label: "File"
+            name: file
+            widget: file
+            media_library:
+              name: cloudinary
+              use_transformations: false
       - { label: "Body", name: body, widget: markdown }
 
   # ── Course Notes ─────────────────────────────────────────────────
@@ -285,4 +296,7 @@ collections:
             widget: file
             required: false
             hint: "Upload the course syllabus PDF"
+            media_library:
+              name: cloudinary
+              use_transformations: false
           - { label: "Notes", name: body, widget: markdown }
