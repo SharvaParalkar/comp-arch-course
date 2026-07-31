@@ -4,7 +4,7 @@ sidebar_position: 3
 week: week-2
 date: 2026-07-31
 topic: workshop
-youtube_id: Z1fp84hK2FQ
+youtube_id: wP4n0WKmZ3Q
 slides_url: https://docs.google.com/presentation/d/1VrIZUqOFp-8XG2ZVUueSoOdMf3ovRRBcZli8cCLe354/edit?usp=sharing
 related_docs:
   - 02 | Cantilever Beams / Load Types
