@@ -7,7 +7,7 @@ topic: workshop
 youtube_id: Z1fp84hK2FQ
 slides_url: https://docs.google.com/presentation/d/1VrIZUqOFp-8XG2ZVUueSoOdMf3ovRRBcZli8cCLe354/edit?usp=sharing
 related_docs:
-  - Intro | Karamba Foundations Notes
+  - 02 | Cantilever Beams / Load Types
 downloads:
   - label: Grasshopper File
     file: https://res.cloudinary.com/dbf3aqsxu/raw/upload/v1785481907/Cantiliver_ymwjcv.gh
