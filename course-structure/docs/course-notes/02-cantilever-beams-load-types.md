@@ -9,9 +9,7 @@ tags:
 ---
 # Video: Intro to Karamba3D (Cantilever Beam, One Connection)
 
-This video comes before the two-connection beam video. It stays even simpler: a single beam, fixed at **one** end only, free at the other. The same beam and support are reused three times, once for each of three different load types, so the full workflow (geometry, beam creation, supports, loads, analysis, results) gets repeated three times over with only the load definition changing. This is meant to introduce the FE pipeline itself before later videos add complexity.
-
-Karamba3D is accessed through Grasshopper, which is built into Rhino.
+This video talks about a familiar beam type, and expands into three different load types. We also cover how to start analyzing statistics behind these beam components. 
 
 ## What you'll build
 
@@ -117,5 +115,3 @@ Each branch's BeamView can be set to display **Utilization**, so all three color
 | BeamView (x3)                         | Colors each beam by utilization for side-by-side comparison                                                     |
 | Beam Forces / Displacements           | Only wired into the Point Load branch outputs raw N/Vz/My numbers and translation/rotation values               |
 | Utilization (x3)                      | Gives the 0–1 capacity ratio for each load case                                                                 |
-
-The beam element and support are built once and shared; everything downstream branches off that shared setup three times, once per load type.
