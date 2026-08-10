@@ -22,10 +22,28 @@
 </head>
 <body class="{{ entry.body_class or 'body' }}">
   <main class="main">
-    {% if entry.body_mode == 'sections' and entry.sections %}
-      {% include "sections/render.njk" %}
+    {% if detail_split %}
+      {% include "partials/detail-split.njk" %}
     {% else %}
-      {{ entry.main_html | safe }}
+      {% if show_detail_header %}
+      {% set detail_authors = entry | detailAuthors %}
+      <header class="section detail-header">
+        <div class="container">
+          {% if entry.year or entry.category %}
+          <div class="h-x-small detail-header__meta">
+            {% if entry.year %}{{ entry.year }}{% endif %}{% if entry.year and entry.category %} · {% endif %}{% if entry.category %}{{ entry.category }}{% endif %}
+          </div>
+          {% endif %}
+          <h1 class="h-x-large detail-header__title">{{ entry.title }}</h1>
+          {% if detail_authors %}<p class="detail-header__authors">{{ detail_authors }}</p>{% endif %}
+        </div>
+      </header>
+      {% endif %}
+      {% if entry.body_mode == 'sections' and entry.sections %}
+        {% include "sections/render.njk" %}
+      {% else %}
+        {{ entry.main_html | safe }}
+      {% endif %}
     {% endif %}
     {% if entry.show_projects_grid %}
       {% include "partials/projects-grid.njk" %}

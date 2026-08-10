@@ -2,14 +2,18 @@ site_name: Mostafa Akbari
 tagline: Computational Designer | Architect | Architectural Technologist
 copyright: © Mostafa Akbari. All rights reserved.
 navigation:
-  - label: About
-    url: about.html
+  - label: Home
+    url: index.html
   - label: Projects
     url: projects.html
-  - label: Publications
-    url: publications.html
   - label: Teaching
     url: teaching.html
+  - label: Publication
+    url: publications.html
+  - label: CV
+    url: cv.html
+  - label: About
+    url: about.html
 social_links:
   - label: LinkedIn
     url: https://www.linkedin.com/in/mostafaakbari/

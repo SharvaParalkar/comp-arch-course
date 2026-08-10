@@ -1,5 +1,20 @@
-{% for section in entry.sections %}
-  {% if section.type == 'headline' %}
+{% set _sections = entry.sections | detailSections(entry, show_detail_header) %}
+{% if section_filter == "media" %}
+  {% set _sections = _sections | detailMedia %}
+{% elif section_filter == "copy" %}
+  {% set _sections = _sections | detailCopy %}
+{% endif %}
+{% for section in _sections %}
+  {% if section.type == 'home_masthead' %}
+  <header class="section home-masthead">
+    <div class="container">
+      <div class="home-masthead__stack">
+        <h1 class="display-h home-masthead__title">{% if section.title_line_1 %}{{ section.title_line_1 }}{% if section.title_line_2 %}<br/>{{ section.title_line_2 }}{% endif %}{% else %}{{ section.title }}{% endif %}</h1>
+        {% if section.subtitle %}<div class="h-x-small home-masthead__tagline">{{ section.subtitle }}</div>{% endif %}
+      </div>
+    </div>
+  </header>
+  {% elif section.type == 'headline' %}
   <section class="section is-t-double"><div class="container"><div class="d"><div class="h-x-large">{{ section.text }}</div></div></div></section>
   {% elif section.type == 'two_column' %}
   <section class="section"><div class="container">
@@ -23,21 +38,24 @@
     <div class="container is-hero-100 is-exclusion"><div class="d">
       {% if section.title %}<h1 class="display-h">{{ section.title }}</h1>{% endif %}
       {% if section.subtitle %}<div class="h-x-small hero-still__subtitle">{{ section.subtitle }}</div>{% endif %}
-      {% if section.cta_url %}
-      <p class="hero-still__cta"><a data-underline-link="" href="{{ section.cta_url }}">{{ section.cta_label or "Learn more" }}</a></p>
-      {% endif %}
     </div></div>
   </header>
   {% elif section.type == 'video' %}
-  <section class="full-media-section"><div class="video-aspect-box">
-    <video loading="eager" preload="metadata" loop playsinline muted autoplay class="video-element">
-      <source src="{{ section.video_url }}" type="video/mp4"/>
-    </video>
-  </div>{% if section.caption %}<div class="caption-div"><div class="h-x-small">{{ section.caption }}</div></div>{% endif %}</section>
+  <section class="section page-media-section"><div class="container">
+    <figure class="page-media">
+      <video loading="lazy" preload="metadata" loop playsinline muted autoplay controls>
+        <source src="{{ section.video_url }}" type="video/mp4"/>
+      </video>
+      {% if section.caption %}<figcaption class="page-media__caption h-x-small">{{ section.caption }}</figcaption>{% endif %}
+    </figure>
+  </div></section>
   {% elif section.type == 'image' %}
-  <section class="full-media-section"><div class="full-img-frame">
-    <img src="{{ section.image }}" loading="lazy" alt="{{ section.alt or '' }}" class="full-img"/>
-  </div>{% if section.caption %}<div class="caption-div"><div class="h-x-small">{{ section.caption }}</div></div>{% endif %}</section>
+  <section class="section page-media-section"><div class="container">
+    <figure class="page-media">
+      <img src="{{ section.image }}" loading="lazy" alt="{{ section.alt or '' }}"/>
+      {% if section.caption %}<figcaption class="page-media__caption h-x-small">{{ section.caption }}</figcaption>{% endif %}
+    </figure>
+  </div></section>
   {% elif section.type == 'image_text' %}
   <section class="section"><div class="container">
     <div class="image-text{% if section.image_position == 'left' %} is-image-left{% endif %}">
@@ -64,6 +82,6 @@
     <div class="display-h is-data">{{ section.value }}</div>
   </div></div></div></section>
   {% elif section.type == 'rich_text' %}
-  <section class="section"><div class="container"><div class="d"><div class="txt-large w-richtext">{{ section.body | safe }}</div></div></div></section>
+  <section class="section{% if show_detail_header %} detail-prose{% endif %}"><div class="container"><div class="d"><div class="txt-large w-richtext">{{ section.body | safe }}</div></div></div></section>
   {% endif %}
 {% endfor %}

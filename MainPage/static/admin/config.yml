@@ -150,6 +150,14 @@ collections:
               - { label: Alt Text, name: alt, widget: string, required: false }
               - { label: CTA Label, name: cta_label, widget: string, required: false }
               - { label: CTA URL, name: cta_url, widget: string, required: false }
+          - label: Home Masthead
+            name: home_masthead
+            widget: object
+            summary: "{{title_line_1}} {{title_line_2}}"
+            fields:
+              - { label: Title line 1, name: title_line_1, widget: string }
+              - { label: Title line 2, name: title_line_2, widget: string, required: false }
+              - { label: Subtitle, name: subtitle, widget: string, required: false }
           - label: Headline
             name: headline
             widget: object

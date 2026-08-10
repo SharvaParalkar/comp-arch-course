@@ -2,9 +2,7 @@
   <nav class="navbar-div">
     <div data-animation="default" data-collapse="none" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
       <div class="container is-nav">
-        <a href="{{ nav_prefix }}index.html" class="brand-link w-nav-brand">
-          <div class="h-x-small" style="letter-spacing:0.08em;">{{ site.site_name or "Mostafa Akbari" }}</div>
-        </a>
+        <a href="{{ nav_prefix }}index.html" class="brand-link w-nav-brand site-brand-silent" aria-label="Home"></a>
         <nav role="navigation" class="navlink-wrap w-nav-menu">
           <div class="navlink-list">
             {% for item in site.navigation %}

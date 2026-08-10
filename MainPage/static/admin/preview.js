@@ -29,6 +29,13 @@
   function renderSection(section, getAssetFn) {
     if (!section || !section.type) return null;
     switch (section.type) {
+      case "home_masthead":
+        return h("section", { className: "section home-masthead", style: { background: "#000", color: "#fff", padding: "4rem 0" } },
+          h("h1", { className: "display-h home-masthead__title", style: { fontSize: "3rem", textTransform: "uppercase" } },
+            (section.title_line_1 || "Mostafa") + (section.title_line_2 ? "\n" + section.title_line_2 : "")
+          ),
+          section.subtitle ? h("div", { className: "h-x-small home-masthead__tagline" }, section.subtitle) : null
+        );
       case "headline":
         return h("section", { className: "section" },
           h("div", { className: "h-x-large" }, section.text || "")
@@ -70,7 +77,7 @@
         );
       case "image": {
         var src = getAsset(getAssetFn, section.image);
-        return h("section", { className: "full-media-section" },
+        return h("section", { className: "page-media" },
           src ? h("img", { className: "cms-preview__img", src: src, alt: section.alt || "" }) : null,
           section.caption ? h("div", { className: "caption-div" }, section.caption) : null
         );
@@ -201,10 +208,8 @@
           h("div", { className: "pub-row__body" },
             h("h3", { className: "pub-row__title" }, data.title || "Untitled"),
             data.authors ? h("p", { className: "pub-row__authors" }, data.authors) : null,
-            h("div", { className: "pub-row__meta" },
-              data.venue ? h("span", { className: "pub-row__venue" }, data.venue) : null,
-              h("span", { className: "pub-row__links" }, links)
-            )
+            data.venue ? h("p", { className: "pub-row__venue" }, data.venue) : null,
+            h("div", { className: "pub-row__links" }, links)
           )
         )
       );

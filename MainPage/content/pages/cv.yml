@@ -1,0 +1,10 @@
+title: CV
+permalink: /cv.html
+body_class: body
+seo:
+  description: Curriculum vitae — Mostafa Akbari
+  og_title: CV | Mostafa Akbari
+body_mode: sections
+sections:
+  - type: headline
+    text: CV

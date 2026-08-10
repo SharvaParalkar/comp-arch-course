@@ -1,0 +1,32 @@
+{% set detail_authors = entry | detailAuthors %}
+{% set split_sections = entry.sections | detailSections(entry, true) %}
+{% set media_sections = split_sections | detailMedia %}
+<section class="section detail-split">
+  <div class="container">
+    <div class="detail-split__grid">
+      <div class="detail-split__copy">
+        <header class="detail-header">
+          {% if entry.year or entry.category %}
+          <div class="h-x-small detail-header__meta">
+            {% if entry.year %}{{ entry.year }}{% endif %}{% if entry.year and entry.category %} · {% endif %}{% if entry.category %}{{ entry.category }}{% endif %}
+          </div>
+          {% endif %}
+          <h1 class="h-x-large detail-header__title">{{ entry.title }}</h1>
+          {% if detail_authors %}<p class="detail-header__authors">{{ detail_authors }}</p>{% endif %}
+        </header>
+        {% set section_filter = "copy" %}
+        {% include "sections/render.njk" %}
+      </div>
+      <div class="detail-split__gallery">
+        {% if media_sections.length %}
+          {% set section_filter = "media" %}
+          {% include "sections/render.njk" %}
+        {% elif entry.cover_image %}
+          <figure class="page-media">
+            <img src="{{ entry.cover_image }}" alt="{{ entry.title }}" loading="lazy"/>
+          </figure>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

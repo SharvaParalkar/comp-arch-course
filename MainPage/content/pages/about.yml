@@ -11,35 +11,30 @@ seo:
 body_mode: sections
 sections:
   - type: headline
-    text: Mostafa Akbari
+    text: About
   - type: image_text
     image: /uploads/media/about-portrait.jpg
     alt: Mostafa Akbari
     image_position: right
     body: >-
+      <p class="about-kicker">Mostafa Akbari</p>
+      <p class="about-role">Assistant Professor of Architecture · Texas A&amp;M University</p>
       <p>Mostafa is a distinguished computational designer and researcher with a distinctive
-      academic background encompassing architectural design and computational structures. He is
-      currently an Assistant Professor of Architecture with expertise in Computational Structures
-      and Advanced Manufacturing at Texas A&amp;M University. His academic journey includes a Ph.D.
-      in Computational Design and a Master degree in Advanced Architectural Design from Upenn, a
-      Master's degree in Architecture from the University of Shahid Beheshti, and a Bachelor's
-      degree in Architecture from the University of Tehran.</p>
+      academic background encompassing architectural design and computational structures. He
+      specializes in Computational Structures and Advanced Manufacturing. His academic journey
+      includes a Ph.D. in Computational Design and a Master of Advanced Architectural Design from
+      the University of Pennsylvania, a Master’s in Architecture from Shahid Beheshti University,
+      and a Bachelor’s in Architecture from the University of Tehran.</p>
 
-      <p>His scholarly interests gravitate toward the realm of structural form finding, particularly
-      with an emphasis on using 3-dimensional Graphic Statics for the exploration of Shellular
-      Funicular Structures. He has pioneered a technique, within the purview of 3D graphic statics,
-      for the design of Shell-based cellular (Shellular) Funicular Structures. This methodological
-      breakthrough has initiated a paradigm shift in the domains of Architecture, Structural Design,
-      Material Design, and their interrelated fields. Beyond this, he has exhibited profound
-      involvement and a multitude of years dedicated to research in Digital Fabrication,
-      computational design, and human-computer interaction. His endeavors are geared towards
-      unearthing the nascent prospects in contemporary architecture, allowing for a reevaluation of
-      tectonics and material systems in the face of synergistic advancements in architecture,
-      structural design, robotic fabrication, computation, and material science.</p>
+      <p>His scholarly work focuses on structural form finding, especially 3-dimensional Graphic
+      Statics and Shellular Funicular Structures — shell-based cellular geometries designed through
+      3D graphic statics. That approach has opened new directions across architecture, structural
+      design, and material systems. He also works extensively in digital fabrication, computational
+      design, and human–computer interaction, rethinking tectonics as architecture, robotics,
+      computation, and material science converge.</p>
 
-      <p>Mostafa's collaborative endeavors span across prestigious international establishments,
-      including his role as a designer and researcher with Gensler. Moreover, he has garnered
-      valuable experience in architectural design and construction as an independent architect.</p>
+      <p>He has collaborated internationally, including as a designer and researcher at Gensler, and
+      practiced independently in architectural design and construction.</p>
 
-      <p><a href="https://www.linkedin.com/in/mostafaakbari/" target="_blank"
+      <p><a data-underline-link="" href="https://www.linkedin.com/in/mostafaakbari/" target="_blank"
       rel="noopener">LinkedIn</a></p>

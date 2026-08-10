@@ -2,6 +2,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   const currentYear = new Date().getFullYear();
   document.querySelectorAll('[data-current-year]').forEach(el => { el.textContent = currentYear; });
+  document.querySelectorAll("a, button").forEach((el) => {
+    if ((el.textContent || "").trim().toLowerCase() === "learn more") {
+      const wrap = el.closest(".footer, .footer-div, section, .cta, .w-inline-block") || el;
+      wrap.style.display = "none";
+    }
+  });
 });
 </script>
 <script>

@@ -3,16 +3,13 @@ permalink: /index.html
 body_class: body is-black
 seo:
   description: >-
-    Mostafa Akbari — computational designer and architectural technologist specializing in shellular
-    funicular structures, digital fabrication, and computational design.
+    Mostafa Akbari — computational designer and architectural technologist specializing in shellular funicular
+    structures, digital fabrication, and computational design.
   og_title: Mostafa Akbari | Architectural Technologist
   og_image: /uploads/media/home-hero.jpg
 body_mode: sections
 sections:
-  - type: hero_image
-    image: /uploads/media/home-hero.jpg
-    alt: Mostafa Akbari
-    title: Mostafa Akbari
+  - type: home_masthead
+    title_line_1: Mostafa
+    title_line_2: Akbari
     subtitle: Architectural Technologist | Designer
-    cta_label: Learn more
-    cta_url: about.html
