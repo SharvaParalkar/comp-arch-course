@@ -1,0 +1,33 @@
+title: Digiblast
+permalink: /teaching/digiblast-workshop.html
+body_class: body
+cover_image: /uploads/media/teaching-digiblast.jpg
+card_title: Digiblast
+year: 2018-2019
+category: Summer workshop
+sort_order: 3
+summary: >-
+  Intensive workshop introducing digital modeling, representation, and fabrication for incoming
+  Master of Architecture students.
+seo:
+  og_title: Digiblast | Mostafa Akbari
+body_mode: sections
+sections:
+  - type: headline
+    text: Digiblast | Summer workshop
+  - type: rich_text
+    body: <p><strong>2018–2019</strong></p>
+  - type: image
+    image: /uploads/media/teaching-digiblast.jpg
+    alt: Digiblast workshop
+  - type: rich_text
+    body: >-
+      <p><em>Instructors: Danielle Willems, Ezio Blasetti, Mostafa Akbari (TA)</em></p>
+
+      <p>Digiblast is an intensive workshop that outlines digital modeling, representation and
+      fabrication for incoming Master of Architecture students. The workshop operates as an
+      introduction to contemporary computational geometries and digital workflows.</p>
+
+      <p><a
+      href="https://www.design.upenn.edu/architecture/graduate/post/digiblast-2020-online-galleries"
+      target="_blank" rel="noopener">Penn Design gallery</a></p>

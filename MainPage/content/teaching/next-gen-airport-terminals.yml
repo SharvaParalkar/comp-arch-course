@@ -1,0 +1,33 @@
+title: Next Generation Airport Terminals
+permalink: /teaching/next-gen-airport-terminals.html
+body_class: body
+cover_image: /uploads/media/teaching-airport-terminals.jpg
+card_title: Airport Terminals
+year: "2019"
+category: Studio
+sort_order: 5
+summary: >-
+  Structural design research studio on efficient typologies for infrastructural design and material
+  computing.
+seo:
+  og_title: Next Generation Airport Terminals | Mostafa Akbari
+body_mode: sections
+sections:
+  - type: headline
+    text: Next Generation Airport Terminals | Studio
+  - type: rich_text
+    body: <p><strong>2019</strong></p>
+  - type: image
+    image: /uploads/media/teaching-airport-terminals.jpg
+    alt: Next Generation Airport Terminals studio
+  - type: rich_text
+    body: >-
+      <p><em>Instructors: Masoud Akbarzadeh, Mostafa Akbari (TA)</em></p>
+
+      <p>The main research objectives of the studio can be summarized as formal structural
+      explorations of the efficient structural typologies suitable for infrastructural design;
+      material computing research, including tectonic studies on the design of structural forms
+      using various materials and fabrication methods.</p>
+
+      <p><a href="https://psl.design.upenn.edu/structural-design-research-studio-spring-2019/"
+      target="_blank" rel="noopener">PSL Penn</a></p>

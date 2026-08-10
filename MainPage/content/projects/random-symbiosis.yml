@@ -13,6 +13,9 @@ body_mode: sections
 sections:
   - type: headline
     text: Random Symbiosis
+  - type: image
+    image: /uploads/media/projects/craft-0.jpg
+    alt: Random Symbiosis
   - type: rich_text
     body: <p><strong>2018</strong></p>
   - type: rich_text
@@ -36,7 +39,7 @@ sections:
       servomotors and their translation into captivating external configurations. Concurrently,
       meticulous assessment of various elastic materials and their pliability was essential, in
       relation to the specific threshold of force tolerable by the servomotors.</p>
-year: '2016'
+year: "2016"
 category: Design/Research
 card_title: Random Symbiosis
 summary: >-
@@ -44,4 +47,4 @@ summary: >-
   Besides, it was an chance for us to experiment a responsive project which can change itself to the
   different factors in the enviroment. This interdisciplinary project has been done in colaboration
   with
-cover_image: https://static.wixstatic.com/media/11062b_7dc1612522fa4189b30c17455973c3bf~mv2.png
+cover_image: /uploads/media/projects/craft-0.jpg

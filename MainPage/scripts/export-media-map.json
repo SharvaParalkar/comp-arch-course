@@ -1,0 +1,35 @@
+{
+  "note": "Local copies of export stills. Cloudinary public IDs usually append _xxxxxx — match by stripping that suffix.",
+  "media": {
+    "homeHero": "/uploads/media/home-hero.jpg",
+    "aboutPortrait": "/uploads/media/about-portrait.jpg",
+    "teachingStructures": "/uploads/media/teaching-structures.jpg",
+    "teachingComputational": "/uploads/media/teaching-computational.jpg",
+    "teachingDigiblast": "/uploads/media/teaching-digiblast.jpg",
+    "teachingMaterial": "/uploads/media/teaching-material-formation.jpg",
+    "teachingAirport": "/uploads/media/teaching-airport-terminals.jpg",
+    "p02Picture2": "/uploads/media/projects/electrochemical-picture2.jpg",
+    "p04Adfm": "/uploads/media/projects/shellular-materials-adfm.jpg",
+    "p04Zoom": "/uploads/media/projects/shellular-zoom.jpg",
+    "p07Psl": "/uploads/media/projects/terrene-psl.jpg",
+    "p08Teaser": "/uploads/media/projects/self-folding-teaser.jpg",
+    "p10Saltatur": "/uploads/media/projects/saltatur-01.jpg",
+    "p10Edited": "/uploads/media/projects/saltatur-1-2.jpg",
+    "p14R12": "/uploads/media/projects/hystrics-r12.jpg",
+    "p16Craft": "/uploads/media/projects/craft-0.jpg",
+    "pubBio": "/uploads/media/publications/bio-based-composite-spatial-shell_cover-scaled.jpg",
+    "pubContinuous": "/uploads/media/publications/Akbari_2022_16by9_2.jpg",
+    "pubAfm": "/uploads/media/publications/AKBARI_AFM.jpg",
+    "pubFolding": "/uploads/media/publications/Shellular_tuck_folding_2_ma.jpg",
+    "pubSaltatur": "/uploads/media/publications/saltatur_02.jpg",
+    "pubScf": "/uploads/media/publications/AKBARI_2020_SCF.jpg",
+    "pubAnticlastic": "/uploads/media/publications/3.jpg",
+    "pubPedestrian": "/uploads/media/publications/pedestrian.jpg"
+  },
+  "gifs_left_on_wix": {
+    "knitting": "https://static.wixstatic.com/media/4249cf_66e6eba4f8a54856b5cb78e7a7ecd0fa~mv2.gif",
+    "performance": "https://static.wixstatic.com/media/4249cf_f92aa4e261744785a0d8101c986d0036~mv2.gif",
+    "clay": "https://static.wixstatic.com/media/4249cf_64150f6691dd445da9f31cea72ad5fc2~mv2.gif"
+  },
+  "unmatched_cloudinary": "Run with CLOUDINARY_URL / API secret to resolve _(code) public IDs."
+}

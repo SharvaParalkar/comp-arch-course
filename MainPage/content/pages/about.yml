@@ -3,38 +3,43 @@ permalink: /about.html
 body_class: body
 seo:
   description: >-
-    Mostafa is a distinguished computational designer and researcher with a distinctive academic background encompassing
-    architectural design and computational structures. He is currently an Assistant Professor of Architecture with
-    expertise in Computational Structures and Advanced Manufacturing at Texas A&M University. His academic journey
-    includes a Ph.D. in Computational Design and a Master degree in Advanced Architectural Design from Upenn, a Master's
-    degree in Architecture from the University of Shahid Beheshti, and a Bachelor's degree in Architecture from the
-    University of Tehran.
+    Mostafa is a distinguished computational designer and researcher, Assistant Professor of
+    Architecture at Texas A&M University specializing in computational structures and advanced
+    manufacturing.
   og_title: About | Mostafa Akbari
+  og_image: /uploads/media/about-portrait.jpg
 body_mode: sections
 sections:
   - type: headline
-    text: About
-  - type: rich_text
+    text: Mostafa Akbari
+  - type: image_text
+    image: /uploads/media/about-portrait.jpg
+    alt: Mostafa Akbari
+    image_position: right
     body: >-
-      <p>Mostafa is a distinguished computational designer and researcher with a distinctive academic background
-      encompassing architectural design and computational structures. He is currently an Assistant Professor of
-      Architecture with expertise in Computational Structures and Advanced Manufacturing at Texas A&M University. His
-      academic journey includes a Ph.D. in Computational Design and a Master degree in Advanced Architectural Design
-      from Upenn, a Master's degree in Architecture from the University of Shahid Beheshti, and a Bachelor's degree in
-      Architecture from the University of Tehran.</p>
+      <p>Mostafa is a distinguished computational designer and researcher with a distinctive
+      academic background encompassing architectural design and computational structures. He is
+      currently an Assistant Professor of Architecture with expertise in Computational Structures
+      and Advanced Manufacturing at Texas A&amp;M University. His academic journey includes a Ph.D.
+      in Computational Design and a Master degree in Advanced Architectural Design from Upenn, a
+      Master's degree in Architecture from the University of Shahid Beheshti, and a Bachelor's
+      degree in Architecture from the University of Tehran.</p>
 
-      <p>His scholarly interests gravitate toward the realm of structural form finding, particularly with an emphasis on
-      using 3-dimensional Graphic Statics for the exploration of Shellular Funicular Structures. He has pioneered a
-      technique, within the purview of 3D graphic statics, for the design of Shell-based cellular (Shellular) Funicular
-      Structures. This methodological breakthrough has initiated a paradigm shift in the domains of Architecture,
-      Structural Design, Material Design, and their interrelated fields. Beyond this, he has exhibited profound
-      involvement and a multitude of years dedicated to research in Digital Fabrication, computational design, and
-      human-computer interaction. His endeavors are geared towards unearthing the nascent prospects in contemporary
-      architecture, allowing for a reevaluation of tectonics and material systems in the face of synergistic
-      advancements in architecture, structural design, robotic fabrication, computation, and material science.</p>
+      <p>His scholarly interests gravitate toward the realm of structural form finding, particularly
+      with an emphasis on using 3-dimensional Graphic Statics for the exploration of Shellular
+      Funicular Structures. He has pioneered a technique, within the purview of 3D graphic statics,
+      for the design of Shell-based cellular (Shellular) Funicular Structures. This methodological
+      breakthrough has initiated a paradigm shift in the domains of Architecture, Structural Design,
+      Material Design, and their interrelated fields. Beyond this, he has exhibited profound
+      involvement and a multitude of years dedicated to research in Digital Fabrication,
+      computational design, and human-computer interaction. His endeavors are geared towards
+      unearthing the nascent prospects in contemporary architecture, allowing for a reevaluation of
+      tectonics and material systems in the face of synergistic advancements in architecture,
+      structural design, robotic fabrication, computation, and material science.</p>
 
-      <p>Mostafa's collaborative endeavors span across prestigious international establishments, including his role as a
-      designer and researcher with Gensler. Moreover, he has garnered valuable experience in architectural design and
-      construction as an independent architect.</p>
-  - type: rich_text
-    body: <p><strong>Mostafa Akbari</strong></p>
+      <p>Mostafa's collaborative endeavors span across prestigious international establishments,
+      including his role as a designer and researcher with Gensler. Moreover, he has garnered
+      valuable experience in architectural design and construction as an independent architect.</p>
+
+      <p><a href="https://www.linkedin.com/in/mostafaakbari/" target="_blank"
+      rel="noopener">LinkedIn</a></p>

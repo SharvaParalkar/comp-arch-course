@@ -14,6 +14,9 @@ body_mode: sections
 sections:
   - type: headline
     text: Bio-Based Composite Spatial Shell Structures
+  - type: image
+    image: https://static.wixstatic.com/media/4249cf_66e6eba4f8a54856b5cb78e7a7ecd0fa~mv2.gif
+    alt: Bio-based composite spatial shell
   - type: rich_text
     body: <p><strong>2023</strong></p>
   - type: rich_text
@@ -45,7 +48,7 @@ sections:
       Mogas- Soldevila. This research was also funded by the National Science Foundation CAREER
       Award (NSF CAREER-1944691 CMMI) and the National Science Foundation Future Eco Manufacturing
       Research Grant (NSF, FMRG-CMMI 2037097) to Dr. Masoud Akbarzadeh.</p>
-year: '2023'
+year: "2023"
 category: Research
 card_title: Bio-Based Composite Spatial Shell Structures
 summary: >-

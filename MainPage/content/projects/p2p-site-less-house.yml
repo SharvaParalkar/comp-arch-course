@@ -13,6 +13,9 @@ body_mode: sections
 sections:
   - type: headline
     text: P2P Site-less House
+  - type: image
+    image: /uploads/media/projects/self-folding-teaser.jpg
+    alt: P2P Site-less House
   - type: rich_text
     body: <p><strong>2019</strong></p>
   - type: rich_text
@@ -33,7 +36,7 @@ sections:
       using robotic wire cutting technique and to find solutions to rationalize and improve the
       existing design of the house; and second, to fabricate a part of the house assembled in the
       form of a mock-up to manifest the solutions to construct the entire project.</p>
-year: '2018'
+year: "2018"
 category: Research
 card_title: P2P Sitless House
 summary: >-

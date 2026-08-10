@@ -13,6 +13,9 @@ body_mode: sections
 sections:
   - type: headline
     text: Terrene / Composite structure with pneumatic formwork
+  - type: image
+    image: /uploads/media/projects/terrene-psl.jpg
+    alt: Terrene pneumatic formwork
   - type: rich_text
     body: <p><strong>2022</strong></p>
   - type: rich_text
@@ -41,11 +44,11 @@ sections:
       Foundation (NSF) CAREER AWARD (NSF CAREER-1944691- CMMI), and the National Science Foundation
       (NSF) Future Eco Manufacturing Research Grant (NSF, FMRG-CMMI 2037097) to Dr. Masoud
       Akbarzadeh.</p>
-year: '2023'
+year: "2023"
 category: Research
 card_title: Terrene
 summary: >-
   this research explores using sand as primary support by combining structural and material
   optimization methods. The main objective of this research was to go beyond a compression-only
   material and invent a new composition
-cover_image: https://static.wixstatic.com/media/4249cf_0aba6caedcf74608ae4ea08b38b8fdbb~mv2.jpg
+cover_image: /uploads/media/projects/terrene-psl.jpg

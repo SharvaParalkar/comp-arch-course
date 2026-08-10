@@ -14,6 +14,12 @@ body_mode: sections
 sections:
   - type: headline
     text: Shellular Fabrication via Origami
+  - type: image
+    image: /uploads/media/projects/self-folding-teaser.jpg
+    alt: Shellular fabrication via origami
+  - type: image
+    image: /uploads/media/projects/saltatur-01.jpg
+    alt: Origami fabrication study
   - type: rich_text
     body: <p><strong>2021</strong></p>
   - type: rich_text
@@ -46,7 +52,7 @@ sections:
       (URF), National Science Foundation (NSF) CAREER AWARD (NSF CAREER-1944691- CMMI), and the
       National Science Foundation (NSF) Future Eco Manufacturing Research Grant (NSF, FMRG-CMMI
       2037097) to Dr. Masoud Akbarzadeh.</p>
-year: '2021'
+year: "2021"
 category: Design/Research
 card_title: Shellular Fabrication via Origami
 summary: >-

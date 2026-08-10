@@ -13,6 +13,9 @@ body_mode: sections
 sections:
   - type: headline
     text: Hystrics | Interactive agents
+  - type: image
+    image: /uploads/media/projects/hystrics-r12.jpg
+    alt: Hystrics interactive agents
   - type: rich_text
     body: <p><strong>2018</strong></p>
   - type: rich_text
@@ -37,7 +40,7 @@ sections:
       weaving the carbon fiber around a preconstructed form, followed by a curing process to
       solidify the sculpture's shape. All models are outfitted with Arduino kits and servomotors,
       which incorporate diverse sensors including distance, camera, and touch sensors.</p>
-year: '2018'
+year: "2018"
 category: Design/Research
 card_title: Hystrics
 summary: >-
@@ -45,4 +48,4 @@ summary: >-
   design principles. Hystrics, a collection of robots, engage with their surroundings through a
   combination of sound and motion. These remarkable machines possess an outer shell made of carbon
   fiber, while their inner framework is pneumatic,
-cover_image: https://static.wixstatic.com/media/11062b_1f7ed8bc7b004201970df69f9eeda689~mv2.png
+cover_image: /uploads/media/projects/hystrics-r12.jpg

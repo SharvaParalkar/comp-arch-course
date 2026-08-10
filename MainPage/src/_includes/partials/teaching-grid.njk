@@ -1,0 +1,30 @@
+<section class="section projects-grid-section">
+  <div class="container">
+    <div class="projects-grid">
+      {% for item in collections.teaching | sortProjects %}
+      {% set href = item.permalink | hrefPath %}
+      <article class="project-card">
+        <a class="project-card__media" href="{{ href }}">
+          {% if item.cover_image %}
+          <img src="{{ item.cover_image }}" alt="{{ item.card_title or item.title }}" loading="lazy" class="project-card__img"/>
+          {% else %}
+          <div class="project-card__placeholder" aria-hidden="true"></div>
+          {% endif %}
+          {% if item.card_title or item.category %}
+          <div class="project-card__overlay">
+            <span>| {{ item.card_title or item.title }} | {{ item.category or "Seminar" }}</span>
+          </div>
+          {% endif %}
+        </a>
+        {% if item.year %}<div class="project-card__year">{{ item.year }}</div>{% endif %}
+        <h3 class="project-card__title">
+          <a href="{{ href }}">{{ item.title }}</a>
+        </h3>
+        {% if item.summary %}
+        <p class="project-card__summary">{{ item.summary }}</p>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

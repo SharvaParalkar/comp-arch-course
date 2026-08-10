@@ -14,12 +14,11 @@ publish_mode: simple
 
 media_library:
   name: cloudinary
+  # Keep raw URLs (PDFs, videos, .gh, .3dm). Image transforms break non-image downloads.
+  use_transformations: false
   config:
     cloud_name: dbf3aqsxu
     api_key: 251365553116344
-    default_transformations:
-      - - fetch_format: auto
-          quality: auto
 
 collections:
   - name: settings
@@ -103,6 +102,12 @@ collections:
         default: false
         required: false
         hint: "Turn on for the Publications page. Renders all Publications with image, text, and links."
+      - label: Show Teaching Grid
+        name: show_teaching_grid
+        widget: boolean
+        default: false
+        required: false
+        hint: "Turn on for the Teaching page. Renders all Teaching entries as a card grid."
       - label: SEO
         name: seo
         widget: object
@@ -134,6 +139,17 @@ collections:
             fields:
               - { label: Title, name: title, widget: string, required: false }
               - { label: Video URL, name: video_url, widget: string, hint: "Direct .mp4 URL" }
+          - label: Hero with Image
+            name: hero_image
+            widget: object
+            summary: "{{title}}"
+            fields:
+              - { label: Image, name: image, widget: image }
+              - { label: Title, name: title, widget: string, required: false }
+              - { label: Subtitle, name: subtitle, widget: string, required: false }
+              - { label: Alt Text, name: alt, widget: string, required: false }
+              - { label: CTA Label, name: cta_label, widget: string, required: false }
+              - { label: CTA URL, name: cta_url, widget: string, required: false }
           - label: Headline
             name: headline
             widget: object
@@ -161,6 +177,18 @@ collections:
               - { label: Image, name: image, widget: image, hint: "Upload here or pick from Media / Cloudinary" }
               - { label: Alt Text, name: alt, widget: string, required: false }
               - { label: Caption, name: caption, widget: string, required: false }
+          - label: Image + Text
+            name: image_text
+            widget: object
+            fields:
+              - { label: Image, name: image, widget: image, required: false }
+              - { label: Alt Text, name: alt, widget: string, required: false }
+              - label: Image Position
+                name: image_position
+                widget: select
+                default: right
+                options: ["left", "right"]
+              - { label: Body, name: body, widget: markdown, required: false }
           - label: Image Gallery
             name: image_gallery
             widget: object
@@ -284,6 +312,16 @@ collections:
             fields:
               - { label: Title, name: title, widget: string, required: false }
               - { label: Video URL, name: video_url, widget: string }
+          - label: Hero with Image
+            name: hero_image
+            widget: object
+            fields:
+              - { label: Image, name: image, widget: image }
+              - { label: Title, name: title, widget: string, required: false }
+              - { label: Subtitle, name: subtitle, widget: string, required: false }
+              - { label: Alt Text, name: alt, widget: string, required: false }
+              - { label: CTA Label, name: cta_label, widget: string, required: false }
+              - { label: CTA URL, name: cta_url, widget: string, required: false }
           - label: Headline
             name: headline
             widget: object
@@ -310,6 +348,18 @@ collections:
               - { label: Image, name: image, widget: image, hint: "Upload or pick from Media / Cloudinary" }
               - { label: Alt Text, name: alt, widget: string, required: false }
               - { label: Caption, name: caption, widget: string, required: false }
+          - label: Image + Text
+            name: image_text
+            widget: object
+            fields:
+              - { label: Image, name: image, widget: image, required: false }
+              - { label: Alt Text, name: alt, widget: string, required: false }
+              - label: Image Position
+                name: image_position
+                widget: select
+                default: right
+                options: ["left", "right"]
+              - { label: Body, name: body, widget: markdown, required: false }
           - label: Image Gallery
             name: image_gallery
             widget: object
@@ -388,3 +438,73 @@ collections:
         widget: text
         required: false
         hint: "Optional inline BibTeX (used if no BibTeX URL)"
+
+  - name: teaching
+    label: "5 · Teaching"
+    label_singular: Teaching
+    description: "Courses, seminars, studios, and workshops. Each card appears on the Teaching page."
+    folder: MainPage/content/teaching
+    extension: yml
+    format: yaml
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{year}} · {{title}}"
+    sortable_fields: ["sort_order", "year", "title"]
+    preview_path: "teaching/{{slug}}.html"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - label: Permalink
+        name: permalink
+        widget: string
+        required: false
+        hint: "e.g. /teaching/structures-seminar.html"
+      - { label: Cover Image, name: cover_image, widget: image, required: false }
+      - { label: Overlay Title, name: card_title, widget: string, required: false }
+      - { label: Year, name: year, widget: string, required: false }
+      - { label: Category, name: category, widget: string, required: false, hint: "Seminar, Studio, Workshop" }
+      - { label: Summary, name: summary, widget: text, required: false }
+      - label: Sort Order
+        name: sort_order
+        widget: number
+        required: false
+        value_type: int
+      - { label: Body Class, name: body_class, widget: string, default: body, required: false }
+      - label: SEO
+        name: seo
+        widget: object
+        collapsed: true
+        required: false
+        fields:
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: OG Title, name: og_title, widget: string, required: false }
+      - label: Body Mode
+        name: body_mode
+        widget: select
+        default: sections
+        options:
+          - { label: "Structured sections (recommended)", value: sections }
+          - { label: "Legacy HTML", value: legacy }
+      - label: Detail Page Sections
+        name: sections
+        widget: list
+        required: false
+        summary: "{{type}}"
+        types:
+          - label: Headline
+            name: headline
+            widget: object
+            fields:
+              - { label: Text, name: text, widget: text }
+          - label: Full-width Image
+            name: image
+            widget: object
+            fields:
+              - { label: Image, name: image, widget: image }
+              - { label: Alt Text, name: alt, widget: string, required: false }
+              - { label: Caption, name: caption, widget: string, required: false }
+          - label: Rich Text
+            name: rich_text
+            widget: object
+            fields:
+              - { label: Body, name: body, widget: markdown, required: false }

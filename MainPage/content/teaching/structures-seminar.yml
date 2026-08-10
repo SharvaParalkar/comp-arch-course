@@ -1,0 +1,31 @@
+title: Structures Seminar
+permalink: /teaching/structures-seminar.html
+body_class: body
+cover_image: /uploads/media/teaching-structures.jpg
+card_title: Structures
+year: "2023"
+category: Seminar
+sort_order: 1
+summary: >-
+  Study of static and hyperstatic systems and design of their elements, including flexural theory,
+  graphic statics, and a weekly laboratory.
+seo:
+  og_title: Structures Seminar | Mostafa Akbari
+body_mode: sections
+sections:
+  - type: headline
+    text: Structures | Seminar
+  - type: rich_text
+    body: <p><strong>2023</strong></p>
+  - type: image
+    image: /uploads/media/teaching-structures.jpg
+    alt: Structures seminar
+  - type: rich_text
+    body: >-
+      <p><em>Instructors: Richard Farley, Masoud Akbarzadeh, Mostafa Akbari (TA)</em></p>
+
+      <p>This seminar covers the study of static and hyperstatic systems and design of their
+      elements. Flexural theory, elastic and plastic. Design for combined stresses; prestressing.
+      The study of graphic statics and the design of trusses. The course comprises both lectures and
+      a weekly laboratory in which various structural elements, systems, materials and technical
+      principles are explored.</p>

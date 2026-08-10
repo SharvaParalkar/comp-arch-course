@@ -14,6 +14,9 @@ body_mode: sections
 sections:
   - type: headline
     text: Material Formation | Agent-based Design | Robotic Clay printing
+  - type: image
+    image: https://static.wixstatic.com/media/4249cf_64150f6691dd445da9f31cea72ad5fc2~mv2.gif
+    alt: Robotic clay printing
   - type: rich_text
     body: <p><strong>2018</strong></p>
   - type: rich_text
@@ -41,7 +44,7 @@ sections:
       this stage, we developed an algorithmically determined tool paths for robot motion for 3d
       printing through bottom-up rule sets. Here, we evaluated production constraints and attempt to
       incorporate these as heuristics within our tool path .</p>
-year: '2018'
+year: "2018"
 category: Research
 card_title: Robotic clay printing
 summary: >-

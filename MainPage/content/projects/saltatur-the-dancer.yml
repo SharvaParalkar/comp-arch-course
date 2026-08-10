@@ -13,6 +13,12 @@ body_mode: sections
 sections:
   - type: headline
     text: Saltatur the Dancer
+  - type: image
+    image: /uploads/media/projects/saltatur-1-2.jpg
+    alt: Saltatur
+  - type: image
+    image: /uploads/media/projects/saltatur-01.jpg
+    alt: Saltatur node assembly
   - type: rich_text
     body: <p><strong>2019</strong></p>
   - type: rich_text
@@ -45,7 +51,7 @@ sections:
 
       <p>The project was supported by the Board of Overseers and the University Research Foundation
       Grant at the University of Pennsylvania, National Science Foundation.</p>
-year: '2019'
+year: "2019"
 category: Design/Research
 card_title: Saltature
 summary: >-

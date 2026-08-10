@@ -3,34 +3,16 @@ permalink: /index.html
 body_class: body is-black
 seo:
   description: >-
-    Mostafa Akbari — computational designer and architectural technologist specializing in shellular funicular
-    structures, digital fabrication, and computational design.
+    Mostafa Akbari — computational designer and architectural technologist specializing in shellular
+    funicular structures, digital fabrication, and computational design.
   og_title: Mostafa Akbari | Architectural Technologist
+  og_image: /uploads/media/home-hero.jpg
 body_mode: sections
 sections:
-  - type: headline
-    text: Mostafa Akbari
-  - type: headline
-    text: Architectural Technologist | Designer
-  - type: rich_text
-    body: >-
-      <p>Mostafa is a distinguished computational designer and researcher with a distinctive academic background
-      encompassing architectural design and computational structures. He is currently an Assistant Professor of
-      Architecture with expertise in Computational Structures and Advanced Manufacturing at Texas A&M University. His
-      academic journey includes a Ph.D. in Computational Design and a Master degree in Advanced Architectural Design
-      from Upenn, a Master's degree in Architecture from the University of Shahid Beheshti, and a Bachelor's degree in
-      Architecture from the University of Tehran.</p>
-
-      <p>His scholarly interests gravitate toward the realm of structural form finding, particularly with an emphasis on
-      using 3-dimensional Graphic Statics for the exploration of Shellular Funicular Structures. He has pioneered a
-      technique, within the purview of 3D graphic statics, for the design of Shell-based cellular (Shellular) Funicular
-      Structures. This methodological breakthrough has initiated a paradigm shift in the domains of Architecture,
-      Structural Design, Material Design, and their interrelated fields. Beyond this, he has exhibited profound
-      involvement and a multitude of years dedicated to research in Digital Fabrication, computational design, and
-      human-computer interaction. His endeavors are geared towards unearthing the nascent prospects in contemporary
-      architecture, allowing for a reevaluation of tectonics and material systems in the face of synergistic
-      advancements in architecture, structural design, robotic fabrication, computation, and material science.</p>
-  - type: rich_text
-    body: >-
-      <p><a href="about.html">About</a> · <a href="projects.html">Projects</a> · <a
-      href="publications.html">Publications</a> · <a href="teaching.html">Teaching</a></p>
+  - type: hero_image
+    image: /uploads/media/home-hero.jpg
+    alt: Mostafa Akbari
+    title: Mostafa Akbari
+    subtitle: Architectural Technologist | Designer
+    cta_label: Learn more
+    cta_url: about.html

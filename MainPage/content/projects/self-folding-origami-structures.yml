@@ -12,6 +12,9 @@ body_mode: sections
 sections:
   - type: headline
     text: Self-folding Origami Structures
+  - type: image
+    image: /uploads/media/projects/self-folding-teaser.jpg
+    alt: Self-folding origami structures
   - type: rich_text
     body: <p><strong>2023</strong></p>
   - type: rich_text
@@ -20,7 +23,7 @@ sections:
       Statics (PGS), the fabrication process of these structures might be time consuming and labor
       intensive. In order to fabricate these structures out of a flat sheet of material and
       automating the fabrication process, [...]</p>
-year: '2023'
+year: "2023"
 category: Research
 card_title: Self-folding Origami Structures
 summary: >-

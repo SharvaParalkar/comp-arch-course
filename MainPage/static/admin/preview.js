@@ -48,6 +48,21 @@
           h("div", { className: "video-aspect-box" }, "Video: " + (section.video_url || "")),
           h("h1", { className: "display-h", style: { fontSize: "2rem" } }, section.title || "")
         );
+      case "hero_image": {
+        var heroSrc = getAsset(getAssetFn, section.image);
+        return h("section", { className: "section" },
+          heroSrc ? h("img", { className: "cms-preview__img", src: heroSrc, alt: section.alt || "" }) : null,
+          h("h1", { className: "display-h", style: { fontSize: "2rem" } }, section.title || ""),
+          section.subtitle ? h("p", null, section.subtitle) : null
+        );
+      }
+      case "image_text": {
+        var splitSrc = getAsset(getAssetFn, section.image);
+        return h("section", { className: "section image-text" },
+          rich(section.body),
+          splitSrc ? h("img", { className: "cms-preview__img", src: splitSrc, alt: section.alt || "" }) : null
+        );
+      }
       case "video":
         return h("section", { className: "full-media-section" },
           h("div", { className: "video-aspect-box" }, "Video: " + (section.video_url || "")),
@@ -107,7 +122,8 @@
           h("span", null, data.title || "Untitled page"),
           data.permalink ? h("span", null, data.permalink) : null,
           data.show_projects_grid ? h("span", null, "Projects grid: on") : null,
-          data.show_publications_list ? h("span", null, "Publications list: on") : null
+          data.show_publications_list ? h("span", null, "Publications list: on") : null,
+          data.show_teaching_grid ? h("span", null, "Teaching grid: on") : null
         ),
         renderSections(data, this.props.getAsset),
         data.show_projects_grid
@@ -118,6 +134,11 @@
         data.show_publications_list
           ? h("div", { className: "cms-preview__empty", style: { marginTop: "1.5rem" } },
               "Publications list will render here on the live site from all entries in Publications."
+            )
+          : null,
+        data.show_teaching_grid
+          ? h("div", { className: "cms-preview__empty", style: { marginTop: "1.5rem" } },
+              "Teaching grid will render here on the live site from all Teaching entries."
             )
           : null
       );
@@ -210,5 +231,6 @@
   CMS.registerPreviewTemplate("pages", PagePreview);
   CMS.registerPreviewTemplate("projects", ProjectPreview);
   CMS.registerPreviewTemplate("publications", PublicationPreview);
+  CMS.registerPreviewTemplate("teaching", ProjectPreview);
   CMS.registerPreviewTemplate("site", SettingsPreview);
 })();

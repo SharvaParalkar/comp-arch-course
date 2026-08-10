@@ -15,6 +15,19 @@
       <source src="{{ section.video_url }}" type="video/mp4"/>
     </video>
   </div></div><div class="container is-hero-100 is-exclusion"><div class="d"><h1 class="display-h">{{ section.title }}</h1></div></div></header>
+  {% elif section.type == 'hero_image' %}
+  <header class="section is-hero">
+    <div class="bg-video-wrap"><div class="video-aspect-box">
+      <img src="{{ section.image }}" alt="{{ section.alt or section.title or '' }}" class="video-element hero-still"/>
+    </div></div>
+    <div class="container is-hero-100 is-exclusion"><div class="d">
+      {% if section.title %}<h1 class="display-h">{{ section.title }}</h1>{% endif %}
+      {% if section.subtitle %}<div class="h-x-small hero-still__subtitle">{{ section.subtitle }}</div>{% endif %}
+      {% if section.cta_url %}
+      <p class="hero-still__cta"><a data-underline-link="" href="{{ section.cta_url }}">{{ section.cta_label or "Learn more" }}</a></p>
+      {% endif %}
+    </div></div>
+  </header>
   {% elif section.type == 'video' %}
   <section class="full-media-section"><div class="video-aspect-box">
     <video loading="eager" preload="metadata" loop playsinline muted autoplay class="video-element">
@@ -25,6 +38,17 @@
   <section class="full-media-section"><div class="full-img-frame">
     <img src="{{ section.image }}" loading="lazy" alt="{{ section.alt or '' }}" class="full-img"/>
   </div>{% if section.caption %}<div class="caption-div"><div class="h-x-small">{{ section.caption }}</div></div>{% endif %}</section>
+  {% elif section.type == 'image_text' %}
+  <section class="section"><div class="container">
+    <div class="image-text{% if section.image_position == 'left' %} is-image-left{% endif %}">
+      <div class="image-text__body txt-large w-richtext">{{ section.body | safe }}</div>
+      {% if section.image %}
+      <div class="image-text__media">
+        <img src="{{ section.image }}" alt="{{ section.alt or '' }}" class="image-text__img"/>
+      </div>
+      {% endif %}
+    </div>
+  </div></section>
   {% elif section.type == 'image_gallery' and section.images %}
   <section class="section image-gallery-section"><div class="container"><div class="image-gallery">
     {% for item in section.images %}
