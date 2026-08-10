@@ -1,4 +1,4 @@
-<section class="section projects-grid-section">
+<section class="section page-block projects-grid-section">
   <div class="container">
     <div class="projects-grid">
       {% for project in collections.projects | sortProjects %}
@@ -10,13 +10,11 @@
           {% else %}
           <div class="project-card__placeholder" aria-hidden="true"></div>
           {% endif %}
-          {% if project.card_title or project.category %}
-          <div class="project-card__overlay">
-            <span>| {{ project.card_title or project.title }} | {{ project.category or "Research" }}</span>
-          </div>
-          {% endif %}
         </a>
-        {% if project.year %}<div class="project-card__year">{{ project.year }}</div>{% endif %}
+        <div class="project-card__meta">
+          {% if project.year %}<div class="project-card__year">{{ project.year }}</div>{% endif %}
+          {% if project.category %}<div class="project-card__category">{{ project.category }}</div>{% endif %}
+        </div>
         <h3 class="project-card__title">
           <a href="{{ href }}">{{ project.title }}</a>
         </h3>
