@@ -1,6 +1,6 @@
 ---
-title: Intro | Karamba Foundations Notes
-sidebar_position: 2
+title: 01 | Karamba Foundations Notes
+sidebar_position: 1
 topic: foundations
 tags:
   - Karamba

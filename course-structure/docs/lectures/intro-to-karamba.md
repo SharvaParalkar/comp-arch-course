@@ -1,10 +1,10 @@
 ---
-title: Intro | Karamba Foundations
+title: 01 | Karamba Foundations
 sidebar_position: 2
 week: week-2
 date: 2026-07-24
 topic: workshop
-youtube_id: Z1fp84hK2FQ
+youtube_id: Mr_I9ESxoFw
 slides_url: https://docs.google.com/presentation/d/1oLeizpzP0QsiX-vcMAwT-z33XOezzfJ-630ImsmnQFs/edit?usp=sharing
 related_docs:
   - Intro | Karamba Foundations Notes
