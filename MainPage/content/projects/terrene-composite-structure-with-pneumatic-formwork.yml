@@ -14,7 +14,7 @@ sections:
   - type: headline
     text: Terrene / Composite structure with pneumatic formwork
   - type: image
-    image: /uploads/media/projects/terrene-psl.jpg
+    image: https://static.wixstatic.com/media/4249cf_3485488bd35d4f38a6dcc3ecdd766101~mv2.jpg
     alt: Terrene pneumatic formwork
   - type: rich_text
     body: <p><strong>2022</strong></p>
@@ -51,4 +51,4 @@ summary: >-
   this research explores using sand as primary support by combining structural and material
   optimization methods. The main objective of this research was to go beyond a compression-only
   material and invent a new composition
-cover_image: /uploads/media/projects/terrene-psl.jpg
+cover_image: https://static.wixstatic.com/media/4249cf_3485488bd35d4f38a6dcc3ecdd766101~mv2.jpg

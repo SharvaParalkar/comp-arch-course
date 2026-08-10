@@ -13,8 +13,8 @@ sections:
   - type: headline
     text: CRAFT
   - type: image
-    image: /uploads/media/projects/craft-0.jpg
-    alt: CRAFT / Flexible Forming
+    image: https://static.wixstatic.com/media/4249cf_13b049c9b78d437fafb241f44769d574~mv2.jpg
+    alt: CRAFT
   - type: rich_text
     body: <p><strong>2016</strong></p>
   - type: rich_text
@@ -59,4 +59,4 @@ summary: >-
   the construction of free-form surface structures utilizing composite materials through the
   application of the 'Flexible Forming' technique. Within this context, the transformation of a
   doubly curved surface into a formwork was pursued
-cover_image: /uploads/media/projects/craft-0.jpg
+cover_image: https://static.wixstatic.com/media/4249cf_13b049c9b78d437fafb241f44769d574~mv2.jpg

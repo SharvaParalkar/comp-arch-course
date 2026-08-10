@@ -15,7 +15,7 @@ sections:
   - type: headline
     text: Bio-Based Composite Spatial Shell Structures
   - type: image
-    image: https://static.wixstatic.com/media/4249cf_66e6eba4f8a54856b5cb78e7a7ecd0fa~mv2.gif
+    image: https://static.wixstatic.com/media/4249cf_40645735d09c4c6180433e54f1a8fb33~mv2.jpg
     alt: Bio-based composite spatial shell
   - type: rich_text
     body: <p><strong>2023</strong></p>
@@ -55,4 +55,4 @@ summary: >-
   This research investigates the possibility of fabricating shell-based cellular structures using
   knitting techniques. Shellular Funicular Structures are two-manifold single-layer structures that
   can be designed in the context of graphic statics
-cover_image: https://static.wixstatic.com/media/4249cf_8d426f679a5d4b9c9caca9314d94e99b~mv2.jpg
+cover_image: https://static.wixstatic.com/media/4249cf_40645735d09c4c6180433e54f1a8fb33~mv2.jpg

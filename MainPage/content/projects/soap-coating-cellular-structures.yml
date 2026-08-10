@@ -4,27 +4,45 @@ body_class: body
 featured: false
 seo:
   description: >-
-    This research investigates the possibility of fabricating shell-based cellular structures using
-    knitting techniques. Shellular Funicular Structures are two-manifold single-layer structures
-    that can be designed in the context of graphic statics [...]
+    Dip-coating a 3D-printed shellular wireframe in polymer or graphene-oxide soap solution so films
+    span the faces and improve shear capacity.
   og_title: Soap Coating Cellular Structures | Mostafa Akbari
 body_mode: sections
 sections:
   - type: headline
     text: Soap Coating Cellular Structures
+  - type: image
+    image: /uploads/media/projects/soap-coating.jpg
+    alt: Soap-coated cellular lattice with graphene oxide film
+  - type: image
+    image: /uploads/media/projects/soap-coating-helmet.png
+    alt: Helmet fabricated with soap-coated shellular structure
+  - type: image
+    image: /uploads/media/projects/soap-coating-compression.png
+    alt: Compression test of soap-coated cellular structure
   - type: rich_text
     body: <p><strong>2023</strong></p>
   - type: rich_text
     body: >-
-      <p>This research investigates the possibility of fabricating shell-based cellular structures
-      using knitting techniques. Shellular Funicular Structures are two-manifold single-layer
-      structures that can be designed in the context of graphic statics [...]</p>
-year: '2023'
+      <p><em>Yinding Chi, Yuchong Gao, Mohit Patel, Kunhao Yu, Pt Brun, Mostafa Akbari, Masoud
+      Akbarzadeh, Shu Yang</em></p>
+  - type: rich_text
+    body: >-
+      <p>In this research, the wireframe of a shellular structure approximating the Schwarz P
+      surface that is designed in PGS is soaked into a soap solution. The wireframe is 3D printed
+      using plastic. Two solutions were used: a polymer and graphene oxide (GO) aqueous mixture, and
+      a polymer aqueous solution. These solutions fill the faces of the polyhedral structure with a
+      soap film, improving structural performance. Strut-based cellular structures designed in PGS
+      lack the desired shear capacity; adding the films across the faces improves shear capacity.</p>
+
+      <p>Related publication: Chi, Gao, Akbari, et al. “Geometrically Templated, Ultra-Lightweight
+      and High Strength Soap Films from Lyotropic Liquid Crystalline Graphene Oxide/Polymer
+      Composites.” <em>Advanced Functional Materials</em>, 2025.</p>
+year: "2023"
 category: Research
 card_title: Soap Coating Cellular Structures
 summary: >-
-  This research investigates the possibility of fabricating shell-based cellular structures using
-  knitting techniques. Shellular Funicular Structures are two-manifold single-layer structures that
-  can be designed in the context of graphic statics
-cover_image: https://static.wixstatic.com/media/4249cf_cb9832a3100e474da91a3abe0cb290b6~mv2.jpg
+  A 3D-printed shellular wireframe approximating a Schwarz P surface is dip-coated in polymer or
+  polymer/graphene-oxide soap solution so films span the faces and improve shear capacity.
+cover_image: /uploads/media/projects/soap-coating.jpg
 sort_order: 3

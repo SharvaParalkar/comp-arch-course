@@ -13,6 +13,9 @@ body_mode: sections
 sections:
   - type: headline
     text: Structurally Adaptable Shoes
+  - type: image
+    image: https://static.wixstatic.com/media/4249cf_d504a5273eae48dd81d8646bd96739d8~mv2.jpg
+    alt: Structurally adaptable shoes
   - type: rich_text
     body: <p><strong>2023</strong></p>
   - type: rich_text
@@ -40,4 +43,4 @@ card_title: Structurally Adaptable Shoes
 summary: >-
   Insights from foot podometry inform a shellular midsole: unit cells of different stiffness are
   placed where flexibility or rigidity is needed.
-cover_image: https://static.wixstatic.com/media/4249cf_69204090c0ad49b6a6f8d955085b25fe~mv2.jpg
+cover_image: https://static.wixstatic.com/media/4249cf_d504a5273eae48dd81d8646bd96739d8~mv2.jpg

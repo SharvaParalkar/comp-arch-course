@@ -14,6 +14,9 @@ body_mode: sections
 sections:
   - type: headline
     text: Shellular Funicular Structures
+  - type: image
+    image: https://static.wixstatic.com/media/4249cf_9fb4e24c47b448fc9ff6d230e96448af~mv2.jpg
+    alt: Shellular funicular structures
   - type: rich_text
     body: <p><strong>2022</strong></p>
   - type: rich_text
@@ -47,7 +50,7 @@ sections:
       performance. In this research, we are trying to get as close as possible to such geometries
       utilizing 3D graphic statics to take advantage of their properties in many fields such as
       architectural design, structural design, biomechanics, biochemistry, and beyond.</p>
-year: '2021'
+year: "2021"
 category: Research
 card_title: Shellular Funicular Structures
 summary: >-
@@ -55,4 +58,4 @@ summary: >-
   polyhedral surface-based structure (shellulars) in PGS that is comparable to the widely known
   minimal surface geometries in the context of structural design, bridging the gap between cellular
   polyhedral geometries and surface-based structures.
-cover_image: https://static.wixstatic.com/media/4249cf_60b21ef3b270474aa2fbbc767a6d4571~mv2.jpg
+cover_image: https://static.wixstatic.com/media/4249cf_9fb4e24c47b448fc9ff6d230e96448af~mv2.jpg

@@ -15,11 +15,8 @@ sections:
   - type: headline
     text: Shellular Fabrication via Origami
   - type: image
-    image: /uploads/media/projects/self-folding-teaser.jpg
+    image: https://static.wixstatic.com/media/4249cf_127570e869c9434cbb8ae006565caf8e~mv2.jpg
     alt: Shellular fabrication via origami
-  - type: image
-    image: /uploads/media/projects/saltatur-01.jpg
-    alt: Origami fabrication study
   - type: rich_text
     body: <p><strong>2021</strong></p>
   - type: rich_text
@@ -59,4 +56,4 @@ summary: >-
   This research introduces a computational algorithm for translating a Cellular Funicular Structure
   (CFS) to a Shellular Funicular Structure (SFS) and explores a fabrication method using the
   origami/kirigami technique
-cover_image: https://static.wixstatic.com/media/4249cf_a09e0995d8374ea0af28bb3344ec305e~mv2.jpg
+cover_image: https://static.wixstatic.com/media/4249cf_127570e869c9434cbb8ae006565caf8e~mv2.jpg

@@ -15,11 +15,8 @@ sections:
   - type: headline
     text: Shellular Funicular Materials
   - type: image
-    image: /uploads/media/projects/shellular-materials-adfm.jpg
+    image: https://static.wixstatic.com/media/4249cf_e3008694dd6e48adadbdc536affc801b~mv2.jpg
     alt: Shellular funicular materials
-  - type: image
-    image: /uploads/media/projects/shellular-zoom.jpg
-    alt: Shellular zoom
   - type: rich_text
     body: <p><strong>2022</strong></p>
   - type: rich_text
@@ -65,4 +62,4 @@ summary: >-
   equilibrium of polyhedral frames, and reciprocity of form and force. This novel approach reveals a
   geometric relationship among the truss system architecture, topological dual, and equilibrium of
   forces on the basis of 3D graphic statics.
-cover_image: https://static.wixstatic.com/media/4249cf_3a9a783e47324a059dcf4fdf0f25d5b8~mv2.jpg
+cover_image: https://static.wixstatic.com/media/4249cf_e3008694dd6e48adadbdc536affc801b~mv2.jpg

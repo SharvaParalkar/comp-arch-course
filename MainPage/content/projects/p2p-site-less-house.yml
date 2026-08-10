@@ -14,7 +14,7 @@ sections:
   - type: headline
     text: P2P Site-less House
   - type: image
-    image: /uploads/media/projects/self-folding-teaser.jpg
+    image: https://static.wixstatic.com/media/4249cf_51544306340c48fab2ef6b077bf915d8~mv2.jpg
     alt: P2P Site-less House
   - type: rich_text
     body: <p><strong>2019</strong></p>
@@ -43,4 +43,4 @@ summary: >-
   This research intends to address the challenges in the design process and fabrication of the P2P
   Site-less House concept. The primary objective of the course is to prepare the design of the house
   for fabrication utilizing wire-cutting robotic arms.
-cover_image: https://static.wixstatic.com/media/4249cf_a7ec3c3aed15424a8e7e29526bf98e60~mv2.jpg
+cover_image: https://static.wixstatic.com/media/4249cf_51544306340c48fab2ef6b077bf915d8~mv2.jpg
