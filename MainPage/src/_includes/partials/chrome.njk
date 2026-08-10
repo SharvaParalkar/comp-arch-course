@@ -1,8 +1,10 @@
 <div>
   <nav class="navbar-div">
     <div data-animation="default" data-collapse="none" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
-      <div class="container is-nav site-nav">
-        <a href="{{ nav_prefix }}index.html" class="brand-link w-nav-brand site-nav__brand-spacer" aria-hidden="true" tabindex="-1"></a>
+      <div class="container is-nav">
+        <a href="{{ nav_prefix }}index.html" class="brand-link w-nav-brand">
+          <div class="h-x-small" style="letter-spacing:0.08em;">{{ site.site_name or "Mostafa Akbari" }}</div>
+        </a>
         <nav role="navigation" class="navlink-wrap w-nav-menu">
           <div class="navlink-list">
             {% for item in site.navigation %}
@@ -23,13 +25,3 @@
   </div>
   {% include "partials/embed-styles.njk" %}
 </div>
-<footer class="site-footer">
-  <div class="container site-footer__inner">
-    <a href="{{ nav_prefix }}index.html" class="site-footer__name">MOSTAFA AKBARI</a>
-    <nav class="site-footer__links" aria-label="Footer">
-      {% for item in site.navigation %}
-      <a data-underline-link="" href="{{ nav_prefix }}{{ item.url }}">{{ item.label }}</a>{% if not loop.last %}<span class="site-footer__dot" aria-hidden="true"> · </span>{% endif %}
-      {% endfor %}
-    </nav>
-  </div>
-</footer>

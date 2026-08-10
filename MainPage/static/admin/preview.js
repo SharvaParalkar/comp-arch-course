@@ -31,7 +31,7 @@
     switch (section.type) {
       case "headline":
         return h("section", { className: "section" },
-          h("h1", { className: "page-title" }, section.text || "")
+          h("div", { className: "h-x-large" }, section.text || "")
         );
       case "rich_text":
         return h("section", { className: "section" }, rich(section.body));
@@ -200,9 +200,11 @@
           ),
           h("div", { className: "pub-row__body" },
             h("h3", { className: "pub-row__title" }, data.title || "Untitled"),
-            data.venue ? h("p", { className: "pub-row__venue" }, data.venue) : null,
             data.authors ? h("p", { className: "pub-row__authors" }, data.authors) : null,
-            h("div", { className: "pub-row__links" }, links)
+            h("div", { className: "pub-row__meta" },
+              data.venue ? h("span", { className: "pub-row__venue" }, data.venue) : null,
+              h("span", { className: "pub-row__links" }, links)
+            )
           )
         )
       );

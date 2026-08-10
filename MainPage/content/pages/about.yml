@@ -10,14 +10,13 @@ seo:
   og_image: /uploads/media/about-portrait.jpg
 body_mode: sections
 sections:
+  - type: headline
+    text: Mostafa Akbari
   - type: image_text
     image: /uploads/media/about-portrait.jpg
     alt: Mostafa Akbari
     image_position: right
     body: >-
-      <p class="name-caps">Mostafa Akbari</p>
-      <p class="page-kicker">Architectural Technologist | Designer</p>
-
       <p>Mostafa is a distinguished computational designer and researcher with a distinctive
       academic background encompassing architectural design and computational structures. He is
       currently an Assistant Professor of Architecture with expertise in Computational Structures
