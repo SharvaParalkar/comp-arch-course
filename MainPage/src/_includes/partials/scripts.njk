@@ -43,82 +43,115 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!video) return;
     video.muted = true;
     video.defaultMuted = true;
+    video.volume = 0;
     video.setAttribute("muted", "");
     video.playsInline = true;
     video.setAttribute("playsinline", "");
     video.setAttribute("webkit-playsinline", "");
+    video.setAttribute("x5-playsinline", "");
   };
 
   const playSafe = (video) => {
-    if (!video) return Promise.resolve();
+    if (!video) return Promise.resolve(false);
     unlock(video);
-    const result = video.play();
-    return result && typeof result.catch === "function" ? result.catch(() => {}) : Promise.resolve();
+    try {
+      const result = video.play();
+      if (result && typeof result.then === "function") {
+        return result.then(() => true).catch(() => false);
+      }
+      return Promise.resolve(!video.paused);
+    } catch (_) {
+      return Promise.resolve(false);
+    }
+  };
+
+  const activeVideo = () => (hq && hq.classList.contains("is-ready") ? hq : lq);
+
+  // Keep trying until the hero is actually playing (iOS often rejects the first play()).
+  let playAttempts = 0;
+  const ensurePlaying = () => {
+    const video = activeVideo();
+    if (!video) return;
+    if (!video.paused && !video.ended) return;
+    playAttempts += 1;
+    playSafe(video);
+    if (playAttempts < 12) {
+      window.setTimeout(ensurePlaying, 250 * Math.min(playAttempts, 4));
+    }
   };
 
   unlock(lq);
   unlock(hq);
-  if (lq) playSafe(lq);
 
-  // iOS often blocks the first play() — retry until it sticks
-  const kickEvents = ["touchstart", "touchend", "click", "scroll", "pageshow", "visibilitychange"];
-  const kick = () => {
-    const active = hq && hq.classList.contains("is-ready") ? hq : lq;
-    playSafe(active).then(() => {
-      if (active && !active.paused) {
-        kickEvents.forEach((eventName) => window.removeEventListener(eventName, kick));
-      }
+  if (lq) {
+    ["loadedmetadata", "loadeddata", "canplay", "canplaythrough", "playing"].forEach((evt) => {
+      lq.addEventListener(evt, () => playSafe(lq), { passive: true });
     });
+    // Force a load + play cycle; needed on some iOS versions.
+    try { lq.load(); } catch (_) {}
+    playSafe(lq);
+  }
+
+  ensurePlaying();
+
+  const gestureEvents = ["touchstart", "touchend", "pointerdown", "click", "scroll", "pageshow"];
+  const onGesture = () => {
+    ensurePlaying();
+    const video = activeVideo();
+    if (video && !video.paused) {
+      gestureEvents.forEach((evt) => window.removeEventListener(evt, onGesture));
+    }
   };
-  kickEvents.forEach((eventName) => {
-    window.addEventListener(eventName, kick, { passive: true });
+  gestureEvents.forEach((evt) => window.addEventListener(evt, onGesture, { passive: true }));
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") ensurePlaying();
   });
 
   if (!hq) return;
 
-  const hqSource = hq.querySelector("source[data-src]");
-  if (!hqSource) return;
+  const hqSrc = hq.getAttribute("data-hq-src");
+  if (!hqSrc) return;
 
   let swapped = false;
   const swapToHq = () => {
-    if (swapped) return;
+    if (swapped || !hqSrc) return;
+    if (hq.readyState < 2) return;
     swapped = true;
     if (lq && Number.isFinite(lq.currentTime)) {
       try { hq.currentTime = lq.currentTime; } catch (_) {}
     }
-    playSafe(hq).then(() => {
+    playSafe(hq).then((ok) => {
+      if (!ok) {
+        swapped = false;
+        window.setTimeout(swapToHq, 400);
+        return;
+      }
       hq.classList.add("is-ready");
       window.setTimeout(() => {
         if (!lq) return;
         lq.pause();
         lq.removeAttribute("src");
-        lq.querySelectorAll("source").forEach((source) => source.removeAttribute("src"));
-        lq.load();
+        try { lq.load(); } catch (_) {}
       }, 550);
     });
   };
 
-  hqSource.setAttribute("src", hqSource.getAttribute("data-src"));
-  hqSource.removeAttribute("data-src");
+  hq.src = hqSrc;
   hq.preload = "auto";
-  hq.load();
+  try { hq.load(); } catch (_) {}
+  ["loadeddata", "canplay", "canplaythrough"].forEach((evt) => {
+    hq.addEventListener(evt, swapToHq, { passive: true });
+  });
 
-  const onReady = () => {
-    if (hq.readyState >= 3) swapToHq();
-  };
-
-  hq.addEventListener("canplaythrough", swapToHq, { once: true });
-  hq.addEventListener("loadeddata", onReady);
-  if (hq.readyState >= 3) swapToHq();
-
+  // Only pause when the hero is mostly off-screen — never on the flaky first IO callback.
   const heroObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      const active = hq.classList.contains("is-ready") ? hq : lq;
-      if (!active) return;
-      if (entry.isIntersecting) playSafe(active);
-      else active.pause();
+      const video = activeVideo();
+      if (!video) return;
+      if (entry.intersectionRatio > 0.2) playSafe(video);
+      else if (entry.intersectionRatio === 0) video.pause();
     });
-  }, { threshold: 0.05 });
+  }, { threshold: [0, 0.2, 0.5, 1] });
   heroObserver.observe(hero);
 });
 </script>

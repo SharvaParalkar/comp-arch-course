@@ -9,33 +9,33 @@
   <header class="section home-masthead"{% if section.video_lq_url or section.video_lq_mp4_url or section.video_hq_url %} data-home-hero-video{% endif %}>
     {% if section.video_lq_url or section.video_lq_mp4_url or section.video_hq_url %}
     <div class="home-masthead__media" aria-hidden="true">
-      {% if section.video_lq_url or section.video_lq_mp4_url %}
+      {% if section.video_lq_mp4_url or section.video_lq_url %}
+      {# iOS Safari autoplay is most reliable with a direct MP4 src (not <source> children) #}
       <video
         class="home-masthead__video home-masthead__video--lq"
         data-home-hero="lq"
+        {% if section.video_lq_mp4_url %}src="{{ section.video_lq_mp4_url }}"{% elif section.video_lq_url %}src="{{ section.video_lq_url }}"{% endif %}
         muted
         autoplay
         loop
         playsinline
         webkit-playsinline
+        x5-playsinline
         preload="auto"
-      >
-        {% if section.video_lq_mp4_url %}<source src="{{ section.video_lq_mp4_url }}" type="video/mp4"/>{% endif %}
-        {% if section.video_lq_url %}<source src="{{ section.video_lq_url }}" type="video/webm"/>{% endif %}
-      </video>
+      ></video>
       {% endif %}
       {% if section.video_hq_url %}
       <video
         class="home-masthead__video home-masthead__video--hq"
         data-home-hero="hq"
+        data-hq-src="{{ section.video_hq_url }}"
         muted
         loop
         playsinline
         webkit-playsinline
-        preload="none"
-      >
-        <source data-src="{{ section.video_hq_url }}" type="video/mp4"/>
-      </video>
+        x5-playsinline
+        preload="auto"
+      ></video>
       {% endif %}
     </div>
     {% endif %}
