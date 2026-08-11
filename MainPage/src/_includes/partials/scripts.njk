@@ -39,13 +39,40 @@ document.addEventListener("DOMContentLoaded", function() {
   const hq = hero.querySelector('[data-home-hero="hq"]');
   if (!lq && !hq) return;
 
+  const unlock = (video) => {
+    if (!video) return;
+    video.muted = true;
+    video.defaultMuted = true;
+    video.setAttribute("muted", "");
+    video.playsInline = true;
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
+  };
+
   const playSafe = (video) => {
     if (!video) return Promise.resolve();
+    unlock(video);
     const result = video.play();
     return result && typeof result.catch === "function" ? result.catch(() => {}) : Promise.resolve();
   };
 
+  unlock(lq);
+  unlock(hq);
   if (lq) playSafe(lq);
+
+  // iOS often blocks the first play() — retry until it sticks
+  const kickEvents = ["touchstart", "touchend", "click", "scroll", "pageshow", "visibilitychange"];
+  const kick = () => {
+    const active = hq && hq.classList.contains("is-ready") ? hq : lq;
+    playSafe(active).then(() => {
+      if (active && !active.paused) {
+        kickEvents.forEach((eventName) => window.removeEventListener(eventName, kick));
+      }
+    });
+  };
+  kickEvents.forEach((eventName) => {
+    window.addEventListener(eventName, kick, { passive: true });
+  });
 
   if (!hq) return;
 

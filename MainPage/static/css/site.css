@@ -8,6 +8,13 @@
 
 body.is-black {
   background: #000 !important;
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: -webkit-fill-available;
+}
+
+html:has(body.is-black) {
+  height: -webkit-fill-available;
 }
 
 /* Match masthead type: solid white, no exclusion wash */
@@ -31,37 +38,61 @@ body.is-black .navlink.w--current {
 body.is-black .container.is-nav {
   padding-left: clamp(1.25rem, 3.5vw, 2.75rem) !important;
   padding-right: clamp(1.25rem, 3.5vw, 2.75rem) !important;
+  padding-top: max(0.75rem, env(safe-area-inset-top)) !important;
 }
 
 .home-masthead.section,
 .home-masthead {
   position: relative;
   overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
   min-height: 100svh;
+  min-height: 100dvh;
+  height: 100vh;
   height: 100svh;
+  height: 100dvh;
   display: flex !important;
   align-items: flex-end !important;
   justify-content: flex-start;
-  padding: 0 0 6.5vh !important;
+  padding: 0 0 max(6.5vh, calc(env(safe-area-inset-bottom) + 1.5rem)) !important;
   margin: 0 !important;
   background: #000;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .home-masthead.section,
+  .home-masthead {
+    min-height: -webkit-fill-available;
+    height: -webkit-fill-available;
+  }
 }
 
 .home-masthead__media {
   position: absolute;
   inset: 0;
   z-index: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   background: #000;
+  /* Bleed past edges to avoid iOS subpixel gaps */
+  transform: translateZ(0);
 }
 
 .home-masthead__video {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  min-width: 100%;
+  min-height: 100%;
   object-fit: cover;
   object-position: center;
+  /* iOS occasionally letterboxes without this */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .home-masthead__video--lq {
