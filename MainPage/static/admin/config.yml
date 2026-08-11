@@ -158,6 +158,9 @@ collections:
               - { label: Title line 1, name: title_line_1, widget: string }
               - { label: Title line 2, name: title_line_2, widget: string, required: false }
               - { label: Subtitle, name: subtitle, widget: string, required: false }
+              - { label: Low-quality WebM, name: video_lq_url, widget: string, required: false, hint: "Instant-load ~2–3MB WebM (poster replacement)" }
+              - { label: Low-quality MP4, name: video_lq_mp4_url, widget: string, required: false, hint: "Safari fallback ~2–3MB H.264" }
+              - { label: High-quality MP4, name: video_hq_url, widget: string, required: false, hint: "Background-loaded ~9MB H.264; crossfades in when ready" }
           - label: Headline
             name: headline
             widget: object

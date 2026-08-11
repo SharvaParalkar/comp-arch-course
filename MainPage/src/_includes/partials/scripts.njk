@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  const videos = document.querySelectorAll('video');
+  const videos = document.querySelectorAll('video:not([data-home-hero])');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const video = entry.target;
@@ -28,6 +28,71 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }, { threshold: 0.05 });
   videos.forEach(video => observer.observe(video));
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const hero = document.querySelector("[data-home-hero-video]");
+  if (!hero) return;
+
+  const lq = hero.querySelector('[data-home-hero="lq"]');
+  const hq = hero.querySelector('[data-home-hero="hq"]');
+  if (!lq && !hq) return;
+
+  const playSafe = (video) => {
+    if (!video) return Promise.resolve();
+    const result = video.play();
+    return result && typeof result.catch === "function" ? result.catch(() => {}) : Promise.resolve();
+  };
+
+  if (lq) playSafe(lq);
+
+  if (!hq) return;
+
+  const hqSource = hq.querySelector("source[data-src]");
+  if (!hqSource) return;
+
+  let swapped = false;
+  const swapToHq = () => {
+    if (swapped) return;
+    swapped = true;
+    if (lq && Number.isFinite(lq.currentTime)) {
+      try { hq.currentTime = lq.currentTime; } catch (_) {}
+    }
+    playSafe(hq).then(() => {
+      hq.classList.add("is-ready");
+      window.setTimeout(() => {
+        if (!lq) return;
+        lq.pause();
+        lq.removeAttribute("src");
+        lq.querySelectorAll("source").forEach((source) => source.removeAttribute("src"));
+        lq.load();
+      }, 550);
+    });
+  };
+
+  hqSource.setAttribute("src", hqSource.getAttribute("data-src"));
+  hqSource.removeAttribute("data-src");
+  hq.preload = "auto";
+  hq.load();
+
+  const onReady = () => {
+    if (hq.readyState >= 3) swapToHq();
+  };
+
+  hq.addEventListener("canplaythrough", swapToHq, { once: true });
+  hq.addEventListener("loadeddata", onReady);
+  if (hq.readyState >= 3) swapToHq();
+
+  const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const active = hq.classList.contains("is-ready") ? hq : lq;
+      if (!active) return;
+      if (entry.isIntersecting) playSafe(active);
+      else active.pause();
+    });
+  }, { threshold: 0.05 });
+  heroObserver.observe(hero);
 });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>

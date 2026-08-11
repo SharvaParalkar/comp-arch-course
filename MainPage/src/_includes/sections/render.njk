@@ -6,7 +6,38 @@
 {% endif %}
 {% for section in _sections %}
   {% if section.type == 'home_masthead' %}
-  <header class="section home-masthead">
+  <header class="section home-masthead"{% if section.video_lq_url or section.video_lq_mp4_url or section.video_hq_url %} data-home-hero-video{% endif %}>
+    {% if section.video_lq_url or section.video_lq_mp4_url or section.video_hq_url %}
+    <div class="home-masthead__media" aria-hidden="true">
+      {% if section.video_lq_url or section.video_lq_mp4_url %}
+      <video
+        class="home-masthead__video home-masthead__video--lq"
+        data-home-hero="lq"
+        muted
+        playsinline
+        loop
+        autoplay
+        preload="auto"
+      >
+        {% if section.video_lq_url %}<source src="{{ section.video_lq_url }}" type="video/webm"/>{% endif %}
+        {% if section.video_lq_mp4_url %}<source src="{{ section.video_lq_mp4_url }}" type="video/mp4"/>{% endif %}
+      </video>
+      {% endif %}
+      {% if section.video_hq_url %}
+      <video
+        class="home-masthead__video home-masthead__video--hq"
+        data-home-hero="hq"
+        muted
+        playsinline
+        loop
+        preload="none"
+      >
+        <source data-src="{{ section.video_hq_url }}" type="video/mp4"/>
+      </video>
+      {% endif %}
+    </div>
+    {% endif %}
+    <div class="home-masthead__readable" aria-hidden="true"></div>
     <div class="container">
       <div class="home-masthead__stack">
         <h1 class="display-h home-masthead__title">{% if section.title_line_1 %}{{ section.title_line_1 }}{% if section.title_line_2 %}<br/>{{ section.title_line_2 }}{% endif %}{% else %}{{ section.title }}{% endif %}</h1>
