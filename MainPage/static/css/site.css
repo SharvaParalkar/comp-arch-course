@@ -109,6 +109,16 @@ body.is-black .main {
   opacity: 1;
 }
 
+.home-masthead__video--ultra {
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.home-masthead__video--ultra.is-ready {
+  opacity: 1;
+}
+
 /* Keeps type readable over bright / busy video frames */
 .home-masthead__readable {
   position: absolute;

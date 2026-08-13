@@ -62,7 +62,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const lq = hero.querySelector('[data-home-hero="lq"]');
   const hq = hero.querySelector('[data-home-hero="hq"]');
-  if (!lq && !hq) return;
+  const ultra = hero.querySelector('[data-home-hero="ultra"]');
+  if (!lq && !hq && !ultra) return;
 
   const unlock = (video) => {
     if (!video) return;
@@ -90,7 +91,57 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   };
 
-  const activeVideo = () => (hq && hq.classList.contains("is-ready") ? hq : lq);
+  const activeVideo = () => {
+    if (ultra && ultra.classList.contains("is-ready")) return ultra;
+    if (hq && hq.classList.contains("is-ready")) return hq;
+    return lq;
+  };
+
+  const canLoadUltra = () => {
+    const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    if (!conn) return true;
+    if (conn.saveData) return false;
+    const type = conn.effectiveType;
+    if (type === "slow-2g" || type === "2g" || type === "3g") return false;
+    if (typeof conn.downlink === "number" && conn.downlink > 0 && conn.downlink < 2.5) return false;
+    return true;
+  };
+
+  const upgradeVideo = (fromVideo, toVideo, { onReady } = {}) => {
+    const src = toVideo.getAttribute("data-upgrade-src");
+    if (!src) return;
+    let swapped = false;
+    const swap = () => {
+      if (swapped) return;
+      if (toVideo.readyState < 2) return;
+      swapped = true;
+      if (fromVideo && Number.isFinite(fromVideo.currentTime)) {
+        try { toVideo.currentTime = fromVideo.currentTime; } catch (_) {}
+      }
+      playSafe(toVideo).then((ok) => {
+        if (!ok) {
+          swapped = false;
+          window.setTimeout(swap, 400);
+          return;
+        }
+        toVideo.classList.add("is-ready");
+        window.setTimeout(() => {
+          if (!fromVideo) return;
+          fromVideo.pause();
+          fromVideo.removeAttribute("src");
+          try { fromVideo.load(); } catch (_) {}
+        }, 550);
+        if (onReady) onReady();
+      });
+    };
+    unlock(toVideo);
+    toVideo.src = src;
+    toVideo.preload = "auto";
+    try { toVideo.load(); } catch (_) {}
+    ["loadeddata", "canplay", "canplaythrough"].forEach((evt) => {
+      toVideo.addEventListener(evt, swap, { passive: true });
+    });
+  };
 
   // Keep trying until the hero is actually playing (iOS often rejects the first play()).
   let playAttempts = 0;
@@ -107,6 +158,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   unlock(lq);
   unlock(hq);
+  unlock(ultra);
 
   if (lq) {
     ["loadedmetadata", "loadeddata", "canplay", "canplaythrough", "playing"].forEach((evt) => {
@@ -132,43 +184,14 @@ document.addEventListener("DOMContentLoaded", function() {
     if (document.visibilityState === "visible") ensurePlaying();
   });
 
-  if (!hq) return;
-
-  const hqSrc = hq.getAttribute("data-hq-src");
-  if (!hqSrc) return;
-
-  let swapped = false;
-  const swapToHq = () => {
-    if (swapped || !hqSrc) return;
-    if (hq.readyState < 2) return;
-    swapped = true;
-    if (lq && Number.isFinite(lq.currentTime)) {
-      try { hq.currentTime = lq.currentTime; } catch (_) {}
-    }
-    playSafe(hq).then((ok) => {
-      if (!ok) {
-        swapped = false;
-        window.setTimeout(swapToHq, 400);
-        return;
+  if (hq) {
+    upgradeVideo(lq, hq, {
+      onReady: () => {
+        if (ultra && canLoadUltra()) upgradeVideo(hq, ultra);
       }
-      hq.classList.add("is-ready");
-      window.setTimeout(() => {
-        if (!lq) return;
-        lq.pause();
-        lq.removeAttribute("src");
-        try { lq.load(); } catch (_) {}
-      }, 550);
     });
-  };
+  }
 
-  hq.src = hqSrc;
-  hq.preload = "auto";
-  try { hq.load(); } catch (_) {}
-  ["loadeddata", "canplay", "canplaythrough"].forEach((evt) => {
-    hq.addEventListener(evt, swapToHq, { passive: true });
-  });
-
-  // Only pause when the hero is mostly off-screen — never on the flaky first IO callback.
   const heroObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       const video = activeVideo();
