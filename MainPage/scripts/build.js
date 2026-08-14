@@ -36,6 +36,17 @@ function walkFiles(dir, acc = []) {
 cleanGeneratedOutput(site);
 execSync("npx @11ty/eleventy", { cwd: root, stdio: "inherit" });
 
+// Keep Cloudflare Pages under the 25 MiB asset limit. Oversized media must be CDN URLs in content.
+const OVERSIZED_ALLOWLIST_REMOVE = [
+  path.join(site, "uploads", "media", "home-hero-ultra.mp4"),
+];
+for (const file of OVERSIZED_ALLOWLIST_REMOVE) {
+  if (fs.existsSync(file)) {
+    fs.unlinkSync(file);
+    console.warn(`Removed oversized deploy asset: ${path.relative(site, file)}`);
+  }
+}
+
 const oversized = walkFiles(site).filter((file) => fs.statSync(file).size > PAGES_MAX_BYTES);
 if (oversized.length) {
   const list = oversized

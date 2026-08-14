@@ -2,5 +2,6 @@ node_modules/
 site/
 .DS_Store
 
-# Cloudflare Pages max file size is 25 MiB — keep oversized PDFs out of the deploy.
+# Cloudflare Pages max file size is 25 MiB — keep oversized assets out of the deploy.
 static/uploads/publications/geometry-based-structural-form-finding-to-design-architected-cellular-solids.pdf
+static/uploads/media/home-hero-ultra.mp4

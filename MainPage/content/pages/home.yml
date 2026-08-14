@@ -16,4 +16,4 @@ sections:
     video_lq_url: /uploads/media/home-hero-lq.webm
     video_lq_mp4_url: /uploads/media/home-hero-lq.mp4
     video_hq_url: /uploads/media/home-hero.mp4
-    video_ultra_url: /uploads/media/home-hero-ultra.mp4
+    video_ultra_url: https://res.cloudinary.com/dbf3aqsxu/video/upload/v1786680318/home-hero-ultra_p2kv0c.mp4
