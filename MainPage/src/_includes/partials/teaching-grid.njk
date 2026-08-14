@@ -12,14 +12,18 @@
           {% endif %}
           {% if item.card_title or item.category %}
           <div class="project-card__overlay">
-            <span>| {{ item.card_title or item.title }} | {{ item.category or "Seminar" }}</span>
+            <span>| {{ item.card_title or item.title }} |</span>
+            <span>{{ item.category or "Seminar" }}</span>
           </div>
           {% endif %}
         </a>
         {% if item.year %}<div class="project-card__year">{{ item.year }}</div>{% endif %}
         <h3 class="project-card__title">
-          <a href="{{ href }}">{{ item.title }}</a>
+          <a href="{{ href }}">{{ item.card_title or item.title }}</a>
         </h3>
+        {% if item.instructors %}
+        <p class="project-card__instructors"><strong>Instructors:</strong> {{ item.instructors }}</p>
+        {% endif %}
         {% if item.summary %}
         <p class="project-card__summary">{{ item.summary }}</p>
         {% endif %}

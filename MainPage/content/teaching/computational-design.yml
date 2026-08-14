@@ -1,14 +1,17 @@
 title: Developing Computational Solutions for Design Problems
 permalink: /teaching/computational-design.html
 body_class: body
-cover_image: /uploads/media/teaching-computational.jpg
-card_title: Computational Design
+cover_image: /uploads/media/teaching/covers/computational.jpg
+card_title: Developing Computational Solutions for Design Problems
 year: "2023"
 category: Seminar
 sort_order: 2
+instructors: Mostafa Akbari, Yao Lu
 summary: >-
-  Seminar on identifying, formulating, and resolving design problems in architecture and structural
-  design using advanced computational techniques.
+  This seminar aimed at students who seek to identify, investigate, formulate, and resolve design
+  problems in Architecture and Structural Design using advanced computational techniques. This course
+  goes through the critical knowledge and technical foundations that current computational design
+  and Computational Structures are built upon.
 seo:
   og_title: Computational Design Seminar | Mostafa Akbari
 body_mode: sections

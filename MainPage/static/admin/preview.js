@@ -170,12 +170,16 @@
                 : h("div", { className: "project-card__placeholder" }),
               (data.card_title || data.category)
                 ? h("div", { className: "project-card__overlay" },
-                    h("span", null, "| " + (data.card_title || data.title || "") + " | " + (data.category || "Research"))
+                    h("span", null, "| " + (data.card_title || data.title || "") + " |"),
+                    h("span", null, data.category || "Research")
                   )
                 : null
             ),
             data.year ? h("div", { className: "project-card__year" }, data.year) : null,
-            h("h3", { className: "project-card__title" }, data.title || "Untitled project"),
+            h("h3", { className: "project-card__title" }, data.card_title || data.title || "Untitled project"),
+            data.instructors ? h("p", { className: "project-card__instructors" },
+              h("strong", null, "Instructors: "), data.instructors
+            ) : null,
             data.summary ? h("p", { className: "project-card__summary" }, data.summary) : null
           )
         ),

@@ -12,7 +12,8 @@
           {% endif %}
           {% if project.card_title or project.category %}
           <div class="project-card__overlay">
-            <span>| {{ project.card_title or project.title }} | {{ project.category or "Research" }}</span>
+            <span>| {{ project.card_title or project.title }} |</span>
+            <span>{{ project.category or "Research" }}</span>
           </div>
           {% endif %}
         </a>

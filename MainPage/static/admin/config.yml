@@ -475,6 +475,7 @@ collections:
       - { label: Overlay Title, name: card_title, widget: string, required: false }
       - { label: Year, name: year, widget: string, required: false }
       - { label: Category, name: category, widget: string, required: false, hint: "Seminar, Studio, Workshop" }
+      - { label: Instructors, name: instructors, widget: string, required: false }
       - { label: Summary, name: summary, widget: text, required: false }
       - label: Sort Order
         name: sort_order
