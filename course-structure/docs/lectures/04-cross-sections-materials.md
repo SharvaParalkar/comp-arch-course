@@ -1,11 +1,11 @@
 ---
-title: 07 | Shell Structures
-sidebar_position: 7
-week: week-7
+title: 08 | Cellular & Grid Structures
+sidebar_position: 8
+week: week-8
 date: 2026-08-20
 topic: workshop
 youtube_id: ""
-slides_url: https://docs.google.com/presentation/d/1Lwu3MtTFuuoWO-yOBQpZhJLoaXgqyiziirQAXL3B6zU/edit?usp=drive_link
+slides_url: https://docs.google.com/presentation/d/1MhWzbWAMUIFHam1T8SsxQLEH0qSw17KZeWJrBvHOeZQ/edit?usp=drive_link
 related_docs: []
 downloads:
   - label: Grasshopper File
@@ -13,4 +13,4 @@ downloads:
   - label: Rhino File
     file: https://res.cloudinary.com/dbf3aqsxu/raw/upload/v1787273371/Video3_tfqrdq.3dm
 ---
-his session moves from line elements to surfaces, meshing a curved shell and reading its stress trajectories instead of a single utilization number.
+This session bridges Video 5's beams and Video 7's shell, turning a discrete lattice into a utilization map and then optimizing every member individually.
