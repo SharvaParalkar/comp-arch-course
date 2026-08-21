@@ -1,5 +1,5 @@
 ---
-title: 08 | Cellular & Grid Structures
+title: "08 | Cellular & Grid Structures "
 sidebar_position: 8
 week: week-8
 date: 2026-08-20
