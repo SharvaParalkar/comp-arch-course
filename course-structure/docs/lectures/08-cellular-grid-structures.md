@@ -6,7 +6,8 @@ date: 2026-08-20
 topic: workshop
 youtube_id: ""
 slides_url: https://docs.google.com/presentation/d/1MhWzbWAMUIFHam1T8SsxQLEH0qSw17KZeWJrBvHOeZQ/edit?usp=drive_link
-related_docs: []
+related_docs:
+  - 08 | Cellular & Grid Structures
 downloads:
   - label: Grasshopper File
     file: https://res.cloudinary.com/dbf3aqsxu/raw/upload/v1787273371/video3_fxati5.gh

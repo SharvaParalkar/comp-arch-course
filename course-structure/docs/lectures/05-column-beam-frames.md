@@ -6,7 +6,8 @@ date: 2026-08-20
 topic: workshop
 youtube_id: ""
 slides_url: https://docs.google.com/presentation/d/1h5J_j0KzFqEYZRU__aEuZA7C6fn62cZAw7PqPXFds_I/edit?usp=drive_link
-related_docs: []
+related_docs:
+  - 05 | Column + Beam Frames
 downloads:
   - label: Grasshopper File
     file: https://res.cloudinary.com/dbf3aqsxu/raw/upload/v1787273371/video3_fxati5.gh

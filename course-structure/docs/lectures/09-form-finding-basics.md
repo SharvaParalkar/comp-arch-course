@@ -6,7 +6,8 @@ date: 2026-08-20
 topic: workshop
 youtube_id: ""
 slides_url: https://docs.google.com/presentation/d/1yHnE4K-Q0dBii2thGbSPol9ma2Gbr9HI2oTHUMUzwEo/edit?usp=drive_link
-related_docs: []
+related_docs:
+  - 09 | Form-Finding Basics
 downloads:
   - label: Grasshopper File
     file: https://res.cloudinary.com/dbf3aqsxu/raw/upload/v1787273371/video3_fxati5.gh

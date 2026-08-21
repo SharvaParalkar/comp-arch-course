@@ -6,7 +6,8 @@ date: 2026-08-20
 topic: workshop
 youtube_id: null
 slides_url: https://docs.google.com/presentation/d/1InCYXQKMSJKqPq9c90rB0NO5Sgh9cFRK7rX_nz0cGI8
-related_docs: null
+related_docs:
+  - 04 | Cross Sections & Materials
 downloads:
   - label: Grasshopper File
     file: https://res.cloudinary.com/dbf3aqsxu/raw/upload/v1787273371/video3_fxati5.gh

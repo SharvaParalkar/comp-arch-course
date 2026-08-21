@@ -6,7 +6,8 @@ date: 2026-08-20
 topic: workshop
 youtube_id: ""
 slides_url: https://docs.google.com/presentation/d/1Lwu3MtTFuuoWO-yOBQpZhJLoaXgqyiziirQAXL3B6zU/edit?usp=drive_link
-related_docs: []
+related_docs:
+  - 07 | Shell Structures
 downloads:
   - label: Grasshopper File
     file: https://res.cloudinary.com/dbf3aqsxu/raw/upload/v1787273371/video3_fxati5.gh
