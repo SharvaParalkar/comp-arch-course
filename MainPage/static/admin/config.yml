@@ -189,6 +189,14 @@ collections:
               - { label: Image, name: image, widget: image, hint: "Upload here or pick from Media / Cloudinary" }
               - { label: Alt Text, name: alt, widget: string, required: false }
               - { label: Caption, name: caption, widget: string, required: false }
+              - label: Image Frame
+                name: fit_mode
+                widget: select
+                default: fit
+                required: false
+                options:
+                  - { label: "Fit (show whole image)", value: fit }
+                  - { label: "Fill (crop to fill frame)", value: fill }
           - label: Image + Text
             name: image_text
             widget: object
@@ -201,6 +209,14 @@ collections:
                 default: right
                 options: ["left", "right"]
               - { label: Body, name: body, widget: markdown, required: false }
+              - label: Image Frame
+                name: fit_mode
+                widget: select
+                default: fill
+                required: false
+                options:
+                  - { label: "Fill (crop to fill frame)", value: fill }
+                  - { label: "Fit (show whole image)", value: fit }
           - label: Image Gallery
             name: image_gallery
             widget: object
@@ -213,6 +229,14 @@ collections:
                   - { label: Image, name: image, widget: image }
                   - { label: Alt Text, name: alt, widget: string, required: false }
                   - { label: Caption, name: caption, widget: string, required: false }
+                  - label: Image Frame
+                    name: fit_mode
+                    widget: select
+                    default: fit
+                    required: false
+                    options:
+                      - { label: "Fit (show whole image)", value: fit }
+                      - { label: "Fill (crop to fill frame)", value: fill }
           - label: Stat
             name: stat
             widget: object
@@ -360,6 +384,14 @@ collections:
               - { label: Image, name: image, widget: image, hint: "Upload or pick from Media / Cloudinary" }
               - { label: Alt Text, name: alt, widget: string, required: false }
               - { label: Caption, name: caption, widget: string, required: false }
+              - label: Image Frame
+                name: fit_mode
+                widget: select
+                default: fit
+                required: false
+                options:
+                  - { label: "Fit (show whole image)", value: fit }
+                  - { label: "Fill (crop to fill frame)", value: fill }
           - label: Image + Text
             name: image_text
             widget: object
@@ -372,6 +404,14 @@ collections:
                 default: right
                 options: ["left", "right"]
               - { label: Body, name: body, widget: markdown, required: false }
+              - label: Image Frame
+                name: fit_mode
+                widget: select
+                default: fill
+                required: false
+                options:
+                  - { label: "Fill (crop to fill frame)", value: fill }
+                  - { label: "Fit (show whole image)", value: fit }
           - label: Image Gallery
             name: image_gallery
             widget: object
@@ -383,6 +423,14 @@ collections:
                   - { label: Image, name: image, widget: image }
                   - { label: Alt Text, name: alt, widget: string, required: false }
                   - { label: Caption, name: caption, widget: string, required: false }
+                  - label: Image Frame
+                    name: fit_mode
+                    widget: select
+                    default: fit
+                    required: false
+                    options:
+                      - { label: "Fit (show whole image)", value: fit }
+                      - { label: "Fill (crop to fill frame)", value: fill }
           - label: Stat
             name: stat
             widget: object
@@ -516,6 +564,14 @@ collections:
               - { label: Image, name: image, widget: image }
               - { label: Alt Text, name: alt, widget: string, required: false }
               - { label: Caption, name: caption, widget: string, required: false }
+              - label: Image Frame
+                name: fit_mode
+                widget: select
+                default: fit
+                required: false
+                options:
+                  - { label: "Fit (show whole image)", value: fit }
+                  - { label: "Fill (crop to fill frame)", value: fill }
           - label: Rich Text
             name: rich_text
             widget: object
