@@ -36,6 +36,13 @@ sections:
       using robotic wire cutting technique and to find solutions to rationalize and improve the
       existing design of the house; and second, to fabricate a part of the house assembled in the
       form of a mock-up to manifest the solutions to construct the entire project.</p>
+  - type: image_gallery
+    images:
+      - { image: /uploads/media/projects/gallery/p2p-site-less-house/img-01.jpg, alt: "p2p-site-less-house archive photo" }
+      - { image: /uploads/media/projects/gallery/p2p-site-less-house/img-02.jpg, alt: "p2p-site-less-house archive photo" }
+      - { image: /uploads/media/projects/gallery/p2p-site-less-house/img-03.jpg, alt: "p2p-site-less-house archive photo" }
+      - { image: /uploads/media/projects/gallery/p2p-site-less-house/img-04.jpg, alt: "p2p-site-less-house archive photo" }
+      - { image: /uploads/media/projects/gallery/p2p-site-less-house/img-05.gif, alt: "p2p-site-less-house archive photo" }
 year: "2018"
 category: Research
 card_title: P2P Sitless House

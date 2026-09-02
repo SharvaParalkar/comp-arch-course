@@ -97,7 +97,7 @@
   </div></section>
   {% elif section.type == 'image' %}
   <section class="section page-media-section"><div class="container">
-    <figure class="page-media">
+    <figure class="page-media{% if section.fit_mode == 'fill' %} page-media--fill{% endif %}">
       <img src="{{ section.image }}" loading="lazy" alt="{{ section.alt or '' }}"/>
       {% if section.caption %}<figcaption class="page-media__caption h-x-small">{{ section.caption }}</figcaption>{% endif %}
     </figure>
@@ -108,7 +108,7 @@
       <div class="image-text__body txt-large w-richtext">{{ section.body | safe }}</div>
       {% if section.image %}
       <div class="image-text__media">
-        <img src="{{ section.image }}" alt="{{ section.alt or '' }}" class="image-text__img"/>
+        <img src="{{ section.image }}" alt="{{ section.alt or '' }}" class="image-text__img{% if section.fit_mode == 'fit' %} image-text__img--fit{% endif %}"/>
       </div>
       {% endif %}
     </div>
@@ -117,7 +117,7 @@
   <section class="section image-gallery-section"><div class="container"><div class="image-gallery">
     {% for item in section.images %}
     <figure class="image-gallery__item">
-      <img src="{{ item.image }}" loading="lazy" alt="{{ item.alt or '' }}" class="image-gallery__img"/>
+      <img src="{{ item.image }}" loading="lazy" alt="{{ item.alt or '' }}" class="image-gallery__img{% if item.fit_mode == 'fill' %} image-gallery__img--fill{% endif %}"/>
       {% if item.caption %}<figcaption class="image-gallery__caption">{{ item.caption }}</figcaption>{% endif %}
     </figure>
     {% endfor %}

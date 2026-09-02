@@ -44,6 +44,16 @@ sections:
       this stage, we developed an algorithmically determined tool paths for robot motion for 3d
       printing through bottom-up rule sets. Here, we evaluated production constraints and attempt to
       incorporate these as heuristics within our tool path .</p>
+  - type: image_gallery
+    images:
+      - { image: /uploads/media/projects/gallery/material-formation-agent-based-design-robotic-clay-printing/img-01.jpg, alt: "material-formation-agent-based-design-robotic-clay-printing archive photo" }
+      - { image: /uploads/media/projects/gallery/material-formation-agent-based-design-robotic-clay-printing/img-02.jpg, alt: "material-formation-agent-based-design-robotic-clay-printing archive photo" }
+      - { image: /uploads/media/projects/gallery/material-formation-agent-based-design-robotic-clay-printing/img-03.jpg, alt: "material-formation-agent-based-design-robotic-clay-printing archive photo" }
+      - { image: /uploads/media/projects/gallery/material-formation-agent-based-design-robotic-clay-printing/img-04.jpg, alt: "material-formation-agent-based-design-robotic-clay-printing archive photo" }
+      - { image: /uploads/media/projects/gallery/material-formation-agent-based-design-robotic-clay-printing/img-05.jpg, alt: "material-formation-agent-based-design-robotic-clay-printing archive photo" }
+      - { image: /uploads/media/projects/gallery/material-formation-agent-based-design-robotic-clay-printing/img-06.jpg, alt: "material-formation-agent-based-design-robotic-clay-printing archive photo" }
+      - { image: /uploads/media/projects/gallery/material-formation-agent-based-design-robotic-clay-printing/img-07.jpg, alt: "material-formation-agent-based-design-robotic-clay-printing archive photo" }
+      - { image: /uploads/media/projects/gallery/material-formation-agent-based-design-robotic-clay-printing/img-08.jpg, alt: "material-formation-agent-based-design-robotic-clay-printing archive photo" }
 year: "2018"
 category: Research
 card_title: Robotic clay printing

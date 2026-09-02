@@ -54,6 +54,14 @@ sections:
       Council of Canada (RGPIN-2016-0471) and Canada Research Chairs program in Multifunctional
       Metamaterials to Abdolhamid Akbarzadeh. The authors acknowledge the contribution of Hossein
       Mofatteh, at the AM^3L laboratory at McGill University, for the 3D printing process.</p>
+  - type: image_gallery
+    images:
+      - { image: /uploads/media/projects/gallery/shellular-funicular-materials/img-01.jpg, alt: "shellular-funicular-materials archive photo" }
+      - { image: /uploads/media/projects/gallery/shellular-funicular-materials/img-02.jpg, alt: "shellular-funicular-materials archive photo" }
+      - { image: /uploads/media/projects/gallery/shellular-funicular-materials/img-03.jpg, alt: "shellular-funicular-materials archive photo" }
+      - { image: /uploads/media/projects/gallery/shellular-funicular-materials/img-04.jpg, alt: "shellular-funicular-materials archive photo" }
+      - { image: /uploads/media/projects/gallery/shellular-funicular-materials/img-05.jpg, alt: "shellular-funicular-materials archive photo" }
+      - { image: /uploads/media/projects/gallery/shellular-funicular-materials/img-06.png, alt: "shellular-funicular-materials archive photo" }
 year: "2022"
 category: Research
 card_title: Shellular Funicular Materials
