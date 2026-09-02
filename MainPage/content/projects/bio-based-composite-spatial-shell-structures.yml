@@ -48,6 +48,15 @@ sections:
       Mogas- Soldevila. This research was also funded by the National Science Foundation CAREER
       Award (NSF CAREER-1944691 CMMI) and the National Science Foundation Future Eco Manufacturing
       Research Grant (NSF, FMRG-CMMI 2037097) to Dr. Masoud Akbarzadeh.</p>
+  - type: image_gallery
+    images:
+      - { image: /uploads/media/projects/gallery/bio-based-composite-spatial-shell-structures/img-01.jpg, alt: "bio-based-composite-spatial-shell-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/bio-based-composite-spatial-shell-structures/img-02.jpg, alt: "bio-based-composite-spatial-shell-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/bio-based-composite-spatial-shell-structures/img-03.jpg, alt: "bio-based-composite-spatial-shell-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/bio-based-composite-spatial-shell-structures/img-04.jpg, alt: "bio-based-composite-spatial-shell-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/bio-based-composite-spatial-shell-structures/img-05.jpg, alt: "bio-based-composite-spatial-shell-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/bio-based-composite-spatial-shell-structures/img-06.jpg, alt: "bio-based-composite-spatial-shell-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/bio-based-composite-spatial-shell-structures/img-07.jpg, alt: "bio-based-composite-spatial-shell-structures archive photo" }
 year: "2023"
 category: Research
 card_title: Bio-Based Composite Spatial Shell Structures

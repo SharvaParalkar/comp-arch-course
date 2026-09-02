@@ -64,6 +64,16 @@ sections:
       Air Force Office of Scientific Research (grant no. FA9550-22-1-0095). M. Akbarzadeh
       acknowledges funding from the National Science Foundation through a CAREER Award
       (CAREER-1944691-CMMI) and a Future Eco Manufacturing Research Grant (FMRG-CMMI 2037097).</p>
+  - type: image_gallery
+    images:
+      - { image: /uploads/media/projects/gallery/electrochemical-healing-of-fractured-metals/img-01.jpg, alt: "electrochemical-healing-of-fractured-metals archive photo" }
+      - { image: /uploads/media/projects/gallery/electrochemical-healing-of-fractured-metals/img-02.jpg, alt: "electrochemical-healing-of-fractured-metals archive photo" }
+      - { image: /uploads/media/projects/gallery/electrochemical-healing-of-fractured-metals/img-03.jpg, alt: "electrochemical-healing-of-fractured-metals archive photo" }
+      - { image: /uploads/media/projects/gallery/electrochemical-healing-of-fractured-metals/img-04.jpg, alt: "electrochemical-healing-of-fractured-metals archive photo" }
+      - { image: /uploads/media/projects/gallery/electrochemical-healing-of-fractured-metals/img-05.jpg, alt: "electrochemical-healing-of-fractured-metals archive photo" }
+      - { image: /uploads/media/projects/gallery/electrochemical-healing-of-fractured-metals/img-06.jpg, alt: "electrochemical-healing-of-fractured-metals archive photo" }
+      - { image: /uploads/media/projects/gallery/electrochemical-healing-of-fractured-metals/img-07.jpg, alt: "electrochemical-healing-of-fractured-metals archive photo" }
+      - { image: /uploads/media/projects/gallery/electrochemical-healing-of-fractured-metals/img-08.jpg, alt: "electrochemical-healing-of-fractured-metals archive photo" }
 year: "2023"
 category: Research
 card_title: Electrochemical Healing of Fractured Metals

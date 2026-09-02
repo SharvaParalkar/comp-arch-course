@@ -49,6 +49,14 @@ sections:
       (URF), National Science Foundation (NSF) CAREER AWARD (NSF CAREER-1944691- CMMI), and the
       National Science Foundation (NSF) Future Eco Manufacturing Research Grant (NSF, FMRG-CMMI
       2037097) to Dr. Masoud Akbarzadeh.</p>
+  - type: image_gallery
+    images:
+      - { image: /uploads/media/projects/gallery/shellular-fabrication-via-origami/img-01.jpg, alt: "shellular-fabrication-via-origami archive photo" }
+      - { image: /uploads/media/projects/gallery/shellular-fabrication-via-origami/img-02.jpg, alt: "shellular-fabrication-via-origami archive photo" }
+      - { image: /uploads/media/projects/gallery/shellular-fabrication-via-origami/img-03.jpg, alt: "shellular-fabrication-via-origami archive photo" }
+      - { image: /uploads/media/projects/gallery/shellular-fabrication-via-origami/img-04.jpg, alt: "shellular-fabrication-via-origami archive photo" }
+      - { image: /uploads/media/projects/gallery/shellular-fabrication-via-origami/img-05.jpg, alt: "shellular-fabrication-via-origami archive photo" }
+      - { image: /uploads/media/projects/gallery/shellular-fabrication-via-origami/img-06.jpg, alt: "shellular-fabrication-via-origami archive photo" }
 year: "2021"
 category: Design/Research
 card_title: Shellular Fabrication via Origami

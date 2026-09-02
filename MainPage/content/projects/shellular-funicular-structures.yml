@@ -50,6 +50,16 @@ sections:
       performance. In this research, we are trying to get as close as possible to such geometries
       utilizing 3D graphic statics to take advantage of their properties in many fields such as
       architectural design, structural design, biomechanics, biochemistry, and beyond.</p>
+  - type: image_gallery
+    images:
+      - { image: /uploads/media/projects/gallery/shellular-funicular-structures/img-01.jpg, alt: "shellular-funicular-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/shellular-funicular-structures/img-02.jpg, alt: "shellular-funicular-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/shellular-funicular-structures/img-03.jpg, alt: "shellular-funicular-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/shellular-funicular-structures/img-04.jpg, alt: "shellular-funicular-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/shellular-funicular-structures/img-05.jpg, alt: "shellular-funicular-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/shellular-funicular-structures/img-06.jpg, alt: "shellular-funicular-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/shellular-funicular-structures/img-07.jpg, alt: "shellular-funicular-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/shellular-funicular-structures/img-08.jpg, alt: "shellular-funicular-structures archive photo" }
 year: "2021"
 category: Research
 card_title: Shellular Funicular Structures

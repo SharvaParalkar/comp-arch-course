@@ -38,6 +38,15 @@ sections:
       <p>Related publication: Chi, Gao, Akbari, et al. “Geometrically Templated, Ultra-Lightweight
       and High Strength Soap Films from Lyotropic Liquid Crystalline Graphene Oxide/Polymer
       Composites.” <em>Advanced Functional Materials</em>, 2025.</p>
+  - type: image_gallery
+    images:
+      - { image: /uploads/media/projects/gallery/soap-coating-cellular-structures/img-01.jpg, alt: "soap-coating-cellular-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/soap-coating-cellular-structures/img-02.jpg, alt: "soap-coating-cellular-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/soap-coating-cellular-structures/img-03.jpg, alt: "soap-coating-cellular-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/soap-coating-cellular-structures/img-04.jpg, alt: "soap-coating-cellular-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/soap-coating-cellular-structures/img-05.png, alt: "soap-coating-cellular-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/soap-coating-cellular-structures/img-06.jpg, alt: "soap-coating-cellular-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/soap-coating-cellular-structures/img-07.png, alt: "soap-coating-cellular-structures archive photo" }
 year: "2023"
 category: Research
 card_title: Soap Coating Cellular Structures

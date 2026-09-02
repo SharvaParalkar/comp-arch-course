@@ -23,6 +23,15 @@ sections:
       Statics (PGS), the fabrication process of these structures might be time consuming and labor
       intensive. In order to fabricate these structures out of a flat sheet of material and
       automating the fabrication process, [...]</p>
+  - type: image_gallery
+    images:
+      - { image: /uploads/media/projects/gallery/self-folding-origami-structures/img-01.gif, alt: "self-folding-origami-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/self-folding-origami-structures/img-02.gif, alt: "self-folding-origami-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/self-folding-origami-structures/img-03.gif, alt: "self-folding-origami-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/self-folding-origami-structures/img-04.gif, alt: "self-folding-origami-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/self-folding-origami-structures/img-05.gif, alt: "self-folding-origami-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/self-folding-origami-structures/img-06.gif, alt: "self-folding-origami-structures archive photo" }
+      - { image: /uploads/media/projects/gallery/self-folding-origami-structures/img-07.gif, alt: "self-folding-origami-structures archive photo" }
 year: "2023"
 category: Research
 card_title: Self-folding Origami Structures

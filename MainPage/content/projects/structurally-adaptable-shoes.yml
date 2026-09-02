@@ -37,6 +37,15 @@ sections:
       cell to shell structures. The integration of divergent unit cells, each distinguished by
       unique geometries, culminates in the formation of a hybrid structure that seamlessly combines
       various components into a cohesive whole.</p>
+  - type: image_gallery
+    images:
+      - { image: /uploads/media/projects/gallery/structurally-adaptable-shoes/img-01.jpg, alt: "structurally-adaptable-shoes archive photo" }
+      - { image: /uploads/media/projects/gallery/structurally-adaptable-shoes/img-02.jpg, alt: "structurally-adaptable-shoes archive photo" }
+      - { image: /uploads/media/projects/gallery/structurally-adaptable-shoes/img-03.jpg, alt: "structurally-adaptable-shoes archive photo" }
+      - { image: /uploads/media/projects/gallery/structurally-adaptable-shoes/img-04.jpg, alt: "structurally-adaptable-shoes archive photo" }
+      - { image: /uploads/media/projects/gallery/structurally-adaptable-shoes/img-05.jpg, alt: "structurally-adaptable-shoes archive photo" }
+      - { image: /uploads/media/projects/gallery/structurally-adaptable-shoes/img-06.jpg, alt: "structurally-adaptable-shoes archive photo" }
+      - { image: /uploads/media/projects/gallery/structurally-adaptable-shoes/img-07.jpg, alt: "structurally-adaptable-shoes archive photo" }
 year: "2023"
 category: Research
 card_title: Structurally Adaptable Shoes

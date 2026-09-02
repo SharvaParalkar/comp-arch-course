@@ -40,6 +40,10 @@ sections:
       weaving the carbon fiber around a preconstructed form, followed by a curing process to
       solidify the sculpture's shape. All models are outfitted with Arduino kits and servomotors,
       which incorporate diverse sensors including distance, camera, and touch sensors.</p>
+  - type: image_gallery
+    images:
+      - { image: /uploads/media/projects/gallery/hystrics-interactive-agents/img-01.jpg, alt: "hystrics-interactive-agents archive photo" }
+      - { image: /uploads/media/projects/gallery/hystrics-interactive-agents/img-02.jpg, alt: "hystrics-interactive-agents archive photo" }
 year: "2018"
 category: Design/Research
 card_title: Hystrics

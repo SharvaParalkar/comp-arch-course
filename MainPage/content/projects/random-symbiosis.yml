@@ -39,6 +39,15 @@ sections:
       servomotors and their translation into captivating external configurations. Concurrently,
       meticulous assessment of various elastic materials and their pliability was essential, in
       relation to the specific threshold of force tolerable by the servomotors.</p>
+  - type: image_gallery
+    images:
+      - { image: /uploads/media/projects/gallery/random-symbiosis/img-01.jpg, alt: "random-symbiosis archive photo" }
+      - { image: /uploads/media/projects/gallery/random-symbiosis/img-02.jpg, alt: "random-symbiosis archive photo" }
+      - { image: /uploads/media/projects/gallery/random-symbiosis/img-03.jpg, alt: "random-symbiosis archive photo" }
+      - { image: /uploads/media/projects/gallery/random-symbiosis/img-04.jpg, alt: "random-symbiosis archive photo" }
+      - { image: /uploads/media/projects/gallery/random-symbiosis/img-05.jpg, alt: "random-symbiosis archive photo" }
+      - { image: /uploads/media/projects/gallery/random-symbiosis/img-06.jpg, alt: "random-symbiosis archive photo" }
+      - { image: /uploads/media/projects/gallery/random-symbiosis/img-07.jpg, alt: "random-symbiosis archive photo" }
 year: "2016"
 category: Design/Research
 card_title: Random Symbiosis
