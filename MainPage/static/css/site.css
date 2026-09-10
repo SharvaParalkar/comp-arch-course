@@ -293,7 +293,8 @@ a[href*="learn-more"],
 }
 
 .projects-grid-section,
-.publications-list-section {
+.publications-list-section,
+.projects-list-section {
   padding-top: 1.5rem;
   padding-bottom: 5rem;
 }
@@ -302,6 +303,19 @@ a[href*="learn-more"],
   columns: 3;
   column-gap: 1.75rem;
   width: 100%;
+}
+
+/* Teaching: row-major grid so odd counts don't leave a hole under column 1 */
+.teaching-grid {
+  columns: unset;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 1.75rem;
+  row-gap: 2.75rem;
+}
+
+.teaching-grid .project-card {
+  margin-bottom: 0;
 }
 
 .project-card {
@@ -319,24 +333,22 @@ a[href*="learn-more"],
   background: #e8e8e8;
   text-decoration: none;
   color: inherit;
+  aspect-ratio: 498 / 460;
 }
 
 .project-card__img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   object-position: center center;
-<<<<<<< HEAD
   transition: transform 0.45s ease;
-=======
-  display: block;
->>>>>>> ed862d94f388d240848b66bd03c5f7fb15bbee40
 }
 
 .project-card__placeholder {
   width: 100%;
-  aspect-ratio: 498 / 460;
+  height: 100%;
+  aspect-ratio: auto;
   background: linear-gradient(145deg, #d8d8d8, #efefef 45%, #cfcfcf);
 }
 
@@ -565,6 +577,60 @@ a[href*="learn-more"],
   text-align: center;
 }
 
+/* CV / PDF embed */
+.section.is-t-double:has(+ .pdf-embed-section) .container,
+.pdf-embed-section .container {
+  max-width: 58rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.pdf-embed-section {
+  padding-top: 0.5rem;
+  padding-bottom: 5rem;
+}
+
+.pdf-embed {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.pdf-embed__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 1.75rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
+.pdf-embed__actions a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pdf-embed__frame {
+  display: block;
+  width: 100%;
+  min-height: min(85vh, 1100px);
+  height: 85vh;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #f4f4f4;
+}
+
+.pdf-embed__fallback {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.pdf-embed__fallback a {
+  color: inherit;
+}
+
 .detail-related {
   margin: 0 0 2rem;
 }
@@ -614,76 +680,132 @@ a[href*="learn-more"],
   opacity: 0.8;
 }
 
-/* Publications — venue, then PDF / BibTeX underneath */
-.publications-list {
+/* Publications — centered column, larger thumbs, venue then PDF / BibTeX */
+.section.is-t-double:has(+ .publications-list-section) .container,
+.publications-list-section .container,
+.section.is-t-double:has(+ .projects-list-section) .container,
+.projects-list-section .container {
+  max-width: 58rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.publications-list,
+.projects-list {
   display: flex;
   flex-direction: column;
   gap: 3.25rem;
   width: 100%;
 }
 
-.pub-row {
+.pub-row,
+.proj-row {
   display: grid;
-  grid-template-columns: minmax(160px, 240px) minmax(0, 1fr);
-  gap: 1.75rem 2.25rem;
+  grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
+  gap: 1.75rem 2.5rem;
   align-items: start;
   padding-bottom: 3.25rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.pub-row:last-child {
+.pub-row:last-child,
+.proj-row:last-child {
   border-bottom: 0;
   padding-bottom: 0;
 }
 
-.pub-row__media {
-  justify-self: start;
+.pub-row__media,
+.proj-row__media {
+  justify-self: stretch;
   overflow: hidden;
   background: transparent;
 }
 
-.pub-row__img {
+.proj-row__media {
+  position: relative;
   display: block;
-  width: auto;
-  height: auto;
-  max-width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #e8e8e8;
+  text-decoration: none;
+  color: inherit;
 }
 
-.pub-row__placeholder {
+.pub-row__img {
+  display: block;
   width: 100%;
+  height: auto;
+}
+
+.proj-row__img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 0;
+  transition: opacity 0.55s ease;
+  pointer-events: none;
+}
+
+.proj-row__img.is-active {
+  opacity: 1;
+}
+
+.pub-row__placeholder,
+.proj-row__placeholder {
+  width: 100%;
+  height: 100%;
   aspect-ratio: 4 / 3;
   background: linear-gradient(145deg, #d8d8d8, #efefef 45%, #cfcfcf);
 }
 
-.pub-row__body {
+.pub-row__body,
+.proj-row__body {
   display: flex;
   flex-direction: column;
   min-width: 0;
   padding-top: 0.15rem;
 }
 
-.pub-row__title {
+.pub-row__title,
+.proj-row__title {
   margin: 0;
   font-size: 1.2rem;
   font-weight: 700;
   line-height: 1.35;
 }
 
-.pub-row__authors {
+.proj-row__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.proj-row__title a:hover {
+  text-decoration: underline;
+}
+
+.pub-row__authors,
+.proj-row__summary {
   margin: 0.75rem 0 0;
   font-size: 0.95rem;
   line-height: 1.5;
   opacity: 0.72;
 }
 
-.pub-row__venue {
+.pub-row__venue,
+.proj-row__year {
   margin: 1.1rem 0 0;
   font-size: 0.85rem;
   letter-spacing: 0.04em;
   opacity: 0.85;
 }
 
-.pub-row__links {
+.pub-row__links,
+.proj-row__links {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -693,7 +815,8 @@ a[href*="learn-more"],
   letter-spacing: 0.04em;
 }
 
-.pub-row__links a {
+.pub-row__links a,
+.proj-row__links a {
   color: inherit;
   text-decoration: none;
 }
@@ -723,12 +846,22 @@ a[href*="learn-more"],
 }
 
 /* About */
+.section.is-t-double:has(+ .section .image-text) .container,
+.section:has(> .container > .image-text) .container {
+  max-width: 58rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
 .image-text {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(200px, 0.7fr);
   gap: 3rem 4rem;
   align-items: start;
   padding-bottom: 3rem;
+  width: 100%;
 }
 
 .image-text.is-image-left {
@@ -796,6 +929,13 @@ a[href*="learn-more"],
     column-gap: 1.25rem;
   }
 
+  .teaching-grid {
+    columns: unset;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1.25rem;
+    row-gap: 2rem;
+  }
+
   .project-card {
     margin-bottom: 2rem;
   }
@@ -816,15 +956,21 @@ a[href*="learn-more"],
     margin-left: 0;
   }
 
-  .pub-row {
-    grid-template-columns: minmax(140px, 200px) minmax(0, 1fr);
-    gap: 1.25rem;
+  .pub-row,
+  .proj-row {
+    grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+    gap: 1.25rem 1.75rem;
   }
 }
 
 @media (max-width: 640px) {
   .projects-grid {
     columns: 1;
+  }
+
+  .teaching-grid {
+    columns: unset;
+    grid-template-columns: 1fr;
   }
 
   .image-gallery,
@@ -841,12 +987,14 @@ a[href*="learn-more"],
     max-width: 280px;
   }
 
-  .pub-row {
+  .pub-row,
+  .proj-row {
     grid-template-columns: 1fr;
   }
 
-  .pub-row__media {
-    max-width: 280px;
+  .pub-row__media,
+  .proj-row__media {
+    max-width: 100%;
   }
 
   .page-media img,

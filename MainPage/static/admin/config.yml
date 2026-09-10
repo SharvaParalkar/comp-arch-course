@@ -249,6 +249,14 @@ collections:
             widget: object
             fields:
               - { label: Body, name: body, widget: markdown, required: false }
+          - label: PDF Embed
+            name: pdf
+            widget: object
+            summary: "{{title}}"
+            fields:
+              - { label: PDF File, name: file, widget: file, media_folder: /static/uploads/cv, public_folder: /uploads/cv }
+              - { label: Title, name: title, widget: string, required: false, hint: "Accessibility title for the embed" }
+              - { label: Download Label, name: download_label, widget: string, required: false, default: "Download PDF" }
       - label: Legacy HTML
         name: main_html
         widget: code

@@ -158,29 +158,27 @@
       var cover = getAsset(this.props.getAsset, data.cover_image);
       return h("div", { className: "cms-preview" },
         h("div", { className: "cms-preview__meta" },
-          h("span", null, "Card preview (Projects grid)"),
+          h("span", null, "Card preview (Projects list)"),
           data.year ? h("span", null, data.year) : null,
           data.category ? h("span", null, data.category) : null
         ),
-        h("div", { className: "projects-grid", style: { gridTemplateColumns: "minmax(0, 320px)" } },
-          h("article", { className: "project-card" },
-            h("div", { className: "project-card__media" },
-              cover
-                ? h("img", { className: "project-card__img", src: cover, alt: data.card_title || data.title || "" })
-                : h("div", { className: "project-card__placeholder" }),
-              (data.card_title || data.category)
-                ? h("div", { className: "project-card__overlay" },
-                    h("span", null, "| " + (data.card_title || data.title || "") + " |"),
-                    h("span", null, data.category || "Research")
-                  )
-                : null
-            ),
-            data.year ? h("div", { className: "project-card__year" }, data.year) : null,
-            h("h3", { className: "project-card__title" }, data.card_title || data.title || "Untitled project"),
-            data.instructors ? h("p", { className: "project-card__instructors" },
-              h("strong", null, "Instructors: "), data.instructors
-            ) : null,
-            data.summary ? h("p", { className: "project-card__summary" }, data.summary) : null
+        h("article", { className: "proj-row" },
+          h("a", { className: "proj-row__media", href: "#" },
+            cover
+              ? h("img", { className: "proj-row__img is-active", src: cover, alt: data.card_title || data.title || "" })
+              : h("div", { className: "proj-row__placeholder" })
+          ),
+          h("div", { className: "proj-row__body" },
+            h("h3", { className: "proj-row__title" }, data.title || "Untitled project"),
+            data.summary ? h("p", { className: "proj-row__summary" }, data.summary) : null,
+            (data.year || data.category)
+              ? h("p", { className: "proj-row__year" },
+                  [data.year, data.category].filter(Boolean).join(" · ")
+                )
+              : null,
+            h("div", { className: "proj-row__links" },
+              h("a", { href: "#" }, "View project")
+            )
           )
         ),
         h("hr", { style: { margin: "2rem 0", border: 0, borderTop: "1px solid #ddd" } }),

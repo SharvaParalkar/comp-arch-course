@@ -253,3 +253,73 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const galleries = document.querySelectorAll("[data-proj-gallery]");
+  if (!galleries.length) return;
+
+  const INTERVAL_MS = 2600;
+
+  galleries.forEach((gallery) => {
+    const slides = Array.from(gallery.querySelectorAll(".proj-row__img"));
+    if (slides.length < 2) return;
+
+    let index = slides.findIndex((slide) => slide.classList.contains("is-active"));
+    if (index < 0) index = 0;
+    let timer = null;
+    let paused = false;
+    let visible = false;
+
+    const show = (next) => {
+      slides[index].classList.remove("is-active");
+      slides[index].setAttribute("aria-hidden", "true");
+      index = next;
+      slides[index].classList.add("is-active");
+      slides[index].removeAttribute("aria-hidden");
+    };
+
+    const tick = () => show((index + 1) % slides.length);
+
+    const stop = () => {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    };
+
+    const start = () => {
+      if (paused || !visible || document.hidden || timer) return;
+      timer = setInterval(tick, INTERVAL_MS);
+    };
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          visible = entry.isIntersecting;
+          if (visible) start();
+          else stop();
+        });
+      },
+      { threshold: 0.35 }
+    );
+    io.observe(gallery);
+
+    gallery.addEventListener("mouseenter", () => {
+      paused = true;
+      stop();
+    });
+    gallery.addEventListener("mouseleave", () => {
+      paused = false;
+      start();
+    });
+    gallery.addEventListener("focusin", () => {
+      paused = true;
+      stop();
+    });
+    gallery.addEventListener("focusout", () => {
+      paused = false;
+      start();
+    });
+  });
+});
+</script>

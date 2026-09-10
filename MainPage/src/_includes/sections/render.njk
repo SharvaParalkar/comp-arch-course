@@ -129,5 +129,28 @@
   </div></div></div></section>
   {% elif section.type == 'rich_text' %}
   <section class="section{% if show_detail_header %} detail-prose{% endif %}"><div class="container"><div class="d"><div class="txt-large w-richtext">{{ section.body | safe }}</div></div></div></section>
+  {% elif section.type == 'pdf' and section.file %}
+  <section class="section pdf-embed-section">
+    <div class="container">
+      <div class="pdf-embed">
+        <div class="pdf-embed__actions">
+          <a data-underline-link="" href="{{ section.file }}" download target="_blank" rel="noopener">{{ section.download_label or "Download PDF" }}</a>
+          <a data-underline-link="" href="{{ section.file }}" target="_blank" rel="noopener">Open in new tab</a>
+        </div>
+        <iframe
+          class="pdf-embed__frame"
+          src="{{ section.file }}#view=FitH"
+          title="{{ section.title or 'PDF document' }}"
+          loading="lazy"
+        ></iframe>
+        <p class="pdf-embed__fallback">
+          Can’t view the PDF here?
+          <a href="{{ section.file }}" target="_blank" rel="noopener">Open it in a new tab</a>
+          or
+          <a href="{{ section.file }}" download>download it</a>.
+        </p>
+      </div>
+    </div>
+  </section>
   {% endif %}
 {% endfor %}

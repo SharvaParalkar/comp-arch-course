@@ -52,6 +52,37 @@ module.exports = function (eleventyConfig) {
     })
   );
 
+  eleventyConfig.addFilter("projectCardImages", (project) => {
+    const images = [];
+    const seen = new Set();
+    const push = (src, alt) => {
+      const image = String(src || "").trim();
+      if (!image || seen.has(image)) return;
+      seen.add(image);
+      images.push({ image, alt: alt || project?.title || "" });
+    };
+
+    for (const section of project?.sections || []) {
+      if (section?.type === "image_gallery" && Array.isArray(section.images)) {
+        for (const item of section.images) {
+          push(item?.image, item?.alt || project?.title);
+        }
+      }
+    }
+
+    if (!images.length) {
+      push(project?.cover_image, project?.card_title || project?.title);
+    } else if (project?.cover_image) {
+      // Prefer cover as the opening frame when it isn't already in the gallery.
+      const cover = String(project.cover_image).trim();
+      if (cover && !seen.has(cover)) {
+        images.unshift({ image: cover, alt: project.card_title || project.title || "" });
+      }
+    }
+
+    return images;
+  });
+
   eleventyConfig.addFilter("hrefPath", (permalink) => {
     const value = String(permalink || "");
     return value.startsWith("/") ? value.slice(1) : value;
