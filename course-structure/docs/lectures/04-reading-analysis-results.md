@@ -4,14 +4,14 @@ sidebar_position: 4
 week: week-
 date: 2026-08-20
 topic: workshop
-youtube_id: null
+youtube_id: cZIm44NHpmQ
 slides_url: https://docs.google.com/presentation/d/1InCYXQKMSJKqPq9c90rB0NO5Sgh9cFRK7rX_nz0cGI8
 related_docs:
   - 04 | Cross Sections & Materials
 downloads:
   - label: Grasshopper File
-    file: https://res.cloudinary.com/dbf3aqsxu/raw/upload/v1787273371/video3_fxati5.gh
+    file: https://res.cloudinary.com/dbf3aqsxu/raw/upload/v1790660882/video4_ovcf6v.ghx
   - label: Rhino File
-    file: https://res.cloudinary.com/dbf3aqsxu/raw/upload/v1787273371/Video3_tfqrdq.3dm
+    file: w
 ---
-This session reuses Video 1's fixed beam but swaps the material underneath it, showing how stiffness and strength independently drive deflection and utilization.
+This session walks through setting material properties for different beam types, understanding their utilization percentages, understanding what the numbers mean, and finally, a fun demo highlighting the optimize cross section component that finds the best beam to use given a set of beams to choose from.
