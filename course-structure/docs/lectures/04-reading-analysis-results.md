@@ -12,6 +12,6 @@ downloads:
   - label: Grasshopper File
     file: https://res.cloudinary.com/dbf3aqsxu/raw/upload/v1790660882/video4_ovcf6v.ghx
   - label: Rhino File
-    file: w
+    file: https://res.cloudinary.com/dbf3aqsxu/raw/upload/v1790660905/KarambaCourse_Videos3-11_lcvigh.3dm
 ---
 This session walks through setting material properties for different beam types, understanding their utilization percentages, understanding what the numbers mean, and finally, a fun demo highlighting the optimize cross section component that finds the best beam to use given a set of beams to choose from.
