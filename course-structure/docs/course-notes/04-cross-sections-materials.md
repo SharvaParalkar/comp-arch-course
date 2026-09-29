@@ -6,8 +6,7 @@ tags:
   - Karamba
   - Grasshopper
   - Rhino
-related:
-  - 04 | Cross Sections & Materials
+related: []
 ---
 # Video 4 Course Guide: Cross-Sections & Materials
 
