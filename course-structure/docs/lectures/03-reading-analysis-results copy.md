@@ -4,7 +4,7 @@ sidebar_position: 3
 week: week-3
 date: 2026-08-20
 topic: workshop
-youtube_id: ULx6CIYVaho
+youtube_id: lAPT3Xw8Jgc
 slides_url: https://docs.google.com/presentation/d/1Vtd0ZC-2iWCviTTmOHEKHa_D8h7TLjHBrlZmpjKJSWM/edit?usp=sharing
 related_docs:
   - 03 | Reading Analysis Results
