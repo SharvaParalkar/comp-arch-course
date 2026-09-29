@@ -10,8 +10,8 @@ related_docs:
   - 05 | Column + Beam Frames
 downloads:
   - label: Grasshopper File
-    file: https://res.cloudinary.com/dbf3aqsxu/raw/upload/v1787273371/video3_fxati5.gh
+    file: https://res.cloudinary.com/dbf3aqsxu/raw/upload/v1790661572/video5_tal2jt.ghx
   - label: Rhino File
-    file: https://res.cloudinary.com/dbf3aqsxu/raw/upload/v1787273371/Video3_tfqrdq.3dm
+    file: https://res.cloudinary.com/dbf3aqsxu/raw/upload/v1790661572/KarambaCourse_Videos3-11_ck3yuk.3dm
 ---
 This session leaves single beams behind and builds a full portal frame, showing how load travels from a beam down through columns to the ground.
