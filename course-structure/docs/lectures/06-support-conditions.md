@@ -10,8 +10,8 @@ related_docs:
   - 06 | Support Conditions
 downloads:
   - label: Grasshopper File
-    file: https://res.cloudinary.com/dbf3aqsxu/raw/upload/v1787273371/video3_fxati5.gh
+    file: https://res.cloudinary.com/dbf3aqsxu/raw/upload/v1790790556/video6_gyc18v.ghx
   - label: Rhino File
-    file: https://res.cloudinary.com/dbf3aqsxu/raw/upload/v1787273371/Video3_tfqrdq.3dm
+    file: https://res.cloudinary.com/dbf3aqsxu/raw/upload/v1790790555/video6_xcedmv.3dm
 ---
 This session reuses Video 5's portal frame unchanged and swaps only its base conditions, showing how boundary conditions alone reshape internal forces, and how they could be used for different project conditions.
