@@ -4,7 +4,7 @@ sidebar_position: 5
 week: week-5
 date: 2026-08-20
 topic: workshop
-youtube_id: CFpArqbXJw4
+youtube_id: IKiL-etwfeA
 slides_url: https://docs.google.com/presentation/d/1h5J_j0KzFqEYZRU__aEuZA7C6fn62cZAw7PqPXFds_I/edit?usp=drive_link
 related_docs:
   - 05 | Column + Beam Frames
