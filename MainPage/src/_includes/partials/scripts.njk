@@ -323,3 +323,127 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const grids = Array.from(document.querySelectorAll("[data-fit-gallery]"));
+  if (!grids.length) return;
+
+  const desktop = window.matchMedia("(min-width: 992px)");
+  const macro = 12;
+
+  const resetItem = (item) => {
+    item.style.gridColumn = "";
+    item.style.gridRow = "";
+  };
+
+  const layout = (grid) => {
+    const split = grid.closest(".detail-split__grid");
+    const copy = split && split.querySelector(".detail-split__copy");
+    const items = Array.from(grid.querySelectorAll(".fit-gallery__item"));
+    const count = items.length;
+    if (!copy || !count) return;
+
+    if (!desktop.matches) {
+      grid.classList.remove("is-fitted");
+      grid.style.height = "";
+      grid.style.gridTemplateColumns = "";
+      grid.style.gridTemplateRows = "";
+      if (split) split.style.gridTemplateColumns = "";
+      items.forEach(resetItem);
+      delete grid.dataset.fitKey;
+      return;
+    }
+
+    const shell = split.parentElement;
+    const shellStyles = shell ? getComputedStyle(shell) : null;
+    const shellPad = shellStyles
+      ? (parseFloat(shellStyles.paddingLeft) || 0) + (parseFloat(shellStyles.paddingRight) || 0)
+      : 0;
+    const columnGap = parseFloat(getComputedStyle(split).columnGap) || 0;
+    const inner = Math.max(0, (shell ? shell.clientWidth : split.clientWidth) - shellPad - columnGap);
+    const left = Math.round(inner * 0.425);
+    if (inner > 80) {
+      split.style.gridTemplateColumns = `${left}px minmax(0, 1fr)`;
+    }
+
+    const height = Math.round((() => {
+      const kids = Array.from(copy.children).filter((child) => child.getClientRects().length);
+      if (!kids.length) return copy.getBoundingClientRect().height;
+      const top = kids[0].getBoundingClientRect().top;
+      const bottom = kids[kids.length - 1].getBoundingClientRect().bottom;
+      const style = getComputedStyle(copy);
+      return bottom - top + (parseFloat(style.paddingTop) || 0) + (parseFloat(style.paddingBottom) || 0);
+    })());
+    const width = Math.round(grid.clientWidth);
+    if (height < 40 || width < 40) return;
+
+    const gap = parseFloat(getComputedStyle(grid).columnGap) || 0;
+    const choices = [1, 2, 3, 4].filter((cols) => cols <= count);
+    let cols = choices[0] || 1;
+    let best = Infinity;
+
+    choices.forEach((choice) => {
+      const rows = Math.ceil(count / choice);
+      const cellW = (width - gap * (choice - 1)) / choice;
+      const cellH = (height - gap * (rows - 1)) / rows;
+      if (cellW <= 1 || cellH <= 1) return;
+      const aspect = cellW / cellH;
+      let score = Math.abs(Math.log(aspect / 1.2));
+      const remainder = count % choice;
+      if (remainder !== 0) score += 0.12;
+      if (remainder === 1 && choice > 1) score += 0.45;
+      if (cellH < 64) score += (64 - cellH) / 64;
+      if (score < best) {
+        best = score;
+        cols = choice;
+      }
+    });
+
+    const rows = Math.ceil(count / cols);
+    const key = [height, width, cols, count].join(":");
+    if (grid.dataset.fitKey === key) return;
+    grid.dataset.fitKey = key;
+    grid.classList.add("is-fitted");
+    grid.style.height = height + "px";
+    grid.style.gridTemplateColumns = `repeat(${macro}, minmax(0, 1fr))`;
+    grid.style.gridTemplateRows = `repeat(${rows}, minmax(0, 1fr))`;
+
+    items.forEach((item, index) => {
+      const row = Math.floor(index / cols);
+      const indexInRow = index % cols;
+      const countInRow = row === rows - 1 ? count - row * cols : cols;
+      const span = macro / countInRow;
+      const start = indexInRow * span + 1;
+      item.style.gridColumn = `${start} / span ${span}`;
+      item.style.gridRow = String(row + 1);
+    });
+  };
+
+  const layoutAll = () => grids.forEach(layout);
+  const observer = new ResizeObserver(layoutAll);
+  grids.forEach((grid) => {
+    const copy = grid.closest(".detail-split__grid")?.querySelector(".detail-split__copy");
+    if (copy) observer.observe(copy);
+    observer.observe(grid.parentElement || grid);
+  });
+
+  if (typeof desktop.addEventListener === "function") {
+    desktop.addEventListener("change", layoutAll);
+  } else if (typeof desktop.addListener === "function") {
+    desktop.addListener(layoutAll);
+  }
+
+  window.addEventListener("load", layoutAll);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(layoutAll);
+    document.fonts.addEventListener("loadingdone", layoutAll);
+  }
+  grids.forEach((grid) => {
+    grid.querySelectorAll("img").forEach((img) => {
+      if (!img.complete) img.addEventListener("load", layoutAll, { once: true });
+    });
+  });
+  [200, 800, 1600].forEach((delay) => window.setTimeout(layoutAll, delay));
+  layoutAll();
+});
+</script>

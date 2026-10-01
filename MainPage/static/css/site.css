@@ -1,4 +1,7 @@
 /* Site extras — projects, publications, teaching, about */
+html:has(.detail-split) {
+  scrollbar-gutter: stable;
+}
 
 .site-brand-silent {
   min-width: 1.25rem;
@@ -424,43 +427,71 @@ a[href*="learn-more"],
   align-items: start;
 }
 
-.detail-split__gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 1.35rem;
+.detail-split__gallery,
+.detail-split__copy {
   min-width: 0;
 }
 
-.detail-split__gallery .section,
-.detail-split__gallery .page-media-section,
-.detail-split__gallery .image-gallery-section {
-  padding: 0;
-  margin: 0;
+.detail-split__gallery {
+  overflow: hidden;
 }
 
-.detail-split__gallery .container {
-  max-width: none;
+.fit-gallery {
+  --fit-gallery-gap: 0.65rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--fit-gallery-gap);
   width: 100%;
-  padding: 0;
+  min-width: 0;
 }
 
-.detail-split__gallery .image-gallery {
+.fit-gallery.is-single {
   grid-template-columns: 1fr;
-  gap: 1.35rem;
 }
 
-.detail-split__gallery .page-media {
-  align-items: stretch;
+.fit-gallery.is-fitted {
+  min-height: 0;
+  overflow: hidden;
 }
 
-.detail-split__gallery .page-media img,
-.detail-split__gallery .page-media video,
-.detail-split__gallery .image-gallery__img {
+.fit-gallery__item {
+  margin: 0;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.fit-gallery__item img,
+.fit-gallery__item video {
+  display: block;
   width: 100% !important;
   max-width: 100% !important;
-  max-height: none !important;
-  height: auto !important;
-  object-fit: contain !important;
+  min-width: 0 !important;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  object-position: center;
+}
+
+.fit-gallery.is-single .fit-gallery__item {
+  background: transparent;
+}
+
+.fit-gallery.is-single .fit-gallery__item img,
+.fit-gallery.is-single .fit-gallery__item video {
+  aspect-ratio: auto;
+  max-height: min(72vh, 820px);
+  object-fit: contain;
+  object-position: center top;
+}
+
+.fit-gallery.is-fitted .fit-gallery__item img,
+.fit-gallery.is-fitted .fit-gallery__item video {
+  height: 100% !important;
+  min-height: 0 !important;
+  aspect-ratio: auto;
+  max-height: 100% !important;
 }
 
 .detail-split__copy {
@@ -943,6 +974,23 @@ a[href*="learn-more"],
   .detail-split__grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .fit-gallery,
+  .fit-gallery.is-single,
+  .fit-gallery.is-fitted {
+    height: auto !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: none !important;
+  }
+
+  .fit-gallery.is-single {
+    grid-template-columns: 1fr !important;
+  }
+
+  .fit-gallery__item {
+    grid-column: auto !important;
+    grid-row: auto !important;
   }
 
   .detail-split__copy,

@@ -52,13 +52,62 @@ module.exports = function (eleventyConfig) {
     })
   );
 
+  function mediaKey(src) {
+    const value = String(src || "").trim();
+    if (!value) return "";
+    const wix = value.match(/\/media\/([a-z0-9]+_[a-f0-9]+)/i);
+    if (wix) return `wix:${wix[1].toLowerCase()}`;
+    try {
+      const url = new URL(value, "https://local.invalid");
+      return decodeURIComponent(url.pathname).replace(/\/+$/, "").toLowerCase();
+    } catch {
+      return value.split("?")[0].toLowerCase();
+    }
+  }
+
+  eleventyConfig.addFilter("galleryItems", (entry) => {
+    const items = [];
+    const seen = new Set();
+    const push = (src, alt, kind) => {
+      const raw = String(src || "").trim();
+      const key = mediaKey(raw);
+      if (!key || seen.has(key)) return;
+      seen.add(key);
+      items.push({
+        src: raw,
+        alt: alt || entry?.title || "",
+        kind: kind || "image",
+      });
+    };
+
+    for (const section of entry?.sections || []) {
+      if (!section) continue;
+      if (section.type === "image" || section.type === "hero_image") {
+        push(section.image, section.alt || section.caption || entry?.title, "image");
+      } else if (section.type === "video" || section.type === "hero_video") {
+        push(section.video_url, section.caption || entry?.title, "video");
+      } else if (section.type === "image_gallery" && Array.isArray(section.images)) {
+        for (const item of section.images) {
+          push(item?.image, item?.alt || item?.caption || entry?.title, "image");
+        }
+      }
+    }
+
+    if (!items.length && entry?.cover_image) {
+      push(entry.cover_image, entry.card_title || entry?.title, "image");
+    }
+
+    return items;
+  });
+
   eleventyConfig.addFilter("projectCardImages", (project) => {
     const images = [];
     const seen = new Set();
     const push = (src, alt) => {
       const image = String(src || "").trim();
-      if (!image || seen.has(image)) return;
-      seen.add(image);
+      const key = mediaKey(image);
+      if (!key || seen.has(key)) return;
+      seen.add(key);
       images.push({ image, alt: alt || project?.title || "" });
     };
 
@@ -75,7 +124,7 @@ module.exports = function (eleventyConfig) {
     } else if (project?.cover_image) {
       // Prefer cover as the opening frame when it isn't already in the gallery.
       const cover = String(project.cover_image).trim();
-      if (cover && !seen.has(cover)) {
+      if (cover && !seen.has(mediaKey(cover))) {
         images.unshift({ image: cover, alt: project.card_title || project.title || "" });
       }
     }

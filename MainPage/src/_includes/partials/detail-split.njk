@@ -1,6 +1,5 @@
 {% set detail_authors = entry | detailAuthors %}
-{% set split_sections = entry.sections | detailSections(entry, true) %}
-{% set media_sections = split_sections | detailMedia %}
+{% set gallery_items = entry | galleryItems %}
 <section class="section detail-split">
   <div class="container">
     <div class="detail-split__grid">
@@ -18,13 +17,18 @@
         {% include "sections/render.njk" %}
       </div>
       <div class="detail-split__gallery">
-        {% if media_sections.length %}
-          {% set section_filter = "media" %}
-          {% include "sections/render.njk" %}
-        {% elif entry.cover_image %}
-          <figure class="page-media">
-            <img src="{{ entry.cover_image }}" alt="{{ entry.title }}" loading="lazy"/>
+        {% if gallery_items.length %}
+        <div class="fit-gallery{% if gallery_items.length == 1 %} is-single{% endif %}" data-fit-gallery>
+          {% for item in gallery_items %}
+          <figure class="fit-gallery__item">
+            {% if item.kind == "video" %}
+            <video src="{{ item.src }}" muted loop playsinline preload="metadata" aria-label="{{ item.alt }}"></video>
+            {% else %}
+            <img src="{{ item.src }}" alt="{{ item.alt }}" loading="lazy"/>
+            {% endif %}
           </figure>
+          {% endfor %}
+        </div>
         {% endif %}
       </div>
     </div>
