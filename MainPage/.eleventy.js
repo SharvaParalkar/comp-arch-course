@@ -159,9 +159,13 @@ module.exports = function (eleventyConfig) {
 
   const MEDIA_TYPES = new Set(["image", "video", "image_gallery", "hero_image", "hero_video"]);
 
-  eleventyConfig.addFilter("detailMedia", (sections) =>
-    (sections || []).filter((section) => MEDIA_TYPES.has(section?.type))
-  );
+  eleventyConfig.addFilter("detailMedia", (sections) => {
+    const media = (sections || []).filter((section) => MEDIA_TYPES.has(section?.type));
+    const hasGallery = media.some((section) => section.type === "image_gallery");
+    // Project entries often repeat the gallery's lead image as a separate image section.
+    // Keep the gallery version so it appears once in the bento grid.
+    return hasGallery ? media.filter((section) => section.type !== "image") : media;
+  });
 
   eleventyConfig.addFilter("detailCopy", (sections) =>
     (sections || []).filter(

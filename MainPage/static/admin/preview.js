@@ -129,7 +129,7 @@
           h("span", null, data.title || "Untitled page"),
           data.permalink ? h("span", null, data.permalink) : null,
           data.show_projects_grid ? h("span", null, "Projects grid: on") : null,
-          data.show_publications_list ? h("span", null, "Publications list: on") : null,
+          data.show_publications_list ? h("span", null, "Publications grid: on") : null,
           data.show_teaching_grid ? h("span", null, "Teaching grid: on") : null
         ),
         renderSections(data, this.props.getAsset),
@@ -140,7 +140,7 @@
           : null,
         data.show_publications_list
           ? h("div", { className: "cms-preview__empty", style: { marginTop: "1.5rem" } },
-              "Publications list will render here on the live site from all entries in Publications."
+              "Publications grid will render here on the live site from all entries in Publications."
             )
           : null,
         data.show_teaching_grid
@@ -200,20 +200,22 @@
       if (data.article_url) links.push(h("a", { href: data.article_url, target: "_blank", rel: "noopener" }, "Article"));
       return h("div", { className: "cms-preview" },
         h("div", { className: "cms-preview__meta" },
-          h("span", null, "Publication row preview"),
+          h("span", null, "Publication grid card preview"),
           data.year ? h("span", null, data.year) : null
         ),
-        h("article", { className: "pub-row" },
-          h("div", { className: "pub-row__media" },
+        h("div", { className: "publications-grid", style: { gridTemplateColumns: "minmax(0, 320px)" } },
+          h("article", { className: "publication-card" },
+          h("div", { className: "publication-card__media" },
             img
-              ? h("img", { className: "pub-row__img", src: img, alt: data.title || "" })
-              : h("div", { className: "pub-row__placeholder" })
+              ? h("img", { className: "publication-card__img", src: img, alt: data.title || "" })
+              : h("div", { className: "publication-card__placeholder" })
           ),
-          h("div", { className: "pub-row__body" },
-            h("h3", { className: "pub-row__title" }, data.title || "Untitled"),
-            data.authors ? h("p", { className: "pub-row__authors" }, data.authors) : null,
-            data.venue ? h("p", { className: "pub-row__venue" }, data.venue) : null,
-            h("div", { className: "pub-row__links" }, links)
+          h("div", { className: "publication-card__body" },
+            h("h3", { className: "publication-card__title" }, data.title || "Untitled"),
+            data.authors ? h("p", { className: "publication-card__authors" }, data.authors) : null,
+            data.venue ? h("p", { className: "publication-card__venue" }, data.venue) : null,
+            h("div", { className: "publication-card__links" }, links)
+          )
           )
         )
       );

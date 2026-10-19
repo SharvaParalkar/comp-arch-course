@@ -152,54 +152,53 @@ html, body {
   text-align: center;
 }
 
-.pub-row {
+.publications-grid {
   display: grid;
-  grid-template-columns: 160px minmax(0, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
-  align-items: center;
 }
 
-.pub-row__media {
-  aspect-ratio: 1;
+.publication-card__media {
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   background: #e8e8e8;
 }
 
-.pub-row__img {
+.publication-card__img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
   display: block;
 }
 
-.pub-row__placeholder {
+.publication-card__placeholder {
   width: 100%;
   height: 100%;
   background: #ddd;
 }
 
-.pub-row__title {
+.publication-card__title {
   margin: 0;
   font-size: 1.05rem;
   font-weight: 700;
 }
 
-.pub-row__authors {
+.publication-card__authors {
   margin: 0.5rem 0 0;
   font-size: 0.85rem;
   opacity: 0.75;
 }
 
-.pub-row__venue {
+.publication-card__venue {
   margin: 0.85rem 0 0;
   font-size: 0.8rem;
 }
 
-.pub-row__links {
+.publication-card__links {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 0.4rem;
   margin: 0.75rem 0 0;
 }
@@ -212,12 +211,19 @@ html, body {
   object-fit: contain !important;
 }
 
-.pub-row__links a {
+.publication-card__links a {
   color: inherit;
 }
 
 @media (max-width: 800px) {
-  .projects-grid {
+  .projects-grid,
+  .publications-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .publications-grid {
+    grid-template-columns: 1fr;
   }
 }

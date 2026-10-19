@@ -1,29 +1,29 @@
-<section class="section publications-list-section">
+<section class="section publications-grid-section">
   <div class="container">
-    <div class="publications-list">
+    <div class="publications-grid">
       {% for pub in collections.publications | sortProjects %}
-      <article class="pub-row">
-        <div class="pub-row__media">
+      <article class="publication-card">
+        <div class="publication-card__media">
           {% if pub.image %}
-          <img src="{{ pub.image }}" alt="{{ pub.title }}" loading="lazy" class="pub-row__img"/>
+          <img src="{{ pub.image }}" alt="{{ pub.title }}" loading="lazy" class="publication-card__img"/>
           {% else %}
-          <div class="pub-row__placeholder" aria-hidden="true"></div>
+          <div class="publication-card__placeholder" aria-hidden="true"></div>
           {% endif %}
         </div>
-        <div class="pub-row__body">
-          <h3 class="pub-row__title">{{ pub.title }}</h3>
-          {% if pub.authors %}<p class="pub-row__authors">{{ pub.authors }}</p>{% endif %}
-          {% if pub.venue %}<p class="pub-row__venue">{{ pub.venue }}</p>{% endif %}
-          <div class="pub-row__links">
+        <div class="publication-card__body">
+          <h3 class="publication-card__title">{{ pub.title }}</h3>
+          {% if pub.authors %}<p class="publication-card__authors">{{ pub.authors }}</p>{% endif %}
+          {% if pub.venue %}<p class="publication-card__venue">{{ pub.venue }}</p>{% endif %}
+          <div class="publication-card__links">
             {% if pub.pdf_url %}
             <a data-underline-link="" href="{{ pub.pdf_url }}" target="_blank" rel="noopener">PDF</a>
             {% endif %}
             {% if pub.bibtex_url %}
             <a data-underline-link="" href="{{ pub.bibtex_url }}" target="_blank" rel="noopener">BibTeX</a>
             {% elif pub.bibtex %}
-            <details class="pub-row__bib">
+            <details class="publication-card__bib">
               <summary data-underline-link="">BibTeX</summary>
-              <pre class="pub-row__bibtex">{{ pub.bibtex }}</pre>
+              <pre class="publication-card__bibtex">{{ pub.bibtex }}</pre>
             </details>
             {% endif %}
             {% if pub.article_url %}

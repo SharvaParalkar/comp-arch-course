@@ -96,7 +96,7 @@ collections:
         default: false
         required: false
         hint: "Turn on for the Projects page. Renders all Projects as a card grid automatically."
-      - label: Show Publications List
+      - label: Show Publications Grid
         name: show_publications_list
         widget: boolean
         default: false
