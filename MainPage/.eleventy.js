@@ -1,6 +1,9 @@
 const fs = require("fs");
 const path = require("path");
 const yaml = require("js-yaml");
+const MarkdownIt = require("markdown-it");
+
+const markdownRenderer = new MarkdownIt({ html: true, linkify: true, typographer: true });
 
 const CONTENT_DIR = path.join(__dirname, "content");
 
@@ -137,7 +140,7 @@ module.exports = function (eleventyConfig) {
     return value.startsWith("/") ? value.slice(1) : value;
   });
 
-  eleventyConfig.addFilter("markdown", (value) => value || "");
+  eleventyConfig.addFilter("markdown", (value) => markdownRenderer.render(String(value || "")));
 
   eleventyConfig.addFilter("safeHtml", (value) => value || "");
 

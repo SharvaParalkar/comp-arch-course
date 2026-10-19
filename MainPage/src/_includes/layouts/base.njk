@@ -40,10 +40,15 @@
         </div>
       </header>
       {% endif %}
-      {% if entry.body_mode == 'sections' and entry.sections %}
-        {% include "sections/render.njk" %}
-      {% else %}
+      {% if entry.body_mode == 'legacy' %}
         {{ entry.main_html | safe }}
+      {% elif entry.sections %}
+        {% include "sections/render.njk" %}
+      {% endif %}
+      {% if entry.quick_content %}
+      <section class="section quick-content-section">
+        <div class="container"><div class="d"><div class="txt-large w-richtext">{{ entry.quick_content | markdown | safe }}</div></div></div>
+      </section>
       {% endif %}
     {% endif %}
     {% if entry.show_projects_grid %}

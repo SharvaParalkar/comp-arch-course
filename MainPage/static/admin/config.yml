@@ -118,16 +118,15 @@ collections:
           - { label: OG Title, name: og_title, widget: string, required: false }
           - { label: OG Description, name: og_description, widget: text, required: false }
           - { label: OG Image, name: og_image, widget: image, required: false }
-      - label: Body Mode
-        name: body_mode
-        widget: select
-        default: sections
-        options:
-          - { label: "Structured sections (recommended)", value: sections }
-          - { label: "Legacy HTML", value: legacy }
-      - label: Page Sections
+      - label: Write Page Content
+        name: quick_content
+        widget: markdown
+        required: false
+        hint: "Write normally. Use the toolbar for headings, links, lists, and images. Content appears below any existing layout blocks."
+      - label: Advanced Layout Blocks
         name: sections
         widget: list
+        collapsed: true
         required: false
         summary: "{{type}}"
         hint: "Add headlines, images, video, and text. Drag to reorder. Use Image / Image Gallery to add media."
@@ -257,13 +256,6 @@ collections:
               - { label: PDF File, name: file, widget: file, media_folder: /static/uploads/cv, public_folder: /uploads/cv }
               - { label: Title, name: title, widget: string, required: false, hint: "Accessibility title for the embed" }
               - { label: Download Label, name: download_label, widget: string, required: false, default: "Download PDF" }
-      - label: Legacy HTML
-        name: main_html
-        widget: code
-        default_language: html
-        required: false
-        hint: "Only used when Body Mode is Legacy HTML."
-
   - name: projects
     label: "3 · Projects"
     label_singular: Project
@@ -336,16 +328,15 @@ collections:
           - { label: OG Title, name: og_title, widget: string, required: false }
           - { label: OG Description, name: og_description, widget: text, required: false }
           - { label: OG Image, name: og_image, widget: image, required: false }
-      - label: Body Mode
-        name: body_mode
-        widget: select
-        default: sections
-        options:
-          - { label: "Structured sections (recommended)", value: sections }
-          - { label: "Legacy HTML", value: legacy }
-      - label: Detail Page Sections
+      - label: Write Project Content
+        name: quick_content
+        widget: markdown
+        required: false
+        hint: "Write normally. Use the toolbar for headings, links, lists, and images. Content appears below the project description blocks."
+      - label: Advanced Layout Blocks
         name: sections
         widget: list
+        collapsed: true
         required: false
         summary: "{{type}}"
         hint: "Content for the project detail page. Add Full-width Image or Image Gallery to place media."
@@ -450,13 +441,6 @@ collections:
             widget: object
             fields:
               - { label: Body, name: body, widget: markdown, required: false }
-      - label: Legacy HTML
-        name: main_html
-        widget: code
-        default_language: html
-        required: false
-        hint: "Only used when Body Mode is Legacy HTML."
-
   - name: publications
     label: "4 · Publications"
     label_singular: Publication
@@ -533,6 +517,11 @@ collections:
       - { label: Category, name: category, widget: string, required: false, hint: "Seminar, Studio, Workshop" }
       - { label: Instructors, name: instructors, widget: string, required: false }
       - { label: Summary, name: summary, widget: text, required: false }
+      - label: Write Teaching Page Content
+        name: quick_content
+        widget: markdown
+        required: false
+        hint: "Write normally. Use the toolbar for headings, links, lists, and images."
       - label: Sort Order
         name: sort_order
         widget: number
@@ -547,16 +536,10 @@ collections:
         fields:
           - { label: Description, name: description, widget: text, required: false }
           - { label: OG Title, name: og_title, widget: string, required: false }
-      - label: Body Mode
-        name: body_mode
-        widget: select
-        default: sections
-        options:
-          - { label: "Structured sections (recommended)", value: sections }
-          - { label: "Legacy HTML", value: legacy }
-      - label: Detail Page Sections
+      - label: Advanced Layout Blocks
         name: sections
         widget: list
+        collapsed: true
         required: false
         summary: "{{type}}"
         types:

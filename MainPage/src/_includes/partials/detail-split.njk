@@ -15,6 +15,9 @@
         </header>
         {% set section_filter = "copy" %}
         {% include "sections/render.njk" %}
+        {% if entry.quick_content %}
+        <div class="detail-prose txt-large w-richtext">{{ entry.quick_content | markdown | safe }}</div>
+        {% endif %}
       </div>
       <div class="detail-split__gallery">
         {% if gallery_items.length %}
