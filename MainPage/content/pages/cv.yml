@@ -8,3 +8,7 @@ body_mode: sections
 sections:
   - type: headline
     text: CV
+  - type: pdf
+    file: /uploads/cv/mostafa-akbari-cv.pdf
+    title: Mostafa Akbari — CV
+    download_label: Download PDF
