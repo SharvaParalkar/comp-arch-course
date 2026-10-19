@@ -9,32 +9,18 @@ seo:
   og_title: About | Mostafa Akbari
   og_image: /uploads/media/about-portrait.jpg
 body_mode: sections
-sections:
-  - type: headline
-    text: About
-  - type: image_text
-    image: /uploads/media/about-portrait.jpg
-    alt: Mostafa Akbari
-    image_position: right
-    body: >-
-      <p class="about-kicker">Mostafa Akbari</p>
-      <p class="about-role">Assistant Professor of Architecture · Texas A&amp;M University</p>
-      <p>Mostafa is a distinguished computational designer and researcher with a distinctive
-      academic background encompassing architectural design and computational structures. He
-      specializes in Computational Structures and Advanced Manufacturing. His academic journey
-      includes a Ph.D. in Computational Design and a Master of Advanced Architectural Design from
-      the University of Pennsylvania, a Master’s in Architecture from Shahid Beheshti University,
-      and a Bachelor’s in Architecture from the University of Tehran.</p>
+page_heading: About
+page_image: /uploads/media/about-portrait.jpg
+page_image_alt: Mostafa Akbari
+page_content: |-
+  **Mostafa Akbari**
 
-      <p>His scholarly work focuses on structural form finding, especially 3-dimensional Graphic
-      Statics and Shellular Funicular Structures — shell-based cellular geometries designed through
-      3D graphic statics. That approach has opened new directions across architecture, structural
-      design, and material systems. He also works extensively in digital fabrication, computational
-      design, and human–computer interaction, rethinking tectonics as architecture, robotics,
-      computation, and material science converge.</p>
+  *Assistant Professor of Architecture · Texas A&M University*
 
-      <p>He has collaborated internationally, including as a designer and researcher at Gensler, and
-      practiced independently in architectural design and construction.</p>
+  Mostafa is a distinguished computational designer and researcher with a distinctive academic background encompassing architectural design and computational structures. He specializes in Computational Structures and Advanced Manufacturing. His academic journey includes a Ph.D. in Computational Design and a Master of Advanced Architectural Design from the University of Pennsylvania, a Master’s in Architecture from Shahid Beheshti University, and a Bachelor’s in Architecture from the University of Tehran.
 
-      <p><a data-underline-link="" href="https://www.linkedin.com/in/mostafaakbari/" target="_blank"
-      rel="noopener">LinkedIn</a></p>
+  His scholarly work focuses on structural form finding, especially 3-dimensional Graphic Statics and Shellular Funicular Structures — shell-based cellular geometries designed through 3D graphic statics. That approach has opened new directions across architecture, structural design, and material systems. He also works extensively in digital fabrication, computational design, and human–computer interaction, rethinking tectonics as architecture, robotics, computation, and material science converge.
+
+  He has collaborated internationally, including as a designer and researcher at Gensler, and practiced independently in architectural design and construction.
+
+  [LinkedIn](https://www.linkedin.com/in/mostafaakbari/)

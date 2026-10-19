@@ -8,11 +8,12 @@ seo:
   og_title: Mostafa Akbari | Architectural Technologist
   og_image: /uploads/media/home-hero.jpg
 body_mode: sections
+home_hero_text:
+  hero_title_line_1: Mostafa
+  hero_title_line_2: Akbari
+  hero_subtitle: Architectural Technologist | Designer
 sections:
   - type: home_masthead
-    title_line_1: Mostafa
-    title_line_2: Akbari
-    subtitle: Architectural Technologist | Designer
     video_lq_url: /uploads/media/home-hero-lq.webm
     video_lq_mp4_url: /uploads/media/home-hero-lq.mp4
     video_hq_url: /uploads/media/home-hero.mp4

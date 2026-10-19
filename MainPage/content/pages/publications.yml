@@ -5,7 +5,5 @@ seo:
   description: Selected publications by Mostafa Akbari
   og_title: Publications | Mostafa Akbari
 body_mode: sections
+page_heading: Publications
 show_publications_list: true
-sections:
-  - type: headline
-    text: Publications

@@ -84,6 +84,27 @@ collections:
         name: permalink
         widget: string
         hint: "e.g. /about.html or /index.html"
+      - { label: Page Heading, name: page_heading, widget: string, required: false, hint: "Heading shown at the top of this page" }
+      - label: Main Image
+        name: page_image
+        widget: image
+        required: false
+        hint: "Optional image shown beside the page text"
+      - { label: Image Alt Text, name: page_image_alt, widget: string, required: false }
+      - label: Page Content
+        name: page_content
+        widget: markdown
+        required: false
+        hint: "Edit the page text here. Use the toolbar for headings, links, lists, and images."
+      - label: Home Page Hero Text
+        name: home_hero_text
+        widget: object
+        collapsed: true
+        required: false
+        fields:
+          - { label: First line, name: hero_title_line_1, widget: string, required: false }
+          - { label: Second line, name: hero_title_line_2, widget: string, required: false }
+          - { label: Subtitle, name: hero_subtitle, widget: string, required: false }
       - label: Body Class
         name: body_class
         widget: string
@@ -118,11 +139,6 @@ collections:
           - { label: OG Title, name: og_title, widget: string, required: false }
           - { label: OG Description, name: og_description, widget: text, required: false }
           - { label: OG Image, name: og_image, widget: image, required: false }
-      - label: Write Page Content
-        name: quick_content
-        widget: markdown
-        required: false
-        hint: "Write normally. Use the toolbar for headings, links, lists, and images. Content appears below any existing layout blocks."
       - label: Advanced Layout Blocks
         name: sections
         widget: list

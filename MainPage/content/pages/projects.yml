@@ -5,7 +5,5 @@ seo:
   description: Research and design projects by Mostafa Akbari
   og_title: Projects | Mostafa Akbari
 body_mode: sections
+page_heading: Projects
 show_projects_grid: true
-sections:
-  - type: headline
-    text: Projects

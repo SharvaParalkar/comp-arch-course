@@ -5,7 +5,5 @@ seo:
   description: Teaching — seminars, studios, and workshops
   og_title: Teaching | Mostafa Akbari
 body_mode: sections
+page_heading: Teaching
 show_teaching_grid: true
-sections:
-  - type: headline
-    text: Teaching

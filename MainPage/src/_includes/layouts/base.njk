@@ -26,6 +26,23 @@
     {% if detail_split %}
       {% include "partials/detail-split.njk" %}
     {% else %}
+      {% if entry.page_heading %}
+      <section class="section page-heading-section"><div class="container"><h1 class="h-x-large">{{ entry.page_heading }}</h1></div></section>
+      {% endif %}
+      {% if entry.page_content or entry.page_image %}
+      <section class="section page-content-section">
+        <div class="container">
+          {% if entry.page_image %}
+          <div class="image-text{% if entry.page_image_position == 'left' %} is-image-left{% endif %}">
+            <div class="image-text__body txt-large w-richtext">{{ entry.page_content | markdown | safe }}</div>
+            <div class="image-text__media"><img src="{{ entry.page_image }}" alt="{{ entry.page_image_alt or '' }}" class="image-text__img image-text__img--fit"/></div>
+          </div>
+          {% else %}
+          <div class="d"><div class="txt-large w-richtext">{{ entry.page_content | markdown | safe }}</div></div>
+          {% endif %}
+        </div>
+      </section>
+      {% endif %}
       {% if show_detail_header %}
       {% set detail_authors = entry | detailAuthors %}
       <header class="section detail-header">
@@ -44,11 +61,6 @@
         {{ entry.main_html | safe }}
       {% elif entry.sections %}
         {% include "sections/render.njk" %}
-      {% endif %}
-      {% if entry.quick_content %}
-      <section class="section quick-content-section">
-        <div class="container"><div class="d"><div class="txt-large w-richtext">{{ entry.quick_content | markdown | safe }}</div></div></div>
-      </section>
       {% endif %}
     {% endif %}
     {% if entry.show_projects_grid %}

@@ -55,8 +55,8 @@
     <div class="home-masthead__readable" aria-hidden="true"></div>
     <div class="container">
       <div class="home-masthead__stack">
-        <h1 class="display-h home-masthead__title">{% if section.title_line_1 %}{{ section.title_line_1 }}{% if section.title_line_2 %}<br/>{{ section.title_line_2 }}{% endif %}{% else %}{{ section.title }}{% endif %}</h1>
-        {% if section.subtitle %}<div class="h-x-small home-masthead__tagline">{{ section.subtitle }}</div>{% endif %}
+        <h1 class="display-h home-masthead__title">{% if entry.home_hero_text.hero_title_line_1 or section.title_line_1 %}{{ entry.home_hero_text.hero_title_line_1 or section.title_line_1 }}{% if entry.home_hero_text.hero_title_line_2 or section.title_line_2 %}<br/>{{ entry.home_hero_text.hero_title_line_2 or section.title_line_2 }}{% endif %}{% else %}{{ section.title }}{% endif %}</h1>
+        {% if entry.home_hero_text.hero_subtitle or section.subtitle %}<div class="h-x-small home-masthead__tagline">{{ entry.home_hero_text.hero_subtitle or section.subtitle }}</div>{% endif %}
       </div>
     </div>
   </header>
