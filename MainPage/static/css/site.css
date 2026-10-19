@@ -521,27 +521,24 @@ a[href*="learn-more"],
   height: min(92vh, 1100px);
   max-width: none;
   max-height: none;
-  padding: 3.5rem 1.5rem 1.25rem;
+  padding: 0;
   border: 0;
   color: #fff;
-  background: rgba(15, 15, 15, 0.97);
+  background: transparent;
+  overflow: visible;
 }
 
 .project-lightbox::backdrop {
-  background: rgba(0, 0, 0, 0.82);
+  background: rgba(255, 255, 255, 0.16);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
 }
 
 .project-lightbox__image {
   display: block;
   width: 100%;
-  height: calc(100% - 3rem);
+  height: 100%;
   object-fit: contain;
-}
-
-.project-lightbox__caption {
-  margin: 0.5rem 0 0;
-  text-align: center;
-  font-size: 0.85rem;
 }
 
 .project-lightbox__close {
@@ -561,16 +558,19 @@ a[href*="learn-more"],
   position: absolute;
   top: 50%;
   z-index: 1;
-  display: grid;
+  display: flex;
   width: 2.75rem;
   height: 2.75rem;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
   transform: translateY(-50%);
+  padding: 0 0 0.12em;
   border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 50%;
   color: #fff;
   background: rgba(0, 0, 0, 0.5);
-  font-size: 2rem;
+  font-family: Arial, sans-serif;
+  font-size: 1.75rem;
   line-height: 1;
   cursor: pointer;
 }

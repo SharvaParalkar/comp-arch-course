@@ -3,7 +3,6 @@
   if (!dialog) return;
 
   const expandedImage = dialog.querySelector(".project-lightbox__image");
-  const caption = dialog.querySelector(".project-lightbox__caption");
   const closeButton = dialog.querySelector(".project-lightbox__close");
   const previousButton = dialog.querySelector(".project-lightbox__nav--previous");
   const nextButton = dialog.querySelector(".project-lightbox__nav--next");
@@ -16,7 +15,6 @@
     const thumbnail = link.querySelector("img");
     expandedImage.src = link.href;
     expandedImage.alt = thumbnail?.alt || "Expanded project image";
-    caption.textContent = thumbnail?.alt || "";
   };
 
   links.forEach((link, index) => {
@@ -53,6 +51,5 @@
   });
   dialog.addEventListener("close", () => {
     expandedImage.removeAttribute("src");
-    caption.textContent = "";
   });
 })();
