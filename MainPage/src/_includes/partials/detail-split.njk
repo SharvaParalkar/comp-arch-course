@@ -18,7 +18,7 @@
       </div>
       <div class="detail-split__gallery">
         {% if gallery_items.length %}
-        <div class="fit-gallery{% if gallery_items.length == 1 %} is-single{% endif %}" data-fit-gallery>
+        <div class="fit-gallery{% if gallery_items.length == 1 %} is-single{% endif %}">
           {% for item in gallery_items %}
           <figure class="fit-gallery__item">
             {% if item.kind == "video" %}

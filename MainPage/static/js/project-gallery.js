@@ -21,20 +21,26 @@
 
   links.forEach((link, index) => {
     link.addEventListener("click", (event) => {
-      if (event.button !== 0 || !dialog.showModal) return;
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
 
       showImage(index);
-      dialog.showModal();
+      if (typeof dialog.showModal === "function") dialog.showModal();
+      else dialog.setAttribute("open", "");
       closeButton.focus();
     });
   });
 
   previousButton.addEventListener("click", () => showImage(currentIndex - 1));
   nextButton.addEventListener("click", () => showImage(currentIndex + 1));
-  closeButton.addEventListener("click", () => dialog.close());
+  closeButton.addEventListener("click", () => {
+    if (typeof dialog.close === "function") dialog.close();
+    else dialog.removeAttribute("open");
+  });
   dialog.addEventListener("click", (event) => {
-    if (event.target === dialog) dialog.close();
+    if (event.target !== dialog) return;
+    if (typeof dialog.close === "function") dialog.close();
+    else dialog.removeAttribute("open");
   });
   dialog.addEventListener("keydown", (event) => {
     if (event.key === "ArrowLeft") {

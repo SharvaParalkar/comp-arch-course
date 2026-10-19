@@ -276,6 +276,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addPassthroughCopy({ "static/css": "css" });
+  eleventyConfig.addPassthroughCopy({ "static/js": "js" });
 
   return {
     dir: {
