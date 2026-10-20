@@ -3,18 +3,15 @@
     <div class="projects-grid teaching-grid">
       {% for item in collections.teaching | sortProjects %}
       {% set href = item.permalink | hrefPath %}
+      {% set images = item | teachingCardImages %}
       <article class="project-card">
-        <a class="project-card__media" href="{{ href }}">
-          {% if item.cover_image %}
-          <img src="{{ item.cover_image }}" alt="{{ item.card_title or item.title }}" loading="lazy" class="project-card__img"/>
+        <a class="project-card__media teaching-card__carousel" href="{{ href }}" aria-label="View teaching page: {{ item.card_title or item.title }}">
+          {% if images.length %}
+          {% for image in images %}
+          <img src="{{ image.image }}" alt="{{ image.alt }}" loading="lazy" class="project-card__img teaching-card__img{% if loop.first %} is-active{% endif %}"/>
+          {% endfor %}
           {% else %}
           <div class="project-card__placeholder" aria-hidden="true"></div>
-          {% endif %}
-          {% if item.card_title or item.category %}
-          <div class="project-card__overlay">
-            <span>| {{ item.card_title or item.title }} |</span>
-            <span>{{ item.category or "Seminar" }}</span>
-          </div>
           {% endif %}
         </a>
         {% if item.year %}<div class="project-card__year">{{ item.year }}</div>{% endif %}

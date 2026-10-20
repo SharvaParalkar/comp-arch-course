@@ -10,10 +10,12 @@ navigation:
     url: teaching.html
   - label: Publication
     url: publications.html
-  - label: CV
-    url: cv.html
+  - label: Team
+    url: team.html
   - label: About
     url: about.html
+  - label: CV
+    url: cv.html
 social_links:
   - label: LinkedIn
     url: https://www.linkedin.com/in/mostafaakbari/

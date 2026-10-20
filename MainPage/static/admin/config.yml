@@ -129,6 +129,42 @@ collections:
         default: false
         required: false
         hint: "Turn on for the Teaching page. Renders all Teaching entries as a card grid."
+      - label: Show Team Grid
+        name: show_team_grid
+        widget: boolean
+        default: false
+        required: false
+        hint: "Turn on for the Team page."
+      - label: Team Members
+        name: team_members
+        widget: list
+        required: false
+        summary: "{{name}} · {{title}}"
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: Title, name: title, widget: string, required: false }
+          - { label: Image, name: image, widget: image, required: false }
+          - { label: Website, name: website, widget: string, required: false }
+          - { label: LinkedIn, name: linkedin, widget: string, required: false }
+          - { label: Instagram, name: instagram, widget: string, required: false }
+      - label: Team Hierarchy
+        name: team_groups
+        widget: list
+        required: false
+        summary: "{{title}}"
+        hint: "Create ordered groups such as Leadership, Researchers, and Students. Add people under each group."
+        fields:
+          - { label: Group Title, name: title, widget: string }
+          - label: Members
+            name: members
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Title, name: title, widget: string, required: false }
+              - { label: Image, name: image, widget: image, required: false }
+              - { label: Website, name: website, widget: string, required: false }
+              - { label: LinkedIn, name: linkedin, widget: string, required: false }
+              - { label: Instagram, name: instagram, widget: string, required: false }
       - label: SEO
         name: seo
         widget: object

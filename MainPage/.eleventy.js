@@ -135,6 +135,47 @@ module.exports = function (eleventyConfig) {
     return images;
   });
 
+  eleventyConfig.addFilter("publicationCardImages", (publication) => {
+    const sources = Array.isArray(publication?.images)
+      ? publication.images
+      : publication?.image
+        ? [publication.image]
+        : [];
+    const seen = new Set();
+    return sources
+      .map((item) => typeof item === "string" ? { image: item } : item)
+      .filter((item) => {
+        const image = String(item?.image || "").trim();
+        const key = mediaKey(image);
+        if (!key || seen.has(key)) return false;
+        seen.add(key);
+        item.image = image;
+        return true;
+      });
+  });
+
+  eleventyConfig.addFilter("teachingCardImages", (teaching) => {
+    const images = [];
+    const seen = new Set();
+    const push = (src, alt) => {
+      const image = String(src || "").trim();
+      const key = mediaKey(image);
+      if (!key || seen.has(key)) return;
+      seen.add(key);
+      images.push({ image, alt: alt || teaching?.card_title || teaching?.title || "" });
+    };
+
+    push(teaching?.cover_image);
+    for (const section of teaching?.sections || []) {
+      if (section?.type === "image" || section?.type === "hero_image") {
+        push(section.image, section.alt || section.caption);
+      } else if (section?.type === "image_gallery" && Array.isArray(section.images)) {
+        for (const item of section.images) push(item?.image, item?.alt || item?.caption);
+      }
+    }
+    return images;
+  });
+
   eleventyConfig.addFilter("hrefPath", (permalink) => {
     const value = String(permalink || "");
     return value.startsWith("/") ? value.slice(1) : value;

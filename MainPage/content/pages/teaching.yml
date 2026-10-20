@@ -7,3 +7,4 @@ seo:
 body_mode: sections
 page_heading: Teaching
 show_teaching_grid: true
+show_courses_placeholder: true

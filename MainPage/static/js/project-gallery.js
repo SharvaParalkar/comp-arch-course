@@ -1,4 +1,31 @@
 (() => {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!prefersReducedMotion) {
+    document.querySelectorAll(".project-card__carousel, .publication-card__carousel, .teaching-card__carousel").forEach((carousel, carouselIndex) => {
+      const images = Array.from(carousel.querySelectorAll("img"));
+      if (images.length < 2) return;
+
+      let activeIndex = 0;
+      const advance = () => {
+        if (document.hidden || carousel.matches(":hover, :focus-within")) return;
+        images[activeIndex].classList.remove("is-active");
+        activeIndex = (activeIndex + 1) % images.length;
+        images[activeIndex].classList.add("is-active");
+        if (carousel.matches(".publication-card__carousel")) {
+          carousel.href = images[activeIndex].src;
+        }
+      };
+      const isProjectOrTeachingCarousel = carousel.matches(".project-card__carousel, .teaching-card__carousel");
+      const initialDelay = isProjectOrTeachingCarousel
+        ? 1500 + ((carouselIndex * 347) % 1000)
+        : 4000 + ((carouselIndex * 347) % 4500);
+      window.setTimeout(() => {
+        advance();
+        window.setInterval(advance, 4500);
+      }, initialDelay);
+    });
+  }
+
   const dialog = document.querySelector(".project-lightbox");
   if (!dialog) return;
 

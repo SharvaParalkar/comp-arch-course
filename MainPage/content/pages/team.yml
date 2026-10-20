@@ -1,0 +1,10 @@
+title: Team
+permalink: /team.html
+body_class: body
+seo:
+  description: Meet the team.
+  og_title: Team | Mostafa Akbari
+page_heading: Team
+show_team_grid: true
+team_members: []
+team_groups: []
