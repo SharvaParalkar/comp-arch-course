@@ -26,19 +26,6 @@
     {% if detail_split %}
       {% include "partials/detail-split.njk" %}
     {% else %}
-      {% if entry.show_courses_placeholder %}
-      <section class="section courses-placeholder-section">
-        <div class="container">
-          <h2 class="h-x-large">Courses</h2>
-          <div class="projects-grid">
-            <article class="project-card course-placeholder-card">
-              <div class="project-card__media"><div class="project-card__placeholder" aria-hidden="true"></div></div>
-              <h3 class="project-card__title">Course title</h3>
-            </article>
-          </div>
-        </div>
-      </section>
-      {% endif %}
       {% if entry.page_heading %}
       <section class="section page-heading-section"><div class="container"><h1 class="h-x-large">{{ entry.page_heading }}</h1></div></section>
       {% endif %}

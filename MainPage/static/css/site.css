@@ -303,23 +303,6 @@ a[href*="learn-more"],
   padding-bottom: 5rem;
 }
 
-.courses-placeholder-section {
-  padding-top: max(7.5rem, calc(env(safe-area-inset-top, 0px) + 7rem));
-  padding-bottom: 2rem;
-}
-
-.courses-placeholder-section h2 {
-  margin-bottom: 1.5rem;
-}
-
-.courses-placeholder-section .projects-grid {
-  grid-template-columns: minmax(0, 24rem);
-}
-
-.course-placeholder-card {
-  max-width: 24rem;
-}
-
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1140,8 +1123,8 @@ a[href*="learn-more"],
 }
 
 .publication-card {
-  display: grid;
-  grid-template-columns: minmax(0, 42%) minmax(0, 1fr);
+  display: flex;
+  flex-direction: column;
   align-items: stretch;
   min-width: 0;
   background: #fff;
@@ -1185,9 +1168,9 @@ a[href*="learn-more"],
 .publication-card__body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   min-width: 0;
-  padding: 1rem;
+  padding: 0.9rem 0;
 }
 
 .publication-card__title {
@@ -1435,10 +1418,6 @@ a[href*="learn-more"],
 
   .publications-grid {
     grid-template-columns: 1fr;
-  }
-
-  .publication-card {
-    grid-template-columns: minmax(0, 42%) minmax(0, 1fr);
   }
 
   .publication-card__media {
