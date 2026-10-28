@@ -4,7 +4,7 @@ The site is built with Eleventy and deployed to Cloudflare Pages.
 
 ## Contact form and Mailjet
 
-The contact form sends name, email, subject, message, and an optional PDF to `sharvaparalkar@tamu.edu` using Mailjet's Send API. The verified sender is configured as `info@calab.net` by default. PDFs are limited to 10 MB and are sent as email attachments; uploads are not stored by the site.
+The contact form sends name, email, subject, message, and up to two optional PDFs (10 MB combined) to `sharvaparalkar@tamu.edu` using Mailjet's Send API. The verified sender is configured as `info@calab.net` by default. PDFs are sent as email attachments; uploads are not stored by the site. Visitors who run into file limits can email files directly to `info@calab.net`.
 
 The Pages Function reads `MAILJET_API_KEY` and `MAILJET_API_SECRET` from Cloudflare secrets. In the Cloudflare dashboard, add both under **Workers & Pages → calab-site → Settings → Variables and Secrets** for Production and Preview. Or use the Wrangler prompts:
 

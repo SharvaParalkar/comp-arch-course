@@ -1,6 +1,8 @@
 const RECIPIENT_EMAIL = "sharvaparalkar@tamu.edu";
 const MAX_PDF_BYTES = 10 * 1024 * 1024;
-const MAX_REQUEST_BYTES = MAX_PDF_BYTES + 128 * 1024;
+const MAX_TOTAL_PDF_BYTES = 10 * 1024 * 1024;
+const MAX_PDF_COUNT = 2;
+const MAX_REQUEST_BYTES = MAX_TOTAL_PDF_BYTES + 256 * 1024;
 const ALLOWED_ORIGINS = new Set([
   "https://calab.net",
   "https://www.calab.net",
@@ -31,7 +33,7 @@ export async function onRequestPost({ request, env }) {
 
   const declaredLength = Number(request.headers.get("content-length") || 0);
   if (declaredLength > MAX_REQUEST_BYTES) {
-    return json({ error: "The PDF must be 10 MB or smaller." }, 413);
+    return json({ error: "PDF attachments must be 10 MB or smaller combined. If needed, email them directly to info@calab.net." }, 413);
   }
 
   let form;
@@ -52,9 +54,18 @@ export async function onRequestPost({ request, env }) {
     return json({ error: "Please check the name, email, subject, and message fields." }, 400);
   }
 
-  let attachment;
-  const uploaded = form.get("attachment");
-  if (uploaded && typeof uploaded === "object" && "arrayBuffer" in uploaded && uploaded.size > 0) {
+  const uploadedFiles = form.getAll("attachment").filter((file) => file && typeof file === "object" && "arrayBuffer" in file && file.size > 0);
+  if (uploadedFiles.length > MAX_PDF_COUNT) {
+    return json({ error: "You can attach up to two PDFs. If you need to send more, email them directly to info@calab.net." }, 400);
+  }
+
+  const totalPdfBytes = uploadedFiles.reduce((total, file) => total + file.size, 0);
+  if (totalPdfBytes > MAX_TOTAL_PDF_BYTES) {
+    return json({ error: "PDF attachments must be 10 MB or smaller combined. If needed, email them directly to info@calab.net." }, 413);
+  }
+
+  const attachments = [];
+  for (const uploaded of uploadedFiles) {
     if (!uploaded.name.toLowerCase().endsWith(".pdf") || (uploaded.type && uploaded.type !== "application/pdf")) {
       return json({ error: "Please attach a PDF file only." }, 400);
     }
@@ -70,11 +81,11 @@ export async function onRequestPost({ request, env }) {
       binary += String.fromCharCode(...bytes.subarray(index, index + chunkSize));
     }
     const filename = uploaded.name.replace(/[^a-zA-Z0-9._-]/g, "_").slice(-120) || "attachment.pdf";
-    attachment = {
+    attachments.push({
       ContentType: "application/pdf",
       Filename: filename,
       Base64Content: btoa(binary),
-    };
+    });
   }
 
   if (!env.MAILJET_API_KEY || !env.MAILJET_API_SECRET) {
@@ -93,7 +104,7 @@ export async function onRequestPost({ request, env }) {
       Subject: `Website contact: ${subject}`,
       TextPart: `From: ${name} <${email}>\n\n${message}`,
       HTMLPart: `<p><strong>From:</strong> ${safeName} &lt;${safeEmail}&gt;</p><p><strong>Subject:</strong> ${safeSubject}</p><p>${safeMessage}</p>`,
-      ...(attachment ? { Attachments: [attachment] } : {}),
+      ...(attachments.length ? { Attachments: attachments } : {}),
     }, {
       From: { Email: env.CONTACT_FROM_EMAIL || "info@calab.net", Name: "Cellular Architectures Laboratory" },
       To: [{ Email: email, Name: name }],

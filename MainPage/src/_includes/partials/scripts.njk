@@ -79,14 +79,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const maxPdfBytes = 10 * 1024 * 1024;
 
   fileInput.addEventListener("change", () => {
-    const file = fileInput.files && fileInput.files[0];
-    if (!file) return;
-    if (!file.name.toLowerCase().endsWith(".pdf") || file.type && file.type !== "application/pdf") {
+    const files = Array.from(fileInput.files || []);
+    if (!files.length) return;
+    if (files.length > 2) {
       fileInput.value = "";
-      status.textContent = "Please choose a PDF file.";
-    } else if (file.size > maxPdfBytes) {
+      status.textContent = "You can attach up to two PDFs. For more files, email info@calab.net.";
+    } else if (files.some((file) => !file.name.toLowerCase().endsWith(".pdf") || file.type && file.type !== "application/pdf")) {
       fileInput.value = "";
-      status.textContent = "The PDF must be 10 MB or smaller.";
+      status.textContent = "Please choose PDF files only.";
+    } else if (files.some((file) => file.size > maxPdfBytes) || files.reduce((total, file) => total + file.size, 0) > maxPdfBytes) {
+      fileInput.value = "";
+      status.textContent = "PDF attachments must be 10 MB or smaller combined. Email them directly to info@calab.net if needed.";
     } else {
       status.textContent = "";
     }
