@@ -1,6 +1,17 @@
 const RECIPIENT_EMAIL = "sharvaparalkar@tamu.edu";
 const MAX_PDF_BYTES = 10 * 1024 * 1024;
 const MAX_REQUEST_BYTES = MAX_PDF_BYTES + 128 * 1024;
+const ALLOWED_ORIGINS = new Set([
+  "https://calab.net",
+  "https://www.calab.net",
+  "https://calab-site.pages.dev",
+  "http://localhost:8081",
+  "http://127.0.0.1:8081",
+]);
+
+const isAllowedOrigin = (origin) => ALLOWED_ORIGINS.has(origin)
+  || /^https:\/\/[a-z0-9-]+\.calab-main\.pages\.dev$/i.test(origin)
+  || /^https:\/\/[a-z0-9-]+\.calab-site\.pages\.dev$/i.test(origin);
 
 const json = (body, status = 200) => new Response(JSON.stringify(body), {
   status,
@@ -14,7 +25,7 @@ const escapeHtml = (value) => value.replace(/[&<>"']/g, (char) => ({
 
 export async function onRequestPost({ request, env }) {
   const origin = request.headers.get("origin");
-  if (origin && origin !== new URL(request.url).origin) {
+  if (origin && !isAllowedOrigin(origin)) {
     return json({ error: "This request could not be accepted." }, 403);
   }
 
