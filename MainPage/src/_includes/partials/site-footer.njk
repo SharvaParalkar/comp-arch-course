@@ -1,0 +1,30 @@
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="site-footer__name" href="{{ nav_prefix }}index.html">Mostafa Akbari</a>
+    </div>
+    <div class="site-footer__column">
+      <h2>Contact</h2>
+      <a href="{{ nav_prefix }}contact.html">Contact the team</a>
+      <a href="mailto:info@calab.net">info@calab.net</a>
+    </div>
+    <div class="site-footer__column">
+      <h2>Explore</h2>
+      {% for item in site.navigation %}
+      {% if item.url == "projects.html" or item.url == "publications.html" or item.url == "team.html" %}
+      <a href="{{ nav_prefix }}{{ item.url }}">{{ item.label }}</a>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="site-footer__column">
+      <h2>Follow</h2>
+      {% for item in site.footer_links %}
+      <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <span>© <span data-current-year></span> Mostafa Akbari. All rights reserved.</span>
+    <span>Texas A&amp;M University</span>
+  </div>
+</footer>

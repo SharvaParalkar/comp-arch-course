@@ -16,10 +16,16 @@ navigation:
     url: about.html
   - label: CV
     url: cv.html
+  - label: Contact
+    url: contact.html
 social_links:
   - label: LinkedIn
     url: https://www.linkedin.com/in/mostafaakbari/
-footer_links: []
+footer_links:
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/mostafaakbari/
+  - label: Instagram
+    url: https://www.instagram.com/akbariae/
 default_seo:
   description: >-
     Mostafa is a distinguished computational designer and researcher with a distinctive academic

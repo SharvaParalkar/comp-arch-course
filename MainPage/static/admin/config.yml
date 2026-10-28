@@ -135,6 +135,12 @@ collections:
         default: false
         required: false
         hint: "Turn on for the Team page."
+      - label: Show Contact Form
+        name: show_contact_form
+        widget: boolean
+        default: false
+        required: false
+        hint: "Turn on for the Contact page."
       - label: Team Members
         name: team_members
         widget: list

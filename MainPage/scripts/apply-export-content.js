@@ -550,8 +550,6 @@ const pubMap = {
   "saltatur-node-based-assembly-of-funicular-spatial-concrete.yml": media.pubSaltatur,
   "geometry-based-structural-form-finding-to-design-architected-cellular-solids.yml": media.pubScf,
   "from-polyhedral-to-anticlastic-funicular-spatial-structures.yml": media.pubAnticlastic,
-  "optimization-of-qualitative-and-motional-aspects-of-marine-passenger-terminal-ba.yml":
-    media.pubPedestrian,
 };
 
 const pubDir = path.join(ROOT, "content", "publications");

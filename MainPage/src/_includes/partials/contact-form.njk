@@ -1,0 +1,23 @@
+<section class="section contact-section">
+  <div class="container contact-section__inner">
+    <div class="contact-section__intro">
+      <p class="contact-section__eyebrow">CALAB · Texas A&amp;M University</p>
+      <h2>Start a conversation</h2>
+      <p>Send a message to the team. You can attach one PDF if it helps explain your question or project.</p>
+    </div>
+    <form class="contact-form" action="/api/contact" method="post" enctype="multipart/form-data" data-contact-form>
+      <div class="contact-form__row">
+        <label>Name<input name="name" type="text" autocomplete="name" maxlength="120" required/></label>
+        <label>Email<input name="email" type="email" autocomplete="email" maxlength="254" required/></label>
+      </div>
+      <label>Subject<input name="subject" type="text" maxlength="180" required/></label>
+      <label>Message<textarea name="message" rows="7" maxlength="5000" required></textarea></label>
+      <label class="contact-form__file">PDF attachment <span>(optional, max 10 MB)</span><input name="attachment" type="file" accept=".pdf,application/pdf" data-pdf-input/></label>
+      <div class="contact-form__trap" aria-hidden="true"><label>Leave this field empty<input name="website" type="text" tabindex="-1" autocomplete="off"/></label></div>
+      <div class="contact-form__actions">
+        <button type="submit" class="contact-form__submit">Send message</button>
+        <p class="contact-form__status" data-contact-status role="status" aria-live="polite"></p>
+      </div>
+    </form>
+  </div>
+</section>

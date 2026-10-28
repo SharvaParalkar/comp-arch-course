@@ -3,14 +3,27 @@
     <div data-animation="default" data-collapse="none" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
       <div class="container is-nav">
         <a href="{{ nav_prefix }}index.html" class="brand-link w-nav-brand site-brand-silent" aria-label="Home"></a>
-        <nav role="navigation" class="navlink-wrap w-nav-menu">
+        <nav role="navigation" class="navlink-wrap" aria-label="Primary navigation">
           <div class="navlink-list">
             {% for item in site.navigation %}
+              {% if item.url == "index.html" or item.url == "publications.html" or item.url == "team.html" %}
             <a data-underline-link="" href="{{ nav_prefix }}{{ item.url }}" class="navlink w-nav-link">{{ item.label }}</a>
+              {% endif %}
             {% endfor %}
           </div>
         </nav>
-        <div class="w-nav-button"><div class="w-icon-nav-menu"></div></div>
+        <button class="w-nav-button" type="button" aria-label="Open more navigation links" aria-expanded="false" aria-controls="site-navigation">
+          <span class="w-icon-nav-menu" aria-hidden="true"></span>
+        </button>
+        <nav id="site-navigation" role="navigation" class="navlink-menu" aria-label="More navigation links">
+          <div class="navlink-list">
+            {% for item in site.navigation %}
+              {% if item.url != "index.html" and item.url != "publications.html" and item.url != "team.html" %}
+            <a data-underline-link="" href="{{ nav_prefix }}{{ item.url }}" class="navlink w-nav-link">{{ item.label }}</a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </nav>
       </div>
     </div>
   </nav>
