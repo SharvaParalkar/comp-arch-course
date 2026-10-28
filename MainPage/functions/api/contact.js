@@ -83,6 +83,13 @@ export async function onRequestPost({ request, env }) {
       TextPart: `From: ${name} <${email}>\n\n${message}`,
       HTMLPart: `<p><strong>From:</strong> ${safeName} &lt;${safeEmail}&gt;</p><p><strong>Subject:</strong> ${safeSubject}</p><p>${safeMessage}</p>`,
       ...(attachment ? { Attachments: [attachment] } : {}),
+    }, {
+      From: { Email: env.CONTACT_FROM_EMAIL || "info@calab.net", Name: "Cellular Architectures Laboratory" },
+      To: [{ Email: email, Name: name }],
+      ReplyTo: { Email: env.CONTACT_FROM_EMAIL || "info@calab.net", Name: "Cellular Architectures Laboratory" },
+      Subject: "CAL - Confirmation Receipt",
+      TextPart: `Hello ${name},\n\nThank you for contacting the Cellular Architectures Laboratory. We received your message about: ${subject}. A member of our team will follow up with you.\n\nCellular Architectures Laboratory\nTexas A&M University\ninfo@calab.net`,
+      HTMLPart: `<p>Hello ${safeName},</p><p>Thank you for contacting the Cellular Architectures Laboratory. We received your message about <strong>${safeSubject}</strong>. A member of our team will follow up with you.</p><p>Cellular Architectures Laboratory<br>Texas A&amp;M University<br><a href="mailto:info@calab.net">info@calab.net</a></p>`,
     }],
   };
 
@@ -100,7 +107,13 @@ export async function onRequestPost({ request, env }) {
     return json({ error: "Mail delivery is temporarily unavailable. Please try again later." }, 502);
   }
 
-  if (!mailjetResponse.ok) {
+  let mailjetResult;
+  try {
+    mailjetResult = await mailjetResponse.json();
+  } catch {
+    return json({ error: "Mail delivery failed. Please try again later or email info@calab.net." }, 502);
+  }
+  if (!mailjetResponse.ok || !Array.isArray(mailjetResult.Messages) || mailjetResult.Messages.length !== 2 || mailjetResult.Messages.some((result) => result.Status !== "success")) {
     return json({ error: "Mail delivery failed. Please try again later or email info@calab.net." }, 502);
   }
   return json({ ok: true });
