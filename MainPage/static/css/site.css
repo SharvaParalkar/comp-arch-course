@@ -21,6 +21,8 @@ html:has(body.is-black) {
 
 /* Navbar readability — replace Webflow exclusion blend with explicit contrast */
 .navbar-div {
+  /* Override the imported Webflow rule so mobile taps reach the navigation. */
+  pointer-events: auto !important;
   mix-blend-mode: normal !important;
   background-color: transparent !important;
   isolation: isolate;
