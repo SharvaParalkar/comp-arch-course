@@ -1,4 +1,4 @@
-const RECIPIENT_EMAIL = "sharvaparalkar@tamu.edu";
+const RECIPIENT_EMAILS = ["sharvaparalkar@tamu.edu", "akbariae@tamu.edu"];
 const MAX_PDF_BYTES = 10 * 1024 * 1024;
 const MAX_TOTAL_PDF_BYTES = 10 * 1024 * 1024;
 const MAX_PDF_COUNT = 2;
@@ -99,7 +99,7 @@ export async function onRequestPost({ request, env }) {
   const mail = {
     Messages: [{
       From: { Email: env.CONTACT_FROM_EMAIL || "info@calab.net", Name: "CALAB Contact Form" },
-      To: [{ Email: RECIPIENT_EMAIL }],
+      To: RECIPIENT_EMAILS.map((Email) => ({ Email })),
       ReplyTo: { Email: email, Name: name },
       Subject: `Website contact: ${subject}`,
       TextPart: `From: ${name} <${email}>\n\n${message}`,
