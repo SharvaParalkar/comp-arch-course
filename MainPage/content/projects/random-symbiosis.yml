@@ -57,3 +57,10 @@ summary: >-
   different factors in the enviroment. This interdisciplinary project has been done in colaboration
   with
 cover_image: /uploads/media/projects/covers/random-symbiosis.jpg
+
+# Curated for the square cards on the projects listing.
+card_images:
+  - image: /uploads/media/projects/gallery/random-symbiosis/img-01.jpg
+    alt: "Illuminated interactive symbiotic structure"
+  - image: /uploads/media/projects/gallery/random-symbiosis/img-04.jpg
+    alt: "Visitors interacting with the illuminated installation"

@@ -71,3 +71,10 @@ summary: >-
   geometric relationship among the truss system architecture, topological dual, and equilibrium of
   forces on the basis of 3D graphic statics.
 cover_image: /uploads/media/projects/covers/shellular-materials.jpg
+
+# Curated for the square cards on the projects listing.
+card_images:
+  - image: /uploads/media/projects/gallery/shellular-funicular-materials/img-01.jpg
+    alt: "Fabricated shellular material samples"
+  - image: /uploads/media/projects/gallery/shellular-funicular-materials/img-04.jpg
+    alt: "Structural response of shellular unit cells"

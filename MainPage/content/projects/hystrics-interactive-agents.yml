@@ -53,3 +53,10 @@ summary: >-
   combination of sound and motion. These remarkable machines possess an outer shell made of carbon
   fiber, while their inner framework is pneumatic,
 cover_image: /uploads/media/projects/covers/hystrics.jpg
+
+# Curated for the square cards on the projects listing.
+card_images:
+  - image: /uploads/media/projects/gallery/hystrics-interactive-agents/img-01.jpg
+    alt: "Interactive installation in magenta and blue light"
+  - image: /uploads/media/projects/gallery/hystrics-interactive-agents/img-02.jpg
+    alt: "Alternate illuminated state of the interactive installation"

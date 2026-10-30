@@ -61,3 +61,10 @@ summary: >-
   optimization methods. The main objective of this research was to go beyond a compression-only
   material and invent a new composition
 cover_image: /uploads/media/projects/covers/terrene.jpg
+
+# Curated for the square cards on the projects listing.
+card_images:
+  - image: /uploads/media/projects/gallery/terrene-composite-structure-with-pneumatic-formwork/img-07.jpg
+    alt: "Interior of the Terrene earthen shell"
+  - image: /uploads/media/projects/gallery/terrene-composite-structure-with-pneumatic-formwork/img-06.jpg
+    alt: "Earthen shell openings and textured surface"

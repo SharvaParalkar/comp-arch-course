@@ -42,3 +42,10 @@ summary: >-
   process,
 cover_image: /uploads/media/projects/covers/self-folding.jpg
 sort_order: 8
+
+# Curated for the square cards on the projects listing.
+card_images:
+  - image: /uploads/media/projects/covers/self-folding.jpg
+    alt: "Self-folding structural surface simulation"
+  - image: /uploads/media/projects/gallery/self-folding-origami-structures/img-07.gif
+    alt: "Animated folding of a flat structural grid"

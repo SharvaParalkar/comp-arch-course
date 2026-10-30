@@ -81,3 +81,10 @@ summary: >-
   This research presents a framework for effective room temperature repair of fractured metals using
   an area-selective nickel electrodeposition process we refer to as electrochemical healing.
 cover_image: /uploads/media/projects/covers/electrochemical.jpg
+
+# Curated for the square cards on the projects listing.
+card_images:
+  - image: /uploads/media/projects/gallery/electrochemical-healing-of-fractured-metals/img-01.jpg
+    alt: "Fractured and healed metal specimens"
+  - image: /uploads/media/projects/gallery/electrochemical-healing-of-fractured-metals/img-06.jpg
+    alt: "Architected metal specimen geometries"

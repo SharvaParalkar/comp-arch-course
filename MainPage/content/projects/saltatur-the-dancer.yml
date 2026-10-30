@@ -62,3 +62,10 @@ summary: >-
   engage with material organization, production and design performance as intrinsic properties to a
   creative design methodology, and
 cover_image: /uploads/media/projects/covers/saltature.jpg
+
+# Curated for the square cards on the projects listing.
+card_images:
+  - image: /uploads/media/projects/gallery/saltatur-the-dancer/img-01.jpg
+    alt: "Saltatur spatial concrete structure"
+  - image: /uploads/media/projects/gallery/saltatur-the-dancer/img-04.jpg
+    alt: "Concrete members and connections in detail"

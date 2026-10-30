@@ -69,3 +69,10 @@ summary: >-
   minimal surface geometries in the context of structural design, bridging the gap between cellular
   polyhedral geometries and surface-based structures.
 cover_image: /uploads/media/projects/covers/shellular-structures.jpg
+
+# Curated for the square cards on the projects listing.
+card_images:
+  - image: /uploads/media/projects/covers/shellular-structures.jpg
+    alt: "Interior view of a shellular funicular structure"
+  - image: /uploads/media/projects/gallery/shellular-funicular-structures/img-02.jpg
+    alt: "Shellular structure model with continuous openings"

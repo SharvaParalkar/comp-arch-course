@@ -53,3 +53,10 @@ summary: >-
   Insights from foot podometry inform a shellular midsole: unit cells of different stiffness are
   placed where flexibility or rigidity is needed.
 cover_image: /uploads/media/projects/covers/adaptable-shoes.jpg
+
+# Curated for the square cards on the projects listing.
+card_images:
+  - image: /uploads/media/projects/gallery/structurally-adaptable-shoes/img-07.jpg
+    alt: "Shoe with architected cellular sole"
+  - image: /uploads/media/projects/gallery/structurally-adaptable-shoes/img-05.jpg
+    alt: "Adaptable sole lattice and unit cells"

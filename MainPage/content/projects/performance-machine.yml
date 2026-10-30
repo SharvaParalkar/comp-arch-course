@@ -59,3 +59,10 @@ summary: >-
   have been considered as part of the performance themselves as far as complex decorations are
   concerned, But these decorations require a lot of effort, energy and
 cover_image: /uploads/media/projects/covers/performance-machine.jpg
+
+# Curated for the square cards on the projects listing.
+card_images:
+  - image: /uploads/media/projects/gallery/performance-machine/img-01.jpg
+    alt: "Spatial interior of the Performance Machine"
+  - image: /uploads/media/projects/gallery/performance-machine/img-04.jpg
+    alt: "Cellular facade and suspended structure detail"

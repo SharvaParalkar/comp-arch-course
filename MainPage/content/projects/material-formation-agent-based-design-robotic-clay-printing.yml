@@ -63,3 +63,10 @@ summary: >-
   creative design methodology and opportunistically; capable of producing a range of aesthetic
   effects.
 cover_image: /uploads/media/projects/covers/clay-printing.gif
+
+# Curated for the square cards on the projects listing.
+card_images:
+  - image: /uploads/media/projects/gallery/material-formation-agent-based-design-robotic-clay-printing/img-01.jpg
+    alt: "Robotically printed clay column"
+  - image: /uploads/media/projects/gallery/material-formation-agent-based-design-robotic-clay-printing/img-02.jpg
+    alt: "Robotic clay printing setup"

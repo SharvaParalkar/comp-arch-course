@@ -65,3 +65,10 @@ summary: >-
   (CFS) to a Shellular Funicular Structure (SFS) and explores a fabrication method using the
   origami/kirigami technique
 cover_image: /uploads/media/projects/covers/fabrication-origami.jpg
+
+# Curated for the square cards on the projects listing.
+card_images:
+  - image: /uploads/media/projects/gallery/shellular-fabrication-via-origami/img-03.jpg
+    alt: "Folded shellular prototype seen from above"
+  - image: /uploads/media/projects/gallery/shellular-fabrication-via-origami/img-01.jpg
+    alt: "Folded sheet assembly and joint detail"

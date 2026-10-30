@@ -342,6 +342,16 @@ collections:
         widget: image
         required: false
         hint: "Main image on the Projects grid — upload or choose from Cloudinary"
+      - label: Square Card Images
+        name: card_images
+        widget: list
+        required: false
+        min: 2
+        max: 2
+        hint: "Two complementary images for the square projects-page carousel. Preview the center square crop."
+        fields:
+          - { label: Image, name: image, widget: image }
+          - { label: Alt Text, name: alt, widget: string, required: false }
       - label: Overlay Title
         name: card_title
         widget: string

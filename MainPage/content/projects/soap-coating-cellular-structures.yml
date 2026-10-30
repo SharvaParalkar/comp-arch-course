@@ -55,3 +55,10 @@ summary: >-
   polymer/graphene-oxide soap solution so films span the faces and improve shear capacity.
 cover_image: /uploads/media/projects/covers/soap-coating.jpg
 sort_order: 3
+
+# Curated for the square cards on the projects listing.
+card_images:
+  - image: /uploads/media/projects/gallery/soap-coating-cellular-structures/img-04.jpg
+    alt: "Soap-coated cellular frame"
+  - image: /uploads/media/projects/gallery/soap-coating-cellular-structures/img-06.jpg
+    alt: "Soap films spanning cellular frame edges"

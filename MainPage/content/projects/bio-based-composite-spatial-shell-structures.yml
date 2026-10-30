@@ -65,3 +65,10 @@ summary: >-
   knitting techniques. Shellular Funicular Structures are two-manifold single-layer structures that
   can be designed in the context of graphic statics
 cover_image: /uploads/media/projects/covers/bio-based.gif
+
+# Curated for the square cards on the projects listing.
+card_images:
+  - image: /uploads/media/projects/gallery/bio-based-composite-spatial-shell-structures/img-01.jpg
+    alt: "Woven bio-based spatial shell prototype"
+  - image: /uploads/media/projects/covers/bio-based.gif
+    alt: "Robotic fabrication of the bio-based shell"

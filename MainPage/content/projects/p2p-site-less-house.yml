@@ -51,3 +51,10 @@ summary: >-
   Site-less House concept. The primary objective of the course is to prepare the design of the house
   for fabrication utilizing wire-cutting robotic arms.
 cover_image: /uploads/media/projects/covers/p2p.gif
+
+# Curated for the square cards on the projects listing.
+card_images:
+  - image: /uploads/media/projects/gallery/p2p-site-less-house/img-01.jpg
+    alt: "Site-less house module"
+  - image: /uploads/media/projects/gallery/p2p-site-less-house/img-03.jpg
+    alt: "Physical prototype of the house module"

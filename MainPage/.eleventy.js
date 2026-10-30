@@ -117,6 +117,18 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("projectCardImages", (project) => {
+    if (Array.isArray(project?.card_images) && project.card_images.length) {
+      const seen = new Set();
+      return project.card_images.filter((item) => {
+        const key = mediaKey(item?.image);
+        if (!key || seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      }).slice(0, 2).map((item) => ({
+        image: item.image,
+        alt: item.alt || project.title || "",
+      }));
+    }
     const images = [];
     const seen = new Set();
     const push = (src, alt) => {
@@ -145,7 +157,7 @@ module.exports = function (eleventyConfig) {
       }
     }
 
-    return images;
+    return images.slice(0, 2);
   });
 
   eleventyConfig.addFilter("publicationCardImages", (publication) => {
