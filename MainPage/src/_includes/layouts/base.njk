@@ -2,6 +2,7 @@
 <html data-wf-domain="www.mostafaakbari.net" data-wf-site="690e0b6e2e2a0cbc45ab116e" lang="en">
 <head>
   <meta charset="utf-8"/>
+  {% if entry.home_hero_text.hero_logo_src %}<link rel="preload" as="image" href="{{ entry.home_hero_text.hero_logo_src }}" fetchpriority="high"/>{% endif %}
   <link href="https://cdn.prod.website-files.com" rel="preconnect" crossorigin="anonymous"/>
   <title>{% if entry.seo.og_title %}{{ entry.seo.og_title }}{% else %}{{ entry.title }}{% if site.site_name %} | {{ site.site_name }}{% endif %}{% endif %}</title>
   <meta content="{{ entry.seo.description or site.default_seo.description }}" name="description"/>

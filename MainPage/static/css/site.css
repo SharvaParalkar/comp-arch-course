@@ -1474,26 +1474,26 @@ a[href*="learn-more"],
     width: 2.75rem;
     height: 2.75rem;
     padding: 0;
-    border: 1px solid currentColor;
-    border-radius: 50%;
+    border: 0;
+    border-radius: 0;
     color: #fff;
-    background: rgba(0, 0, 0, 0.28);
+    background: transparent;
     cursor: pointer;
     z-index: 2;
   }
 
   body:not(.is-black) .navbar .site-nav-toggle {
     color: #111;
-    background: rgba(255, 255, 255, 0.72);
+    background: transparent;
   }
 
   .site-nav-toggle__icon,
   .site-nav-toggle__icon::before,
   .site-nav-toggle__icon::after {
     display: block;
-    width: 1.1rem;
-    height: 2px;
-    border-radius: 2px;
+    width: 1.4rem;
+    height: 1px;
+    border-radius: 0;
     background: currentColor;
     transition: transform 180ms ease;
   }
@@ -1526,16 +1526,23 @@ a[href*="learn-more"],
     right: 0;
     width: 100%;
     min-width: 0;
-    padding: 0.5rem clamp(1.5rem, 4vw, 3.25rem) 1.25rem;
-    background: rgba(0, 0, 0, 0.94);
-    -webkit-backdrop-filter: blur(14px);
-    backdrop-filter: blur(14px);
+    padding: 0.5rem clamp(1.5rem, 4vw, 3.25rem) 1.5rem;
+    background: #111;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: none;
+    max-height: calc(100dvh - 5rem);
+    overflow-y: auto;
   }
 
-  body:not(.is-black) .navbar .navlink-menu { background: rgba(255, 255, 255, 0.97); }
+  body:not(.is-black) .navbar .navlink-menu { background: #fff; border-top-color: rgba(0, 0, 0, 0.16); }
   .navbar .navlink-menu.is-open { display: block !important; }
-  .navbar .navlink-menu .navlink-list { width: 100%; gap: 0.25rem; }
-  .navbar .navlink-menu .navlink { padding: 0.75rem 0; font-size: 1rem !important; }
+  .navbar .navlink-menu .navlink-list { width: 100%; gap: 0; }
+  .navbar .navlink-menu .navlink { padding: 1rem 0; font-size: clamp(1.5rem, 5vw, 2rem) !important; line-height: 1.15 !important; font-weight: 400; letter-spacing: -0.025em; border-bottom: 1px solid rgba(255, 255, 255, 0.16); }
+  body:not(.is-black) .navbar .navlink-menu .navlink { border-bottom-color: rgba(0, 0, 0, 0.12); }
+  .navbar .site-nav-toggle { -webkit-tap-highlight-color: transparent; }
+  .navbar .navlink-menu .navlink { text-shadow: none !important; }
+  .navbar .site-nav-toggle:focus-visible { outline: 1px solid currentColor; outline-offset: 2px; }
+  body.is-black .navbar .site-nav-toggle { background: transparent; }
 
   .projects-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
