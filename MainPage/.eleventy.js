@@ -56,14 +56,26 @@ module.exports = function (eleventyConfig) {
     })
   );
 
+  // Reviewed copies of the same image, including local and legacy Wix URLs.
+  const imageAliases = new Map();
+  for (const group of require("./scripts/image-duplicates.json")) {
+    const canonical = sourceKey(group[0]);
+    for (const source of group) imageAliases.set(sourceKey(source), canonical);
+  }
+
   function mediaKey(src) {
+    const key = sourceKey(src);
+    return imageAliases.get(key) || key;
+  }
+
+  function sourceKey(src) {
     const value = String(src || "").trim();
     if (!value) return "";
     const wix = value.match(/\/media\/([a-z0-9]+_[a-f0-9]+)/i);
     if (wix) return `wix:${wix[1].toLowerCase()}`;
     try {
       const url = new URL(value, "https://local.invalid");
-      return decodeURIComponent(url.pathname).replace(/\/+$/, "").toLowerCase();
+      return `${url.origin === "https://local.invalid" ? "" : url.origin}${decodeURIComponent(url.pathname).replace(/\/+$/, "")}`;
     } catch {
       return value.split("?")[0].toLowerCase();
     }

@@ -1,0 +1,202 @@
+[
+  {
+    "a": "/uploads/media/teaching-airport-terminals.jpg",
+    "b": "/uploads/media/teaching/covers/airport.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/teaching-computational.jpg",
+    "b": "/uploads/media/teaching/covers/computational.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/teaching-computational.jpg",
+    "b": "/uploads/media/projects/covers/self-folding.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/teaching-digiblast.jpg",
+    "b": "/uploads/media/teaching/covers/digiblast.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/teaching-material-formation.jpg",
+    "b": "/uploads/media/teaching/covers/material-formation.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/teaching-structures.jpg",
+    "b": "/uploads/media/teaching/covers/structures.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/craft-0.jpg",
+    "b": "/uploads/media/projects/covers/craft.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/electrochemical-picture2.jpg",
+    "b": "/uploads/media/projects/soap-coating.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/electrochemical-picture2.jpg",
+    "b": "/uploads/media/projects/covers/soap-coating.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/hystrics-r12.jpg",
+    "b": "/uploads/media/projects/covers/random-symbiosis.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/saltatur-01.jpg",
+    "b": "/uploads/media/projects/covers/saltature.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/saltatur-1-2.jpg",
+    "b": "/uploads/media/projects/covers/performance-machine.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/self-folding-teaser.jpg",
+    "b": "/uploads/media/projects/covers/fabrication-origami.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/self-folding-teaser.jpg",
+    "b": "https://static.wixstatic.com/media/4249cf_2101c2818aa64bf0b155beb8a3d4fd9a~mv2.jpg",
+    "distance": 4
+  },
+  {
+    "a": "/uploads/media/projects/shellular-materials-adfm.jpg",
+    "b": "/uploads/media/projects/covers/shellular-materials.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/shellular-zoom.jpg",
+    "b": "/uploads/media/projects/covers/shellular-structures.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/soap-coating.jpg",
+    "b": "/uploads/media/projects/covers/soap-coating.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/terrene-psl.jpg",
+    "b": "/uploads/media/projects/covers/terrene.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/publications/AKBARI_AFM.jpg",
+    "b": "/uploads/media/projects/gallery/shellular-funicular-materials/img-01.jpg",
+    "distance": 2
+  },
+  {
+    "a": "/uploads/media/publications/AKBARI_AFM.jpg",
+    "b": "https://static.wixstatic.com/media/4249cf_e3008694dd6e48adadbdc536affc801b~mv2.jpg",
+    "distance": 2
+  },
+  {
+    "a": "/uploads/media/publications/Shellular_tuck_folding_2_ma.jpg",
+    "b": "/uploads/media/projects/gallery/shellular-fabrication-via-origami/img-02.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/teaching/covers/computational.jpg",
+    "b": "/uploads/media/projects/covers/self-folding.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/covers/fabrication-origami.jpg",
+    "b": "https://static.wixstatic.com/media/4249cf_2101c2818aa64bf0b155beb8a3d4fd9a~mv2.jpg",
+    "distance": 4
+  },
+  {
+    "a": "/uploads/media/projects/covers/p2p.gif",
+    "b": "/uploads/media/projects/gallery/p2p-site-less-house/img-05.gif",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/gallery/bio-based-composite-spatial-shell-structures/img-01.jpg",
+    "b": "https://static.wixstatic.com/media/4249cf_40645735d09c4c6180433e54f1a8fb33~mv2.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/gallery/electrochemical-healing-of-fractured-metals/img-01.jpg",
+    "b": "https://static.wixstatic.com/media/4249cf_c324045d338f4ada983925f2a565f128~mv2.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/gallery/electrochemical-healing-of-fractured-metals/img-01.jpg",
+    "b": "https://static.wixstatic.com/media/4249cf_5f3b3ddeb0484bb9b8d419ddb445e00f~mv2.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/gallery/hystrics-interactive-agents/img-01.jpg",
+    "b": "https://static.wixstatic.com/media/4249cf_2ffc72efcc16439c943d0d275776725b~mv2.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/gallery/material-formation-agent-based-design-robotic-clay-printing/img-01.jpg",
+    "b": "https://static.wixstatic.com/media/4249cf_c9b5e8efee4a4598bf913bdfb31a56ac~mv2.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/gallery/material-formation-agent-based-design-robotic-clay-printing/img-03.jpg",
+    "b": "/uploads/media/projects/gallery/material-formation-agent-based-design-robotic-clay-printing/img-04.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/gallery/p2p-site-less-house/img-03.jpg",
+    "b": "https://static.wixstatic.com/media/4249cf_51544306340c48fab2ef6b077bf915d8~mv2.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/gallery/performance-machine/img-01.jpg",
+    "b": "https://static.wixstatic.com/media/4249cf_3268f9028b7d4a9c941d0fa05e58b93b~mv2.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/gallery/random-symbiosis/img-01.jpg",
+    "b": "https://static.wixstatic.com/media/4249cf_657c8d3377d54ce18be92cd9e4e00b3e~mv2.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/gallery/saltatur-the-dancer/img-01.jpg",
+    "b": "https://static.wixstatic.com/media/4249cf_2b59de764ea9433c89a4c5a5dda4d5c2~mv2.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/gallery/shellular-fabrication-via-origami/img-01.jpg",
+    "b": "https://static.wixstatic.com/media/4249cf_127570e869c9434cbb8ae006565caf8e~mv2.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/gallery/shellular-funicular-materials/img-01.jpg",
+    "b": "https://static.wixstatic.com/media/4249cf_e3008694dd6e48adadbdc536affc801b~mv2.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/gallery/shellular-funicular-structures/img-02.jpg",
+    "b": "https://static.wixstatic.com/media/4249cf_9fb4e24c47b448fc9ff6d230e96448af~mv2.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/gallery/structurally-adaptable-shoes/img-01.jpg",
+    "b": "https://static.wixstatic.com/media/4249cf_d504a5273eae48dd81d8646bd96739d8~mv2.jpg",
+    "distance": 0
+  },
+  {
+    "a": "/uploads/media/projects/gallery/terrene-composite-structure-with-pneumatic-formwork/img-07.jpg",
+    "b": "https://static.wixstatic.com/media/4249cf_3485488bd35d4f38a6dcc3ecdd766101~mv2.jpg",
+    "distance": 0
+  },
+  {
+    "a": "https://static.wixstatic.com/media/4249cf_c324045d338f4ada983925f2a565f128~mv2.jpg",
+    "b": "https://static.wixstatic.com/media/4249cf_5f3b3ddeb0484bb9b8d419ddb445e00f~mv2.jpg",
+    "distance": 0
+  }
+]
