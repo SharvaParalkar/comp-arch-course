@@ -12,10 +12,6 @@ navigation:
     url: publications.html
   - label: Team
     url: team.html
-  - label: About
-    url: about.html
-  - label: CV
-    url: cv.html
   - label: Contact
     url: contact.html
 social_links:

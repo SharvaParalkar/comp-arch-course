@@ -1,21 +1,19 @@
-title: About
-permalink: /about.html
+title: Mostafa Akbari
+permalink: /team/mostafa-akbari.html
+nav_prefix: ../
 body_class: body
 seo:
   description: >-
-    Mostafa is a distinguished computational designer and researcher, Assistant Professor of
+    Mostafa Akbari is a computational designer and researcher, and Assistant Professor of
     Architecture at Texas A&M University specializing in computational structures and advanced
     manufacturing.
-  og_title: About | Mostafa Akbari
+  og_title: Mostafa Akbari | Cellular Architectures Lab
   og_image: /uploads/media/about-portrait.jpg
-body_mode: sections
-page_heading: About
+page_heading: Mostafa Akbari
 page_image: /uploads/media/about-portrait.jpg
 page_image_alt: Mostafa Akbari
 page_content: |-
-  **Mostafa Akbari**
-
-  *Assistant Professor of Architecture · Texas A&M University*
+  *PI · Assistant Professor of Architecture · Texas A&M University*
 
   Mostafa is a distinguished computational designer and researcher with a distinctive academic background encompassing architectural design and computational structures. He specializes in Computational Structures and Advanced Manufacturing. His academic journey includes a Ph.D. in Computational Design and a Master of Advanced Architectural Design from the University of Pennsylvania, a Master’s in Architecture from Shahid Beheshti University, and a Bachelor’s in Architecture from the University of Tehran.
 
@@ -23,4 +21,4 @@ page_content: |-
 
   He has collaborated internationally, including as a designer and researcher at Gensler, and practiced independently in architectural design and construction.
 
-  [LinkedIn](https://www.linkedin.com/in/mostafaakbari/)
+  [LinkedIn](https://www.linkedin.com/in/mostafaakbari/) · [View CV](../cv.html) · [Back to Team](../team.html)

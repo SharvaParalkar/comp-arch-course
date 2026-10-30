@@ -1,32 +1,65 @@
 <div>
-  <nav class="navbar-div">
-    <div data-animation="default" data-collapse="none" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
+  <div class="navbar-div" data-site-navbar>
+    <div role="banner" class="navbar">
       <div class="container is-nav">
         <a href="{{ nav_prefix }}index.html" class="brand-link w-nav-brand site-brand-silent" aria-label="Home"></a>
         <nav role="navigation" class="navlink-wrap" aria-label="Primary navigation">
           <div class="navlink-list">
             {% for item in site.navigation %}
               {% if item.url == "index.html" or item.url == "publications.html" or item.url == "team.html" %}
-            <a data-underline-link="" href="{{ nav_prefix }}{{ item.url }}" class="navlink w-nav-link">{{ item.label }}</a>
+            <a data-underline-link="" href="{{ nav_prefix }}{{ item.url }}" class="navlink">{{ item.label }}</a>
               {% endif %}
             {% endfor %}
           </div>
         </nav>
-        <button class="w-nav-button" type="button" aria-label="Open more navigation links" aria-expanded="false" aria-controls="site-navigation">
-          <span class="w-icon-nav-menu" aria-hidden="true"></span>
+        <button class="site-nav-toggle" type="button" aria-label="Open more navigation links" aria-expanded="false" aria-controls="site-navigation" onclick="document.getElementById('site-navigation').classList.toggle('is-open');this.setAttribute('aria-expanded',String(this.getAttribute('aria-expanded')!=='true'))">
+          <span class="site-nav-toggle__icon" aria-hidden="true"></span>
         </button>
         <nav id="site-navigation" role="navigation" class="navlink-menu" aria-label="More navigation links">
           <div class="navlink-list">
             {% for item in site.navigation %}
               {% if item.url != "index.html" and item.url != "publications.html" and item.url != "team.html" %}
-            <a data-underline-link="" href="{{ nav_prefix }}{{ item.url }}" class="navlink w-nav-link">{{ item.label }}</a>
+            <a data-underline-link="" href="{{ nav_prefix }}{{ item.url }}" class="navlink">{{ item.label }}</a>
               {% endif %}
             {% endfor %}
           </div>
         </nav>
       </div>
     </div>
-  </nav>
+  </div>
+  <script>
+    (() => {
+      const bar = document.querySelector("[data-site-navbar]");
+      if (!bar) return;
+      const button = bar.querySelector(".site-nav-toggle");
+      const menu = bar.querySelector(".navlink-menu");
+      if (!button || !menu) return;
+      const close = () => {
+        button.setAttribute("aria-expanded", "false");
+        button.setAttribute("aria-label", "Open more navigation links");
+        menu.classList.remove("is-open");
+      };
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const open = button.getAttribute("aria-expanded") !== "true";
+        button.setAttribute("aria-expanded", String(open));
+        button.setAttribute("aria-label", open ? "Close navigation" : "Open more navigation links");
+        menu.classList.toggle("is-open", open);
+      });
+      menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", close));
+      document.addEventListener("click", (event) => {
+        if (!bar.contains(event.target)) close();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") { close(); button.focus(); }
+      });
+      const desktop = window.matchMedia("(min-width: 992px)");
+      const closeOnDesktop = () => { if (desktop.matches) close(); };
+      if (desktop.addEventListener) desktop.addEventListener("change", closeOnDesktop);
+      else desktop.addListener(closeOnDesktop);
+    })();
+  </script>
   <div class="footer-trigger-wrap"><div data-w-id="e6fd8eae-e7b7-3f32-a9e5-7170bf1befea" class="footer-trigger"></div></div>
   <div class="cursor">
     <div class="cursor-plus"><div class="cursor-line"><div class="cursor-line is-90"></div></div></div>

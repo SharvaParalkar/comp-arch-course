@@ -68,7 +68,7 @@ collections:
   - name: pages
     label: "2 · Pages"
     label_singular: Page
-    description: "Home, About, Projects listing, Publications, Teaching, and other top-level pages."
+    description: "Home, Team, Projects listing, Publications, Teaching, and other pages."
     folder: MainPage/content/pages
     extension: yml
     format: yaml
@@ -102,6 +102,7 @@ collections:
         collapsed: true
         required: false
         fields:
+          - { label: Hero Logo, name: hero_logo_src, widget: image, required: false, hint: "If set, this logo replaces the two hero title lines." }
           - { label: First line, name: hero_title_line_1, widget: string, required: false }
           - { label: Second line, name: hero_title_line_2, widget: string, required: false }
           - { label: Subtitle, name: hero_subtitle, widget: string, required: false }
@@ -150,6 +151,7 @@ collections:
           - { label: Name, name: name, widget: string }
           - { label: Title, name: title, widget: string, required: false }
           - { label: Image, name: image, widget: image, required: false }
+          - { label: Profile Page URL, name: profile_url, widget: string, required: false, hint: "Optional page opened by clicking the person's image or name." }
           - { label: Website, name: website, widget: string, required: false }
           - { label: LinkedIn, name: linkedin, widget: string, required: false }
           - { label: Instagram, name: instagram, widget: string, required: false }
@@ -168,6 +170,7 @@ collections:
               - { label: Name, name: name, widget: string }
               - { label: Title, name: title, widget: string, required: false }
               - { label: Image, name: image, widget: image, required: false }
+              - { label: Profile Page URL, name: profile_url, widget: string, required: false, hint: "Optional page opened by clicking the person's image or name." }
               - { label: Website, name: website, widget: string, required: false }
               - { label: LinkedIn, name: linkedin, widget: string, required: false }
               - { label: Instagram, name: instagram, widget: string, required: false }

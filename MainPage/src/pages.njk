@@ -6,5 +6,5 @@ pagination:
 permalink: "{{ entry.permalink }}"
 eleventyExcludeFromCollections: true
 ---
-{% set nav_prefix = "" %}
+{% set nav_prefix = entry.nav_prefix or ("../" if "/" in entry.permalink else "") %}
 {% include "layouts/base.njk" %}

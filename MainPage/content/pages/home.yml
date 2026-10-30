@@ -1,17 +1,15 @@
-title: Mostafa Akbari
+title: Cellular Architectures Lab
 permalink: /index.html
 body_class: body is-black
 seo:
   description: >-
     Mostafa Akbari — computational designer and architectural technologist specializing in shellular funicular
     structures, digital fabrication, and computational design.
-  og_title: Mostafa Akbari | Architectural Technologist
+  og_title: Cellular Architectures Lab
   og_image: /uploads/media/home-hero.jpg
 body_mode: sections
 home_hero_text:
-  hero_title_line_1: Mostafa
-  hero_title_line_2: Akbari
-  hero_subtitle: Architectural Technologist | Designer
+  hero_logo_src: /uploads/media/calab-logo-white.svg
 sections:
   - type: home_masthead
     video_lq_url: /uploads/media/home-hero-lq.webm

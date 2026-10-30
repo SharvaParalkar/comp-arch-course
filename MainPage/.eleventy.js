@@ -29,6 +29,7 @@ function loadSiteSettings() {
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "static/admin": "admin" });
   eleventyConfig.addPassthroughCopy({ "static/robots.txt": "robots.txt" });
+  eleventyConfig.addPassthroughCopy({ "static/_redirects": "_redirects" });
   eleventyConfig.addPassthroughCopy({ "static/uploads": "uploads" });
 
   eleventyConfig.addGlobalData("site", loadSiteSettings);
