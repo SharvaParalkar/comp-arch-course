@@ -43,39 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 <script>
-document.addEventListener("click", (event) => {
-  const toggle = event.target.closest(".site-nav-toggle");
-  const menu = document.querySelector(".navlink-menu");
-  const button = document.querySelector(".site-nav-toggle");
-  if (!menu || !button) return;
-
-  if (toggle) {
-    event.preventDefault();
-    const open = button.getAttribute("aria-expanded") !== "true";
-    button.setAttribute("aria-expanded", String(open));
-    button.setAttribute("aria-label", open ? "Close navigation" : "Open more navigation links");
-    menu.classList.toggle("is-open", open);
-    return;
-  }
-
-  if (!menu.contains(event.target)) {
-    button.setAttribute("aria-expanded", "false");
-    button.setAttribute("aria-label", "Open more navigation links");
-    menu.classList.remove("is-open");
-  }
-});
-document.addEventListener("keydown", (event) => {
-  if (event.key !== "Escape") return;
-  const button = document.querySelector(".site-nav-toggle");
-  const menu = document.querySelector(".navlink-menu");
-  if (!button || !menu) return;
-  button.setAttribute("aria-expanded", "false");
-  button.setAttribute("aria-label", "Open more navigation links");
-  menu.classList.remove("is-open");
-  button.focus();
-});
-</script>
-<script>
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("[data-contact-form]");
   if (!form) return;
