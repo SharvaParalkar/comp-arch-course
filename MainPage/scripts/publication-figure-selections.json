@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "bio-based-composite-spatial-shell-structures",
+    "page": 2,
+    "box": [
+      379.3936767578125,
+      99.36007690429688,
+      524.7271728515625,
+      253.91302490234375
+    ],
+    "alt": "Woven bio-based shell prototype detail"
+  },
+  {
+    "slug": "continuous-approximation-of-shellular-funicular-structures",
+    "page": 11,
+    "box": [
+      70.55999755859375,
+      99.356689453125,
+      524.7275390625,
+      520.8253350830078
+    ],
+    "alt": "Comparison of shellular structural responses"
+  },
+  {
+    "slug": "electrochemical-healing-of-fractured-metals",
+    "page": 13,
+    "box": [
+      245.8783984375,
+      199.9969973754883,
+      418.226396484375,
+      340.0459924316406
+    ],
+    "alt": "Metal specimens before fracture and after electrochemical healing"
+  },
+  {
+    "slug": "from-design-to-the-fabrication-of-shellular-funicular-structures",
+    "page": 13,
+    "box": [
+      72.0,
+      42.1199951171875,
+      252.80389404296875,
+      227.16583251953125
+    ],
+    "alt": "Top view of the fabricated folded shellular structure"
+  },
+  {
+    "slug": "saltatur-node-based-assembly-of-funicular-spatial-concrete",
+    "page": 6,
+    "box": [
+      34.98884201049805,
+      42.47998046875,
+      541.091552734375,
+      407.53765869140625
+    ],
+    "alt": "Concrete members meeting at the Saltatur structural node"
+  },
+  {
+    "slug": "strut-based-cellular-to-shellular-funicular-polyhedral-materials",
+    "page": 16,
+    "box": [
+      163.50182891845702,
+      439.9211120605469,
+      281.56743682861327,
+      551.287114868164
+    ],
+    "alt": "Fabricated shellular cellular material specimen"
+  },
+  {
+    "slug": "from-polyhedral-to-anticlastic-funicular-spatial-structures",
+    "page": 2,
+    "box": [
+      322,
+      102,
+      524,
+      420
+    ],
+    "alt": "Anticlastic shellular form derived through graphic statics"
+  },
+  {
+    "slug": "geometry-based-structural-form-finding-to-design-architected-cellular-solids",
+    "page": 1,
+    "box": [
+      437,
+      268,
+      562,
+      436
+    ],
+    "alt": "Shellular unit cell with its surrounding form and force diagram"
+  }
+]

@@ -8,7 +8,7 @@
           {% if images.length %}
           <a class="project-gallery__link publication-card__carousel" href="{{ images[0].original or images[0].image }}" data-project-lightbox aria-label="View publication image larger: {{ pub.title }}">
             {% for image in images %}
-            <img src="{{ image.image }}"{% if image.srcset %} srcset="{{ image.srcset }}" sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 991px) calc((100vw - 64px) / 2), calc((100vw - 128px) / 3)" width="960" height="960"{% endif %} data-full-src="{{ image.original or image.image }}" alt="{{ pub.title }}" loading="lazy" class="publication-card__img{% if loop.first %} is-active{% endif %}"/>
+            <img src="{{ image.image }}"{% if image.srcset %} srcset="{{ image.srcset }}" sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 991px) calc((100vw - 64px) / 2), calc((100vw - 128px) / 3)" width="960" height="960"{% endif %} data-full-src="{{ image.original or image.image }}" alt="{{ image.alt or pub.title }}" loading="lazy" class="publication-card__img{% if loop.first %} is-active{% endif %}"/>
             {% endfor %}
           </a>
           {% else %}

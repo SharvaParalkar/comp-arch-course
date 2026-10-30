@@ -180,7 +180,7 @@ module.exports = function (eleventyConfig) {
         return true;
       }).map((item) => {
         const optimized = publicationImages[item.image];
-        return optimized ? { ...item, original: optimized.source, image: `${optimized.thumbnail}-960.webp`, srcset: `${optimized.thumbnail}-480.webp 480w, ${optimized.thumbnail}-960.webp 960w` } : item;
+        return optimized ? { ...item, alt: optimized.alt || item.alt, original: optimized.source, image: `${optimized.thumbnail}-960.webp`, srcset: `${optimized.thumbnail}-480.webp 480w, ${optimized.thumbnail}-960.webp 960w` } : item;
       });
   });
 

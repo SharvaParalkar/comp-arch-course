@@ -1696,3 +1696,17 @@ a[href*="learn-more"],
   padding-top: calc(env(safe-area-inset-top, 0px) + 7.5rem) !important;
   padding-bottom: 1.5rem;
 }
+
+/* Use the same gap within each navigation group and between groups. */
+.navbar .container.is-nav { --site-nav-gap: clamp(1rem, 2vw, 2.1rem); gap: var(--site-nav-gap); }
+.navbar .navlink-list,
+.navbar .navlink-menu .navlink-list { column-gap: var(--site-nav-gap); }
+.navbar .navlink { margin-left: 0; margin-right: 0; }
+@media (min-width: 992px) {
+  .navbar .navlink-list,
+  .navbar .navlink-menu .navlink-list { gap: var(--site-nav-gap); }
+}
+@media (max-width: 991px) {
+  .navbar .container.is-nav { --site-nav-gap: clamp(0.65rem, 2vw, 1rem); }
+  .navbar .navlink-wrap .navlink-list { gap: var(--site-nav-gap); }
+}

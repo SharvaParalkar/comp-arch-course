@@ -1,34 +1,50 @@
 {
   "/uploads/media/publications/bio-based-composite-spatial-shell_cover-scaled.jpg": {
-    "source": "/uploads/media/publications/bio-based-composite-spatial-shell_cover-scaled.jpg",
-    "thumbnail": "/uploads/media/publications/optimized/bio-based-composite-spatial-shell-structures"
+    "source": "/uploads/media/publications/optimized/bio-based-composite-spatial-shell-structures-revised-figure.webp",
+    "thumbnail": "/uploads/media/publications/optimized/bio-based-composite-spatial-shell-structures-revised",
+    "alt": "Bio-based shell prototype held in its fabrication frame",
+    "pdf_page": 2
   },
   "/uploads/media/publications/Akbari_2022_16by9_2.jpg": {
-    "source": "/uploads/media/publications/Akbari_2022_16by9_2.jpg",
-    "thumbnail": "/uploads/media/publications/optimized/continuous-approximation-of-shellular-funicular-structures"
+    "source": "/uploads/media/publications/optimized/continuous-approximation-of-shellular-funicular-structures-revised-figure.webp",
+    "thumbnail": "/uploads/media/publications/optimized/continuous-approximation-of-shellular-funicular-structures-revised",
+    "alt": "Discrete and continuously approximated shellular geometries",
+    "pdf_page": 11
   },
   "https://static.wixstatic.com/media/4249cf_5f3b3ddeb0484bb9b8d419ddb445e00f~mv2.jpg": {
-    "source": "/uploads/media/projects/gallery/electrochemical-healing-of-fractured-metals/img-01.jpg",
-    "thumbnail": "/uploads/media/publications/optimized/electrochemical-healing-of-fractured-metals"
+    "source": "/uploads/media/publications/optimized/electrochemical-healing-of-fractured-metals-revised-figure.webp",
+    "thumbnail": "/uploads/media/publications/optimized/electrochemical-healing-of-fractured-metals-revised",
+    "alt": "Shellular metal specimen geometry and section",
+    "pdf_page": 13
   },
   "/uploads/media/publications/Shellular_tuck_folding_2_ma.jpg": {
-    "source": "/uploads/media/publications/Shellular_tuck_folding_2_ma.jpg",
-    "thumbnail": "/uploads/media/publications/optimized/from-design-to-the-fabrication-of-shellular-funicular-structures"
+    "source": "/uploads/media/publications/optimized/from-design-to-the-fabrication-of-shellular-funicular-structures-figure.webp",
+    "thumbnail": "/uploads/media/publications/optimized/from-design-to-the-fabrication-of-shellular-funicular-structures",
+    "alt": "Top view of the fabricated folded shellular structure",
+    "pdf_page": 13
   },
   "/uploads/media/publications/3.jpg": {
-    "source": "/uploads/media/publications/3.jpg",
-    "thumbnail": "/uploads/media/publications/optimized/from-polyhedral-to-anticlastic-funicular-spatial-structures"
+    "source": "/uploads/media/publications/optimized/from-polyhedral-to-anticlastic-funicular-spatial-structures-figure.webp",
+    "thumbnail": "/uploads/media/publications/optimized/from-polyhedral-to-anticlastic-funicular-spatial-structures",
+    "alt": "Anticlastic shellular form derived through graphic statics",
+    "pdf_page": 2
   },
   "/uploads/media/publications/AKBARI_2020_SCF.jpg": {
-    "source": "/uploads/media/publications/AKBARI_2020_SCF.jpg",
-    "thumbnail": "/uploads/media/publications/optimized/geometry-based-structural-form-finding-to-design-architected-cellular-solids"
+    "source": "/uploads/media/publications/optimized/geometry-based-structural-form-finding-to-design-architected-cellular-solids-figure.webp",
+    "thumbnail": "/uploads/media/publications/optimized/geometry-based-structural-form-finding-to-design-architected-cellular-solids",
+    "alt": "Shellular unit cell with its surrounding form and force diagram",
+    "pdf_page": 1
   },
   "/uploads/media/publications/saltatur_02.jpg": {
-    "source": "/uploads/media/publications/saltatur_02.jpg",
-    "thumbnail": "/uploads/media/publications/optimized/saltatur-node-based-assembly-of-funicular-spatial-concrete"
+    "source": "/uploads/media/publications/optimized/saltatur-node-based-assembly-of-funicular-spatial-concrete-figure.webp",
+    "thumbnail": "/uploads/media/publications/optimized/saltatur-node-based-assembly-of-funicular-spatial-concrete",
+    "alt": "Concrete members meeting at the Saltatur structural node",
+    "pdf_page": 6
   },
   "/uploads/media/publications/AKBARI_AFM.jpg": {
-    "source": "/uploads/media/publications/AKBARI_AFM.jpg",
-    "thumbnail": "/uploads/media/publications/optimized/strut-based-cellular-to-shellular-funicular-polyhedral-materials"
+    "source": "/uploads/media/publications/optimized/strut-based-cellular-to-shellular-funicular-polyhedral-materials-revised-figure.webp",
+    "thumbnail": "/uploads/media/publications/optimized/strut-based-cellular-to-shellular-funicular-polyhedral-materials-revised",
+    "alt": "Transformation from strut-based cells to shellular cellular materials",
+    "pdf_page": 16
   }
 }
