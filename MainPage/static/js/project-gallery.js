@@ -12,7 +12,7 @@
         activeIndex = (activeIndex + 1) % images.length;
         images[activeIndex].classList.add("is-active");
         if (carousel.matches(".publication-card__carousel")) {
-          carousel.href = images[activeIndex].src;
+          carousel.href = images[activeIndex].dataset.fullSrc || images[activeIndex].src;
         }
       };
       const isProjectOrTeachingCarousel = carousel.matches(".project-card__carousel, .teaching-card__carousel");

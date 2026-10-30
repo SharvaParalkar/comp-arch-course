@@ -160,6 +160,8 @@ module.exports = function (eleventyConfig) {
     return images.slice(0, 2);
   });
 
+  const publicationImages = require("./scripts/publication-images.json");
+
   eleventyConfig.addFilter("publicationCardImages", (publication) => {
     const sources = Array.isArray(publication?.images)
       ? publication.images
@@ -176,6 +178,9 @@ module.exports = function (eleventyConfig) {
         seen.add(key);
         item.image = image;
         return true;
+      }).map((item) => {
+        const optimized = publicationImages[item.image];
+        return optimized ? { ...item, original: optimized.source, image: `${optimized.thumbnail}-960.webp`, srcset: `${optimized.thumbnail}-480.webp 480w, ${optimized.thumbnail}-960.webp 960w` } : item;
       });
   });
 

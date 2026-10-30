@@ -12,7 +12,7 @@ sections:
   - type: headline
     text: Soap Coating Cellular Structures
   - type: image
-    image: /uploads/media/projects/soap-coating.jpg
+    image: /uploads/media/projects/soap-coating-selected.png
     alt: Soap-coated cellular lattice with graphene oxide film
   - type: image
     image: /uploads/media/projects/soap-coating-helmet.png
@@ -43,7 +43,7 @@ sections:
       - { image: /uploads/media/projects/gallery/soap-coating-cellular-structures/img-01.jpg, alt: "soap-coating-cellular-structures archive photo" }
       - { image: /uploads/media/projects/gallery/soap-coating-cellular-structures/img-02.jpg, alt: "soap-coating-cellular-structures archive photo" }
       - { image: /uploads/media/projects/gallery/soap-coating-cellular-structures/img-03.jpg, alt: "soap-coating-cellular-structures archive photo" }
-      - { image: /uploads/media/projects/gallery/soap-coating-cellular-structures/img-04.jpg, alt: "soap-coating-cellular-structures archive photo" }
+      - { image: /uploads/media/projects/soap-coating-selected.png, alt: "soap-coating-cellular-structures archive photo" }
       - { image: /uploads/media/projects/gallery/soap-coating-cellular-structures/img-05.png, alt: "soap-coating-cellular-structures archive photo" }
       - { image: /uploads/media/projects/gallery/soap-coating-cellular-structures/img-06.jpg, alt: "soap-coating-cellular-structures archive photo" }
       - { image: /uploads/media/projects/gallery/soap-coating-cellular-structures/img-07.png, alt: "soap-coating-cellular-structures archive photo" }
@@ -53,12 +53,12 @@ card_title: Soap Coating Cellular Structures
 summary: >-
   A 3D-printed shellular wireframe approximating a Schwarz P surface is dip-coated in polymer or
   polymer/graphene-oxide soap solution so films span the faces and improve shear capacity.
-cover_image: /uploads/media/projects/covers/soap-coating.jpg
+cover_image: /uploads/media/projects/soap-coating-selected.png
 sort_order: 3
 
 # Curated for the square cards on the projects listing.
 card_images:
-  - image: /uploads/media/projects/gallery/soap-coating-cellular-structures/img-04.jpg
+  - image: /uploads/media/projects/soap-coating-selected.png
     alt: "Soap-coated cellular frame"
   - image: /uploads/media/projects/gallery/soap-coating-cellular-structures/img-06.jpg
     alt: "Soap films spanning cellular frame edges"

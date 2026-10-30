@@ -1690,3 +1690,9 @@ a[href*="learn-more"],
     max-height: min(60vh, 640px) !important;
   }
 }
+
+/* Keep page headings below the fixed navigation, including mobile safe areas. */
+.page-heading-section {
+  padding-top: calc(env(safe-area-inset-top, 0px) + 7.5rem) !important;
+  padding-bottom: 1.5rem;
+}
