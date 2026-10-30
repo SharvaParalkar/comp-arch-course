@@ -46,6 +46,31 @@ export async function onRequestPost({ request, env }) {
   // Quietly accept honeypot submissions so bots do not learn they were filtered.
   if (cleanText(form.get("website"), 200)) return json({ ok: true });
 
+  if (!env.TURNSTILE_SECRET_KEY) {
+    return json({ error: "The contact form is temporarily unavailable. Please email info@calab.net." }, 503);
+  }
+  const token = form.get("cf-turnstile-response");
+  if (typeof token !== "string" || !token.trim() || token.length > 2048) {
+    return json({ error: "Please complete the security check and try again." }, 400);
+  }
+  try {
+    const verification = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ secret: env.TURNSTILE_SECRET_KEY, response: token }),
+      signal: AbortSignal.timeout(10000),
+    });
+    if (!verification.ok) throw new Error("Verification unavailable");
+    const result = await verification.json();
+    if (result.success !== true || result.action !== "contact" ||
+        typeof result.hostname !== "string" ||
+        !isAllowedOrigin(`https://${result.hostname}`)) {
+      return json({ error: "The security check failed or expired. Please try again." }, 400);
+    }
+  } catch {
+    return json({ error: "The security check is temporarily unavailable. Please try again later or email info@calab.net." }, 503);
+  }
+
   const name = cleanText(form.get("name"), 120);
   const email = cleanText(form.get("email"), 254);
   const subject = cleanText(form.get("subject"), 180);

@@ -31,3 +31,11 @@ npm run dev
 This builds the site and serves its static pages and Functions at `http://localhost:8081`. Re-run `npm run build` after content or template changes while the preview is running.
 
 After setting the production secrets, deploy a new Pages build for the Function to use them.
+
+## Contact form bot protection
+
+The form uses Cloudflare Turnstile and the existing hidden honeypot. Every real submission must pass server-side Turnstile validation before either the team email or visitor receipt is sent. Missing configuration or a verification outage blocks sending and offers info@calab.net as a fallback.
+
+In the Cloudflare dashboard, create a **Turnstile** widget in Managed mode. Allow `calab.net`, `www.calab.net`, and `calab-site.pages.dev`, plus any preview hostnames you use. Under **Workers & Pages → calab-site → Settings → Variables and Secrets**, set `TURNSTILE_SITE_KEY` to the public site key and add `TURNSTILE_SECRET_KEY` as a secret, for both Production and Preview as needed. Deploy the updated site and Functions together after configuring these values. The `/api/contact-config` endpoint exposes only the public site key.
+
+For local testing, add the Turnstile test site key and test secret from Cloudflare's testing documentation to `.dev.vars`. Server validation checks the returned hostname against the site's allowlist and the action against `contact`; mocked tests can exercise these checks without sending mail. Never use test keys in production. Turnstile reduces automated spam but cannot eliminate all abuse or human-submitted spam. If spam persists, add rate limits to `POST /api/contact` in Cloudflare.

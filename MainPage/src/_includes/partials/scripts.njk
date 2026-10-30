@@ -50,6 +50,43 @@ document.addEventListener("DOMContentLoaded", () => {
   const status = form.querySelector("[data-contact-status]");
   const submit = form.querySelector('[type="submit"]');
   const maxPdfBytes = 10 * 1024 * 1024;
+  let widgetId;
+  let sending = false;
+  const captcha = form.querySelector("[data-contact-captcha]");
+  const verificationUnavailable = () => {
+    submit.disabled = true;
+    status.textContent = "The security check is unavailable. Please reload the page or email info@calab.net.";
+  };
+  status.textContent = "Loading security check…";
+  window.initContactTurnstile = async () => {
+    try {
+      const response = await fetch("/api/contact-config");
+      if (!response.ok) throw new Error("Configuration unavailable");
+      const config = await response.json();
+      if (!config.siteKey) throw new Error("Missing site key");
+      widgetId = window.turnstile.render(captcha, {
+        sitekey: config.siteKey,
+        action: "contact",
+        size: "flexible",
+        callback: () => {
+          submit.disabled = sending;
+          if (!sending) status.textContent = "";
+        },
+        "expired-callback": () => {
+          submit.disabled = true;
+          if (!sending) status.textContent = "Security check expired. Please complete it again.";
+        },
+        "error-callback": verificationUnavailable,
+      });
+    } catch {
+      verificationUnavailable();
+    }
+  };
+  const captchaScript = document.createElement("script");
+  captchaScript.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?onload=initContactTurnstile&render=explicit";
+  captchaScript.async = true;
+  captchaScript.onerror = verificationUnavailable;
+  document.head.appendChild(captchaScript);
 
   fileInput.addEventListener("change", () => {
     const files = Array.from(fileInput.files || []);
@@ -71,6 +108,12 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     if (!form.reportValidity()) return;
+    if (sending) return;
+    if (widgetId === undefined || !window.turnstile.getResponse(widgetId)) {
+      status.textContent = "Please complete the security check before sending.";
+      return;
+    }
+    sending = true;
     status.textContent = "Sending your message…";
     submit.disabled = true;
     try {
@@ -82,7 +125,9 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (error) {
       status.textContent = error.message || "Your message could not be sent. Please try again.";
     } finally {
-      submit.disabled = false;
+      sending = false;
+      submit.disabled = true;
+      window.turnstile.reset(widgetId);
     }
   });
 });

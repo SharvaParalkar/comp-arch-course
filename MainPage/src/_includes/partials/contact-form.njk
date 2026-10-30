@@ -16,9 +16,11 @@
       <p class="contact-form__file-note">If you run into the file size limit or have trouble attaching your PDFs, email them directly to <a href="mailto:info@calab.net">info@calab.net</a>.</p>
       <div class="contact-form__trap" aria-hidden="true"><label>Leave this field empty<input name="website" type="text" tabindex="-1" autocomplete="off"/></label></div>
       <div class="contact-form__actions">
-        <button type="submit" class="contact-form__submit">Send message</button>
+        <button type="submit" class="contact-form__submit" disabled>Send message</button>
         <p class="contact-form__status" data-contact-status role="status" aria-live="polite"></p>
       </div>
+      <div data-contact-captcha></div>
+      <noscript>Please enable JavaScript to complete the security check, or email <a href="mailto:info@calab.net">info@calab.net</a>.</noscript>
     </form>
   </div>
 </section>
