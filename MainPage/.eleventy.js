@@ -7,6 +7,36 @@ const markdownRenderer = new MarkdownIt({ html: true, linkify: true, typographer
 
 const CONTENT_DIR = path.join(__dirname, "content");
 
+// The visual editor stores a page's editable body in one object so it can be
+// saved atomically from Decap. Pages that have never been opened in the visual
+// editor keep using their original top-level fields unchanged.
+const VISUAL_PAGE_FIELDS = [
+  "page_heading",
+  "page_content",
+  "page_image",
+  "page_image_alt",
+  "page_image_position",
+  "body_class",
+  "show_projects_grid",
+  "show_publications_list",
+  "show_teaching_grid",
+  "show_team_grid",
+  "show_contact_form",
+  "sections",
+];
+
+function applyVisualPage(data) {
+  const visual = data && data.visual_page;
+  if (!visual || typeof visual !== "object") return data;
+  const merged = { ...data };
+  for (const key of VISUAL_PAGE_FIELDS) {
+    if (Object.prototype.hasOwnProperty.call(visual, key)) {
+      merged[key] = visual[key];
+    }
+  }
+  return merged;
+}
+
 function readYamlFiles(dir) {
   if (!fs.existsSync(dir)) return [];
   return fs
@@ -14,7 +44,7 @@ function readYamlFiles(dir) {
     .filter((f) => f.endsWith(".yml") || f.endsWith(".yaml"))
     .map((f) => {
       const raw = fs.readFileSync(path.join(dir, f), "utf8");
-      const data = yaml.load(raw) || {};
+      const data = applyVisualPage(yaml.load(raw) || {});
       const slug = f.replace(/\.ya?ml$/, "");
       return { ...data, slug, _filename: f };
     });

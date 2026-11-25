@@ -36,6 +36,42 @@ function walkFiles(dir, acc = []) {
 cleanGeneratedOutput(site);
 execSync("npx @11ty/eleventy", { cwd: root, stdio: "inherit" });
 
+// The visual editor's media chooser reads a generated index instead of
+// requiring an authenticated directory listing.
+function writeMediaIndex() {
+  const uploads = path.join(root, "static", "uploads");
+  const extensions = {
+    image: new Set([".jpg", ".jpeg", ".png", ".gif", ".webp", ".avif", ".svg"]),
+    video: new Set([".mp4", ".webm", ".mov", ".m4v"]),
+    pdf: new Set([".pdf"]),
+  };
+  const index = { generated: new Date().toISOString(), images: [], videos: [], pdfs: [] };
+  if (fs.existsSync(uploads)) {
+    for (const file of walkFiles(uploads)) {
+      const ext = path.extname(file).toLowerCase();
+      const relative = path.relative(uploads, file).split(path.sep).join("/");
+      if (relative === ".gitkeep") continue;
+      const entry = {
+        path: "/uploads/" + relative,
+        name: path.basename(file),
+        folder: path.dirname(relative) === "." ? "" : path.dirname(relative),
+        size: fs.statSync(file).size,
+      };
+      if (extensions.image.has(ext)) index.images.push(entry);
+      else if (extensions.video.has(ext)) index.videos.push(entry);
+      else if (extensions.pdf.has(ext)) index.pdfs.push(entry);
+    }
+  }
+  for (const key of ["images", "videos", "pdfs"]) {
+    index[key].sort((a, b) => a.path.localeCompare(b.path));
+  }
+  const adminDir = path.join(site, "admin");
+  fs.mkdirSync(adminDir, { recursive: true });
+  fs.writeFileSync(path.join(adminDir, "media-index.json"), JSON.stringify(index, null, 2));
+}
+
+writeMediaIndex();
+
 // Keep Cloudflare Pages under the 25 MiB asset limit. Oversized media must be CDN URLs in content.
 const OVERSIZED_ALLOWLIST_REMOVE = [
   path.join(site, "uploads", "media", "home-hero-ultra.mp4"),

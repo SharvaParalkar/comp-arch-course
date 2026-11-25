@@ -68,7 +68,7 @@ collections:
   - name: pages
     label: "2 · Pages"
     label_singular: Page
-    description: "Home, Team, Projects listing, Publications, Teaching, and other pages."
+    description: "Home, Team, Projects listing, Publications, Teaching, and other pages. Use the visual editor to change the page body."
     folder: MainPage/content/pages
     extension: yml
     format: yaml
@@ -79,69 +79,30 @@ collections:
     sortable_fields: ["title", "permalink"]
     preview_path: "{{fields.permalink}}"
     fields:
-      - { label: Title, name: title, widget: string }
-      - label: Permalink
+      - label: Page Title
+        name: title
+        widget: string
+        hint: "Shown in the browser tab and in the Pages list."
+      - label: Web Address
         name: permalink
         widget: string
-        hint: "e.g. /about.html or /index.html"
-      - { label: Page Heading, name: page_heading, widget: string, required: false, hint: "Heading shown at the top of this page" }
-      - label: Main Image
-        name: page_image
-        widget: image
+        hint: "e.g. /about.html or /index.html. Keep the leading slash."
+      - label: Page Body — Visual Editor
+        name: visual_page
+        widget: visual_page
         required: false
-        hint: "Optional image shown beside the page text"
-      - { label: Image Alt Text, name: page_image_alt, widget: string, required: false }
-      - label: Page Content
-        name: page_content
-        widget: markdown
-        required: false
-        hint: "Edit the page text here. Use the toolbar for headings, links, lists, and images."
+        hint: "Open the visual editor to change the page heading, introduction, image, automatic grids, and every content section. Click Apply, then Publish."
       - label: Home Page Hero Text
         name: home_hero_text
         widget: object
         collapsed: true
         required: false
+        hint: "Home page only. If you set a logo here, it replaces the two hero title lines."
         fields:
-          - { label: Hero Logo, name: hero_logo_src, widget: image, required: false, hint: "If set, this logo replaces the two hero title lines." }
+          - { label: Hero Logo, name: hero_logo_src, widget: image, required: false }
           - { label: First line, name: hero_title_line_1, widget: string, required: false }
           - { label: Second line, name: hero_title_line_2, widget: string, required: false }
           - { label: Subtitle, name: hero_subtitle, widget: string, required: false }
-      - label: Body Class
-        name: body_class
-        widget: string
-        default: body
-        required: false
-        hint: "Advanced — usually leave as body"
-      - label: Show Projects Grid
-        name: show_projects_grid
-        widget: boolean
-        default: false
-        required: false
-        hint: "Turn on for the Projects page. Renders all Projects as a card grid automatically."
-      - label: Show Publications Grid
-        name: show_publications_list
-        widget: boolean
-        default: false
-        required: false
-        hint: "Turn on for the Publications page. Renders all Publications with image, text, and links."
-      - label: Show Teaching Grid
-        name: show_teaching_grid
-        widget: boolean
-        default: false
-        required: false
-        hint: "Turn on for the Teaching page. Renders all Teaching entries as a card grid."
-      - label: Show Team Grid
-        name: show_team_grid
-        widget: boolean
-        default: false
-        required: false
-        hint: "Turn on for the Team page."
-      - label: Show Contact Form
-        name: show_contact_form
-        widget: boolean
-        default: false
-        required: false
-        hint: "Turn on for the Contact page."
       - label: Team Members
         name: team_members
         widget: list
@@ -174,149 +135,16 @@ collections:
               - { label: Website, name: website, widget: string, required: false }
               - { label: LinkedIn, name: linkedin, widget: string, required: false }
               - { label: Instagram, name: instagram, widget: string, required: false }
-      - label: SEO
+      - label: Search & Social Preview (SEO)
         name: seo
         widget: object
         collapsed: true
         required: false
         fields:
-          - { label: Description, name: description, widget: text, required: false }
+          - { label: Description, name: description, widget: text, required: false, hint: "The sentence search engines and social cards show." }
           - { label: OG Title, name: og_title, widget: string, required: false }
           - { label: OG Description, name: og_description, widget: text, required: false }
           - { label: OG Image, name: og_image, widget: image, required: false }
-      - label: Advanced Layout Blocks
-        name: sections
-        widget: list
-        collapsed: true
-        required: false
-        summary: "{{type}}"
-        hint: "Add headlines, images, video, and text. Drag to reorder. Use Image / Image Gallery to add media."
-        types:
-          - label: Hero with Video
-            name: hero_video
-            widget: object
-            summary: "{{title}}"
-            fields:
-              - { label: Title, name: title, widget: string, required: false }
-              - { label: Video URL, name: video_url, widget: string, hint: "Direct .mp4 URL" }
-          - label: Hero with Image
-            name: hero_image
-            widget: object
-            summary: "{{title}}"
-            fields:
-              - { label: Image, name: image, widget: image }
-              - { label: Title, name: title, widget: string, required: false }
-              - { label: Subtitle, name: subtitle, widget: string, required: false }
-              - { label: Alt Text, name: alt, widget: string, required: false }
-              - { label: CTA Label, name: cta_label, widget: string, required: false }
-              - { label: CTA URL, name: cta_url, widget: string, required: false }
-          - label: Home Masthead
-            name: home_masthead
-            widget: object
-            summary: "{{title_line_1}} {{title_line_2}}"
-            fields:
-              - { label: Title line 1, name: title_line_1, widget: string }
-              - { label: Title line 2, name: title_line_2, widget: string, required: false }
-              - { label: Subtitle, name: subtitle, widget: string, required: false }
-              - { label: Low-quality WebM, name: video_lq_url, widget: string, required: false, hint: "Instant-load ~2–3MB WebM (poster replacement)" }
-              - { label: Low-quality MP4, name: video_lq_mp4_url, widget: string, required: false, hint: "Safari fallback ~2–3MB H.264" }
-              - { label: High-quality MP4, name: video_hq_url, widget: string, required: false, hint: "Background-loaded ~9MB H.264; crossfades in when ready" }
-              - { label: Ultra-quality MP4, name: video_ultra_url, widget: string, required: false, hint: "Cloudinary (or CDN) URL — must stay under Cloudflare Pages 25 MiB if hosted locally" }
-          - label: Headline
-            name: headline
-            widget: object
-            summary: "{{text}}"
-            fields:
-              - { label: Text, name: text, widget: text }
-          - label: Two Column Text
-            name: two_column
-            widget: object
-            fields:
-              - { label: Heading, name: heading, widget: string, required: false }
-              - { label: Left Column, name: left, widget: markdown, required: false }
-              - { label: Right Column, name: right, widget: markdown, required: false }
-          - label: Full-width Video
-            name: video
-            widget: object
-            fields:
-              - { label: Video URL, name: video_url, widget: string }
-              - { label: Caption, name: caption, widget: string, required: false }
-          - label: Full-width Image
-            name: image
-            widget: object
-            summary: "{{alt}}"
-            fields:
-              - { label: Image, name: image, widget: image, hint: "Upload here or pick from Media / Cloudinary" }
-              - { label: Alt Text, name: alt, widget: string, required: false }
-              - { label: Caption, name: caption, widget: string, required: false }
-              - label: Image Frame
-                name: fit_mode
-                widget: select
-                default: fit
-                required: false
-                options:
-                  - { label: "Fit (show whole image)", value: fit }
-                  - { label: "Fill (crop to fill frame)", value: fill }
-          - label: Image + Text
-            name: image_text
-            widget: object
-            fields:
-              - { label: Image, name: image, widget: image, required: false }
-              - { label: Alt Text, name: alt, widget: string, required: false }
-              - label: Image Position
-                name: image_position
-                widget: select
-                default: right
-                options: ["left", "right"]
-              - { label: Body, name: body, widget: markdown, required: false }
-              - label: Image Frame
-                name: fit_mode
-                widget: select
-                default: fill
-                required: false
-                options:
-                  - { label: "Fill (crop to fill frame)", value: fill }
-                  - { label: "Fit (show whole image)", value: fit }
-          - label: Image Gallery
-            name: image_gallery
-            widget: object
-            fields:
-              - label: Images
-                name: images
-                widget: list
-                summary: "{{alt}}"
-                fields:
-                  - { label: Image, name: image, widget: image }
-                  - { label: Alt Text, name: alt, widget: string, required: false }
-                  - { label: Caption, name: caption, widget: string, required: false }
-                  - label: Image Frame
-                    name: fit_mode
-                    widget: select
-                    default: fit
-                    required: false
-                    options:
-                      - { label: "Fit (show whole image)", value: fit }
-                      - { label: "Fill (crop to fill frame)", value: fill }
-          - label: Stat
-            name: stat
-            widget: object
-            summary: "{{label}}: {{value}}"
-            fields:
-              - { label: Label, name: label, widget: string, required: false }
-              - { label: Value, name: value, widget: string }
-          - label: Rich Text
-            name: rich_text
-            widget: object
-            fields:
-              - { label: Body, name: body, widget: markdown, required: false }
-          - label: PDF Embed
-            name: pdf
-            widget: object
-            summary: "{{title}}"
-            fields:
-              - { label: PDF File, name: file, widget: file, media_folder: /static/uploads/cv, public_folder: /uploads/cv }
-              - { label: Title, name: title, widget: string, required: false, hint: "Accessibility title for the embed" }
-              - { label: Download Label, name: download_label, widget: string, required: false, default: "Download PDF" }
   - name: projects
     label: "3 · Projects"
     label_singular: Project
@@ -404,13 +232,13 @@ collections:
         widget: markdown
         required: false
         hint: "Write normally. Use the toolbar for headings, links, lists, and images. Content appears below the project description blocks."
-      - label: Advanced Layout Blocks
+      - label: Page Content — Structured Sections
         name: sections
         widget: list
         collapsed: true
         required: false
         summary: "{{type}}"
-        hint: "Content for the project detail page. Add Full-width Image or Image Gallery to place media."
+        hint: "Add, remove, and reorder detail-page sections. Text blocks appear in the left column; images, galleries, and videos appear in the right column."
         types:
           - label: Hero with Video
             name: hero_video
@@ -607,7 +435,7 @@ collections:
         fields:
           - { label: Description, name: description, widget: text, required: false }
           - { label: OG Title, name: og_title, widget: string, required: false }
-      - label: Advanced Layout Blocks
+      - label: Page Content — Structured Sections
         name: sections
         widget: list
         collapsed: true

@@ -2,6 +2,12 @@
 
 The site is built with Eleventy and deployed to Cloudflare Pages.
 
+## Visual page editor
+
+Pages have a GrapesJS visual editor inside Decap CMS. Sign in at `/admin/` with GitHub, open **2 · Pages**, choose a page, and use **Page Body — Visual Editor**. You can edit the page heading, introduction, image, automatic grids, and every content section by clicking, dragging, and typing. Click **Apply changes**, then **Publish** in the CMS.
+
+The editor never writes to GitHub by itself. It only runs inside the authenticated CMS, and all saves go through Decap's existing GitHub backend. See [docs/VISUAL-EDITOR.md](docs/VISUAL-EDITOR.md) for the full user and developer guide.
+
 ## Contact form and Mailjet
 
 The contact form sends name, email, subject, message, and up to two optional PDFs (10 MB combined) to `sharvaparalkar@tamu.edu` using Mailjet's Send API. The verified sender is configured as `info@calab.net` by default. PDFs are sent as email attachments; uploads are not stored by the site. Visitors who run into file limits can email files directly to `info@calab.net`.

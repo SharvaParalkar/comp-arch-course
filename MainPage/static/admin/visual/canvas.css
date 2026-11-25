@@ -1,0 +1,179 @@
+/* Styles that live inside the GrapesJS canvas iframe (editor-only helpers). */
+.main {
+  min-height: 100vh;
+}
+
+[data-cms-section-type] {
+  position: relative;
+}
+
+[data-cms-field]:empty {
+  min-height: 1.2em;
+  outline: 1px dashed rgba(29, 99, 255, 0.35);
+}
+
+.cms-vis-media-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+  min-height: 160px;
+  border: 1px dashed #a9a298;
+  background: repeating-linear-gradient(45deg, #f7f5f1, #f7f5f1 8px, #f1eee8 8px, #f1eee8 16px);
+  color: #6b655c;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+  padding: 18px;
+}
+
+.cms-vis-media-empty__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #bdb6aa;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 15px;
+}
+
+.cms-vis-media-empty--hero {
+  min-height: 420px;
+  border: 0;
+  color: #fff;
+  background: #171717;
+}
+
+.cms-vis-media-empty--hero .cms-vis-media-empty__icon {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.cms-vis-media-empty--video,
+.cms-vis-media-empty--gallery {
+  aspect-ratio: 16 / 9;
+  min-height: 220px;
+}
+
+.cms-vis-media-empty--gallery {
+  grid-column: 1 / -1;
+}
+
+.cms-vis-pdf-placeholder {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 280px;
+  border: 1px solid #dedad3;
+  background: #f7f5f1;
+  color: #6b655c;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+}
+
+.cms-vis-generated__bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 0 13px;
+  color: #6b655c;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+}
+
+.cms-vis-generated__bar strong {
+  color: #111;
+  font-size: 12px;
+}
+
+.cms-vis-lock {
+  display: inline-flex;
+  align-items: center;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 3px;
+  background: #eeeae3;
+  color: #6b655c;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cms-vis-skeleton-card {
+  opacity: 0.55;
+}
+
+.cms-vis-locked-card {
+  padding: 18px;
+  border: 1px dashed #bdb6aa;
+  background: #f7f5f1;
+  color: #6b655c;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+}
+
+.cms-vis-locked-card strong {
+  display: block;
+  margin: 6px 0 2px;
+  color: #111;
+}
+
+.cms-vis-locked-card p {
+  margin: 0;
+}
+
+.cms-vis-hero-title {
+  display: inline;
+}
+
+.cms-vis-active {
+  outline: 2px solid #1d63ff !important;
+  outline-offset: -2px;
+}
+
+/* GrapesJS selection styles inside the canvas */
+.gjs-selected {
+  outline: 2px solid #1d63ff !important;
+  outline-offset: -2px;
+}
+
+.gjs-hovered {
+  outline: 1px dashed rgba(29, 99, 255, 0.65) !important;
+  outline-offset: -1px;
+}
+
+.gjs-toolbar {
+  background: #111 !important;
+  border-radius: 3px !important;
+  padding: 2px !important;
+}
+
+.gjs-toolbar-item {
+  color: #fff !important;
+  padding: 4px 5px !important;
+}
+
+.gjs-toolbar-item:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+}
+
+.gjs-placeholder,
+.gjs-placeholder-int {
+  background: #1d63ff !important;
+  height: 2px !important;
+}
+
+/* Keep links from navigating while editing. */
+a[data-project-lightbox] {
+  cursor: default;
+}

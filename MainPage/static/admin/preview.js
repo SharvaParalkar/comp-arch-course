@@ -8,6 +8,39 @@
     return entry.get("data") ? entry.get("data").toJS() : {};
   }
 
+  // Pages edited in the visual editor keep their body in `visual_page`.
+  // Overlay it on the legacy fields so previews always match what will publish.
+  function withVisualPage(data) {
+    var visual = data && data.visual_page;
+    if (!visual || typeof visual !== "object") return data;
+    var merged = Object.assign({}, data);
+    Object.keys(visual).forEach(function (key) {
+      if (key !== "version") merged[key] = visual[key];
+    });
+    return merged;
+  }
+
+  function renderPageBasics(data, getAssetFn) {
+    var heading = data.page_heading;
+    var content = data.page_content;
+    var image = getAsset(getAssetFn, data.page_image);
+    if (!heading && !content && !image) return null;
+    return h(
+      "div",
+      { className: "cms-preview__page-basics" },
+      heading ? h("h1", { className: "cms-preview__page-heading" }, heading) : null,
+      h(
+        "div",
+        { className: "cms-preview__image-text" + (data.page_image_position === "left" ? " is-image-left" : "") },
+        h("div", {
+          className: "txt-large w-richtext",
+          dangerouslySetInnerHTML: { __html: content || "" },
+        }),
+        image ? h("img", { className: "cms-preview__img", src: image, alt: data.page_image_alt || "" }) : null
+      )
+    );
+  }
+
   function getAsset(getAsset, path) {
     if (!path) return null;
     try {
@@ -114,6 +147,7 @@
     }
     var sections = data.sections || [];
     if (!sections.length) {
+      if (data.page_heading || data.page_content || data.page_image) return null;
       return h("div", { className: "cms-preview__empty" }, "Add sections to see a live-style preview.");
     }
     return h("div", null, sections.map(function (section, i) {
@@ -123,7 +157,7 @@
 
   var PagePreview = createClass({
     render: function () {
-      var data = getData(this.props.entry);
+      var data = withVisualPage(getData(this.props.entry));
       return h("div", { className: "cms-preview" },
         h("div", { className: "cms-preview__meta" },
           h("span", null, data.title || "Untitled page"),
@@ -132,6 +166,7 @@
           data.show_publications_list ? h("span", null, "Publications grid: on") : null,
           data.show_teaching_grid ? h("span", null, "Teaching grid: on") : null
         ),
+        renderPageBasics(data, this.props.getAsset),
         renderSections(data, this.props.getAsset),
         data.show_projects_grid
           ? h("div", { className: "cms-preview__empty", style: { marginTop: "1.5rem" } },
