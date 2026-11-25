@@ -101,7 +101,7 @@
         '<div class="image-text__body txt-large w-richtext" data-cms-page-field="page_content" data-cms-html="1">' +
         renderMarkdown(content) +
         "</div>" +
-        '<div class="image-text__media">' +
+        '<div class="image-text__media"' + styleAttr(frameStyle({ image_width: page.page_image_width, image_align: page.page_image_align, image_radius: page.page_image_radius })) + '>' +
         imgTag({
           src: image,
           alt: alt,
@@ -135,6 +135,60 @@
       /* ignore */
     }
     return src;
+  }
+
+  function numberInRange(value, min, max, fallback) {
+    var number = Number(value);
+    if (!Number.isFinite(number)) return fallback;
+    return Math.min(max, Math.max(min, number));
+  }
+
+  function frameStyle(item, fallback) {
+    if (!item) return "";
+    var base = fallback || {};
+    var widthValue = item.image_width != null ? item.image_width : base.image_width;
+    var alignValue = item.image_align != null ? item.image_align : base.image_align;
+    var radiusValue = item.image_radius != null ? item.image_radius : base.image_radius;
+    var hasWidth = widthValue !== undefined && widthValue !== null && widthValue !== "";
+    var hasAlign = alignValue !== undefined && alignValue !== null && alignValue !== "";
+    var hasRadius = radiusValue !== undefined && radiusValue !== null && radiusValue !== "";
+    if (!hasWidth && !hasAlign && !hasRadius) return "";
+    var width = hasWidth ? numberInRange(widthValue, 10, 100, 100) : 100;
+    var align = ["left", "center", "right"].indexOf(alignValue) >= 0 ? alignValue : "center";
+    var radius = radiusValue;
+    if (width >= 100 && (!hasAlign || align === "center") && !radius) return "";
+    var styles = [];
+    if (width < 100) styles.push("width:" + width + "%", "max-width:" + width + "%");
+    if (hasAlign || width < 100) {
+      if (align === "center") styles.push("justify-self:center", "margin-left:auto", "margin-right:auto");
+      else if (align === "right") styles.push("justify-self:end", "margin-left:auto", "margin-right:0");
+      else styles.push("justify-self:start", "margin-left:0", "margin-right:auto");
+    }
+    if (radius === "rounded") styles.push("border-radius:12px", "overflow:hidden");
+    else if (radius === "soft") styles.push("border-radius:4px", "overflow:hidden");
+    return styles.join(";");
+  }
+
+  function cardStyle(entry, kind) {
+    if (!entry) return "";
+    var publication = kind === "publication";
+    var scaleValue = publication ? entry.image_scale : entry.card_image_scale;
+    var positionValue = publication ? entry.image_position : entry.card_image_position;
+    var hasScale = scaleValue !== undefined && scaleValue !== null && scaleValue !== "";
+    var hasPosition = positionValue !== undefined && positionValue !== null && positionValue !== "";
+    if (!hasScale && !hasPosition) return "";
+    var scale = numberInRange(scaleValue, 100, 180, 100);
+    var position = String(positionValue || "center");
+    if (["center", "top", "bottom", "left", "right"].indexOf(position) < 0) position = "center";
+    if (scale === 100 && position === "center") return "";
+    var styles = [];
+    if (position !== "center" || scale !== 100) styles.push("object-position:" + position);
+    if (scale !== 100) styles.push("transform:scale(" + (scale / 100).toFixed(3) + ")", "transform-origin:center");
+    return styles.join(";");
+  }
+
+  function styleAttr(style) {
+    return style ? ' style="' + escapeHtml(style) + '"' : "";
   }
 
   function imgTag(opts) {
@@ -417,7 +471,7 @@
         sectionAttrs("image") +
         '><div class="container"><figure class="page-media' +
         (section.fit_mode === "fill" ? " page-media--fill" : "") +
-        '">' +
+        '"' + styleAttr(frameStyle(section)) + '>' +
         anchorFor(section.image, "image", "View image larger: " + (section.alt || (ctx && ctx.entry && ctx.entry.title) || ""), imageInner) +
         (section.caption
           ? '<figcaption class="page-media__caption h-x-small"' + field("caption") + ">" + escapeHtml(section.caption) + "</figcaption>"
@@ -439,7 +493,7 @@
         (section.body || "<p>Write something about this image.</p>") +
         "</div>" +
         (section.image
-          ? '<div class="image-text__media">' +
+          ? '<div class="image-text__media"' + styleAttr(frameStyle(section)) + '>' +
             imgTag({
               src: section.image,
               alt: section.alt || "",
@@ -466,7 +520,7 @@
           emptyLabel: "Choose an image",
         });
         items +=
-          '<figure class="image-gallery__item">' +
+          '<figure class="image-gallery__item"' + styleAttr(frameStyle(item, section)) + '>' +
           anchorFor(src, "images." + index + ".image", "View image larger: " + (item.alt || ""), inner) +
           (item.caption
             ? '<figcaption class="image-gallery__caption"' + field("images." + index + ".caption") + ">" + escapeHtml(item.caption) + "</figcaption>"
@@ -477,7 +531,7 @@
         items =
           '<div class="cms-vis-media-empty cms-vis-media-empty--gallery" data-cms-gallery-empty="1">' +
           '<span class="cms-vis-media-empty__icon" aria-hidden="true">▦</span>' +
-          "<span>No images yet — add images in the settings panel</span></div>";
+          "<span>No images yet. Add images in the settings panel</span></div>";
       }
       return (
         '<section class="section image-gallery-section"' +
@@ -552,6 +606,204 @@
     }
 
     return "";
+  }
+
+  var MEDIA_TYPES = ["image", "video", "hero_image", "hero_video", "image_gallery"];
+
+  function isMediaType(type) {
+    return MEDIA_TYPES.indexOf(type) >= 0;
+  }
+
+  function renderDetailGalleryGroup(section) {
+    if (!section || !isMediaType(section.type)) return "";
+    var figures = "";
+
+    function figure(src, alt, path, style, kind) {
+      var inner;
+      if (!src) {
+        inner =
+          '<div class="cms-vis-media-empty" data-cms-media="' +
+          escapeHtml(path) +
+          '"><span class="cms-vis-media-empty__icon" aria-hidden="true">+</span><span>Choose a file</span></div>';
+      } else if (kind === "video") {
+        inner =
+          '<video src="' +
+          escapeHtml(src) +
+          '" muted loop playsinline preload="metadata" data-cms-media="' +
+          escapeHtml(path) +
+          '"></video>';
+      } else {
+        inner =
+          '<img src="' +
+          escapeHtml(src) +
+          '" alt="' +
+          escapeHtml(alt || "") +
+          '" loading="lazy" data-cms-media="' +
+          escapeHtml(path) +
+          '">';
+      }
+      return (
+        '<figure class="fit-gallery__item" data-cms-media-frame="' +
+        escapeHtml(path) +
+        '"' +
+        styleAttr(style) +
+        ">" +
+        (kind === "video" || !src
+          ? inner
+          : '<a class="project-gallery__link" href="' +
+            escapeHtml(src) +
+            '" data-project-lightbox aria-label="View image larger">' +
+            inner +
+            "</a>") +
+        "</figure>"
+      );
+    }
+
+    if (section.type === "image") {
+      figures += figure(section.image, section.alt, "image", frameStyle(section), "image");
+    } else if (section.type === "image_gallery") {
+      (section.images || []).forEach(function (item, index) {
+        if (!item) return;
+        figures += figure(item.image, item.alt, "images." + index + ".image", frameStyle(item, section), "image");
+      });
+    } else if (section.type === "hero_image") {
+      figures += figure(section.image, section.alt, "image", frameStyle(section), "image");
+    } else if (section.type === "video" || section.type === "hero_video") {
+      figures += figure(section.video_url, "", "video_url", frameStyle(section), "video");
+    }
+
+    return (
+      '<div data-cms-section-type="' +
+      escapeHtml(section.type) +
+      '" data-cms-gallery-group="1" style="display:contents">' +
+      figures +
+      "</div>"
+    );
+  }
+
+  function detailAuthors(sections) {
+    for (var i = 0; i < (sections || []).length; i += 1) {
+      var section = sections[i];
+      if (!section || section.type !== "rich_text" || !section.body) continue;
+      var match = String(section.body).match(/<em[^>]*>([\s\S]*?)<\/em>/i);
+      if (match) {
+        var value = plain(match[1]).replace(/^instructors?:\s*/i, "");
+        if (value) return value;
+      }
+    }
+    return "";
+  }
+
+  function renderDetailShell(entry, visual, copyHtml, mediaHtml, mediaCount, authors) {
+    entry = entry || {};
+    visual = visual || {};
+    var category = visual.category || entry.category || "";
+    var year = entry.year || "";
+    var authors = authors || visual.instructors || entry.instructors || "";
+    var meta = [year, category].filter(Boolean).join(" · ");
+    return (
+      '<section class="section detail-split" data-cms-detail-root="1">' +
+      '<div class="container"><div class="detail-split__grid">' +
+      '<div class="detail-split__copy" data-cms-column="copy">' +
+      '<header class="detail-header">' +
+      (meta ? '<div class="h-x-small detail-header__meta">' + escapeHtml(meta) + "</div>" : "") +
+      '<h1 class="h-x-large detail-header__title">' +
+      escapeHtml(entry.title || "Untitled") +
+      "</h1>" +
+      (authors ? '<p class="detail-header__authors">' + escapeHtml(authors) + "</p>" : "") +
+      "</header>" +
+      (copyHtml || '<p class="cms-detail-empty">Add text blocks from the left panel.</p>') +
+      "</div>" +
+      '<div class="detail-split__gallery" data-cms-column="media">' +
+      '<div class="fit-gallery' +
+      (mediaCount === 1 ? " is-single" : "") +
+      '" data-cms-gallery>' +
+      (mediaHtml || '<div class="cms-vis-media-empty cms-vis-media-empty--gallery">Add images, galleries, or videos from the left panel.</div>') +
+      "</div></div></div></div></section>"
+    );
+  }
+
+  function cardMedia(visual, entry, kind) {
+    if (kind === "publication") {
+      var image = visual.image || entry.image || "";
+      return image
+        ? '<img src="' +
+            escapeHtml(image) +
+            '" alt="' +
+            escapeHtml(entry.title || "") +
+            '" loading="lazy" class="publication-card__img is-active" data-cms-card-media="image"' +
+            styleAttr(cardStyle(visual, "publication")) +
+            ">"
+        : '<div class="publication-card__placeholder" aria-hidden="true" data-cms-card-media="image"></div>';
+    }
+    var cover = visual.cover_image || entry.cover_image || "";
+    if (!cover && Array.isArray(visual.card_images) && visual.card_images[0]) {
+      cover = visual.card_images[0].image || "";
+    }
+    return cover
+      ? '<img src="' +
+          escapeHtml(cover) +
+          '" alt="' +
+          escapeHtml(entry.title || "") +
+          '" loading="lazy" class="project-card__img is-active" data-cms-card-media="cover_image"' +
+          styleAttr(cardStyle(visual, "card")) +
+          ">"
+      : '<div class="project-card__placeholder" aria-hidden="true" data-cms-card-media="cover_image"></div>';
+  }
+
+  function renderCardStage(context, visual, entry) {
+    entry = entry || {};
+    visual = visual || {};
+    var isPublication = context === "publication";
+    var isTeaching = context === "teaching";
+
+    if (isPublication) {
+      return (
+        '<section class="section cms-card-stage" data-cms-card-root="1">' +
+        '<div class="container">' +
+        '<div class="cms-card-stage__head"><span class="cms-vis-lock">Listing card</span><strong>How this publication looks in the list</strong><p>Click authors or venue to edit. Use the Card tab for the image and links.</p></div>' +
+        '<div class="publications-grid cms-card-stage__grid">' +
+        '<article class="publication-card">' +
+        '<div class="publication-card__media">' +
+        (visual.image
+          ? '<a class="project-gallery__link publication-card__carousel" href="' + escapeHtml(visual.image) + '" data-project-lightbox aria-label="View publication image larger">' + cardMedia(visual, entry, "publication") + "</a>"
+          : cardMedia(visual, entry, "publication")) +
+        "</div>" +
+        '<div class="publication-card__body">' +
+        '<h3 class="publication-card__title">' + escapeHtml(entry.title || "Untitled publication") + "</h3>" +
+        '<p class="publication-card__authors" data-cms-card-field="authors">' + escapeHtml(visual.authors || "Add authors") + "</p>" +
+        '<p class="publication-card__venue" data-cms-card-field="venue">' + escapeHtml(visual.venue || "Add venue") + "</p>" +
+        '<div class="publication-card__links">' +
+        (visual.pdf_url ? '<a href="' + escapeHtml(visual.pdf_url) + '" target="_blank" rel="noopener">PDF</a>' : "") +
+        (visual.bibtex_url ? '<a href="' + escapeHtml(visual.bibtex_url) + '" target="_blank" rel="noopener">BibTeX</a>' : "") +
+        (visual.article_url ? '<a href="' + escapeHtml(visual.article_url) + '" target="_blank" rel="noopener">Article</a>' : "") +
+        "</div></div></article></div></div></section>"
+      );
+    }
+
+    return (
+      '<section class="section cms-card-stage" data-cms-card-root="1">' +
+      '<div class="container">' +
+      '<div class="cms-card-stage__head"><span class="cms-vis-lock">Listing card</span><strong>How this ' +
+      (isTeaching ? "teaching page" : "project") +
+      " looks in the list</strong><p>Click the summary" +
+      (isTeaching ? " or instructors" : "") +
+      " to edit. Use the Card tab for images and image design.</p></div>" +
+      '<div class="projects-grid cms-card-stage__grid">' +
+      '<article class="project-card">' +
+      '<div class="project-card__media">' +
+      (visual.cover_image || (visual.card_images && visual.card_images[0] && visual.card_images[0].image)
+        ? '<a class="project-gallery__link project-card__carousel" href="#" aria-label="View card image">' + cardMedia(visual, entry, "card") + "</a>"
+        : cardMedia(visual, entry, "card")) +
+      "</div>" +
+      (entry.year ? '<div class="project-card__year">' + escapeHtml(entry.year) + "</div>" : "") +
+      '<h3 class="project-card__title"><a href="#">' + escapeHtml(entry.title || "Untitled") + "</a></h3>" +
+      (isTeaching
+        ? '<p class="project-card__instructors"><strong>Instructors:</strong> <span data-cms-card-field="instructors">' + escapeHtml(visual.instructors || "Add instructors") + "</span></p>"
+        : "") +
+      '<p class="project-card__summary" data-cms-card-field="summary">' + escapeHtml(visual.summary || "Add a short summary") + "</p>" +
+      "</article></div></div></section>"
+    );
   }
 
   function renderExtras(entry) {
@@ -758,8 +1010,8 @@
 
   var FIELDS = {
     home_masthead: [
-      { path: "title_line_1", label: "Hero title — first line", type: "text", help: "Only used when no hero logo or title is set in Page basics." },
-      { path: "title_line_2", label: "Hero title — second line", type: "text" },
+      { path: "title_line_1", label: "Hero title: first line", type: "text", help: "Only used when no hero logo or title is set in Page basics." },
+      { path: "title_line_2", label: "Hero title: second line", type: "text" },
       { path: "subtitle", label: "Hero subtitle", type: "text" },
       { path: "video_lq_url", label: "Fast-loading WebM", type: "media", media: "video", help: "A small video that appears instantly while the larger one loads." },
       { path: "video_lq_mp4_url", label: "Fast-loading MP4", type: "media", media: "video", help: "Safari fallback for the small video." },
@@ -795,8 +1047,8 @@
         label: "Image frame",
         type: "select",
         options: [
-          { value: "fit", label: "Fit — show the whole image" },
-          { value: "fill", label: "Fill — crop to fill the frame" },
+          { value: "fit", label: "Fit: show the whole image" },
+          { value: "fill", label: "Fill: crop to fill the frame" },
         ],
       },
     ],
@@ -817,8 +1069,8 @@
         label: "Image frame",
         type: "select",
         options: [
-          { value: "fill", label: "Fill — crop to fill the frame" },
-          { value: "fit", label: "Fit — show the whole image" },
+          { value: "fill", label: "Fill: crop to fill the frame" },
+          { value: "fit", label: "Fit: show the whole image" },
         ],
       },
       { path: "body", label: "Text", type: "rich" },
@@ -863,7 +1115,7 @@
       case "video":
         return section.caption || "Video";
       case "image":
-        return section.alt || section.caption || (section.image ? "Image" : "Image — no file chosen");
+        return section.alt || section.caption || (section.image ? "Image" : "Image: no file chosen");
       case "image_text":
         return plain(section.body) || "Image + text";
       case "image_gallery": {
@@ -873,7 +1125,7 @@
         return count + (count === 1 ? " image" : " images");
       }
       case "stat":
-        return (section.label || "Stat") + ": " + (section.value || "—");
+        return (section.label || "Stat") + ": " + (section.value || "-");
       case "rich_text":
         return plain(section.body) || "Text";
       case "pdf":
@@ -887,7 +1139,14 @@
     renderSection: renderSection,
     renderPageBasics: renderPageBasics,
     renderExtras: renderExtras,
+    renderDetailGalleryGroup: renderDetailGalleryGroup,
+    renderDetailShell: renderDetailShell,
+    detailAuthors: detailAuthors,
+    renderCardStage: renderCardStage,
     renderMarkdown: renderMarkdown,
+    isMediaType: isMediaType,
+    frameStyle: frameStyle,
+    cardStyle: cardStyle,
     defaults: defaults,
     blocks: BLOCKS,
     blockForType: function (type) {

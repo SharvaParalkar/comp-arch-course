@@ -2,12 +2,12 @@ title: CV
 permalink: /cv.html
 body_class: body
 seo:
-  description: Curriculum vitae — Mostafa Akbari
+  description: Curriculum vitae for Mostafa Akbari
   og_title: CV | Mostafa Akbari
 body_mode: sections
 page_heading: CV
 sections:
   - type: pdf
     file: /uploads/cv/mostafa-akbari-cv.pdf
-    title: Mostafa Akbari — CV
+    title: Mostafa Akbari - CV
     download_label: Download PDF

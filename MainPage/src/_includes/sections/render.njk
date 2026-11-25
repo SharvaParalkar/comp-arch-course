@@ -101,7 +101,7 @@
   </div></section>
   {% elif section.type == 'image' %}
   <section class="section page-media-section"><div class="container">
-    <figure class="page-media{% if section.fit_mode == 'fill' %} page-media--fill{% endif %}">
+    <figure class="page-media{% if section.fit_mode == 'fill' %} page-media--fill{% endif %}"{{ section | mediaFrameStyle | styleAttr | safe }}>
       <a class="project-gallery__link" href="{{ section.image }}" data-project-lightbox aria-label="View image larger: {{ section.alt or entry.title }}">
         <img src="{{ section.image }}" loading="lazy" alt="{{ section.alt or '' }}"/>
       </a>
@@ -113,7 +113,7 @@
     <div class="image-text{% if section.image_position == 'left' %} is-image-left{% endif %}">
       <div class="image-text__body txt-large w-richtext">{{ section.body | safe }}</div>
       {% if section.image %}
-      <div class="image-text__media">
+      <div class="image-text__media"{{ section | mediaFrameStyle | styleAttr | safe }}>
         <img src="{{ section.image }}" alt="{{ section.alt or '' }}" class="image-text__img{% if section.fit_mode == 'fit' %} image-text__img--fit{% endif %}"/>
       </div>
       {% endif %}
@@ -122,7 +122,7 @@
   {% elif section.type == 'image_gallery' and section.images %}
   <section class="section image-gallery-section"><div class="container"><div class="image-gallery">
     {% for item in section.images %}
-    <figure class="image-gallery__item">
+    <figure class="image-gallery__item"{{ item | mediaFrameStyle(section) | styleAttr | safe }}>
       <a class="project-gallery__link" href="{{ item.image }}" data-project-lightbox aria-label="View image larger: {{ item.alt or entry.title }}">
         <img src="{{ item.image }}" loading="lazy" alt="{{ item.alt or '' }}" class="image-gallery__img{% if item.fit_mode == 'fill' %} image-gallery__img--fill{% endif %}"/>
       </a>

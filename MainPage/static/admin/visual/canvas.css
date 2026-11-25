@@ -177,3 +177,63 @@
 a[data-project-lightbox] {
   cursor: default;
 }
+
+/* Detail editor and listing card canvas */
+.cms-detail-empty {
+  padding: 18px 0;
+  color: #857e73;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+}
+
+.cms-card-stage {
+  min-height: 100vh;
+  padding: 3rem 0 4rem;
+  background: #f7f5f1;
+}
+
+.cms-card-stage__head {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 560px;
+  margin: 0 auto 1.5rem;
+  color: #6b655c;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+  text-align: center;
+}
+
+.cms-card-stage__head strong {
+  color: #111;
+  font-size: 14px;
+}
+
+.cms-card-stage__head p {
+  margin: 0;
+}
+
+.cms-card-stage__grid {
+  display: flex !important;
+  justify-content: center;
+  grid-template-columns: none !important;
+}
+
+.cms-card-stage__grid .project-card,
+.cms-card-stage__grid .publication-card {
+  width: min(420px, 100%);
+}
+
+.cms-card-stage__grid.publications-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 420px) !important;
+  justify-content: center;
+}
+.cms-quick-content:empty::before {
+  content: "Add an introduction (click here)";
+  color: #9a9388;
+}
+
+.cms-quick-content {
+  min-height: 1.5em;
+}

@@ -18,7 +18,7 @@ sections:
   - type: headline
     text: Digiblast | Summer workshop
   - type: rich_text
-    body: <p><strong>2018–2019</strong></p>
+    body: <p><strong>2018-2019</strong></p>
   - type: image
     image: /uploads/media/teaching-digiblast.jpg
     alt: Digiblast workshop

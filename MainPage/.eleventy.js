@@ -7,32 +7,15 @@ const markdownRenderer = new MarkdownIt({ html: true, linkify: true, typographer
 
 const CONTENT_DIR = path.join(__dirname, "content");
 
-// The visual editor stores a page's editable body in one object so it can be
-// saved atomically from Decap. Pages that have never been opened in the visual
-// editor keep using their original top-level fields unchanged.
-const VISUAL_PAGE_FIELDS = [
-  "page_heading",
-  "page_content",
-  "page_image",
-  "page_image_alt",
-  "page_image_position",
-  "body_class",
-  "show_projects_grid",
-  "show_publications_list",
-  "show_teaching_grid",
-  "show_team_grid",
-  "show_contact_form",
-  "sections",
-];
-
+// The visual editor stores an entry's editable content in one object so it can
+// be saved atomically from Decap. Entries that have never been opened in the
+// visual editor keep using their original top-level fields unchanged.
 function applyVisualPage(data) {
   const visual = data && data.visual_page;
   if (!visual || typeof visual !== "object") return data;
   const merged = { ...data };
-  for (const key of VISUAL_PAGE_FIELDS) {
-    if (Object.prototype.hasOwnProperty.call(visual, key)) {
-      merged[key] = visual[key];
-    }
+  for (const [key, value] of Object.entries(visual)) {
+    if (key !== "version") merged[key] = value;
   }
   return merged;
 }
@@ -48,6 +31,65 @@ function readYamlFiles(dir) {
       const slug = f.replace(/\.ya?ml$/, "");
       return { ...data, slug, _filename: f };
     });
+}
+
+function numberInRange(value, min, max, fallback) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return fallback;
+  return Math.min(max, Math.max(min, number));
+}
+
+function frameStyleFrom(widthValue, alignValue, radiusValue) {
+  const hasWidth = widthValue !== undefined && widthValue !== null && widthValue !== "";
+  const hasAlign = alignValue !== undefined && alignValue !== null && alignValue !== "";
+  const hasRadius = radiusValue !== undefined && radiusValue !== null && radiusValue !== "";
+  if (!hasWidth && !hasAlign && !hasRadius) return "";
+  const width = hasWidth ? numberInRange(widthValue, 10, 100, 100) : 100;
+  const align = ["left", "center", "right"].includes(alignValue) ? alignValue : "center";
+  const radius = radiusValue;
+  const styles = [];
+  if (width < 100) styles.push(`width:${width}%`, `max-width:${width}%`);
+  if (hasAlign || width < 100) {
+    if (align === "center") styles.push("justify-self:center", "margin-left:auto", "margin-right:auto");
+    else if (align === "right") styles.push("justify-self:end", "margin-left:auto", "margin-right:0");
+    else styles.push("justify-self:start", "margin-left:0", "margin-right:auto");
+  }
+  if (radius === "rounded") styles.push("border-radius:12px", "overflow:hidden");
+  else if (radius === "soft") styles.push("border-radius:4px", "overflow:hidden");
+  return styles.join(";");
+}
+
+function mediaFrameStyle(item, fallback) {
+  if (!item) return "";
+  const base = fallback || {};
+  return frameStyleFrom(
+    item.image_width != null ? item.image_width : base.image_width,
+    item.image_align != null ? item.image_align : base.image_align,
+    item.image_radius != null ? item.image_radius : base.image_radius
+  );
+}
+
+function pageImageFrameStyle(entry) {
+  if (!entry) return "";
+  return frameStyleFrom(entry.page_image_width, entry.page_image_align, entry.page_image_radius);
+}
+
+function cardImageStyle(entry, kind) {
+  if (!entry) return "";
+  const publication = kind === "publication";
+  const scaleValue = publication ? entry.image_scale : entry.card_image_scale;
+  const positionValue = publication ? entry.image_position : entry.card_image_position;
+  const hasScale = scaleValue !== undefined && scaleValue !== null && scaleValue !== "";
+  const hasPosition = positionValue !== undefined && positionValue !== null && positionValue !== "";
+  if (!hasScale && !hasPosition) return "";
+  const scale = numberInRange(scaleValue, 100, 180, 100);
+  const position = String(positionValue || "center");
+  const safePosition = ["center", "top", "bottom", "left", "right"].includes(position) ? position : "center";
+  if (scale === 100 && safePosition === "center") return "";
+  const styles = [];
+  if (safePosition !== "center" || scale !== 100) styles.push(`object-position:${safePosition}`);
+  if (scale !== 100) styles.push(`transform:scale(${(scale / 100).toFixed(3)})`, "transform-origin:center");
+  return styles.join(";");
 }
 
 function loadSiteSettings() {
@@ -111,6 +153,11 @@ module.exports = function (eleventyConfig) {
     }
   }
 
+  eleventyConfig.addFilter("styleAttr", (style) => (style ? ` style="${style}"` : ""));
+  eleventyConfig.addFilter("mediaFrameStyle", mediaFrameStyle);
+  eleventyConfig.addFilter("pageImageFrameStyle", pageImageFrameStyle);
+  eleventyConfig.addFilter("cardImageStyle", cardImageStyle);
+
   eleventyConfig.addFilter("galleryItems", (entry) => {
     const items = [];
     const seen = new Set();
@@ -129,18 +176,18 @@ module.exports = function (eleventyConfig) {
     for (const section of entry?.sections || []) {
       if (!section) continue;
       if (section.type === "image" || section.type === "hero_image") {
-        push(section.image, section.alt || section.caption || entry?.title, "image");
+        push(section.image, section.alt || section.caption || entry?.title, "image", mediaFrameStyle(section));
       } else if (section.type === "video" || section.type === "hero_video") {
-        push(section.video_url, section.caption || entry?.title, "video");
+        push(section.video_url, section.caption || entry?.title, "video", mediaFrameStyle(section));
       } else if (section.type === "image_gallery" && Array.isArray(section.images)) {
         for (const item of section.images) {
-          push(item?.image, item?.alt || item?.caption || entry?.title, "image");
+          push(item?.image, item?.alt || item?.caption || entry?.title, "image", mediaFrameStyle(item, section));
         }
       }
     }
 
     if (!items.length && entry?.cover_image) {
-      push(entry.cover_image, entry.card_title || entry?.title, "image");
+      push(entry.cover_image, entry.card_title || entry?.title, "image", mediaFrameStyle(entry));
     }
 
     return items;
@@ -157,6 +204,7 @@ module.exports = function (eleventyConfig) {
       }).slice(0, 2).map((item) => ({
         image: item.image,
         alt: item.alt || project.title || "",
+        style: cardImageStyle(project, "card"),
       }));
     }
     const images = [];
@@ -166,7 +214,7 @@ module.exports = function (eleventyConfig) {
       const key = mediaKey(image);
       if (!key || seen.has(key)) return;
       seen.add(key);
-      images.push({ image, alt: alt || project?.title || "" });
+      images.push({ image, alt: alt || project?.title || "", style: cardImageStyle(project, "card") });
     };
 
     for (const section of project?.sections || []) {
@@ -183,7 +231,7 @@ module.exports = function (eleventyConfig) {
       // Prefer cover as the opening frame when it isn't already in the gallery.
       const cover = String(project.cover_image).trim();
       if (cover && !seen.has(mediaKey(cover))) {
-        images.unshift({ image: cover, alt: project.card_title || project.title || "" });
+        images.unshift({ image: cover, alt: project.card_title || project.title || "", style: cardImageStyle(project, "card") });
       }
     }
 
@@ -210,7 +258,7 @@ module.exports = function (eleventyConfig) {
         return true;
       }).map((item) => {
         const optimized = publicationImages[item.image];
-        return optimized ? { ...item, alt: optimized.alt || item.alt, original: optimized.source, image: `${optimized.thumbnail}-960.webp`, srcset: `${optimized.thumbnail}-480.webp 480w, ${optimized.thumbnail}-960.webp 960w` } : item;
+        return optimized ? { ...item, alt: optimized.alt || item.alt, original: optimized.source, image: `${optimized.thumbnail}-960.webp`, srcset: `${optimized.thumbnail}-480.webp 480w, ${optimized.thumbnail}-960.webp 960w`, style: cardImageStyle(publication, "publication") } : { ...item, style: cardImageStyle(publication, "publication") };
       });
   });
 
@@ -222,7 +270,7 @@ module.exports = function (eleventyConfig) {
       const key = mediaKey(image);
       if (!key || seen.has(key)) return;
       seen.add(key);
-      images.push({ image, alt: alt || teaching?.card_title || teaching?.title || "" });
+      images.push({ image, alt: alt || teaching?.card_title || teaching?.title || "", style: cardImageStyle(teaching, "card") });
     };
 
     push(teaching?.cover_image);

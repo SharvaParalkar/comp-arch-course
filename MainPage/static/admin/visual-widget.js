@@ -69,22 +69,65 @@
     return fallback;
   }
 
+  function contextFor(props) {
+    var collection = collectionName(props);
+    if (collection === "projects") return "project";
+    if (collection === "teaching") return "teaching";
+    if (collection === "publications") return "publication";
+    return "page";
+  }
+
   function pageDataFrom(props) {
     var data = entryData(props);
     var visual = visualObject(props.value);
-    return {
+    var context = contextFor(props);
+    var base = {
+      body_class: pick(visual, data, "body_class", "body"),
+    };
+
+    if (context === "project" || context === "teaching") {
+      return Object.assign(base, {
+        cover_image: pick(visual, data, "cover_image", ""),
+        card_images: Array.isArray(pick(visual, data, "card_images", [])) ? pick(visual, data, "card_images", []) : [],
+        card_title: pick(visual, data, "card_title", ""),
+        category: pick(visual, data, "category", ""),
+        instructors: pick(visual, data, "instructors", ""),
+        summary: pick(visual, data, "summary", ""),
+        quick_content: pick(visual, data, "quick_content", ""),
+        card_image_scale: Number(pick(visual, data, "card_image_scale", 100)) || 100,
+        card_image_position: pick(visual, data, "card_image_position", "center"),
+      });
+    }
+
+    if (context === "publication") {
+      return {
+        authors: pick(visual, data, "authors", ""),
+        venue: pick(visual, data, "venue", ""),
+        image: pick(visual, data, "image", ""),
+        pdf_url: pick(visual, data, "pdf_url", ""),
+        bibtex_url: pick(visual, data, "bibtex_url", ""),
+        article_url: pick(visual, data, "article_url", ""),
+        bibtex: pick(visual, data, "bibtex", ""),
+        image_scale: Number(pick(visual, data, "image_scale", 100)) || 100,
+        image_position: pick(visual, data, "image_position", "center"),
+      };
+    }
+
+    return Object.assign(base, {
       page_heading: pick(visual, data, "page_heading", ""),
       page_content: pick(visual, data, "page_content", ""),
       page_image: pick(visual, data, "page_image", ""),
       page_image_alt: pick(visual, data, "page_image_alt", ""),
       page_image_position: pick(visual, data, "page_image_position", "right"),
-      body_class: pick(visual, data, "body_class", "body"),
+      page_image_width: Number(pick(visual, data, "page_image_width", 100)) || 100,
+      page_image_align: pick(visual, data, "page_image_align", "center"),
+      page_image_radius: pick(visual, data, "page_image_radius", ""),
       show_projects_grid: !!pick(visual, data, "show_projects_grid", false),
       show_publications_list: !!pick(visual, data, "show_publications_list", false),
       show_teaching_grid: !!pick(visual, data, "show_teaching_grid", false),
       show_team_grid: !!pick(visual, data, "show_team_grid", false),
       show_contact_form: !!pick(visual, data, "show_contact_form", false),
-    };
+    });
   }
 
   function sectionsFrom(props) {
@@ -96,11 +139,8 @@
 
   function buildValue(page, sections) {
     var value = { version: 1 };
-    ["page_heading", "page_content", "page_image", "page_image_alt", "page_image_position", "body_class"].forEach(function (key) {
-      value[key] = page && page[key] != null ? page[key] : "";
-    });
-    ["show_projects_grid", "show_publications_list", "show_teaching_grid", "show_team_grid", "show_contact_form"].forEach(function (key) {
-      value[key] = !!(page && page[key]);
+    Object.keys(page || {}).forEach(function (key) {
+      if (key !== "version" && key !== "sections") value[key] = page[key];
     });
     value.sections = Array.isArray(sections) ? sections : [];
     return value;
@@ -166,6 +206,7 @@
     var slug = entrySlug(props) || data.slug || "";
     if (collection === "projects" && slug) return "/projects/" + slug + ".html";
     if (collection === "teaching" && slug) return "/teaching/" + slug + ".html";
+    if (collection === "publications") return "/publications.html";
     return "/index.html";
   }
 
@@ -256,6 +297,7 @@
           title: data.title || "Untitled page",
           url: pageUrl(this.props, data),
           collection: collectionName(this.props),
+          context: contextFor(this.props),
         },
         entry: copy,
         pageData: pageDataFrom(this.props),
@@ -321,11 +363,11 @@
           h(
             "div",
             { className: "cms-visual-widget__copy" },
-            h("strong", null, "Visual page editor"),
+            h("strong", null, "Visual editor"),
             h(
               "p",
               null,
-              "Drag, drop, and edit this page like a design tool. Existing content and styling are preserved."
+              "Drag, drop, and edit this entry like a design tool. Existing content and styling are preserved."
             )
           )
         ),

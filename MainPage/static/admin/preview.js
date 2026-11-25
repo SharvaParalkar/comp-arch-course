@@ -1,4 +1,4 @@
-/* Decap CMS visual previews — mirrors Eleventy section + project card layouts */
+/* Decap CMS visual previews: mirrors Eleventy section + project card layouts */
 (function () {
   var h = window.h;
   var CMS = window.CMS;
@@ -189,7 +189,7 @@
 
   var ProjectPreview = createClass({
     render: function () {
-      var data = getData(this.props.entry);
+      var data = withVisualPage(getData(this.props.entry));
       var cover = getAsset(this.props.getAsset, data.cover_image);
       return h("div", { className: "cms-preview" },
         h("div", { className: "cms-preview__meta" },
@@ -227,7 +227,7 @@
 
   var PublicationPreview = createClass({
     render: function () {
-      var data = getData(this.props.entry);
+      var data = withVisualPage(getData(this.props.entry));
       var img = getAsset(this.props.getAsset, data.image);
       var links = [];
       if (data.pdf_url) links.push(h("a", { href: data.pdf_url, target: "_blank", rel: "noopener" }, "PDF"));

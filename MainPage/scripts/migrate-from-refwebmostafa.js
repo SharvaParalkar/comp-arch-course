@@ -216,7 +216,7 @@ function buildSiteSettings(about) {
   const bio = about.paragraphs.filter((p) => p.length > 100);
   const description =
     bio[0] ||
-    "Mostafa Akbari — computational designer, architect, and researcher in structural form finding and advanced manufacturing.";
+    "Mostafa Akbari :  computational designer, architect, and researcher in structural form finding and advanced manufacturing.";
 
   return {
     site_name: "Mostafa Akbari",
@@ -249,7 +249,7 @@ function buildHomePage(index, about) {
     body_class: "body is-black",
     seo: {
       description:
-        "Mostafa Akbari — computational designer and architectural technologist specializing in shellular funicular structures, digital fabrication, and computational design.",
+        "Mostafa Akbari :  computational designer and architectural technologist specializing in shellular funicular structures, digital fabrication, and computational design.",
       og_title: "Mostafa Akbari | Architectural Technologist",
     },
     body_mode: "sections",

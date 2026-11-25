@@ -19,6 +19,10 @@
           <span id="ve-page-url">/</span>
         </div>
         <span class="ve-badge">Visual editor</span>
+        <div class="ve-mode-switch" id="ve-mode-switch" hidden>
+          <button type="button" class="ve-mode-button is-active" data-mode="detail">Detail page</button>
+          <button type="button" class="ve-mode-button" data-mode="card">Listing card</button>
+        </div>
       </div>
 
       <div class="ve-devices" role="group" aria-label="Preview size">
@@ -86,6 +90,7 @@
         <div class="ve-right-tabs" role="tablist">
           <button type="button" class="ve-right-tab is-active" data-right-tab="page" role="tab">Page</button>
           <button type="button" class="ve-right-tab" data-right-tab="section" role="tab">Section</button>
+          <button type="button" class="ve-right-tab" data-right-tab="card" role="tab" hidden>Card</button>
         </div>
         <div id="ve-inspector" class="ve-inspector"></div>
       </aside>

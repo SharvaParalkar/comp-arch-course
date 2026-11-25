@@ -36,7 +36,7 @@
           {% if entry.page_image %}
           <div class="image-text{% if entry.page_image_position == 'left' %} is-image-left{% endif %}">
             <div class="image-text__body txt-large w-richtext">{{ entry.page_content | markdown | safe }}</div>
-            <div class="image-text__media"><img src="{{ entry.page_image }}" alt="{{ entry.page_image_alt or '' }}" class="image-text__img image-text__img--fit"/></div>
+            <div class="image-text__media"{{ entry | pageImageFrameStyle | styleAttr | safe }}><img src="{{ entry.page_image }}" alt="{{ entry.page_image_alt or '' }}" class="image-text__img image-text__img--fit"/></div>
           </div>
           {% else %}
           <div class="d"><div class="txt-large w-richtext">{{ entry.page_content | markdown | safe }}</div></div>

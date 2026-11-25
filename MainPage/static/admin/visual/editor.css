@@ -1,4 +1,4 @@
-/* Visual editor shell — deliberately neutral so the page canvas is the focus. */
+/* Visual editor shell: deliberately neutral so the page canvas is the focus. */
 :root {
   --ve-ink: #111111;
   --ve-ink-soft: #555555;
@@ -1777,4 +1777,71 @@ button {
   color: #6a5310;
   font-size: 10.5px;
   line-height: 1.45;
+}
+/* Mode switch: detail page vs listing card */
+.ve-mode-switch {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--ve-line);
+  border-radius: 5px;
+  background: #fff;
+}
+
+.ve-mode-button {
+  height: 26px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--ve-ink-soft);
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.ve-mode-button.is-active {
+  background: var(--ve-ink);
+  color: #fff;
+}
+
+.is-card-mode .ve-sidebar--left {
+  display: none;
+}
+
+.is-card-mode .ve-workspace {
+  grid-template-columns: 0 minmax(0, 1fr) var(--ve-sidebar-right);
+}
+.ve-outline-group {
+  margin: 10px 0 4px;
+  color: #857e73;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.ve-gallery-design {
+  margin-top: 5px;
+  border-top: 1px solid var(--ve-line);
+  padding-top: 5px;
+}
+
+.ve-gallery-design summary {
+  cursor: pointer;
+  color: var(--ve-focus);
+  font-size: 10.5px;
+  font-weight: 500;
+}
+
+.ve-gallery-design .ve-select {
+  margin-top: 4px;
+  padding: 4px 6px;
+  font-size: 10.5px;
+}
+
+.ve-gallery-design .ve-field__help {
+  display: flex;
+  justify-content: space-between;
+  margin: 4px 0 0;
 }

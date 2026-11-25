@@ -4,7 +4,9 @@ The site is built with Eleventy and deployed to Cloudflare Pages.
 
 ## Visual page editor
 
-Pages have a GrapesJS visual editor inside Decap CMS. Sign in at `/admin/` with GitHub, open **2 · Pages**, choose a page, and use **Page Body — Visual Editor**. You can edit the page heading, introduction, image, automatic grids, and every content section by clicking, dragging, and typing. Click **Apply changes**, then **Publish** in the CMS.
+Pages, projects, publications, and teaching entries have a GrapesJS visual editor inside Decap CMS. Sign in at `/admin/` with GitHub, open an entry, and click **Open visual editor**. You can edit page copy, detail-page layouts, listing cards, images, videos, PDFs, and image size or crop controls by clicking, dragging, and typing. Click **Apply changes**, then **Publish** in the CMS.
+
+Projects and teaching entries have two modes in the editor: the two-column detail page and the listing card. Publications are edited as the card that appears on the Publications page.
 
 The editor never writes to GitHub by itself. It only runs inside the authenticated CMS, and all saves go through Decap's existing GitHub backend. See [docs/VISUAL-EDITOR.md](docs/VISUAL-EDITOR.md) for the full user and developer guide.
 

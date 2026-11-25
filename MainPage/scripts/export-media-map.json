@@ -1,5 +1,5 @@
 {
-  "note": "Local copies of export stills. Cloudinary public IDs usually append _xxxxxx — match by stripping that suffix.",
+  "note": "Local copies of export stills. Cloudinary public IDs usually append _xxxxxx :  match by stripping that suffix.",
   "media": {
     "homeHero": "/uploads/media/home-hero.jpg",
     "aboutPortrait": "/uploads/media/about-portrait.jpg",

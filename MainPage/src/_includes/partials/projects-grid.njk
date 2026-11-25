@@ -9,7 +9,7 @@
           {% set images = project | projectCardImages %}
           <a class="project-gallery__link project-card__carousel" href="{{ href }}" aria-label="View project: {{ project.title }}">
             {% for image in images %}
-            <img src="{{ image.image }}" alt="{{ image.alt }}" loading="lazy" class="project-card__img{% if loop.first %} is-active{% endif %}"/>
+            <img src="{{ image.image }}" alt="{{ image.alt }}" loading="lazy" class="project-card__img{% if loop.first %} is-active{% endif %}"{{ project | cardImageStyle('card') | styleAttr | safe }}/>
             {% endfor %}
           </a>
           {% else %}

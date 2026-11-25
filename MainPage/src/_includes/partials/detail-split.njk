@@ -23,7 +23,7 @@
         {% if gallery_items.length %}
         <div class="fit-gallery{% if gallery_items.length == 1 %} is-single{% endif %}">
           {% for item in gallery_items %}
-          <figure class="fit-gallery__item">
+          <figure class="fit-gallery__item"{{ item.frameStyle | styleAttr | safe }}>
             {% if item.kind == "video" %}
             <video src="{{ item.src }}" muted loop playsinline preload="metadata" aria-label="{{ item.alt }}"></video>
             {% else %}

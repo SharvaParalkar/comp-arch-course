@@ -1,4 +1,4 @@
-/* Site extras — projects, publications, teaching, about */
+/* Site extras :  projects, publications, teaching, about */
 html:has(.detail-split) {
   scrollbar-gutter: stable;
 }
@@ -19,7 +19,7 @@ html:has(body.is-black) {
   height: 100%;
 }
 
-/* Navbar readability — replace Webflow exclusion blend with explicit contrast */
+/* Navbar readability :  replace Webflow exclusion blend with explicit contrast */
 .navbar-div {
   /* Override the imported Webflow rule so mobile taps reach the navigation. */
   pointer-events: auto !important;
@@ -101,7 +101,7 @@ body:not(.is-black) .navlink.w--current {
   border-bottom-color: #111 !important;
 }
 
-/* Navbar layout — horizontal row, flush to top */
+/* Navbar layout :  horizontal row, flush to top */
 .navbar .container.is-nav {
   display: flex !important;
   align-items: center !important;
@@ -503,7 +503,7 @@ a[href*="learn-more"],
   opacity: 0.85;
 }
 
-/* Project detail — copy left, gallery right */
+/* Project detail :  copy left, gallery right */
 .detail-split {
   padding-top: clamp(6.75rem, 11vh, 8rem);
   padding-bottom: 5rem;
@@ -707,7 +707,7 @@ a[href*="learn-more"],
   padding: 0;
 }
 
-/* Detail pages — title + year/category, then proportional media */
+/* Detail pages :  title + year/category, then proportional media */
 .detail-header {
   padding-bottom: 0.5rem;
 }
@@ -892,7 +892,7 @@ a[href*="learn-more"],
   opacity: 0.8;
 }
 
-/* Publications — centered column, larger thumbs, venue then PDF / BibTeX */
+/* Publications :  centered column, larger thumbs, venue then PDF / BibTeX */
 .section.is-t-double:has(+ .publications-list-section) .container,
 .publications-list-section .container,
 .section.is-t-double:has(+ .projects-list-section) .container,

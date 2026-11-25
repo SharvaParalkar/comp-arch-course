@@ -60,7 +60,7 @@ collections:
             widget: object
             collapsed: true
             required: false
-            hint: "All fields optional — empty values will not block Save."
+            hint: "All fields optional. Empty values will not block Save."
             fields:
               - { label: Description, name: description, widget: text, required: false }
               - { label: OG Image, name: og_image, widget: image, required: false }
@@ -87,7 +87,7 @@ collections:
         name: permalink
         widget: string
         hint: "e.g. /about.html or /index.html. Keep the leading slash."
-      - label: Page Body — Visual Editor
+      - label: Page Body (Visual Editor)
         name: visual_page
         widget: visual_page
         required: false
@@ -148,7 +148,7 @@ collections:
   - name: projects
     label: "3 · Projects"
     label_singular: Project
-    description: "Each project is a card on the Projects grid plus its own detail page. Edit Cover Image + Summary first, then detail sections."
+    description: "Each project has a detail page and a card on the Projects grid. Use the visual editor for both."
     folder: MainPage/content/projects
     extension: yml
     format: yaml
@@ -159,48 +159,20 @@ collections:
     sortable_fields: ["sort_order", "year", "title"]
     preview_path: "projects/{{slug}}.html"
     fields:
-      - { label: Title, name: title, widget: string, hint: "Detail page + card title" }
+      - label: Title
+        name: title
+        widget: string
+        hint: "Detail page and listing card title. The visual editor can change the shorter card overlay title."
       - label: Permalink
         name: permalink
         widget: string
         required: false
         hint: "e.g. /projects/my-project.html"
-      - label: Cover Image
-        name: cover_image
-        widget: image
-        required: false
-        hint: "Main image on the Projects grid — upload or choose from Cloudinary"
-      - label: Square Card Images
-        name: card_images
-        widget: list
-        required: false
-        min: 2
-        max: 2
-        hint: "Two complementary images for the square projects-page carousel. Preview the center square crop."
-        fields:
-          - { label: Image, name: image, widget: image }
-          - { label: Alt Text, name: alt, widget: string, required: false }
-      - label: Overlay Title
-        name: card_title
-        widget: string
-        required: false
-        hint: "Optional white text overlaid on the cover image"
       - label: Year
         name: year
         widget: string
         required: false
-        hint: "e.g. 2023"
-      - label: Category
-        name: category
-        widget: string
-        required: false
-        default: Research
-        hint: "e.g. Research or Design/Research"
-      - label: Summary
-        name: summary
-        widget: text
-        required: false
-        hint: "Short blurb shown under the card on the Projects grid"
+        hint: "Shown in the Projects list and on the card."
       - label: Featured on Home
         name: featured
         widget: boolean
@@ -211,13 +183,8 @@ collections:
         widget: number
         required: false
         value_type: int
-        hint: "Lower numbers appear first on the grid"
-      - label: Body Class
-        name: body_class
-        widget: string
-        default: body
-        required: false
-      - label: SEO
+        hint: "Lower numbers appear first on the grid."
+      - label: Search and Social Preview (SEO)
         name: seo
         widget: object
         collapsed: true
@@ -227,123 +194,16 @@ collections:
           - { label: OG Title, name: og_title, widget: string, required: false }
           - { label: OG Description, name: og_description, widget: text, required: false }
           - { label: OG Image, name: og_image, widget: image, required: false }
-      - label: Write Project Content
-        name: quick_content
-        widget: markdown
+      - label: Detail Page and Card (Visual Editor)
+        name: visual_page
+        widget: visual_page
         required: false
-        hint: "Write normally. Use the toolbar for headings, links, lists, and images. Content appears below the project description blocks."
-      - label: Page Content — Structured Sections
-        name: sections
-        widget: list
-        collapsed: true
-        required: false
-        summary: "{{type}}"
-        hint: "Add, remove, and reorder detail-page sections. Text blocks appear in the left column; images, galleries, and videos appear in the right column."
-        types:
-          - label: Hero with Video
-            name: hero_video
-            widget: object
-            fields:
-              - { label: Title, name: title, widget: string, required: false }
-              - { label: Video URL, name: video_url, widget: string }
-          - label: Hero with Image
-            name: hero_image
-            widget: object
-            fields:
-              - { label: Image, name: image, widget: image }
-              - { label: Title, name: title, widget: string, required: false }
-              - { label: Subtitle, name: subtitle, widget: string, required: false }
-              - { label: Alt Text, name: alt, widget: string, required: false }
-              - { label: CTA Label, name: cta_label, widget: string, required: false }
-              - { label: CTA URL, name: cta_url, widget: string, required: false }
-          - label: Headline
-            name: headline
-            widget: object
-            summary: "{{text}}"
-            fields:
-              - { label: Text, name: text, widget: text }
-          - label: Two Column Text
-            name: two_column
-            widget: object
-            fields:
-              - { label: Heading, name: heading, widget: string, required: false }
-              - { label: Left Column, name: left, widget: markdown, required: false }
-              - { label: Right Column, name: right, widget: markdown, required: false }
-          - label: Full-width Video
-            name: video
-            widget: object
-            fields:
-              - { label: Video URL, name: video_url, widget: string }
-              - { label: Caption, name: caption, widget: string, required: false }
-          - label: Full-width Image
-            name: image
-            widget: object
-            fields:
-              - { label: Image, name: image, widget: image, hint: "Upload or pick from Media / Cloudinary" }
-              - { label: Alt Text, name: alt, widget: string, required: false }
-              - { label: Caption, name: caption, widget: string, required: false }
-              - label: Image Frame
-                name: fit_mode
-                widget: select
-                default: fit
-                required: false
-                options:
-                  - { label: "Fit (show whole image)", value: fit }
-                  - { label: "Fill (crop to fill frame)", value: fill }
-          - label: Image + Text
-            name: image_text
-            widget: object
-            fields:
-              - { label: Image, name: image, widget: image, required: false }
-              - { label: Alt Text, name: alt, widget: string, required: false }
-              - label: Image Position
-                name: image_position
-                widget: select
-                default: right
-                options: ["left", "right"]
-              - { label: Body, name: body, widget: markdown, required: false }
-              - label: Image Frame
-                name: fit_mode
-                widget: select
-                default: fill
-                required: false
-                options:
-                  - { label: "Fill (crop to fill frame)", value: fill }
-                  - { label: "Fit (show whole image)", value: fit }
-          - label: Image Gallery
-            name: image_gallery
-            widget: object
-            fields:
-              - label: Images
-                name: images
-                widget: list
-                fields:
-                  - { label: Image, name: image, widget: image }
-                  - { label: Alt Text, name: alt, widget: string, required: false }
-                  - { label: Caption, name: caption, widget: string, required: false }
-                  - label: Image Frame
-                    name: fit_mode
-                    widget: select
-                    default: fit
-                    required: false
-                    options:
-                      - { label: "Fit (show whole image)", value: fit }
-                      - { label: "Fill (crop to fill frame)", value: fill }
-          - label: Stat
-            name: stat
-            widget: object
-            fields:
-              - { label: Label, name: label, widget: string, required: false }
-              - { label: Value, name: value, widget: string }
-          - label: Rich Text
-            name: rich_text
-            widget: object
-            fields:
-              - { label: Body, name: body, widget: markdown, required: false }
+        hint: "Open the visual editor to change the detail page, the listing card, images, and design. Click Apply, then Publish."
+
   - name: publications
     label: "4 · Publications"
     label_singular: Publication
-    description: "Each entry appears on the Publications page with an image, authors, venue, and PDF / BibTeX links."
+    description: "Each entry appears on the Publications page as a card with an image, authors, venue, and links."
     folder: MainPage/content/publications
     extension: yml
     format: yaml
@@ -354,46 +214,24 @@ collections:
     sortable_fields: ["sort_order", "year", "title"]
     preview_path: "publications.html"
     fields:
-      - { label: Title, name: title, widget: string }
-      - { label: Authors, name: authors, widget: text, required: false }
-      - { label: Venue, name: venue, widget: string, required: false, hint: "e.g. IASS 2023" }
+      - { label: Title, name: title, widget: string, hint: "The title shown on the publication card." }
       - { label: Year, name: year, widget: string, required: false }
       - label: Sort Order
         name: sort_order
         widget: number
         required: false
         value_type: int
-        hint: "Lower numbers appear first"
-      - label: Image
-        name: image
-        widget: image
+        hint: "Lower numbers appear first on the Publications page."
+      - label: Publication Card (Visual Editor)
+        name: visual_page
+        widget: visual_page
         required: false
-        hint: "Thumbnail shown beside the publication"
-      - label: PDF URL
-        name: pdf_url
-        widget: string
-        required: false
-        hint: "Link to PDF (/uploads/... or external URL)"
-      - label: BibTeX URL
-        name: bibtex_url
-        widget: string
-        required: false
-        hint: "Link to a .bib / .txt file"
-      - label: Article URL
-        name: article_url
-        widget: string
-        required: false
-        hint: "Optional DOI or publisher page"
-      - label: BibTeX
-        name: bibtex
-        widget: text
-        required: false
-        hint: "Optional inline BibTeX (used if no BibTeX URL)"
+        hint: "Open the visual editor to change the image, authors, venue, links, and image design. Click Apply, then Publish."
 
   - name: teaching
     label: "5 · Teaching"
     label_singular: Teaching
-    description: "Courses, seminars, studios, and workshops. Each card appears on the Teaching page."
+    description: "Courses, seminars, studios, and workshops. Each entry has a detail page and a card on the Teaching page."
     folder: MainPage/content/teaching
     extension: yml
     format: yaml
@@ -404,30 +242,27 @@ collections:
     sortable_fields: ["sort_order", "year", "title"]
     preview_path: "teaching/{{slug}}.html"
     fields:
-      - { label: Title, name: title, widget: string }
+      - label: Title
+        name: title
+        widget: string
+        hint: "Detail page and listing card title. The visual editor can change the shorter card overlay title."
       - label: Permalink
         name: permalink
         widget: string
         required: false
         hint: "e.g. /teaching/structures-seminar.html"
-      - { label: Cover Image, name: cover_image, widget: image, required: false }
-      - { label: Overlay Title, name: card_title, widget: string, required: false }
-      - { label: Year, name: year, widget: string, required: false }
-      - { label: Category, name: category, widget: string, required: false, hint: "Seminar, Studio, Workshop" }
-      - { label: Instructors, name: instructors, widget: string, required: false }
-      - { label: Summary, name: summary, widget: text, required: false }
-      - label: Write Teaching Page Content
-        name: quick_content
-        widget: markdown
+      - label: Year
+        name: year
+        widget: string
         required: false
-        hint: "Write normally. Use the toolbar for headings, links, lists, and images."
+        hint: "Shown in the Teaching list and on the card."
       - label: Sort Order
         name: sort_order
         widget: number
         required: false
         value_type: int
-      - { label: Body Class, name: body_class, widget: string, default: body, required: false }
-      - label: SEO
+        hint: "Lower numbers appear first on the grid."
+      - label: Search and Social Preview (SEO)
         name: seo
         widget: object
         collapsed: true
@@ -435,35 +270,8 @@ collections:
         fields:
           - { label: Description, name: description, widget: text, required: false }
           - { label: OG Title, name: og_title, widget: string, required: false }
-      - label: Page Content — Structured Sections
-        name: sections
-        widget: list
-        collapsed: true
+      - label: Detail Page and Card (Visual Editor)
+        name: visual_page
+        widget: visual_page
         required: false
-        summary: "{{type}}"
-        types:
-          - label: Headline
-            name: headline
-            widget: object
-            fields:
-              - { label: Text, name: text, widget: text }
-          - label: Full-width Image
-            name: image
-            widget: object
-            fields:
-              - { label: Image, name: image, widget: image }
-              - { label: Alt Text, name: alt, widget: string, required: false }
-              - { label: Caption, name: caption, widget: string, required: false }
-              - label: Image Frame
-                name: fit_mode
-                widget: select
-                default: fit
-                required: false
-                options:
-                  - { label: "Fit (show whole image)", value: fit }
-                  - { label: "Fill (crop to fill frame)", value: fill }
-          - label: Rich Text
-            name: rich_text
-            widget: object
-            fields:
-              - { label: Body, name: body, widget: markdown, required: false }
+        hint: "Open the visual editor to change the detail page, the listing card, images, and design. Click Apply, then Publish."

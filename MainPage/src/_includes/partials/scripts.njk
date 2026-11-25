@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const result = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(result.error || "Your message could not be sent. Please try again.");
       form.reset();
-      status.textContent = "Thanks — your message has been sent.";
+      status.textContent = "Thanks, your message has been sent.";
     } catch (error) {
       status.textContent = error.message || "Your message could not be sent. Please try again.";
     } finally {

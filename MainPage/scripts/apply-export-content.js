@@ -220,7 +220,7 @@ dump(path.join(ROOT, "content", "pages", "home.yml"), {
   body_class: "body is-black",
   seo: {
     description:
-      "Mostafa Akbari — computational designer and architectural technologist specializing in shellular funicular structures, digital fabrication, and computational design.",
+      "Mostafa Akbari :  computational designer and architectural technologist specializing in shellular funicular structures, digital fabrication, and computational design.",
     og_title: "Mostafa Akbari | Architectural Technologist",
     og_image: media.homeHero,
   },
@@ -295,7 +295,7 @@ dump(path.join(ROOT, "content", "pages", "teaching.yml"), {
   permalink: "/teaching.html",
   body_class: "body",
   seo: {
-    description: "Teaching — seminars, studios, and workshops",
+    description: "Teaching :  seminars, studios, and workshops",
     og_title: "Teaching | Mostafa Akbari",
   },
   body_mode: "sections",
@@ -382,7 +382,7 @@ dump(path.join(teachingDir, "digiblast-workshop.yml"), {
   body_mode: "sections",
   sections: [
     { type: "headline", text: "Digiblast | Summer workshop" },
-    { type: "rich_text", body: "<p><strong>2018–2019</strong></p>" },
+    { type: "rich_text", body: "<p><strong>2018-2019</strong></p>" },
     { type: "image", image: media.teachingDigiblast, alt: "Digiblast workshop" },
     {
       type: "rich_text",
@@ -566,7 +566,7 @@ fs.writeFileSync(
   path.join(ROOT, "scripts", "export-media-map.json"),
   JSON.stringify(
     {
-      note: "Local copies of export stills. Cloudinary public IDs usually append _xxxxxx — match by stripping that suffix.",
+      note: "Local copies of export stills. Cloudinary public IDs usually append _xxxxxx :  match by stripping that suffix.",
       media,
       gifs_left_on_wix: GIF,
       unmatched_cloudinary: "Run with CLOUDINARY_URL / API secret to resolve _(code) public IDs.",
